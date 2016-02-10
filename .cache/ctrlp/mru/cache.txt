@@ -1,4 +1,0 @@
-/home/mattailes/bin/www
-/home/mattailes/package.json
-/home/mattailes/routes/users.js
-/home/mattailes/routes/index.js

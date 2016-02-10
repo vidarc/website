@@ -1,6 +1,0 @@
-2016-02-10 03:03:20: [PM2][WORKER] Started with refreshing interval: 30000
-2016-02-10 03:03:20: [[[[ PM2/God daemon launched ]]]]
-2016-02-10 03:03:20: BUS system [READY] on port /home/mattailes/.pm2/pub.sock
-2016-02-10 03:03:20: RPC interface [READY] on port /home/mattailes/.pm2/rpc.sock
-2016-02-10 03:03:20: Starting execution sequence in -fork mode- for app name:www id:0
-2016-02-10 03:03:20: App name:www id:0 online
