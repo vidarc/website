@@ -1,0 +1,176 @@
+Error: Failed to lookup view "error" in views directory "/home/mattailes/views"
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/mattailes/node_modules/express/lib/response.js:961:7)
+    at /home/mattailes/app.js:54:7
+    at Layer.handle_error (/home/mattailes/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/mattailes/node_modules/express/lib/router/index.js:310:13)
+    at /home/mattailes/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/mattailes/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/mattailes/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/mattailes/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:581:14)
+Error: Failed to lookup view "error" in views directory "/home/mattailes/views"
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/mattailes/node_modules/express/lib/response.js:961:7)
+    at /home/mattailes/app.js:54:7
+    at Layer.handle_error (/home/mattailes/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/mattailes/node_modules/express/lib/router/index.js:310:13)
+    at /home/mattailes/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/mattailes/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/mattailes/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/mattailes/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:581:14)
+Error: Failed to lookup view "error" in views directory "/home/mattailes/views"
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/mattailes/node_modules/express/lib/response.js:961:7)
+    at /home/mattailes/app.js:54:7
+    at Layer.handle_error (/home/mattailes/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/mattailes/node_modules/express/lib/router/index.js:310:13)
+    at /home/mattailes/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/mattailes/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/mattailes/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/mattailes/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:581:14)
+Error: Failed to lookup view "error" in views directory "/home/mattailes/views"
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/mattailes/node_modules/express/lib/response.js:961:7)
+    at /home/mattailes/app.js:54:7
+    at Layer.handle_error (/home/mattailes/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/mattailes/node_modules/express/lib/router/index.js:310:13)
+    at /home/mattailes/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/mattailes/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/mattailes/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/mattailes/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:581:14)
+Error: Failed to lookup view "error" in views directory "/home/mattailes/views"
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/mattailes/node_modules/express/lib/response.js:961:7)
+    at /home/mattailes/app.js:54:7
+    at Layer.handle_error (/home/mattailes/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/mattailes/node_modules/express/lib/router/index.js:310:13)
+    at /home/mattailes/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/mattailes/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/mattailes/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/mattailes/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:581:14)
+Error: Failed to lookup view "error" in views directory "/home/mattailes/views"
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/mattailes/node_modules/express/lib/response.js:961:7)
+    at /home/mattailes/app.js:54:7
+    at Layer.handle_error (/home/mattailes/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/mattailes/node_modules/express/lib/router/index.js:310:13)
+    at /home/mattailes/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/mattailes/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/mattailes/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/mattailes/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:581:14)
+Error: Failed to lookup view "error" in views directory "/home/mattailes/views"
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/mattailes/node_modules/express/lib/response.js:961:7)
+    at /home/mattailes/app.js:54:7
+    at Layer.handle_error (/home/mattailes/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/mattailes/node_modules/express/lib/router/index.js:310:13)
+    at /home/mattailes/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/mattailes/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/mattailes/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/mattailes/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:581:14)
+Error: Failed to lookup view "error" in views directory "/home/mattailes/views"
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/mattailes/node_modules/express/lib/response.js:961:7)
+    at /home/mattailes/app.js:54:7
+    at Layer.handle_error (/home/mattailes/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/mattailes/node_modules/express/lib/router/index.js:310:13)
+    at /home/mattailes/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/mattailes/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/mattailes/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/mattailes/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:581:14)
+Error: Failed to lookup view "error" in views directory "/home/mattailes/views"
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/mattailes/node_modules/express/lib/response.js:961:7)
+    at /home/mattailes/app.js:54:7
+    at Layer.handle_error (/home/mattailes/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/mattailes/node_modules/express/lib/router/index.js:310:13)
+    at /home/mattailes/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/mattailes/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/mattailes/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/mattailes/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:581:14)
+Error: Failed to lookup view "error" in views directory "/home/mattailes/views"
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/mattailes/node_modules/express/lib/response.js:961:7)
+    at /home/mattailes/app.js:54:7
+    at Layer.handle_error (/home/mattailes/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/mattailes/node_modules/express/lib/router/index.js:310:13)
+    at /home/mattailes/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/mattailes/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/mattailes/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/mattailes/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:581:14)
+Error: Failed to lookup view "error" in views directory "/home/mattailes/views"
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/mattailes/node_modules/express/lib/response.js:961:7)
+    at /home/mattailes/app.js:54:7
+    at Layer.handle_error (/home/mattailes/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/mattailes/node_modules/express/lib/router/index.js:310:13)
+    at /home/mattailes/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/mattailes/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/mattailes/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/mattailes/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:581:14)
+Error: Failed to lookup view "error" in views directory "/home/mattailes/views"
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/mattailes/node_modules/express/lib/response.js:961:7)
+    at /home/mattailes/app.js:54:7
+    at Layer.handle_error (/home/mattailes/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/mattailes/node_modules/express/lib/router/index.js:310:13)
+    at /home/mattailes/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/mattailes/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/mattailes/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/mattailes/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:581:14)
+Error: Failed to lookup view "error" in views directory "/home/mattailes/views"
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/mattailes/node_modules/express/lib/response.js:961:7)
+    at /home/mattailes/app.js:54:7
+    at Layer.handle_error (/home/mattailes/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/mattailes/node_modules/express/lib/router/index.js:310:13)
+    at /home/mattailes/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/mattailes/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/mattailes/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/mattailes/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:581:14)
+Error: Failed to lookup view "error" in views directory "/home/mattailes/views"
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/mattailes/node_modules/express/lib/response.js:961:7)
+    at /home/mattailes/app.js:54:7
+    at Layer.handle_error (/home/mattailes/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/mattailes/node_modules/express/lib/router/index.js:310:13)
+    at /home/mattailes/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/mattailes/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/mattailes/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/mattailes/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:581:14)
+Error: Failed to lookup view "error" in views directory "/home/mattailes/views"
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/mattailes/node_modules/express/lib/response.js:961:7)
+    at /home/mattailes/app.js:54:7
+    at Layer.handle_error (/home/mattailes/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/mattailes/node_modules/express/lib/router/index.js:310:13)
+    at /home/mattailes/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/mattailes/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/mattailes/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/mattailes/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:581:14)
+Error: Failed to lookup view "error" in views directory "/home/mattailes/views"
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/mattailes/node_modules/express/lib/response.js:961:7)
+    at /home/mattailes/app.js:54:7
+    at Layer.handle_error (/home/mattailes/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/mattailes/node_modules/express/lib/router/index.js:310:13)
+    at /home/mattailes/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/mattailes/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/mattailes/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/mattailes/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/mattailes/node_modules/express/lib/application.js:581:14)
