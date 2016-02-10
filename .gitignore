@@ -1,0 +1,13 @@
+.cache
+.forever
+.npm
+.pm2
+.vim_runtime
+
+.bash_history
+.bash_logout
+.bashrc
+.profile
+.vim_mru_files
+.viminfo
+.vimrc
