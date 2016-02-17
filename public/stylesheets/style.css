@@ -1,8 +1,26 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 5px;
+  font: 14px 'Roboto', sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.header {
+  height: 110px;
+}
+
+.profile {
+  height: 100px;
+  width: 100px;
+  border: 2px solid black;
+  border-radius: 50%;
+  float: left;
+  margin: 5px;
+}
+
+.nav {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
 }
