@@ -11,3 +11,5 @@
 .vim_mru_files
 .viminfo
 .vimrc
+
+node_modules/
