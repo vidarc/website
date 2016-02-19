@@ -8,6 +8,14 @@ router.get('/', function (req, res, next) {
   res.render('home');
 });
 
+router.get('/portfolio', function (req, res, next) {
+	res.render('portfolio');
+});
+
+router.get('/resume', function (req, res, next) {
+	res.render('resume');
+});
+
 router.get('/about', function (req, res, next) {
   res.render('about');
 });
