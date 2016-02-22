@@ -24,3 +24,8 @@ a {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
 }
+
+.kylo {
+  border: 2px solid black;
+  border-radius: 50%;
+}
