@@ -11,13 +11,16 @@ a {
   margin: auto;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 700;
-  background: url(images/headerbg.jpg);
+  color: #fffafa;
+  background: url(/images/headerbg.jpg);
+  background-size: auto;
   border-radius: 25px;
+  padding-bottom: 5px;
 }
 
 .profile {
   height: 125px;
-  border: 2px solid black;
+  margin: 5px 0px 0px 0px;
   border-radius: 50%;
 }
 
