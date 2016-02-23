@@ -5,7 +5,14 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('home');
+  var context = {
+    nav1: 'class="active"',
+    nav2: '',
+    nav3: '',
+    nav4: '',
+    nav5: ''
+  };
+  res.render('home', context);
 });
 
 router.get('/portfolio', function (req, res, next) {
