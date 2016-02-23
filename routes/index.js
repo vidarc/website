@@ -6,55 +6,35 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function (req, res, next) {
   var context = {
-    home: 'class="active"',
-    portfolio: '',
-    resume: '',
-    about: '',
-    contact: ''
+    home: ' class="active"'
   };
   res.render('home', context);
 });
 
 router.get('/portfolio', function (req, res, next) {
   var context = {
-    home: '',
-    portfolio: 'class="active"',
-    resume: '',
-    about: '',
-    contact: ''
+    portfolio: ' class="active"'
   };
 	res.render('portfolio', context);
 });
 
 router.get('/resume', function (req, res, next) {
   var context = {
-    home: '',
-    portfolio: '',
-    resume: 'class="active"',
-    about: '',
-    contact: ''
+    resume: ' class="active"'
   };
 	res.render('resume', context);
 });
 
 router.get('/about', function (req, res, next) {
   var context = {
-    home: '',
-    portfolio: '',
-    resume: '',
-    about: 'class="active"',
-    contact: ''
+    about: ' class="active"'
   };
   res.render('about', context);
 });
 
 router.get('/contact', function (req, res, next) {
   var context = {
-    home: '',
-    portfolio: '',
-    resume: '',
-    about: '',
-    contact: 'class="active"'
+    contact: ' class="active"'
   };
   res.render('contact', context);
 });
