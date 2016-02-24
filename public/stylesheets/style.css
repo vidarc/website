@@ -24,6 +24,11 @@ a {
   border-radius: 50%;
 }
 
+.social {
+  width: 25px;
+  padding: 5px;
+}
+
 .nav {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
