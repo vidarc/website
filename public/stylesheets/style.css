@@ -25,8 +25,9 @@ a {
 }
 
 .social {
-  width: 25px;
-  padding: 5px;
+  width: 30px;
+  padding: 2px;
+  float: right;
 }
 
 .nav {
