@@ -1,4 +1,13 @@
+/* My color scheme
+ * #740001 dark red
+ * #ae0001 red
+ * #eeba30 gold
+ * #d3a625 dark gold
+ * #000000 black
+ */
+
 body {
+  background-color: #fafafa;
   padding: 5px;
   font: 14px 'Roboto', sans-serif;
 }
@@ -11,10 +20,10 @@ a {
   margin: auto;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 700;
-  color: #fffafa;
   background: url(/images/headerbg.jpg);
-  background-size: auto;
-  border-radius: 25px;
+  border-radius: 15px;
+  color: #eeba30;
+  text-shadow: black 0.1em 0.1em 0.2em;
   padding-bottom: 5px;
 }
 
@@ -39,6 +48,10 @@ a {
   border: 2px solid black;
   border-radius: 25px;
   height: 275px;
+}
+
+.blog-title {
+  color: #ae0001;
 }
 
 /* footer stuff. "borrowed" from the bootstrap example */
