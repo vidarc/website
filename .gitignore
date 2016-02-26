@@ -3,6 +3,8 @@
 .npm
 .pm2
 .vim_runtime
+.rnd
+.config/htop/htoprc
 
 .bash_history
 .bash_logout
