@@ -28,8 +28,8 @@ app.use('/users', users);
 
 // app.local to get the current year
 // work lazy, not hard
-var y = new Date();
-app.locals.year = y.getFullYear();
+var d = new Date();
+app.locals.year = d.getFullYear();
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
