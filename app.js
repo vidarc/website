@@ -6,6 +6,16 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var handlebars = require('express-handlebars');
 
+// MongoDB stuff
+var MongoClient = require('mongodb').MongoClient;
+var assert = require('assert');
+var url = 'mongodb://localhost:27017/blog';
+MongoClient.connect(url, function (err, db) {
+  assert.equal(null, err);
+  console.log("Connected to the server.");
+  db.close();
+});
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
