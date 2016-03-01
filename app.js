@@ -16,25 +16,20 @@ MongoClient.connect(url, function (err, db) {
   db.close();
 });
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+// routing
+var router = require('./router')(app);
 
 var app = express();
 
 // view engine setup
 app.engine('handlebars', handlebars({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
-
-// uncomment after placing your favicon in /public
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', routes);
-app.use('/users', users);
 
 // app.local to get the current year
 // work lazy, not hard
