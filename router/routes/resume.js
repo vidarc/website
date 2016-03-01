@@ -5,9 +5,9 @@ var router = express.Router();
 
 router.get('/', function (req, res, next) {
   var context = {
-    portfolio: ' active'
+    resume: ' class="active"'
   };
-	res.render('portfolio', context);
+	res.render('resume', context);
 });
 
 module.exports = router;
