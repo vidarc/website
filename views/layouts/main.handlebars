@@ -76,8 +76,28 @@
         </div>
       </div>
     </nav>
-    <!-- starting point for handlebars -->
-    {{{body}}}
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+          <!-- starting point for handlebars -->
+          {{{body}}}
+        </div>
+        <!-- sidebar (address, archives, maybe ads?) -->
+        <div class="col-sm-3">
+          <address>
+            <strong>Matthew Ailes</strong><br>
+            103 S Boulevard #2
+            Richmond, VA 23220
+          </address>
+          <h3>Archives</h3>
+          <ul>
+            <li>Test list</li>
+            <li>Just placeholders</li>
+            <li>Will change later</li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <!-- footer, put some contact type stuff down here -->
     <footer class="blog-footer">
       <p>Built by <a href="email:mattailes@gmail.com">Matthew Ailes</a> using <a href="http://getbootstrap.com">Bootstrap</a>, <a href="http://nodejs.org">Node.js</a>, <a href="http://handlebarsjs.com">handlebars</a>, and the MEAN stack.</p>
