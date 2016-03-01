@@ -16,9 +16,6 @@ MongoClient.connect(url, function (err, db) {
   db.close();
 });
 
-// routing
-var router = require('./router')(app);
-
 var app = express();
 
 // view engine setup
@@ -35,6 +32,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // work lazy, not hard
 var d = new Date();
 app.locals.year = d.getFullYear();
+
+// routing
+var router = require('./router')(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
