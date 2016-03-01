@@ -28,7 +28,7 @@ router.get('/', function (req, res, next) {
 router.get('/test', function (req, res, next) {
   MongoClient.connect(url, function(err, db) {
     assert.equal(null, err);
-    insertDocument(db, function() {
+    insert(db, function() {
       db.close();
     });
   });
