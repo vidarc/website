@@ -27,7 +27,6 @@ a {
 }
 
 .header:before {
-  content: ' ';
   display: block;
   position: absolute;
   left: 0;
@@ -39,10 +38,6 @@ a {
   background: url(/images/headerbg.jpg);
   background-repeat: no-repeat;
   background-position: 50% 0;
-  -ms-background-size: cover;
-  -o-background-size: cover;
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
   background-size: cover;
 }
 
@@ -97,4 +92,10 @@ a {
 
 .blog-footer p:last-child {
   margin-bottom: 0;
+}
+
+.about {
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  padding: 10px;
 }
