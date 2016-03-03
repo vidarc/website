@@ -6,6 +6,13 @@
  * #000000 black
  */
 
+ /* My fonts
+ font-family: 'Roboto', sans-serif; 400 and 700
+ font-family: 'Source Code Pro', ; 400 and 700
+ font-family: 'Playfair Display SC', serif; 400 and 700
+ font-family: 'Righteous', cursive;
+ */
+
 body {
   background-color: #fafafa;
   padding: 5px;
@@ -18,7 +25,7 @@ a {
 
 .header {
   margin: auto;
-  font-family: 'Righteous', sans-serif;
+  font-family: 'Righteous', cursive;
   border-radius: 15px;
   color: #fafafa;
   padding-bottom: 5px;
@@ -67,7 +74,7 @@ a {
 }
 
 .nav {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display SC', serif;
   font-weight: 700;
 }
 
