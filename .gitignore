@@ -14,4 +14,5 @@
 .viminfo
 .vimrc
 
+.ssh/
 node_modules/
