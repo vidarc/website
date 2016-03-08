@@ -13,6 +13,10 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700|Source+Code+Pro:400,700|Playfair+Display+SC:400,700|Righteous' rel='stylesheet' type='text/css'>
     <!-- My stylesheet -->
     <link rel="stylesheet" href="/stylesheets/style.css">
+    {{! Google ReCaptcha stuff}}
+    {{#if contact}}
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    {{/if}}
   </head>
 
   <body>
@@ -25,12 +29,10 @@
         <div class="media-body">
           <h3 class="media-heading stroke">MATTHEW AILES -- PROGRAMMER FOR HIRE</h3>
           <h5 class="stroke">A site for some ramblings, showing off code, and anything else I can think of.</h5>
-          <a href="https://twitter.com/mattailes" target="_blank"><img src="/images/twitter.png" alt="twitter" class="social"></a>
-          <a href="https://www.linkedin.com/in/mattailes" target="_blank"><img src="/images/linkedin.png" alt="linkedin" class="social"></a>
-          <a href="http://www.last.fm/user/vidarc" target="_blank"><img src="/images/lastfm.png" alt="last.fm" class="social"></a>
-          <a href="https://plus.google.com/104160854902939371173" target="_blank"><img src="/images/googleplus.png" alt="googleplus" class="social"></a>
-          <a href="https://github.com/vidarc" target="_blank"><img src="/images/github.png" alt="github" class="social"></a>
-          <a href="https://www.facebook.com/mattailes" target="_blank"><img src="/images/facebook.png" alt="facebook" class="social"></a>
+          {{! little loop for my social links }}
+          {{#each social}}
+            <a href="{{this.link}}" target="_blank"><img src="{{this.source}}" alt="{{this.name}}" class="social"></a>
+          {{/each}}
         </div>
       </div>
     </div>
@@ -111,7 +113,7 @@
     </div>
     <!-- footer, put some contact type stuff down here -->
     <footer class="blog-footer">
-      <p>Built by <a href="email:mattailes@gmail.com">Matthew Ailes</a> using <a href="http://getbootstrap.com">Bootstrap</a>, <a href="http://nodejs.org">Node.js</a>, <a href="http://handlebarsjs.com">handlebars</a>, and the MEAN stack.</p>
+      <p>Built by <a href="email:mattailes@gmail.com">Matthew Ailes</a> on the <a href="https://www.mongodb.org/" alt="mongodb">M</a><a href="http://expressjs.com/" alt="express">E</a><a href="https://angularjs.org/" alt="angular">A</a><a href="http://nodejs.org" alt="nodejs">N</a> stack, <a href="http://getbootstrap.com" alt="bootstrap">Bootstrap</a>, and <a href="http://handlebarsjs.com" alt="handlebars">handlebars</a>.</p>
       <p>Social media icons are from <a href="https://www.iconfinder.com/iconsets/social-aquicons">Lanan Illustration</a>.</p>
       <p>All content is possibly copyrighted 2015 - {{year}} &copy;</p>
     </footer>

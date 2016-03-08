@@ -18,11 +18,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.local to get the current year
-// work lazy, not hard
-var d = new Date();
-app.locals.year = d.getFullYear();
-
 // routing
 var router = require('./router')(app);
 
