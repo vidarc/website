@@ -26,7 +26,6 @@ a {
 .header {
   margin: auto;
   font-family: 'Righteous', cursive;
-  border-radius: 15px;
   color: #fafafa;
   padding-bottom: 5px;
   position: relative;
@@ -76,6 +75,26 @@ a {
 .nav {
   font-family: 'Playfair Display SC', serif;
   font-weight: 700;
+}
+
+/* going to try and change the navbar width */
+@media (min-width: 768px) {
+  .navbar {
+    width: 750px;
+    margin: 0px auto 20px;
+  }
+}
+@media (min-width: 992px) {
+  .navbar {
+    width: 970px;
+    margin: 0px auto 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .navbar {
+    width: 1170px;
+    margin: 0px auto 20px;
+  }
 }
 
 .kylo {
