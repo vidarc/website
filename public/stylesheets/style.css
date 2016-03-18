@@ -15,7 +15,6 @@
 
 body {
   background-color: #fafafa;
-  padding: 5px;
   font: 14px 'Roboto', sans-serif;
 }
 
@@ -24,10 +23,10 @@ a {
 }
 
 .header {
-  margin: auto;
   font-family: 'Righteous', cursive;
   color: #fafafa;
   padding-bottom: 5px;
+  padding-left: 10px;
   position: relative;
   overflow: hidden;
 }
@@ -72,7 +71,7 @@ a {
   z-index: 2;
 }
 
-.nav {
+.navbar {
   font-family: 'Playfair Display SC', serif;
   font-weight: 700;
 }
