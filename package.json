@@ -27,7 +27,7 @@
     "express": ">=4.13.1",
     "express-handlebars": ">=3.0.0",
     "forever": ">=0.15.1",
-    "handlebars": ">=4.0.5",
+    "handlebars": "^4.0.5",
     "latest-version": ">=2.0.0",
     "mongoose": ">=4.4.3",
     "morgan": ">=1.6.1",

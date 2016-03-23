@@ -31,7 +31,13 @@ router.get('/', function (req, res, next) {
           title: 'Delivery Driver',
           joined: 'January 2007',
           left: 'Current',
-          }
+          duties: [
+            'Deliver food to the customer and take orders in the store.',
+            'Help with any complaints or concerns the customers may have.',
+            'Keep the store in a clean and efficient manner.',
+            'Help the manager with any other type of issues.'
+          ]
+        }
       ]
     }
   };

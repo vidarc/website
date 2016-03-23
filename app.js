@@ -8,8 +8,22 @@ var handlebars = require('express-handlebars');
 
 var app = express();
 
+// handlebars helpers
+var hbs = handlebars.create({
+  defaultLayout: 'main',
+  helpers: {
+    list: function (items, options) {
+      var out = "<ul>";
+      for (var i = 0, l = items.length; i < l; i++) {
+        out = out + "<li>" + options.fn(items[i]) + "</li>";
+      }
+      return out + "</ul>";
+    }
+  }
+});
+
 // view engine setup
-app.engine('handlebars', handlebars({defaultLayout: 'main'}));
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));

@@ -46,6 +46,10 @@
         <p>{{this.employer}}</p>
         <p>{{this.title}}</p>
         <p>{{this.joined}} - {{this.left}}</p>
+        {{#list this.duties}}
+          {{this}}
+        {{/list}}
+        {{{testing}}}
         {{#unless @last}}
           <hr>
         {{/unless}}
