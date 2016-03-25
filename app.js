@@ -19,7 +19,8 @@ var hbs = handlebars.create({
       }
       return out + "</ul>";
     }
-  }
+  },
+  partialsDir: 'views/partials/'
 });
 
 // view engine setup

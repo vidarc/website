@@ -1,0 +1,15 @@
+<div class="row header">
+  <div class="media">
+    <div class="media-left media-middle">
+      <img src="/images/me.jpg" class="profile media-object" alt="my face">
+    </div>
+    <div class="media-body">
+      <h3 class="media-heading stroke">MATTHEW AILES -- PROGRAMMER FOR HIRE</h3>
+      <h5 class="stroke">A site for some ramblings, showing off code, and anything else I can think of.</h5>
+      {{! little loop for my social links }}
+      {{#each social}}
+        <a href="{{this.link}}" target="_blank"><img src="{{this.source}}" alt="{{this.name}}" class="social"></a>
+      {{/each}}
+    </div>
+  </div>
+</div>
