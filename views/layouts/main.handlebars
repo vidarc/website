@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!DOCTYPE html>
 
 <html lang="en">
@@ -293,3 +294,33 @@
 
 </html>
 >>>>>>> 99068ca... google ad stuff again
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+  {{> head}}
+
+  <body>
+    <div class="container">
+      <!-- my page header/logo -->
+      {{> header}}
+      <!-- incoming navigation section -->
+      {{> nav}}
+      <div class="row">
+        <div class="col-sm-9">
+          <!-- main section -->
+          {{{body}}}
+        </div>
+        <!-- sidebar (address, archives, maybe ads?) -->
+        <div class="col-sm-3">
+          {{> sidebar}}
+        </div>
+      </div>
+      <!-- footer, put some contact type stuff down here -->
+      {{> footer}}
+    </div>
+    {{> foot}}
+  </body>
+
+</html>
+>>>>>>> 5198248... changed up the templating. partials abound!
