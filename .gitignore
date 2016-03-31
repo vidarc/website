@@ -16,3 +16,7 @@
 
 .ssh/
 node_modules/
+tmp/
+
+secret.js
+Logs.zip

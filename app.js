@@ -5,16 +5,23 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var handlebars = require('express-handlebars');
+var compression = require('compression');
 
 var app = express();
+
+// disable the x-powered-by header
+// recommended by express
+app.disable('x-powered-by');
 
 // handlebars helpers
 var hbs = handlebars.create({
   defaultLayout: 'main',
   helpers: {
+    // simple helper to make an unordered list
+    // array is passed as argument in handlebars
     list: function (items, options) {
       var out = "<ul>";
-      for (var i = 0, l = items.length; i < l; i++) {
+      for(var i=0, l=items.length; i<l; i++) {
         out = out + "<li>" + options.fn(items[i]) + "</li>";
       }
       return out + "</ul>";
@@ -26,6 +33,7 @@ var hbs = handlebars.create({
 // view engine setup
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+app.use(compression());
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
