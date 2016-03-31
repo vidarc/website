@@ -1,10 +1,10 @@
 <div class="row">
-  <form class="form-horizontal">
+  <form class="form-horizontal" action="/portfolio/steam" method="post">
     <legend>Search for Video Games</legend>
     <div class="form-group">
-      <label for="vgameSearch" class="col-sm-2 control-label">Video Game Title: </label>
+      <label for="searchTerm" class="col-sm-2 control-label">Video Game Title: </label>
       <div class="col-sm-10 input-group">
-        <input type="text" class="form-control" id="vgameSearch" placeholder="Video Game Title" required>
+        <input type="text" class="form-control" id="searchTerm" name="searchTerm" placeholder="Video Game Title" required>
         <span class="input-group-btn">
           <button class="btn btn-default search" type="submit"><span class="glyphicon glyphicon-search"></span> Search</button>
         </span>

@@ -32,6 +32,7 @@
     "latest-version": ">=2.0.0",
     "mongoose": ">=4.4.3",
     "morgan": ">=1.6.1",
+    "nodemailer": "^2.3.0",
     "request": ">=2.69.0",
     "serve-favicon": ">=2.3.0",
     "shortid": "^2.2.4"

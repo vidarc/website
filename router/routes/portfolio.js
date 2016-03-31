@@ -24,9 +24,9 @@ router.get('/', function (req, res, next) {
     ],
     node: [
       {
-        name: 'Album Releases',
+        name: 'Steam API',
         link: '/portfolio/steam',
-        image: '/images/placeholder.jpg',
+        image: '/images/steam.jpg',
         description: 'A page that will allow you to search for all types of information from the <a href="http://www.steampowered.com/">Steam</a> service using their handy API.'
       }
     ]
@@ -37,7 +37,7 @@ router.get('/', function (req, res, next) {
 router.get('/steam', function (req, res, next) {
   var context = {};
   var base = 'http://api.steampowered.com/';
-  var getID = 'ISteamUser/ResolveVanityURL/v1/'
+  var getID = 'ISteamUser/ResolveVanityURL/v1/';
 
   var options = {
     url: base + getID + '?key=' + secret.steam + "&vanityurl=vidarc",
@@ -57,6 +57,17 @@ router.get('/steam', function (req, res, next) {
   }
 
   request(options, callback);
+});
+
+router.post('/steam', function (req, res, next) {
+  var context = {};
+  var base = 'http://api.steampowered.com/';
+  var getID = 'ISteamUser/ResolveVanityURL/v1/';
+
+  var vanity = req.body.searchTerm;
+  console.log(vanity);
+
+  res.render('portfolio_views/steam', context);
 });
 
 module.exports = router;

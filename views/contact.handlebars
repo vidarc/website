@@ -1,29 +1,32 @@
+{{#if message}}
+  <h3 class="text-center">{{message}}</h3>
+{{/if}}
 <div class="row">
-  <form class="form-horizontal">
+  <form class="form-horizontal" action="/contact" method="post">
     <fieldset>
       <legend>Contact Me</legend>
       <div class="form-group">
-        <label for="inFName" class="col-sm-2 control-label">First Name:</label>
+        <label for="fName" class="col-sm-2 control-label">First Name:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inFName" placeholder="First Name" required>
+          <input type="text" class="form-control" id="fName" name="fName" placeholder="First Name" required>
         </div>
       </div>
       <div class="form-group">
-        <label for="inLName" class="col-sm-2 control-label">Last Name:</label>
+        <label for="lName" class="col-sm-2 control-label">Last Name:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inLName" placeholder="Last Name" required>
+          <input type="text" class="form-control" id="lName" name="lName" placeholder="Last Name" required>
         </div>
       </div>
       <div class="form-group">
         <label for="inEmail" class="col-sm-2 control-label">Email:</label>
         <div class="col-sm-10">
-          <input type="email" class="form-control" id="inEmail" placeholder="Email" required>
+          <input type="email" class="form-control" id="inEmail" name="inEmail" placeholder="Email" required>
         </div>
       </div>
       <div class="form-group">
         <label for="inText" class="col-sm-2 control-label">Message:</label>
         <div class="col-sm-10">
-          <textarea class="form-control" rows="10" id="inMessage" placeholder="Your Message for Me!" required></textarea>
+          <textarea class="form-control" rows="10" id="inText" name="inText" placeholder="Your Message for Me!" required></textarea>
         </div>
       </div>
       <div class="form-group">
