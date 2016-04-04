@@ -41,5 +41,16 @@
   <!-- C/C++ section -->
   <h4 id="cpp">C/C++</h4>
   <div class="row">
+    {{#each cpp}}
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <a href="{{{this.link}}}"><img src="{{{this.image}}}" alt="{{{this.name}}}"></a>
+          <div class="caption">
+            <h4><a href="{{{this.link}}}">{{this.name}}</a></h4>
+            <p>{{{this.description}}}</p>
+          </div>
+        </div>
+      </div>
+    {{/each}}
   </div>
 </div>

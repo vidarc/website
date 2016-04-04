@@ -5,7 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var handlebars = require('express-handlebars');
-var shortID = require('shortid');
 var compression = require('compression');
 
 var app = express();
@@ -34,7 +33,6 @@ var hbs = handlebars.create({
 // view engine setup
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.set('view cache', true);
 app.use(compression());
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
