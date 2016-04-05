@@ -24,9 +24,15 @@ router.get('/', function (req, res, next) {
     ],
     node: [
       {
+        name: 'My Website',
+        link: 'https://github.com/vidarc/Website',
+        image: '/images/portfolio/website.png',
+        description: 'All the code for this here website. Feel free to take a look and let me know what is good and/or bad.'
+      },
+      {
         name: 'Steam API',
         link: '/portfolio/steam',
-        image: '/images/steam.jpg',
+        image: '/images/portfolio/steam.jpg',
         description: 'A page that will allow you to search for all types of information from the <a href="http://www.steampowered.com/">Steam</a> service using their handy API.'
       }
     ],
@@ -34,7 +40,7 @@ router.get('/', function (req, res, next) {
       {
         name: 'Library CLI',
         link: 'https://github.com/vidarc/Library',
-        image: '/images/library.png',
+        image: '/images/portfolio/library.png',
         description: 'A CLI for a library. Allows you to add/remove members and books, checkout and return books, pay fines, and save/load a database written to a file.'
       },
       {
