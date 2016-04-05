@@ -4,7 +4,7 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 var nodemailer = require('nodemailer');
-var secrets = require('../../lib/secret.js');
+var secrets = require('../../modules/secret.js');
 
 // reusable transporter object for nodemailer
 var transporter = nodemailer.createTransport('smtps://mattailes@gmail.com:' + secrets.nodemailer + '@smtp.gmail.com');
@@ -13,6 +13,7 @@ router.route('/')
   // default for contact page. nothing much going on
   .get(function (req, res, next) {
     var context = {
+      title: 'Contact Matthew Ailes',
       contact: ' class="active"'
     }
 
@@ -24,6 +25,7 @@ router.route('/')
   // check with google to make sure not a bot
   .post(function (req, res, next) {
     var context = {
+      title: 'Contact Matthew Ailes',
       contact: ' class="active"',
       message: ''
     }

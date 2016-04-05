@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="info-section">
+    <h5>{{content.name}} | {{content.address}} | {{content.phone}} | {{content.email}}</h5>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h4 class="panel-title">Education</h4>
+        </div>
+        <div class="panel-body">
+          {{#each content.college}}
+            <p>{{this.name}} -- {{this.date}}</p>
+            <p>{{this.degree}}</p>
+            {{#if this.gpa}}
+              <p>GPA: {{this.gpa}}</p>
+            {{/if}}
+            {{#unless @last}}
+              <hr>
+            {{/unless}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h4 class="panel-title">Skills</h4>
+        </div>
+        <div class="panel-body">
+          {{#each content.skills}}
+            <div class="progress">
+              <div class="progress-bar progress-bar-success" style="width: {{{this.level}}}%">
+                <span>{{this.name}}</span>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h4 class="panel-title">Work History</h4>
+    </div>
+    <div class="panel-body">
+      {{#each content.work}}
+        <p>{{this.employer}}</p>
+        <p>{{this.title}}</p>
+        <p>{{this.joined}} - {{this.left}}</p>
+        {{#list this.duties}}
+          {{this}}
+        {{/list}}
+        {{#unless @last}}
+          <hr>
+        {{/unless}}
+      {{/each}}
+    </div>
+  </div>
+</div>
