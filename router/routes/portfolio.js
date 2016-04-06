@@ -2,7 +2,7 @@
 
 var express = require('express');
 var request = require('request');
-var secret = require('../../lib/secret.js');
+var secret = require('../../modules/secret.js');
 var router = express.Router();
 
 router.get('/', function (req, res, next) {
@@ -63,7 +63,7 @@ router.route('/steam')
     var getID = 'ISteamUser/ResolveVanityURL/v1/';
 
     var options = {
-      url: base + getID + '?key=' + secret.steam + "&vanityurl=vidarc",
+      url: base + getID + '?key=' + secret.steam + '&vanityurl=vidarc'
     };
 
     function callback (error, response, body) {
@@ -91,9 +91,25 @@ router.route('/steam')
     var getID = 'ISteamUser/ResolveVanityURL/v1/';
 
     var vanity = req.body.searchTerm;
-    console.log(vanity);
 
-    res.render('portfolio_views/steam', context);
-  });
+    var options = {
+      url: base + getID + '?key=' + secret.steam + '&vanityurl=' + vanity
+    }
+
+    function callback (error, response, body) {
+      if (!error && response.statusCode < 400) {
+        context = JSON.parse(body);
+        res.render('portfolio_views/steam', context);
+      }
+      else {
+        if (response) {
+          console.log(response.statusCode);
+        }
+        next(error);
+      }
+    }
+
+    request(options, callback);
+  })
 
 module.exports = router;

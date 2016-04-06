@@ -4,7 +4,7 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 var nodemailer = require('nodemailer');
-var secrets = require('../../lib/secret.js');
+var secrets = require('../../modules/secret.js');
 
 // reusable transporter object for nodemailer
 var transporter = nodemailer.createTransport('smtps://mattailes@gmail.com:' + secrets.nodemailer + '@smtp.gmail.com');
