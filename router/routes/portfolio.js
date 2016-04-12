@@ -63,16 +63,35 @@ router.route('/steam')
   // then display information
   .post(function (req, res, next) {
     var context = {};
+    var options = {};
     var base = 'http://api.steampowered.com/';
     var getID = 'ISteamUser/ResolveVanityURL/v1/';
+    var steamID = 'ISteamUser/GetPlayerSummaries/v0002/';
 
-    var vanity = req.body.searchTerm;
+    // get the search term we are looking for. either steamid or vanityurl string
+    var search = req.body.searchTerm;
+    // next get the type. should be either number or vanity
+    var type = req.body.searchType;
 
-    var options = {
-      url: base + getID + '?key=' + secret.steam + '&vanityurl=' + vanity
+    // check to see which one we want searched
+    // then set the options correctly for the search
+    if (type == 'number') {
+      var options = {
+        url: base + steamID + '?key=' + secret.steam + '&steamids=' + search
+      }
+      request(options, callbackOne);
+    }
+    else if (type == 'vanity') {
+      var options = {
+        url: base + getID + '?key=' + secret.steam + '&vanityurl=' + search
+      }
+      request(options, callbackTwo);
     }
 
-    function callback (error, response, body) {
+    // first API call that is the easiest to do
+    // searches with the SteamID and returns info about the user
+    // then renders up the page
+    function callbackOne (error, response, body) {
       if (!error && response.statusCode < 400) {
         context = JSON.parse(body);
         res.render('portfolio_views/steam', context);
@@ -85,7 +104,24 @@ router.route('/steam')
       }
     }
 
-    request(options, callback);
+    // this API call gets us the SteamID of the vanityURL name
+    // Steam doesn't have an easier way to do this
+    function callbackTwo (error, response, body) {
+      if (!error && response.statusCode < 400) {
+        context = JSON.parse(body);
+        search = context.response.steamid;
+        var options = {
+          url: base + steamID + '?key=' + secret.steam + '&steamids=' + search
+        }
+        request(options, callbackOne);
+      }
+      else {
+        if (response) {
+          console.log(response.statusCode);
+        }
+        next(error);
+      }
+    }
   });
 
 module.exports = router;
