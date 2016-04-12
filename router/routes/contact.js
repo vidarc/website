@@ -13,6 +13,7 @@ router.route('/')
   // default for contact page. nothing much going on
   .get(function (req, res, next) {
     var context = {
+      title: 'Contact Matthew Ailes',
       contact: ' class="active"'
     }
 
@@ -24,6 +25,7 @@ router.route('/')
   // check with google to make sure not a bot
   .post(function (req, res, next) {
     var context = {
+      title: 'Contact Matthew Ailes',
       contact: ' class="active"',
       message: ''
     }

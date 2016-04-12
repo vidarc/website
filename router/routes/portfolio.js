@@ -7,6 +7,7 @@ var router = express.Router();
 
 router.get('/', function (req, res, next) {
   var context = {
+    title: 'Matthew Ailes\' Portfolio',
     portfolio: ' active',
     js: [
       { name: 'Placeholder',
