@@ -9,7 +9,7 @@ router.get('/', function (req, res, next) {
     about: ' class="active"',
     section: [
       { header: 'The Basics',
-        image: '/images/kylo_me.jpg',
+        image: '/images/resized/kylo_me.jpg',
         alt: 'Kylo Me',
         description: 'I\'m a guy of many interests these days. I am a lover of music, soccer, my growing guitar collection, video games, programming, and computers. I fell in love with computers and the interenet the day my mom first hooked up our computer to dial-up. Since then computers have been a continuing hobby of mine. Until a few years ago though it never really occured to me to turn it into a career. When I\'m not doing school work or working on my programming, I can be found listening to any number of music genres, playing my guitar, watching soccer (COYS!), or playing some video game.'
       },
