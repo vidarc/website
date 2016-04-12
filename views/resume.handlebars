@@ -12,7 +12,9 @@
           {{#each content.college}}
             <p>{{this.name}} -- {{this.date}}</p>
             <p>{{this.degree}}</p>
-            <p>{{this.gpa}}</p>
+            {{#if this.gpa}}
+              <p>GPA: {{this.gpa}}</p>
+            {{/if}}
             {{#unless @last}}
               <hr>
             {{/unless}}

@@ -12,31 +12,41 @@ router.get('/', function (req, res, next) {
       phone: '804-836-4208',
       email: 'mattailes@gmail.com',
       college: [
-        {
-          name: 'Oregon State University',
+        { name: 'Oregon State University',
           date: '2016',
           degree: 'Bachelor of Science -- Computer Science',
           gpa: '3.0'
         },
-        {
-          name: 'Virginia Commonwealth University',
+        { name: 'Virginia Commonwealth University',
           date: '2013',
           degree: 'Bachelor of Arts -- Political Science'
         }
       ],
       skills: [
-        {
-          name: 'HTML5 / CSS3',
+        { name: 'HTML5 / CSS3',
           level: '90'
         },
-        {
-          name: 'JavaScript',
+        { name: 'JavaScript',
           level: '75'
+        },
+        { name: 'Node.js',
+          level: '50'
+        },
+        { name: 'Express with Handlebars',
+          level: '50'
+        },
+        { name: 'MySQL',
+          level: '50'
+        },
+        { name: 'C/C++',
+          level: '75'
+        },
+        { name: 'Python',
+          level: '20'
         }
       ],
       work: [
-        {
-          employer: 'Domino\'s Pizza',
+        { employer: 'Domino\'s Pizza',
           title: 'Delivery Driver',
           joined: 'January 2007',
           left: 'Current',
