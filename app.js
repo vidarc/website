@@ -20,11 +20,11 @@ var hbs = handlebars.create({
     // simple helper to make an unordered list
     // array is passed as argument in handlebars
     list: function (items, options) {
-      var out = "<ul>";
+      var out = '<ul>';
       for(var i=0, l=items.length; i<l; i++) {
-        out = out + "<li>" + options.fn(items[i]) + "</li>";
+        out = out + '<li>' + options.fn(items[i]) + '</li>';
       }
-      return out + "</ul>";
+      return out + '</ul>';
     }
   },
   partialsDir: 'views/partials/'
@@ -37,7 +37,7 @@ app.use(compression());
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 

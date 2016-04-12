@@ -1,56 +1,29 @@
 <div class="row">
   <h3 class="text-center">My Portfolio</h3>
   <div class="text-center">
-    <a href="#javascript"><span class="label label-info">JavaScript</span></a>
-    <a href="#nodejs"><span class="label label-info">Node.js</span></a>
-    <a href="#cpp"><span class="label label-info">C/C++</span></a>
-  </div>
-  <hr>
-  <!-- Javascript section -->
-  <h4 id="javascript">JavaScript</h4>
-  <div class="row">
-    {{#each js}}
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <a href="{{{this.link}}}"><img src="{{{this.image}}}" alt="{{{this.name}}}"></a>
-          <div class="caption">
-            <h4><a href="{{{this.link}}}">{{this.name}}</a></h4>
-            <p>{{this.description}}</p>
-          </div>
-        </div>
-      </div>
+    {{#each sections}}
+      <a href="#{{{this.name}}}"><span class="label label-info">{{this.name}}</span></a>
     {{/each}}
   </div>
   <hr>
-  <!-- Node.js section -->
-  <h4 id="nodejs">Node.js</h4>
-  <div class="row">
-    {{#each node}}
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <a href="{{{this.link}}}"><img src="{{{this.image}}}" alt="{{{this.name}}}"></a>
-          <div class="caption">
-            <h4><a href="{{{this.link}}}">{{this.name}}</a></h4>
-            <p>{{{this.description}}}</p>
+  <!-- Start template for Projects -->
+  {{#each sections}}
+    <h4 id="{{{this.name}}}">{{this.name}}</h4>
+    <div class="row">
+      {{#each this.projects}}
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <a href="{{{this.link}}}"><img src="{{{this.image}}}" alt="{{{this.name}}}"></a>
+            <div class="caption">
+              <h4><a href="{{{this.link}}}">{{this.name}}</a></h4>
+              <p>{{{this.description}}}</p>
+            </div>
           </div>
         </div>
-      </div>
-    {{/each}}
-  </div>
-  <hr>
-  <!-- C/C++ section -->
-  <h4 id="cpp">C/C++</h4>
-  <div class="row">
-    {{#each cpp}}
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <a href="{{{this.link}}}"><img src="{{{this.image}}}" alt="{{{this.name}}}"></a>
-          <div class="caption">
-            <h4><a href="{{{this.link}}}">{{this.name}}</a></h4>
-            <p>{{{this.description}}}</p>
-          </div>
-        </div>
-      </div>
-    {{/each}}
-  </div>
+      {{/each}}
+    </div>
+    {{#unless @last}}
+      <hr>
+    {{/unless}}
+  {{/each}}
 </div>

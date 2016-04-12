@@ -3,10 +3,22 @@
     <legend>Get Your Steam Information</legend>
     <div class="form-group">
       <div class="col-sm-8 col-sm-offset-2 input-group">
-        <input type="text" class="form-control" id="searchTerm" name="searchTerm" placeholder="Steam ID Number" required>
+        <input type="text" class="form-control" id="searchTerm" name="searchTerm" placeholder="Steam ID Number or VanityURL Name" required>
         <span class="input-group-btn">
           <button class="btn btn-default search" type="submit"><span class="glyphicon glyphicon-search"></span> Search</button>
         </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-8 col-sm-offset-2 input-group">
+        <label class="radio-inline">
+          <input type="radio" name="searchType" value="number" required>
+          SteamID
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="searchType" value="vanity">
+          VanityURL Name
+        </label>
       </div>
     </div>
   </form>
@@ -19,25 +31,27 @@
         <h4 class="panel-title">Steam Information</h4>
       </div>
       <div class="panel-body">
+        {{#each response.players}}
         <div class="media">
           <div class="media-left">
             <a href="#">
-              <img class="media-object" src="/images/placeholder.jpg" alt="Steam Profile" style="width: 128px">
+              <img class="media-object" src="{{{this.avatarfull}}}" alt="Steam Profile" style="width: 128px">
             </a>
           </div>
           <div class="media-body">
             <dl class="dl-horizontal">
               <dt>Steam ID</dt>
-                <dd>ph</dd>
+                <dd>{{this.steamid}}</dd>
               <dt>Persona Name</dt>
-                <dd>ph</dd>
+                <dd>{{this.personaname}}</dd>
               <dt>Profile URL</dt>
-                <dd>ph</dd>
+                <dd><a href="{{{this.profileurl}}}">{{this.profileurl}}</a></dd>
               <dt>Real Name</dt>
-                <dd>ph</dd>
+                <dd>{{this.realname}}</dd>
             </dl>
           </div>
         </div>
+        {{/each}}
       </div>
     </div>
   </div>
