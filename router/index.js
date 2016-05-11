@@ -1,11 +1,17 @@
 'use strict'
 
+var express = require('express');
+var router = express.Router();
+
 module.exports = function (app) {
   app.use('/', require('./routes/home'));
   app.use('/about', require('./routes/about'));
   app.use('/contact', require('./routes/contact'));
   app.use('/portfolio', require('./routes/portfolio'));
   app.use('/resume', require('./routes/resume'));
+
+  // setup my api
+  app.use('/api', require('./routes/api'));
 
   // global variables
   var d = new Date();
