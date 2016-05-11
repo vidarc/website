@@ -5,6 +5,8 @@
 .vim_runtime
 .rnd
 .config/htop/htoprc
+.log
+.eslintrc.json
 
 .bash_history
 .bash_logout
