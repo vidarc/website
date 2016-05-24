@@ -8,10 +8,6 @@ router.get('/', function (req, res, next) {
     title: 'Matthew Ailes\' Resume',
     resume: ' class="active"',
     content: {
-      name: 'Matthew Ailes',
-      address: '103 S Boulevard #2, Richmond, VA 23220',
-      phone: '804-836-4208',
-      email: 'mattailes@gmail.com',
       college: [
         { name: 'Oregon State University',
           date: '2016',
