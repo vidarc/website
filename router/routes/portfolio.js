@@ -16,7 +16,7 @@ router.get('/', function (req, res, next) {
           { name: 'A Pirate Themed Tower Defense Game',
             link: '/portfolio/pirates',
             image: '/images/portfolio/pirates.png',
-            description: 'The final project for my CS 419 capstone course at Oregon State University. Made with the help of Brianna Carter and James Linnenburger. Made with the <a href="http://www.phaser.io">Phaser.io</a> JavaScript framework.'
+            description: 'The final project for my CS 419 capstone course at Oregon State University. Made with the help of Brianna Carter and James Linnenburger. Made with the <a href="http://www.phaser.io">Phaser.io</a> JavaScript framework. Source located <a href="https://github.com/vidarc/Website/tree/master/public/js/pirates">here</a>.'
           }
         ]
       },
