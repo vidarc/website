@@ -13,16 +13,11 @@ router.get('/', function (req, res, next) {
       javascript: {
         name: 'JavaScript',
         projects: [
-          { name: 'Placeholder',
-            link: '/#',
-            image: '/images/placeholder.jpg',
-            description: 'Bacon ipsum dolor amet short loin t-bone venison jowl pancetta pork boudin ham strip steak. Pork loin ground round frankfurter porchetta shankle tongue. Pork alcatra sirloin, frankfurter tongue meatloaf jerky corned beef. Pork belly turkey pig, capicola pancetta beef ribs ground round tongue shankle drumstick filet mignon picanha.'
-          },
-          { name: 'Placeholder',
-            link: '/#',
-            image: '/images/placeholder.jpg',
-            description: 'Bacon ipsum dolor amet short loin t-bone venison jowl pancetta pork boudin ham strip steak. Pork loin ground round frankfurter porchetta shankle tongue. Pork alcatra sirloin, frankfurter tongue meatloaf jerky corned beef. Pork belly turkey pig, capicola pancetta beef ribs ground round tongue shankle drumstick filet mignon picanha.'
-          },
+          { name: 'A Pirate Themed Tower Defense Game',
+            link: '/portfolio/pirates',
+            image: '/images/portfolio/pirates.png',
+            description: 'The final project for my CS 419 capstone course at Oregon State University. Made with the help of Brianna Carter and James Linnenburger. Made with the <a href="http://www.phaser.io">Phaser.io</a> JavaScript framework. Source located <a href="https://github.com/vidarc/Website/tree/master/public/js/pirates">here</a>.'
+          }
         ]
       },
       node: {
@@ -60,6 +55,16 @@ router.get('/', function (req, res, next) {
 
 	res.render('portfolio', context);
 });
+
+router.route('/pirates')
+  .get(function (req, res, next) {
+    var context = {
+      title: 'Pirates!',
+      layout: 'pirates'
+    };
+
+    res.render('portfolio_views/pirates', context);
+  })
 
 router.route('/steam')
   // get route for steam
