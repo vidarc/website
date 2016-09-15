@@ -8,6 +8,7 @@ var app = require('../app');
 var debug = require('debug')('mattailes:server');
 var http = require('http');
 var https = require('https');
+var fs = require('fs');
 
 /**
  * Get port from environment and store in Express.
@@ -19,8 +20,14 @@ app.set('port', port);
 /**
  * Create HTTP server.
  */
+// https options
+var options = {
+     key: fs.readFileSync('/etc/letsencrypt/live/mattailes.net/privkey.pem'),
+     cert: fs.readFileSync('/etc/letsencrypt/live/mattailes.net/fullchain.pem'),
+     ca: fs.readFileSync('/etc/letsencrypt/live/mattailes.net/chain.pem')
+}
 
-var server = http.createServer(app);
+var server = https.createServer(options, app);
 
 /**
  * Listen on provided port, on all network interfaces.
