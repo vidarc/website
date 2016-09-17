@@ -8,31 +8,19 @@ var app = require('../app');
 var debug = require('debug')('mattailes:server');
 var http = require('http');
 var https = require('https');
-var fs = require('fs');
 
 /**
  * Get port from environment and store in Express.
  */
 
 var port = normalizePort(process.env.PORT || '3000');
-var portS = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
-
-/**
- * Set options for https stuff
- */
-var options = {
-  key: fs.readFileSync('/home/mattailes/bin/privkey.pem'),
-  cert: fs.readFileSync('/home/mattailes/bin/fullchain.pem'),
-  ca: fs.readFileSync('/home/mattailes/bin/chain.pem')
-};
 
 /**
  * Create HTTP and HTTPS server.
  */
 
 var server = http.createServer(app);
-var serverS = https.createServer(options, app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -41,9 +29,6 @@ var serverS = https.createServer(options, app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
-serverS.listen(portS);
-serverS.on('error', onError);
-serverS.on('listening', onListening);
 
 /**
  * Normalize a port into a number, string, or false.
