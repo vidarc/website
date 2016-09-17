@@ -21,9 +21,9 @@ app.set('port', port);
  * Set options for https stuff
  */
 var options = {
-  key: fs.readFileSync('privkey.pem'),
-  cert: fs.readFileSync('fullchain.pem'),
-  ca: fs.readFileSync('chain.pem')
+  key: fs.readFileSync('/home/mattailes/bin/privkey.pem'),
+  cert: fs.readFileSync('/home/mattailes/bin/fullchain.pem'),
+  ca: fs.readFileSync('/home/mattailes/bin/chain.pem')
 };
 
 /**
