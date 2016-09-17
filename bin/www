@@ -15,6 +15,7 @@ var fs = require('fs');
  */
 
 var port = normalizePort(process.env.PORT || '3000');
+var port2 = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
 
 /**
@@ -40,7 +41,7 @@ var serverS = https.createServer(options, app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
-serverS.listen(5001);
+serverS.listen(portS);
 serverS.on('error', onError);
 serverS.on('listening', onListening);
 
