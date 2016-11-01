@@ -1,3 +1,19 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+
+# testing
+coverage
+
+# production
+build
+
+# misc
+.DS_Store
+.env
+npm-debug.log
+
 .cache
 .forever
 .npm
@@ -17,9 +33,7 @@
 .vimrc
 
 .ssh/
-node_modules/
 tmp/
 
 secret.js
 Logs.zip
-npm-debug.log
