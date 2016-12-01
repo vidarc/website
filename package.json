@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "babel": {
-    "presets": ["latest", "babili"]
+    "presets": [
+      "latest",
+      "babili"
+    ]
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-preset-latest": "^6.16.0",
+    "babili": "^0.0.9",
     "react-scripts": "0.7.0",
     "semantic-ui": "^2.2.6"
   },
