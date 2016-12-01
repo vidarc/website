@@ -1,18 +1,36 @@
-'use strict'
+import express from 'express'
+import logger from 'morgan'
+import bodyParser from 'body-parser'
+import colors from 'colors'
+import mongoClient from 'mongodb'
+import assert from 'assert'
 
-let express = require('express')
+let app = express();
 
-let app = express()
+app.set('port', process.env.PORT || 3000);
+app.use(express.static('build'));
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(express.static('build'))
+// // Mongo connection
+// const mongoURL = 'mongodb://localhost/website'
+//
+// MongoClient.connect(mongoURL, function(err, db) {
+//   assert.equal(null, err)
+//   console.log("connected to the mongo server")
+//
+//   db.close
+// })
 
-app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/build/index.html')
-})
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/build/index.html');
+});
 
-let server = app.listen(3000, function() {
-  let host = server.address().address
-  let port = server.address().port
+let server = app.listen(app.get('port'), function () {
+  let host = server.address().address;
+  let port = server.address().port;
+  let message = 'Express server running at: ' + host + ' on port ' + port;
 
-  console.log('The Express server is running at: ' + host + ':' + port)
-})
+  console.log(message.red.underline);
+});
