@@ -8,7 +8,7 @@ import assert from 'assert'
 let app = express();
 
 app.set('port', process.env.PORT || 3000);
-app.use(express.static('build'));
+app.use(express.static('./'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // })
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/build/index.html');
+  res.sendFile(__dirname + '/index.html');
 });
 
 let server = app.listen(app.get('port'), function () {
