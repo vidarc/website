@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
 import {
-  IndexLink,
-  Link
-} from 'react-router'
-import {
-  Button,
-  Menu
+  Grid
 } from 'semantic-ui-react'
+import NavbarMenu from './NavbarMenu'
+import Sidebar from './Sidebar'
 import './Navbar.css'
 
 export default class Navbar extends Component {
@@ -18,18 +15,25 @@ export default class Navbar extends Component {
   }
 
   render() {
-    return <Menu stackable size='tiny'>
-      <Menu.Item content='Home Page' as={IndexLink} to='/' />
-      <Menu.Item content='My Blog' as={Link} to='/blog' />
-      <Menu.Item content='About Page' as={Link} to='/about' />
-      <Menu.Item content='My Resume' as={Link} to='/resume' />
-      <Menu.Item content='Contact Me' as={Link} to='/contact' />
-      <Menu.Item content='Admin Page' as={Link} to='/admin' />
-      <Menu.Menu position='right'>
-        <Menu.Item as={Link} to='/login'>
-          <Button primary>Login</Button>
-        </Menu.Item>
-      </Menu.Menu>
-    </Menu>
+    let links = [
+      { content: 'My Blog', to: '/blog' },
+      { content: 'About Page', to: '/about' },
+      { content: 'My Resume', to: '/resume' },
+      { content: 'Contact Me', to: '/contact' },
+      { content: 'Admin Page', to: '/admin'}
+    ]
+
+    return(
+      <Grid>
+        <Grid.Column width={16}>
+          <Grid.Row className='computer tablet only'>
+            <NavbarMenu links={links} auth={this.props.auth} />
+          </Grid.Row>
+          <Grid.Row className='mobile only'>
+            <Sidebar links={links}/>
+          </Grid.Row>
+        </Grid.Column>
+      </Grid>
+    )
   }
 }
