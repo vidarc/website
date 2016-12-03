@@ -15,7 +15,7 @@ import Resume from './components/resume/Resume'
 import './style/semantic/semantic.min.css'
 import './style/main.css'
 
-const auth = new AuthService(__AUTH0_CLIENT_ID__, __AUTH0_DOMAIN__);
+const auth = new AuthService(process.env.AUTH0_CLIENT_ID, process.env.AUTH0_DOMAIN);
 
 // validate authentication for private routes
 const requireAuth = (nextState, replace) => {
