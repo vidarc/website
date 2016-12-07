@@ -4,9 +4,10 @@ import {
   Link
 } from 'react-router'
 import {
+  Input,
   Menu
 } from 'semantic-ui-react'
-import Login from '../login/Login'
+import LoginButton from '../login/LoginButton'
 
 export default class NavbarMenu extends Component {
   processLinks(links) {
@@ -17,12 +18,15 @@ export default class NavbarMenu extends Component {
 
   render() {
     return(
-      <Menu stackable size='tiny' className='computer tablet only'>
+      <Menu stackable size='tiny'>
         <Menu.Item content='Home Page' as={IndexLink} to='/' />
         {this.processLinks(this.props.links)}
         <Menu.Menu position='right'>
           <Menu.Item>
-            <Login auth={this.props.auth} />
+            <Input icon='search' placeholder='Search...' />
+          </Menu.Item>
+          <Menu.Item>
+            <LoginButton auth={this.props.auth} />
           </Menu.Item>
         </Menu.Menu>
       </Menu>

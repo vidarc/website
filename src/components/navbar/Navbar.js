@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import {
-  Grid
-} from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 import NavbarMenu from './NavbarMenu'
-import Sidebar from './Sidebar'
+import NavbarSidebar from './NavbarSidebar'
 import './Navbar.css'
 
 export default class Navbar extends Component {
@@ -25,12 +23,14 @@ export default class Navbar extends Component {
 
     return(
       <Grid>
-        <Grid.Column width={16}>
-          <Grid.Row className='computer tablet only'>
+        <Grid.Column width={16} className='computer tablet only'>
+          <Grid.Row>
             <NavbarMenu links={links} auth={this.props.auth} />
           </Grid.Row>
-          <Grid.Row className='mobile only'>
-            <Sidebar links={links}/>
+        </Grid.Column>
+        <Grid.Column width={16} className='mobile only'>
+          <Grid.Row>
+            <NavbarSidebar links={links} auth={this.props.auth} />
           </Grid.Row>
         </Grid.Column>
       </Grid>
