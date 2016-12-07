@@ -6,6 +6,7 @@ import {
   Menu,
   Sidebar
 } from 'semantic-ui-react'
+import LoginButton from '../login/LoginButton'
 
 export default class NavbarSidebar extends Component {
   state = {
@@ -35,11 +36,14 @@ export default class NavbarSidebar extends Component {
             </Menu.Item>
           </Menu.Menu>
         </Menu>
-        <Sidebar as={Menu} animation='overlay' visible={this.state.visible} vertical>
+        <Sidebar as={Menu} animation='overlay' visible={this.state.visible} vertical onClick={this.toggleVisibility}>
           {this.processLinks(this.props.links)}
           <Menu.Item>
-              <Input icon='search' placeholder='Search...' />
-            </Menu.Item>
+            <Input icon='search' placeholder='Search...' />
+          </Menu.Item>
+          <Menu.Item>
+            <LoginButton auth={this.props.auth} />
+          </Menu.Item>
         </Sidebar>
       </div>
     )
