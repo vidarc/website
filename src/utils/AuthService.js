@@ -1,31 +1,35 @@
-import Auth0Lock from 'auth0-lock'
-import { browserHistory } from 'react-router'
+import Auth0 from 'auth0-js'
 
 export default class AuthService {
   constructor(clientId, domain) {
+    // super()
     // Configure Auth0
-    this.lock = new Auth0Lock(clientId, domain, {
-      auth: {
-        redirectUrl: 'http://localhost:3000/',
-        responseType: 'token'
-      }
-    })
-    // Add callback for lock `authenticated` event
-    this.lock.on('authenticated', this._doAuthentication.bind(this))
-    // binds login functions to keep this context
+    this.auth0 = new Auth0({
+      clientID: clientId,
+      domain: domain,
+      responseType: 'token'
+    });
+
     this.login = this.login.bind(this)
+    this.signup = this.signup.bind(this)
   }
 
-  _doAuthentication(authResult) {
-    // Saves the user token
-    this.setToken(authResult.idToken)
-    // navigate to the home route
-    browserHistory.replace('/home')
+  login(params, onError) {
+    //redirects the call to auth0 instance
+    this.auth0.login(params, onError)
   }
 
-  login() {
-    // Call the show method to display the widget.
-    this.lock.show()
+  signup(params, onError) {
+    //redirects the call to auth0 instance
+    this.auth0.signup(params, onError)
+  }
+
+  parseHash(hash) {
+    // uses auth0 parseHash method to extract data from url hash
+    const authResult = this.auth0.parseHash(hash)
+    if (authResult && authResult.idToken) {
+      this.setToken(authResult.idToken)
+    }
   }
 
   loggedIn() {
