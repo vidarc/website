@@ -1,4 +1,5 @@
 import Auth0 from 'auth0-js'
+import { isTokenExpired } from './jwtHelper'
 
 export default class AuthService {
   constructor(clientId, domain) {
@@ -34,7 +35,8 @@ export default class AuthService {
 
   loggedIn() {
     // Checks if there is a saved token and it's still valid
-    return !!this.getToken()
+    const token = this.getToken()
+    return !!token && !isTokenExpired(token)
   }
 
   setToken(idToken) {

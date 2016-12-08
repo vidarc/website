@@ -20,6 +20,7 @@
     "body-parser": "^1.15.2",
     "colors": "^1.1.2",
     "express": "^4.14.0",
+    "jwt-decode": "^2.1.0",
     "mongodb": "^2.2.12",
     "morgan": "^1.7.0",
     "react": "^15.4.1",
