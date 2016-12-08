@@ -32,6 +32,7 @@ export default class SignupForm extends Component {
       connection: 'Username-Password-Authentication',
       responseType: 'token',
       email: this.state.email,
+      username: this.state.username,
       password: this.state.password
     }, function(err) {
       if (err) alert("something went wrong: " + err.message)
