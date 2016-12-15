@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react'
 import {
   Button,
@@ -9,50 +11,69 @@ export default class SignupForm extends Component {
   constructor(props) {
     super()
     this.state = {
-      form: 'login',
-      email: '',
-      username: '',
-      password: ''
+      form: 'login'
     }
-
-    this.handleChange = this.handleChange.bind(this)
-    this.handleClick = this.handleClick.bind(this)
   }
 
-  handleChange(event) {
-    this.setState({
-      [event.target.name]: event.target.value
+  componentDidMount() {
+    window.grecaptcha.render('recaptcha', {
+      sitekey: process.env.REACT_APP_RECAPTCHA_SITE,
+      callback: this.verifyCallback
     })
   }
 
-  handleClick(event) {
+  verifyCallback(response) {}
+
+  // handleClick(event) {
+  //   event.preventDefault()
+  //
+  //   this.props.auth.signup({
+  //     connection: 'Username-Password-Authentication',
+  //     responseType: 'token',
+  //     email: this.state.email,
+  //     username: this.state.username,
+  //     password: this.state.password
+  //   }, function(err) {
+  //     if (err) alert("something went wrong: " + err.message)
+  //   })
+  // }
+
+  handleClick = (event, { formData }) => {
     event.preventDefault()
 
-    this.props.auth.signup({
-      connection: 'Username-Password-Authentication',
-      responseType: 'token',
-      email: this.state.email,
-      username: this.state.username,
-      password: this.state.password
-    }, function(err) {
-      if (err) alert("something went wrong: " + err.message)
+    let body = {
+      secret: process.env.REACT_APP_RECAPTCHA_SECRET,
+      response: formData['g-recaptcha-response']
+    }
+
+    fetch('https://www.google.com/recaptcha/api/siteverify', {
+      method: 'post',
+      body: body
+    })
+    .then(function(response) {
+      console.log(response)
     })
   }
 
   render() {
+    const { formData } = this.state
+
     return(
-      <Form>
+      <Form onSubmit={this.handleClick}>
         <Form.Field>
-          <Form.Input icon='user' iconPosition='left' type='email' name='email' placeholder='Email Address...' value={this.state.email} onChange={this.handleChange} />
+          <Form.Input icon='user' iconPosition='left' type='email' name='email' placeholder='Email Address...' />
         </Form.Field>
         <Form.Field>
-          <Form.Input icon='user' iconPosition='left' type='text' name='username' placeholder='Username...' value={this.state.username} onChange={this.handleChange} />
+          <Form.Input icon='user' iconPosition='left' type='text' name='username' placeholder='Username...' />
         </Form.Field>
         <Form.Field>
-          <Form.Input icon='lock' iconPosition='left' type='password' name='password' placeholder='Password...' value={this.state.password} onChange={this.handleChange} />
+          <Form.Input icon='lock' iconPosition='left' type='password' name='password' placeholder='Password...' />
         </Form.Field>
         <Form.Field>
-          <Button fluid primary icon='checkmark box' onClick={this.handleClick} />
+          <div id='recaptcha' />
+        </Form.Field>
+        <Form.Field>
+          <Button fluid primary icon='checkmark box' />
         </Form.Field>
       </Form>
     )

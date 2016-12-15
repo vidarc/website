@@ -5,7 +5,7 @@ import {
   Container
 } from 'semantic-ui-react'
 import Navbar from '../navbar/Navbar'
-import './App.css'
+import Footer from '../footer/Footer'
 
 export default class App extends Component {
   constructor(props) {
@@ -13,13 +13,6 @@ export default class App extends Component {
     this.state = {
       text: null
     }
-    this.handleChange = this.handleChange.bind(this)
-  }
-
-  handleChange(event) {
-    this.setState({
-      text: event.target.value
-    })
   }
 
   render() {
@@ -30,9 +23,12 @@ export default class App extends Component {
       })
     }
 
-    return <Container>
-      <Navbar auth={this.props.route.auth} />
-      {children}
-    </Container>
+    return(
+      <Container className='flex-container'>
+        <Navbar auth={this.props.route.auth} />
+        {children}
+        <Footer />
+      </Container>
+    )
   }
 }
