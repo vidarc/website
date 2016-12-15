@@ -38,6 +38,9 @@ export default class NavbarSidebar extends Component {
         </Menu>
         <Sidebar as={Menu} animation='overlay' visible={this.state.visible} vertical onClick={this.toggleVisibility}>
           {this.processLinks(this.props.links)}
+          {this.props.auth.isAdmin() ?
+            <Menu.Item content='Admin' as={Link} to='/admin' /> :
+            null }
           <Menu.Item>
             <Input icon='search' placeholder='Search...' />
           </Menu.Item>
