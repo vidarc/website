@@ -6,6 +6,20 @@ import './Navbar.css'
 
 export default class Navbar extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      admin: false
+    }
+  }
+
+  componentDidMount() {
+    let profile = this.props.auth.getProfile()
+    this.setState({
+      admin: profile.admin
+    })
+  }
+
   render() {
     let links = [
       { content: 'My Blog', to: '/blog' },
@@ -18,7 +32,7 @@ export default class Navbar extends Component {
       <Grid>
         <Grid.Column width={16} className='computer tablet only'>
           <Grid.Row>
-            <NavbarMenu links={links} auth={this.props.auth} />
+            <NavbarMenu links={links} auth={this.props.auth} admin={this.state.admin} />
           </Grid.Row>
         </Grid.Column>
         <Grid.Column width={16} className='mobile only'>

@@ -75,14 +75,4 @@ export default class AuthService {
     localStorage.removeItem('id_token');
     localStorage.removeItem('profile');
   }
-
-  isAdmin() {
-    if (this.loggedIn()) {
-      let profile = this.getProfile()
-      if (profile.app_metadata.admin) {
-        return true
-      }
-    }
-    return false
-  }
 }
