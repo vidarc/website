@@ -1,6 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,700');
 
-body {
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
+}
+
+body > #root {
+  height: 100%;
+}
+
+.flex-container {
+  height: inherit;
+  display: flex !important;
+  flex-flow: column nowrap;
+}
+
+.flex-container > div:nth-child(1) {
+  flex: 0 0 auto;
+}
+
+.flex-container > div:nth-child(2) {
+  flex: 1 0 auto;
+}
+
+.flex-container > div:nth-child(3) {
+  flex: 0 0 auto;
 }

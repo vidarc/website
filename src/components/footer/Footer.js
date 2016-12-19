@@ -21,7 +21,7 @@ export default class Footer extends Component {
 
     return(
       <Segment inverted color='blue' secondary>
-        <Grid columns={4}>
+        <Grid stackable columns={4}>
           <Grid.Column />
           <Grid.Column>
             <Header sub dividing inverted>

@@ -24,7 +24,7 @@ export default class LoadingIpsum extends Component {
     }
 
     return(
-      <Segment piled>
+      <Segment>
         <Dimmer active>
           <Loader size='big' content='Loading...' />
         </Dimmer>

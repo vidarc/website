@@ -28,7 +28,7 @@ export default class Login extends Component {
 
   render() {
     return(
-      <Grid doubling centered>
+      <Grid className='fillUpScreen' doubling centered>
         <Grid.Column verticalAlign='middle' computer={8} tablet={10} mobile={14}>
           <Grid.Row>
             <Segment raised>

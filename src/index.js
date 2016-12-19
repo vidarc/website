@@ -13,8 +13,8 @@ import Admin from './components/admin/Admin'
 import Contact from './components/contact/Contact'
 import Resume from './components/resume/Resume'
 import Login from './components/login/Login'
-import './style/semantic/semantic.min.css'
 import './style/main.css'
+import './style/semantic/semantic.min.css'
 
 const auth = new AuthService(process.env.REACT_APP_AUTH0_CLIENT_ID, process.env.REACT_APP_AUTH0_DOMAIN);
 

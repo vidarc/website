@@ -6,7 +6,6 @@ import {
 } from 'semantic-ui-react'
 import Navbar from '../navbar/Navbar'
 import Footer from '../footer/Footer'
-import './App.css'
 
 export default class App extends Component {
   constructor(props) {
@@ -24,10 +23,12 @@ export default class App extends Component {
       })
     }
 
-    return <Container>
-      <Navbar auth={this.props.route.auth} />
-      {children}
-      <Footer />
-    </Container>
+    return(
+      <Container className='flex-container'>
+        <Navbar auth={this.props.route.auth} />
+        {children}
+        <Footer />
+      </Container>
+    )
   }
 }
