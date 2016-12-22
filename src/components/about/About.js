@@ -5,7 +5,7 @@ import './About.css'
 export default class About extends Component {
   render() {
     return <Container>
-      The About page.
+      <img src='http://i.imgur.com/73Wnjpm.jpg' />
     </Container>
   }
 }

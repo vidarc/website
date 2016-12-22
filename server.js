@@ -6,7 +6,7 @@ import mongoClient from 'mongodb'
 import assert from 'assert'
 import path from 'path'
 
-let app = express()
+const app = express()
 
 app.set('port', process.env.PORT || 3000)
 app.use(express.static(__dirname + '/build'))
@@ -26,12 +26,12 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 app.get('*', function (req, res) {
   res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
-});
+})
 
-let server = app.listen(app.get('port'), function () {
+const server = app.listen(app.get('port'), function () {
   let host = server.address().address
   let port = server.address().port
   let message = 'Express server running at: ' + host + ' on port ' + port
 
   console.log(message.red.underline)
-});
+})

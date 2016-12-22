@@ -1,37 +1,60 @@
+// @flow
+
 import React, { Component } from 'react'
 import {
-  Segment,
-  TextArea
+  Form,
+  Header,
+  Icon,
+  Segment
 } from 'semantic-ui-react'
-import Markdown from 'markdown-it'
 
 export default class Contact extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      content: ''
-    }
+  state = {
+    fname: '',
+    lname: '',
+    email: '',
+    message: ''
+  }
 
-    this.onChange = this.onChange.bind(this)
-    this.md = new Markdown({
-      html: true,
-      linkify: true,
-      typographer: true
+  componentDidMount() {
+    window.grecaptcha.render('recaptcha', {
+      sitekey: process.env.REACT_APP_RECAPTCHA_SITE,
+      callback: this._verifyCallback
     })
   }
 
-  onChange(event) {
+  _handleChange = (event: Object) => {
     this.setState({
-      content: event.target.value
+      [event.target.name]: event.target.value
     })
+  }
+
+  _verifyCallback = (response: string) => {
+    console.log(response)
   }
 
   render() {
     return(
-      <Segment piled>
-        <TextArea rows='10' name='text' value={this.state.content} onChange={this.onChange} />
-        <p dangerouslySetInnerHTML={{__html: this.md.render(this.state.content)}} />
+      <Segment stacked>
+        <Header as='h3' icon textAlign='center'>
+          <Icon name='mail outline' circular />
+          <Header.Content>
+            Send Me a Message
+          </Header.Content>
+        </Header>
+        <Form>
+          <Form.Group widths='equal'>
+            <Form.Input label='First Name' name='fname' value={this.state.fname} placeholder='First Name' onChange={this._handleChange} />
+            <Form.Input label='Last Name' name='lname' value={this.state.lname} placeholder='Last Name' onChange={this._handleChange} />
+          </Form.Group>
+          <Form.Input type='email' label='E-Mail Address' name='email' value={this.state.email} placeholder='E-Mail Address' onChange={this._handleChange} />
+          <Form.TextArea label='Message' name='message' value={this.state.message} placeholder='Message' onChange={this._handleChange} />
+          <Form.Group>
+            <div id='recaptcha' />
+          </Form.Group>
+          <Form.Button primary type='submit' content='Send Message' />
+        </Form>
       </Segment>
     )
   }
