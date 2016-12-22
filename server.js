@@ -8,6 +8,7 @@ import path from 'path'
 
 let app = express()
 
+
 app.set('port', process.env.PORT || 3000)
 app.use(express.static(__dirname + '/build'))
 app.use(logger('dev'))
