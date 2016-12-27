@@ -9,7 +9,7 @@ import path from 'path'
 const app = express()
 
 app.set('port', process.env.PORT || 3000)
-app.use(express.static(__dirname + '/build'))
+app.use(express.static(__dirname + '/'))
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -25,13 +25,13 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // })
 
 app.get('*', function (req, res) {
-  res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
+  res.sendFile(path.resolve(__dirname, 'index.html'))
 })
 
 const server = app.listen(app.get('port'), function () {
-  let host = server.address().address
-  let port = server.address().port
-  let message = 'Express server running at: ' + host + ' on port ' + port
+  const host = server.address().address
+  const port = server.address().port
+  const message = 'Express server running at: ' + host + ' on port ' + port
 
   console.log(message.red.underline)
 })

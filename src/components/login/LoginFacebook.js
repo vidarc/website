@@ -13,11 +13,7 @@ export default class LoginFacebook extends Component {
   }
 
   facebookLogin() {
-    this.props.auth.login({
-      connection: 'facebook'
-    }, function(err) {
-      if (err) alert("something went wrong: " + err.message);
-    });
+    console.log('wip')
   }
 
   render() {

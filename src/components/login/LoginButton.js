@@ -6,10 +6,14 @@ import {
 } from 'semantic-ui-react'
 
 export default class LoginButton extends Component {
+  _isAdmin() {
+    return true
+  }
+
   render() {
-    if (this.props.auth.loggedIn())
+    if (this._isAdmin())
       return(
-        <Button primary onClick={this.props.auth.logout.bind(this)} as={Link} to='/'>
+        <Button primary as={Link} to='/'>
           <Icon name='sign out' />Logout
         </Button>
       )

@@ -24,20 +24,6 @@ export default class SignupForm extends Component {
 
   verifyCallback(response) {}
 
-  // handleClick(event) {
-  //   event.preventDefault()
-  //
-  //   this.props.auth.signup({
-  //     connection: 'Username-Password-Authentication',
-  //     responseType: 'token',
-  //     email: this.state.email,
-  //     username: this.state.username,
-  //     password: this.state.password
-  //   }, function(err) {
-  //     if (err) alert("something went wrong: " + err.message)
-  //   })
-  // }
-
   handleClick = (event, { formData }) => {
     event.preventDefault()
 
