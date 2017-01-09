@@ -5,7 +5,7 @@ export default class Auth {
   }
 
   signout() {
-    
+
   }
 
   isAdmin() {
@@ -14,5 +14,9 @@ export default class Auth {
 
   isLoggedin() {
     return false
+  }
+
+  getProfile() {
+
   }
 }

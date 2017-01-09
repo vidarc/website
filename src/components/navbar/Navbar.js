@@ -6,13 +6,6 @@ import './Navbar.css'
 
 export default class Navbar extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      admin: false
-    }
-  }
-
   render() {
     let links = [
       { content: 'My Blog', to: '/blog' },
@@ -25,12 +18,12 @@ export default class Navbar extends Component {
       <Grid>
         <Grid.Column width={16} className='computer tablet only'>
           <Grid.Row>
-            <NavbarMenu links={links} admin={this.state.admin} />
+            <NavbarMenu links={links} auth={this.props.auth} />
           </Grid.Row>
         </Grid.Column>
         <Grid.Column width={16} className='mobile only'>
           <Grid.Row>
-            <NavbarSidebar links={links} />
+            <NavbarSidebar links={links} auth={this.props.auth} />
           </Grid.Row>
         </Grid.Column>
       </Grid>

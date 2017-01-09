@@ -42,8 +42,6 @@ export default class SignupForm extends Component {
   }
 
   render() {
-    const { formData } = this.state
-
     return(
       <Form onSubmit={this.handleClick}>
         <Form.Field>

@@ -11,10 +11,6 @@ import LoginButton from '../login/LoginButton'
 
 export default class NavbarMenu extends Component {
 
-  _isAdmin() {
-    return true
-  }
-
   _processLinks(links) {
     return links.map((link, index) => (
       <Menu.Item key={index} content={link.content} as={Link} to={link.to} />
@@ -26,13 +22,13 @@ export default class NavbarMenu extends Component {
       <Menu stackable size='tiny'>
         <Menu.Item content='Home Page' as={IndexLink} to='/' />
         {this._processLinks(this.props.links)}
-        {this._isAdmin() ? <Menu.Item content='Admin' as={Link} to='/admin' /> : null}
+        {this.props.auth.isAdmin() ? <Menu.Item content='Admin' as={Link} to='admin' /> : null}
         <Menu.Menu position='right'>
           <Menu.Item>
             <Input icon='search' placeholder='Search...' />
           </Menu.Item>
           <Menu.Item>
-            <LoginButton />
+            <LoginButton auth={this.props.auth} />
           </Menu.Item>
         </Menu.Menu>
       </Menu>

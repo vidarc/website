@@ -27,14 +27,25 @@ const requireAuth = (nextState, replace) => {
   }
 }
 
+const requireAdmin = (nextState, replace) => {
+  requireAuth()
+
+  if (!auth.isAdmin()) {
+    replace({
+      pathname: 'home',
+      state: { nextPathname: nextState.location.pathname }
+    })
+  }
+}
+
 render((
   <Router history={browserHistory}>
-    <Route path='/' component={App}>
+    <Route path='/' component={App} auth={auth}>
       <Route path='about' component={About} />
       <Route path='blog' component={Blog} />
       <Route path='contact' component={Contact} />
       <Route path='resume' component={Resume} />
-      <Route path='admin' component={Admin} onEnter={requireAuth} />
+      <Route path='admin' component={Admin} onEnter={requireAdmin} />
       <Route path='login' component={Login} />
     </Route>
   </Router>
