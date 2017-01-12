@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import {
+  IndexRoute,
   Router,
   Route,
   browserHistory
@@ -10,6 +11,7 @@ import About from './components/about/About'
 import Blog from './components/blog/Blog'
 import Admin from './components/admin/Admin'
 import Contact from './components/contact/Contact'
+import Home from './components/home/Home'
 import Resume from './components/resume/Resume'
 import Login from './components/login/Login'
 import Auth from './utils/Auth'
@@ -41,6 +43,7 @@ const requireAdmin = (nextState, replace) => {
 render((
   <Router history={browserHistory}>
     <Route path='/' component={App} auth={auth}>
+      <IndexRoute component={Home} />
       <Route path='about' component={About} />
       <Route path='blog' component={Blog} />
       <Route path='contact' component={Contact} />
