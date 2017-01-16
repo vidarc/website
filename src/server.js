@@ -5,10 +5,12 @@ import colors from 'colors'
 import mongoClient from 'mongodb'
 import assert from 'assert'
 import path from 'path'
+import compression from 'compression'
 
 const app = express()
 
 app.set('port', process.env.PORT || 3000)
+app.use(compression())
 app.use(express.static(__dirname + '/'))
 app.use(logger('dev'))
 app.use(bodyParser.json())
