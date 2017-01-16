@@ -13,11 +13,7 @@ export default class LoginGoogle extends Component {
   }
 
   googleLogin() {
-    this.props.auth.login({
-      connection: 'google-oauth2'
-    }, function(err) {
-      if (err) alert("something went wrong: " + err.message);
-    });
+    console.log('wip')
   }
 
   render() {

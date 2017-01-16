@@ -29,17 +29,7 @@ export default class LoginForm extends Component {
   }
 
   handleClick(event) {
-    event.preventDefault()
-
-    this.props.auth.login({
-      connection: 'Username-Password-Authentication',
-      responseType: 'token',
-      email: this.state.email,
-      username: this.state.username,
-      password: this.state.password
-    }, function(err) {
-      if (err) alert("something went wrong: " + err.message)
-    })
+    console.log('wip')
   }
 
   render() {
@@ -48,8 +38,8 @@ export default class LoginForm extends Component {
         <Divider horizontal>
           Login With
         </Divider>
-        <LoginFacebook auth={this.props.auth} />
-        <LoginGoogle auth={this.props.auth} />
+        <LoginFacebook />
+        <LoginGoogle />
         <Divider horizontal>
           Or
         </Divider>

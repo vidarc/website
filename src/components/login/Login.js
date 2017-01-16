@@ -44,7 +44,7 @@ export default class Login extends Component {
               <Divider horizontal>
                 <Icon name='user' />
               </Divider>
-              {this.state.form === 'login' ? <LoginForm auth={this.props.auth} /> : <SignupForm auth={this.props.auth} />}
+              {this.state.form === 'login' ? <LoginForm /> : <SignupForm />}
             </Segment>
           </Grid.Row>
         </Grid.Column>
