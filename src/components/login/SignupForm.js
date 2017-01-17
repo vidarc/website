@@ -1,10 +1,8 @@
 // @flow
 
 import React, { Component } from 'react'
-import {
-  Button,
-  Form
-} from 'semantic-ui-react'
+import Form from 'semantic-ui-react/dist/commonjs/collections/Form'
+import Button from 'semantic-ui-react/dist/commonjs/elements/Button'
 
 export default class SignupForm extends Component {
 
@@ -42,7 +40,7 @@ export default class SignupForm extends Component {
   }
 
   render() {
-    return(
+    return (
       <Form onSubmit={this.handleClick}>
         <Form.Field>
           <Form.Input icon='user' iconPosition='left' type='email' name='email' placeholder='Email Address...' />

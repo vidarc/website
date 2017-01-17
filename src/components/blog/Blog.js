@@ -1,10 +1,8 @@
 // @flow
 
 import React, { Component } from 'react'
-import {
-  Header,
-  Segment
-} from 'semantic-ui-react'
+import Header from 'semantic-ui-react/dist/commonjs/elements/Header'
+import Segment from 'semantic-ui-react/dist/commonjs/elements/Segment'
 import Moment from 'moment'
 import LoadingIpsum from '../../utils/LoadingIpsum'
 
@@ -58,7 +56,7 @@ export default class Blog extends Component {
       return <LoadingIpsum times='2' />
     }
     else {
-      return(
+      return (
         <div>
           {posts.map((post) =>
             <Segment color='blue'>

@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
-import {
-  IndexLink,
-  Link
-} from 'react-router'
-import {
-  Input,
-  Menu
-} from 'semantic-ui-react'
+import IndexLink from 'react-router/lib/IndexLink'
+import Link from 'react-router/lib/Link'
+import Menu from 'semantic-ui-react/dist/commonjs/collections/Menu'
+import Input from 'semantic-ui-react/dist/commonjs/elements/Input'
 import LoginButton from '../login/LoginButton'
 
 export default class NavbarMenu extends Component {
@@ -18,7 +14,7 @@ export default class NavbarMenu extends Component {
   }
 
   render() {
-    return(
+    return (
       <Menu stackable size='tiny'>
         <Menu.Item content='Home Page' as={IndexLink} to='/' />
         {this._processLinks(this.props.links)}

@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
-import {
-  Button,
-  Divider,
-  Grid,
-  Icon,
-  Segment
-} from 'semantic-ui-react'
+import Grid from 'semantic-ui-react/dist/commonjs/collections/Grid'
+import Button from 'semantic-ui-react/dist/commonjs/elements/Button'
+import Divider from 'semantic-ui-react/dist/commonjs/elements/Divider'
+import Icon from 'semantic-ui-react/dist/commonjs/elements/Icon'
+import Segment from 'semantic-ui-react/dist/commonjs/elements/Segment'
 import LoginForm from './LoginForm'
 import SignupForm from './SignupForm'
 
@@ -27,7 +25,7 @@ export default class Login extends Component {
   }
 
   render() {
-    return(
+    return (
       <Grid className='fillUpScreen' doubling centered>
         <Grid.Column verticalAlign='middle' computer={8} tablet={10} mobile={14}>
           <Grid.Row>

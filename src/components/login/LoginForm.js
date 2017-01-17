@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import {
-  Button,
-  Divider,
-  Form
-} from 'semantic-ui-react'
+import Form from 'semantic-ui-react/dist/commonjs/collections/Form'
+import Button from 'semantic-ui-react/dist/commonjs/elements/Button'
+import Divider from 'semantic-ui-react/dist/commonjs/elements/Divider'
 import LoginFacebook from './LoginFacebook'
 import LoginGoogle from './LoginGoogle'
 
@@ -33,7 +31,7 @@ export default class LoginForm extends Component {
   }
 
   render() {
-    return(
+    return (
       <div>
         <Divider horizontal>
           Login With

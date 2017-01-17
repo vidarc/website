@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import {
-  Button,
-  Icon
-} from 'semantic-ui-react'
+import Button from 'semantic-ui-react/dist/commonjs/elements/Button'
+import Icon from 'semantic-ui-react/dist/commonjs/elements/Icon'
 
 export default class LoginGoogle extends Component {
 
@@ -17,7 +15,7 @@ export default class LoginGoogle extends Component {
   }
 
   render() {
-    return(
+    return (
       <Button color='google plus' onClick={this.googleLogin}>
         <Icon name='google' />Google
       </Button>

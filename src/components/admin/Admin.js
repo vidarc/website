@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import {
-  Input,
-  Segment
-} from 'semantic-ui-react'
+import Input from 'semantic-ui-react/dist/commonjs/elements/Input'
+import Segment from 'semantic-ui-react/dist/commonjs/elements/Segment'
 
 export default class Admin extends Component {
 
@@ -14,7 +12,7 @@ export default class Admin extends Component {
   }
 
   render() {
-    return(
+    return (
       <Segment piled>
         <Input type='text-area' />
       </Segment>

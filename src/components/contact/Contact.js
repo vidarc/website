@@ -1,12 +1,10 @@
 // @flow
 
 import React, { Component } from 'react'
-import {
-  Form,
-  Header,
-  Icon,
-  Segment
-} from 'semantic-ui-react'
+import Form from 'semantic-ui-react/dist/commonjs/collections/Form'
+import Header from 'semantic-ui-react/dist/commonjs/elements/Header'
+import Icon from 'semantic-ui-react/dist/commonjs/elements/Icon'
+import Segment from 'semantic-ui-react/dist/commonjs/elements/Segment'
 
 export default class Contact extends Component {
 
@@ -35,7 +33,7 @@ export default class Contact extends Component {
   }
 
   render() {
-    return(
+    return (
       <Segment stacked>
         <Header as='h3' icon textAlign='center'>
           <Icon name='mail outline' circular />
