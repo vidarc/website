@@ -7,7 +7,7 @@ import {
 
 const LoginButton = (props) => {
 
-  if (this.props.auth.isLoggedin())
+  if (1 === 1)
     return (
       <Button primary as={Link} to='/'>
         <Icon name='sign out' />Logout
