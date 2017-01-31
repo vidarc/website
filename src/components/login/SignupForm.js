@@ -1,8 +1,10 @@
 // @flow
 
 import React, { Component } from 'react'
-import Form from 'semantic-ui-react/dist/commonjs/collections/Form'
-import Button from 'semantic-ui-react/dist/commonjs/elements/Button'
+import {
+  Button,
+  Form
+} from 'semantic-ui-react'
 
 export default class SignupForm extends Component {
 

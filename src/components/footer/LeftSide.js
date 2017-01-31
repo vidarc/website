@@ -1,7 +1,9 @@
 import React from 'react'
-import Header from 'semantic-ui-react/dist/commonjs/elements/Header'
-import Icon from 'semantic-ui-react/dist/commonjs/elements/Icon'
-import List from 'semantic-ui-react/dist/commonjs/elements/List'
+import {
+  Header,
+  Icon,
+  List
+} from 'semantic-ui-react'
 
 const LeftSide = () => {
   return (

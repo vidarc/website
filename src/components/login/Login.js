@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-import Grid from 'semantic-ui-react/dist/commonjs/collections/Grid'
-import Button from 'semantic-ui-react/dist/commonjs/elements/Button'
-import Divider from 'semantic-ui-react/dist/commonjs/elements/Divider'
-import Icon from 'semantic-ui-react/dist/commonjs/elements/Icon'
-import Segment from 'semantic-ui-react/dist/commonjs/elements/Segment'
+import {
+  Button,
+  Divider,
+  Grid,
+  Icon,
+  Segment
+} from 'semantic-ui-react'
 import LoginForm from './LoginForm'
 import SignupForm from './SignupForm'
 

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import Input from 'semantic-ui-react/dist/commonjs/elements/Input'
-import Segment from 'semantic-ui-react/dist/commonjs/elements/Segment'
+import {
+  Input,
+  Segment
+} from 'semantic-ui-react'
 
 export default class Admin extends Component {
 

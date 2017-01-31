@@ -1,6 +1,8 @@
 import React from 'react'
-import Grid from 'semantic-ui-react/dist/commonjs/collections/Grid'
-import Segment from 'semantic-ui-react/dist/commonjs/elements/Segment'
+import {
+  Grid,
+  Segment
+} from 'semantic-ui-react'
 import LeftSide from './LeftSide'
 import RightSide from './RightSide'
 

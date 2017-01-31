@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import Button from 'semantic-ui-react/dist/commonjs/elements/Button'
-import Icon from 'semantic-ui-react/dist/commonjs/elements/Icon'
+import {
+  Button,
+  Icon
+} from 'semantic-ui-react'
 
 export default class LoginFacebook extends Component {
 

@@ -1,22 +1,24 @@
-import React, { Component } from 'react'
-import Link from 'react-router/lib/Link'
-import Button from 'semantic-ui-react/dist/commonjs/elements/Button'
-import Icon from 'semantic-ui-react/dist/commonjs/elements/Icon'
+import React from 'react'
+import { Link } from 'react-router'
+import {
+  Button,
+  Icon
+} from 'semantic-ui-react'
 
-export default class LoginButton extends Component {
+const LoginButton = (props) => {
 
-  render() {
-    if (this.props.auth.isLoggedin())
-      return (
-        <Button primary as={Link} to='/'>
-          <Icon name='sign out' />Logout
-        </Button>
-      )
-    else
-      return (
-        <Button primary as={Link} to='/login'>
-          <Icon name='sign in' />Login
-        </Button>
-      )
-  }
+  if (this.props.auth.isLoggedin())
+    return (
+      <Button primary as={Link} to='/'>
+        <Icon name='sign out' />Logout
+      </Button>
+    )
+  else
+    return (
+      <Button primary as={Link} to='/login'>
+        <Icon name='sign in' />Login
+      </Button>
+    )
 }
+
+export default LoginButton

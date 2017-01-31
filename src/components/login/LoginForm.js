@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import Form from 'semantic-ui-react/dist/commonjs/collections/Form'
-import Button from 'semantic-ui-react/dist/commonjs/elements/Button'
-import Divider from 'semantic-ui-react/dist/commonjs/elements/Divider'
+import {
+  Button,
+  Divider,
+  Form
+} from 'semantic-ui-react'
 import LoginFacebook from './LoginFacebook'
 import LoginGoogle from './LoginGoogle'
 

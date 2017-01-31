@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import Grid from 'semantic-ui-react/dist/commonjs/collections/Grid'
+import {
+  Grid
+} from 'semantic-ui-react'
 import NavbarMenu from './NavbarMenu'
 import NavbarSidebar from './NavbarSidebar'
 import './Navbar.css'

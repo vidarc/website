@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
-import IndexLink from 'react-router/lib/IndexLink'
-import Link from 'react-router/lib/Link'
-import Menu from 'semantic-ui-react/dist/commonjs/collections/Menu'
-import Input from 'semantic-ui-react/dist/commonjs/elements/Input'
+import {
+  IndexLink,
+  Link
+} from 'react-router'
+import {
+  Input,
+  Menu
+} from 'semantic-ui-react'
 import LoginButton from '../login/LoginButton'
 
 export default class NavbarMenu extends Component {
