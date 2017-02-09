@@ -4,19 +4,16 @@ import {
   Segment
 } from 'semantic-ui-react'
 
-export default class Admin extends Component {
+export class Admin extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      content: ''
-    }
+  state = {
+    content: 'testing',
   }
 
   render() {
-    return(
+    return (
       <Segment piled>
-        <Input type='text-area' />
+        <Input type='text-area' value={this.state.content} />
       </Segment>
     )
   }

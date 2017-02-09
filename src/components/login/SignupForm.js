@@ -1,5 +1,3 @@
-// @flow
-
 import React, { Component } from 'react'
 import {
   Button,
@@ -42,7 +40,7 @@ export default class SignupForm extends Component {
   }
 
   render() {
-    return(
+    return (
       <Form onSubmit={this.handleClick}>
         <Form.Field>
           <Form.Input icon='user' iconPosition='left' type='email' name='email' placeholder='Email Address...' />

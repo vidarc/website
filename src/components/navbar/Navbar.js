@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { Grid } from 'semantic-ui-react'
+import {
+  Grid
+} from 'semantic-ui-react'
 import NavbarMenu from './NavbarMenu'
 import NavbarSidebar from './NavbarSidebar'
 import './Navbar.css'
@@ -14,7 +16,7 @@ export default class Navbar extends Component {
       { content: 'Contact Me', to: '/contact' }
     ]
 
-    return(
+    return (
       <Grid>
         <Grid.Column width={16} className='computer tablet only'>
           <Grid.Row>

@@ -18,7 +18,7 @@ export default class NavbarMenu extends Component {
   }
 
   render() {
-    return(
+    return (
       <Menu stackable size='tiny'>
         <Menu.Item content='Home Page' as={IndexLink} to='/' />
         {this._processLinks(this.props.links)}

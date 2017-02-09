@@ -9,6 +9,7 @@ import {
 import LoginButton from '../login/LoginButton'
 
 export default class NavbarSidebar extends Component {
+
   state = {
     visible: false
   }
@@ -22,7 +23,7 @@ export default class NavbarSidebar extends Component {
   }
 
   render() {
-    return(
+    return (
       <div>
         <Menu borderless icon='labeled' size='tiny'>
           <Menu.Item as={Link} to='/'>

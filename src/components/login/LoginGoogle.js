@@ -17,7 +17,7 @@ export default class LoginGoogle extends Component {
   }
 
   render() {
-    return(
+    return (
       <Button color='google plus' onClick={this.googleLogin}>
         <Icon name='google' />Google
       </Button>

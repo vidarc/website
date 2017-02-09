@@ -1,11 +1,9 @@
-// @flow
-
 import React, { Component } from 'react'
 import {
   Header,
   Segment
 } from 'semantic-ui-react'
-import Moment from 'moment'
+import moment from 'moment'
 import LoadingIpsum from '../../utils/LoadingIpsum'
 
 export default class Blog extends Component {
@@ -28,27 +26,27 @@ export default class Blog extends Component {
   render() {
     let posts = [
       {
-        date: Moment().format('MMMM Do YYYY'),
+        date: moment().format('MMMM Do YYYY'),
         title: 'Test Title',
         body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
       },
       {
-        date: Moment().format('MMMM Do YYYY'),
+        date: moment().format('MMMM Do YYYY'),
         title: 'Test Title',
         body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
       },
       {
-        date: Moment().format('MMMM Do YYYY'),
+        date: moment().format('MMMM Do YYYY'),
         title: 'Test Title',
         body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
       },
       {
-        date: Moment().format('MMMM Do YYYY'),
+        date: moment().format('MMMM Do YYYY'),
         title: 'Test Title',
         body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
       },
       {
-        date: Moment().format('MMMM Do YYYY'),
+        date: moment().format('MMMM Do YYYY'),
         title: 'Test Title',
         body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
       }
@@ -58,7 +56,7 @@ export default class Blog extends Component {
       return <LoadingIpsum times='2' />
     }
     else {
-      return(
+      return (
         <div>
           {posts.map((post) =>
             <Segment color='blue'>

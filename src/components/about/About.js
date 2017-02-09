@@ -4,7 +4,7 @@ import './About.css'
 
 export default class About extends Component {
   render() {
-    return(
+    return (
       <Container>
         <img src='http://i.imgur.com/73Wnjpm.jpg' alt='something goes here' />
       </Container>

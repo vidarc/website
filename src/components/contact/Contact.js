@@ -1,5 +1,3 @@
-// @flow
-
 import React, { Component } from 'react'
 import {
   Form,
@@ -35,7 +33,7 @@ export default class Contact extends Component {
   }
 
   render() {
-    return(
+    return (
       <Segment stacked>
         <Header as='h3' icon textAlign='center'>
           <Icon name='mail outline' circular />

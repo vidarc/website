@@ -33,7 +33,7 @@ export default class LoginForm extends Component {
   }
 
   render() {
-    return(
+    return (
       <div>
         <Divider horizontal>
           Login With
