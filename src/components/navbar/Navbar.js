@@ -12,8 +12,9 @@ export default class Navbar extends Component {
     let links = [
       { content: 'My Blog', to: '/blog' },
       { content: 'About Page', to: '/about' },
+      { content: 'Playground', to: '/playground' },
       { content: 'My Resume', to: '/resume' },
-      { content: 'Contact Me', to: '/contact' }
+      { content: 'Contact Me', to: '/contact' },
     ]
 
     return (
