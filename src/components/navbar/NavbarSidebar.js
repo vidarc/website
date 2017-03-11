@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import {
   Icon,
   Input,
@@ -39,12 +39,11 @@ export default class NavbarSidebar extends Component {
         </Menu>
         <Sidebar as={Menu} animation='overlay' visible={this.state.visible} vertical onClick={this.toggleVisibility}>
           {this.processLinks(this.props.links)}
-          {this.props.auth.isAdmin() ? <Menu.Item content='Admin' as={Link} to='admin' /> : null}
           <Menu.Item>
             <Input icon='search' placeholder='Search...' />
           </Menu.Item>
           <Menu.Item>
-            <LoginButton auth={this.props.auth} />
+            <LoginButton />
           </Menu.Item>
         </Sidebar>
       </div>

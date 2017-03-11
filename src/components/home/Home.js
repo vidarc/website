@@ -1,13 +1,11 @@
-import React, { Component } from 'react'
-import TestingContainer from '../../containers/TestingContainer'
+import React from 'react'
 
-export default class Home extends Component {
-
-  render() {
-    return (
-      <div>
-        <TestingContainer />
-      </div>
-    )
-  }
+const Home = () => {
+  return (
+    <div>
+      Hello everybody
+    </div>
+  )
 }
+
+export default Home
