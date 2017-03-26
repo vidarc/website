@@ -23,7 +23,11 @@ const RightSide = () => {
         </Header.Content>
       </Header>
       {socials.map((social) =>
-        <Button key={social.key} color={social.name} circular icon={social.name} />
+        <Button
+          key={social.key}
+          color={social.name === 'lastfm' ? 'red' : social.name}
+          circular icon={social.name}
+        />
       )}
     </div>
   )

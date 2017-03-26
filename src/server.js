@@ -39,7 +39,15 @@ mongoClient.connect('mongodb://localhost:27017/website', (err, database) => {
 server.get('/art/images', (req, res) => {
   db.collection('art_images').aggregate([
     { $match: { 'Is Public Domain': 'True' } },
-    { $sample: { size: 50 } }
+    { $sample: { size: 50 } },
+    { $project: {
+      'Department': 1,
+      'Title': 1,
+      'Artist Display Name': 1,
+      'Artist Display Bio': 1,
+      'Object Date': 1,
+      'Medium': 1
+    } }
   ]).toArray((err, result) => {
     res.json(result)
   })

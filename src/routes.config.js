@@ -38,7 +38,7 @@ const routes = [
     component: Playground,
     routes: [
       {
-        path: '/art',
+        path: '/playground/art',
         component: Art
       }
     ]
