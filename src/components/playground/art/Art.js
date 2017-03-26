@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ArtCard from './ArtCard'
 
 const api = 'https://www.mattailes.net/art/images'
 

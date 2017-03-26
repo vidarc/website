@@ -7,18 +7,11 @@ import {
 
 const LoginButton = (props) => {
 
-  if (1 === 1)
-    return (
-      <Button primary as={Link} to='/'>
-        <Icon name='sign out' />Logout
-      </Button>
-    )
-  else
-    return (
-      <Button primary as={Link} to='/login'>
-        <Icon name='sign in' />Login
-      </Button>
-    )
+  return (
+    <Button primary as={Link} to='/login'>
+      <Icon name='sign in' />Login
+    </Button>
+  )
 }
 
 export default LoginButton
