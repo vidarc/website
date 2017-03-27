@@ -1,9 +1,7 @@
-#!/bin/bash
+#!/usr/bin/expect
 
-export RSYNC_PASSWORD=$1
-rsync -azP --exclude '.DS_Store' build/ mattailes@mattailes.net:build
-
-if [ "$?" -eq "0" ]; then
-  return 0
-else
-  return 1
+set timeout -1
+spawn rsync -azP --exclude '.DS_Store' build/ mattailes@mattailes.net:build
+expect "password:"
+send $1
+expect eof
