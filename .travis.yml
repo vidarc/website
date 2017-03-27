@@ -1,21 +1,21 @@
 language: node_js
 node_js:
-  - node
+- node
 addons:
   ssh_known_hosts:
-    - mattailes.net
+  - mattailes.net
 before_script:
-  - sudo apt-get install -qq sshpass
+- sudo apt-get install -qq sshpass
 branches:
   only:
-    - master
+  - master
 cache:
   yarn: true
   directories:
-    - node_modules
+  - node_modules
 script:
-  - npm test
-  - npm run build
+- npm test
+- npm run build
 deploy:
   skip_cleanup: true
   provider: script
@@ -25,3 +25,6 @@ deploy:
 env:
   global:
     secure: ksPjMgj6tVyRNj/qQmJcvKiXg16y3IuFKYg20e5Ay6nHcxpBbrJvYBlVLeASLpeDe6r1Cv7zdIzjka0XqOTKdjNHbJfIaBOFXywiTVvM7TdHwVrAyqSWdarpKGN87OW6MZA0mtMhpHaoBkZxIZyvOnfoa5ANQ7NvubofZq61AbiVSW3XNmqmCFORwFCKSFVdLEJaCbmgfNMBjoWHqimq0maYv3LQbHhPxRG5sDf3YJt0CPIpAL/VbGCK+GyJqbkkwNULtofLoOz5pIWdMzuzUwuRjxYYA6Buztp3tvmX9tdc673qBEki4cAzGx2VXS7Fpd3CXDYlT3PcmlHl7r/klVnc4cfalETk5+SYTV+cOveo7+ycnX+l5heSz/AS6oS7t4ZlirHqUzQ0FWY8FVNTUdpl0YHa4QImH2zPh5B31seNUHft22cve1tVIPLd9BZiipOQL4noYJi1965gvqvh7wC4zUjlDSZqWMx7ZqmAdqa9Nu51MOVT3XdsMHcZqP7kdvUARW9Tc/G9PZmVzd31ZJvs6BlwNOsUC8nFrTYC9jWZuKDnlJn30V6KIVCuE74ieX+DIblZt3PLHlprbD44dayDr67rsjA/MDDxWlBjvP7eKgR70KtfAZQR4OYPoR9xBHjIJJWV161yUPVHJkLqY83L+WUAkJE9ahMw5jWlzfk=
+before_install:
+- openssl aes-256-cbc -K $encrypted_4f7e3a5fe483_key -iv $encrypted_4f7e3a5fe483_iv
+  -in .env.enc -out .env -d
