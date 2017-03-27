@@ -9,8 +9,9 @@ script:
 - npm test
 - npm run build
 deploy:
-- provider: script
-  script: travis.sh $PASSWORD
+  skip_cleanup: true
+  provider: script
+  script: sh travis.sh $PASSWORD
   on:
     branch: master
 env:
