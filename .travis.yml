@@ -3,6 +3,8 @@ node_js:
 - node
 addons:
   ssh_known_hosts: mattailes.net
+before_script:
+- sudo apt-get install -qq sshpass
 cache:
   yarn: true
   directories:

@@ -1,7 +1,6 @@
-#!/usr/bin/expect
+#!/bin/bash
 
-set timeout -1
-spawn rsync -azP --exclude '.DS_Store' build/ mattailes@mattailes.net:build
-expect "password:"
-send $1
-expect eof
+echo "Deploying build folder to my server"
+sshpass -p $1 rsync -azP --exclude '.DS_Store' build/ mattailes@mattailes.net:build
+
+exit $?
