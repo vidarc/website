@@ -1,17 +1,21 @@
 language: node_js
 node_js:
-- node
+  - node
 addons:
-  ssh_known_hosts: mattailes.net
+  ssh_known_hosts:
+    - mattailes.net
 before_script:
-- sudo apt-get install -qq sshpass
+  - sudo apt-get install -qq sshpass
+branches:
+  only:
+    - master
 cache:
   yarn: true
   directories:
-  - node_modules
+    - node_modules
 script:
-- npm test
-- npm run build
+  - npm test
+  - npm run build
 deploy:
   skip_cleanup: true
   provider: script
