@@ -1759,7 +1759,7 @@ clap@^1.0.9:
   dependencies:
     chalk "^1.1.3"
 
-classnames@^2.1.5, classnames@^2.2.3:
+classnames@^2.1.5, classnames@^2.2.3, classnames@^2.2.5:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
@@ -5058,6 +5058,10 @@ lodash.merge@^4.4.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.0.tgz#69884ba144ac33fe699737a6086deffadd0f89c5"
 
+lodash.omit@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.omit/-/lodash.omit-4.5.0.tgz#6eb19ae5a1ee1dd9df0b969e66ce0b7fa30b5e60"
+
 lodash.partialright@^4.1.4:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/lodash.partialright/-/lodash.partialright-4.2.1.tgz#0130d80e83363264d40074f329b8a3e7a8a1cc4b"
@@ -6434,6 +6438,13 @@ react-fuzzy@^0.3.3:
     babel-runtime "^6.5.0"
     classnames "^2.2.3"
     fuse.js "^2.2.0"
+
+react-grecaptcha@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/react-grecaptcha/-/react-grecaptcha-1.1.6.tgz#f83fbdf1b4813f0481d199896f87815551d34b47"
+  dependencies:
+    classnames "^2.2.5"
+    lodash.omit "^4.5.0"
 
 react-inspector@^1.1.0:
   version "1.1.2"
