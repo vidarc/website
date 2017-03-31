@@ -6,7 +6,7 @@ import Navbar from '../navbar/Navbar'
 import Footer from '../footer/Footer'
 
 const Routes = (route) => (
-  <Route exact path={route.path} render={props => (
+  <Route path={route.path} exact={route.exact} render={props => (
     <route.component {...props} routes={route.routes} />
   )} />
 )

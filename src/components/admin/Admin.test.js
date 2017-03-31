@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Contact from './Contact'
+import Admin from './Admin'
 
-describe('Contact', function() {
+describe('Admin', function() {
   it('renders without crashing', () => {
     const div = document.createElement('div')
 
     ReactDOM.render((
-      <Contact />
+      <Admin />
     ), div)
   })
 })
