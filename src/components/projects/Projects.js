@@ -20,7 +20,7 @@ const links = [
 ]
 
 const Projects = ({routes}) => (
-  <Container textAlign='center' fluid text>
+  <Container textAlign='center' fluid>
     <List celled horizontal relaxed>
       {links.map((link) => <LinkList key={link.id} link={link} /> )}
     </List>
