@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Card, Dimmer, Image, Loader } from 'semantic-ui-react'
 
-const api = 'http://metmuseum.org/api/Collection/additionalImages?crdId='
+const api = 'https://metmuseum.org/api/Collection/additionalImages?crdId='
 
 export default class ArtCard extends Component {
 
