@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
+import { Dimmer, Loader, Segment } from 'semantic-ui-react'
 import moment from 'moment'
 import BlogPost from './BlogPost'
-import LoadingIpsum from '../../utils/LoadingIpsum'
 
 export default class Blog extends Component {
 
@@ -55,7 +55,13 @@ export default class Blog extends Component {
     ]
 
     if (this.state.loading) {
-      return <LoadingIpsum times='2' />
+      return (
+        <Segment>
+          <Dimmer active>
+            <Loader inverted size='huge' content='Loading the Blog' />
+          </Dimmer>
+        </Segment>
+      )
     }
     else {
       return (

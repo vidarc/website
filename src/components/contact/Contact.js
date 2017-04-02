@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
-import {
-  Form,
-  Header,
-  Icon,
-  Segment
-} from 'semantic-ui-react'
+import { Form, Header, Icon, Segment } from 'semantic-ui-react'
+import Recaptcha from 'react-grecaptcha'
 
 export default class Contact extends Component {
 
@@ -15,20 +11,17 @@ export default class Contact extends Component {
     message: ''
   }
 
-  componentDidMount() {
-    window.grecaptcha.render('recaptcha', {
-      sitekey: process.env.REACT_APP_RECAPTCHA_SITE,
-      callback: this._verifyCallback
-    })
-  }
-
-  _handleChange = (event: Object) => {
+  handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     })
   }
 
-  _verifyCallback = (response: string) => {
+  expiredCallback = () => {
+    window.grecaptcha.reset()
+  }
+
+  verifyCallback = (response) => {
     console.log(response)
   }
 
@@ -49,7 +42,12 @@ export default class Contact extends Component {
           <Form.Input type='email' label='E-Mail Address' name='email' value={this.state.email} placeholder='E-Mail Address' onChange={this._handleChange} />
           <Form.TextArea label='Message' name='message' value={this.state.message} placeholder='Message' onChange={this._handleChange} />
           <Form.Group>
-            <div id='recaptcha' />
+            <Recaptcha
+              sitekey={process.env.REACT_APP_RECAPTCHA_SITE}
+              callback={this.verifyCallback}
+              expiredCallback={this.expiredCallback}
+              locale="en-US"
+            />
           </Form.Group>
           <Form.Button primary type='submit' content='Send Message' />
         </Form>

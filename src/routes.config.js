@@ -1,17 +1,18 @@
 import About from './components/about/About'
 import Admin from './components/admin/Admin'
-import Art from './components/playground/art/Art'
+import Art from './components/projects/art/Art'
 import Blog from './components/blog/Blog'
 import Contact from './components/contact/Contact'
 import Home from './components/home/Home'
 import Login from './components/login/Login'
-import Playground from './components/playground/Playground'
+import Playground from './components/projects/Projects'
 import Resume from './components/resume/Resume'
 
 const routes = [
   {
     path: '/',
-    component: Home
+    component: Home,
+    exact: true
   },
   {
     path: '/about',
@@ -34,11 +35,11 @@ const routes = [
     component: Login
   },
   {
-    path: '/playground',
+    path: '/projects',
     component: Playground,
     routes: [
       {
-        path: '/playground/art',
+        path: '/projects/art',
         component: Art
       }
     ]

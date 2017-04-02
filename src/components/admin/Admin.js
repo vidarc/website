@@ -1,19 +1,16 @@
 import React, { Component } from 'react'
-import {
-  Input,
-  Segment
-} from 'semantic-ui-react'
+import { Segment } from 'semantic-ui-react'
 
-export class Admin extends Component {
+export default class Admin extends Component {
 
   state = {
-    content: 'testing',
+    content: '',
   }
 
   render() {
     return (
       <Segment piled>
-        <Input type='text-area' value={this.state.content} />
+        {this.state.content}
       </Segment>
     )
   }

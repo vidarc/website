@@ -8,7 +8,7 @@ const Navbar = (props) => {
   let links = [
     { content: 'My Blog', to: '/blog' },
     { content: 'About Page', to: '/about' },
-    { content: 'Playground', to: '/playground' },
+    { content: 'Projects', to: '/projects' },
     { content: 'My Resume', to: '/resume' },
     { content: 'Contact Me', to: '/contact' },
   ]
