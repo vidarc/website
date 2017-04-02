@@ -8,6 +8,7 @@ import path from 'path'
 import compression from 'compression'
 import fs from 'fs'
 import handlebars from 'handlebars'
+import Recaptcha from 'react-grecaptcha'
 
 import React from 'react'
 import { renderToString } from 'react-dom/server'
