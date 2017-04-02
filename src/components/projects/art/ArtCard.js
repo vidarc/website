@@ -14,10 +14,7 @@ export default class ArtCard extends Component {
   render() {
     return (
       <Card color='blue' centered>
-        <Dimmer active>
-          <Loader />
-        </Dimmer>
-        {this.state.loading ? <Image src='http://placehold.it/350x350' /> : <Image src={this.state.image} />}
+        <Image src='http://placehold.it/350x350' />
         <Loader as='Img' />
         <Card.Content>
           <Card.Header content={this.props.art.title} />
