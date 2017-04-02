@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Dimmer, Image, Loader } from 'semantic-ui-react'
+import { Card, Image, Loader } from 'semantic-ui-react'
 
 export default class ArtCard extends Component {
 
