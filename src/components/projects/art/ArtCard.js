@@ -17,13 +17,13 @@ export default class ArtCard extends Component {
         <Image src='http://placehold.it/350x350' />
         <Loader as='Img' />
         <Card.Content>
-          <Card.Header content={this.props.art.title} />
-          <Card.Meta content={this.props.art.department} />
+          {this.props.art.title ? <Card.Header content={this.props.art.title} /> : null}
+          {this.props.art.department ? <Card.Meta content={this.props.art.department} /> : null}
           <Card.Description>
-            <div>Artist: {this.props.art.artist}</div>
-            <div>Bio: {this.props.art.artist_bio}</div>
-            <div>Date: {this.props.art.date}</div>
-            <div>Medium: {this.props.art.medium}</div>
+            {this.props.art.artist ? <div>Artist: {this.props.art.artist}</div> : null}
+            {this.props.art.artist_bio ? <div>Bio: {this.props.art.artist_bio}</div> : null}
+            {this.props.art.date ? <div>Date: {this.props.art.date}</div> : null}
+            {this.props.art.medium ? <div>Medium: {this.props.art.medium}</div> : null}
           </Card.Description>
         </Card.Content>
       </Card>
