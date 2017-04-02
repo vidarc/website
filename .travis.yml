@@ -16,6 +16,7 @@ cache:
 script:
 - npm test
 - npm run build
+- npm run build-server
 deploy:
   skip_cleanup: true
   provider: script

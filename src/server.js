@@ -41,12 +41,12 @@ server.get('/art/images', (req, res) => {
     { $match: { 'Is Public Domain': 'True' } },
     { $sample: { size: 50 } },
     { $project: {
-      'Department': 1,
-      'Title': 1,
-      'Artist Display Name': 1,
-      'Artist Display Bio': 1,
-      'Object Date': 1,
-      'Medium': 1
+      'department': '$Department',
+      'title': '$Title',
+      'artist': '$Artist Display Name',
+      'artist_bio': '$Artist Display Bio',
+      'date': '$Object Date',
+      'medium': '$Medium'
     } }
   ]).toArray((err, result) => {
     res.json(result)
@@ -60,8 +60,8 @@ const routes = [
   '/blog',
   '/contact',
   '/login',
-  '/playground',
-  '/playground/art',
+  '/projects',
+  '/projects/art',
   '/resume'
 ]
 

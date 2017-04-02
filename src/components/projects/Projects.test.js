@@ -46,18 +46,6 @@ describe('Art from the Met', function() {
   it('renders the art card without crashing', () => {
     const div = document.createElement('div')
 
-    global.fetch = jest.fn().mockImplementation(() => {
-      const api = new Promise((resolve, reject) => {
-        resolve({
-          ok: true,
-          Id: '123',
-          json: function() {
-            return { webImageUrl: 'url/to/an/image' }
-          }
-        })
-      })
-      return api
-    })
     const data = {
       id: 'some id',
       image: 'an image',

@@ -1,28 +1,14 @@
 import React, { Component } from 'react'
 import { Card, Dimmer, Image, Loader } from 'semantic-ui-react'
 
-const api = 'https://metmuseum.org/api/Collection/additionalImages?crdId='
-
 export default class ArtCard extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
       image: '',
-      loading: true
+      loading: false
     }
-  }
-
-  componentDidMount() {
-    fetch(api + this.props.art.id)
-      .then((response) => response.json())
-      .then((response) => {
-        this.setState({
-          image: response.webImageUrl,
-          visible: false
-        })
-      })
-      .catch((err) => console.log(err))
   }
 
   render() {

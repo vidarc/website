@@ -34,6 +34,13 @@ module.exports = {
           presets: ['es2015', 'react', 'stage-0']
         }
       },
+      {
+        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        loader: 'url-loader',
+        options: {
+          limit: 10000
+        },
+      },
     ]
   },
 
