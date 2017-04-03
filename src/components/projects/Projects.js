@@ -1,14 +1,9 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
 import { Container, List } from 'semantic-ui-react'
-import LinkList from './LinkList'
+import { LinkList } from './'
+import routeHelper from '../../utils/routeHelper'
 import metLogo from '../../images/the_met_logo.png'
-
-const Routes = (route) => (
-  <Route path={route.path} render={props => (
-    <route.component {...props} routes={route.routes} />
-  )} />
-)
+import reddit from '../../images/snoovatar.png'
 
 const links = [
   {
@@ -16,6 +11,12 @@ const links = [
     image: metLogo,
     path: '/projects/art',
     description: 'Art from the Met Museum'
+  },
+  {
+    id: 2,
+    image: reddit,
+    path: '/projects/reddit',
+    description: 'Reddit API'
   }
 ]
 
@@ -26,9 +27,7 @@ const Projects = ({routes}) => (
         {links.map((link) => <LinkList key={link.id} link={link} /> )}
       </List>
     </Container>
-    {routes.map((route, i) => (
-      <Routes key={i} {...route} />
-    ))}
+    {routeHelper(routes)}
   </Container>
 )
 

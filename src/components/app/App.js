@@ -1,22 +1,14 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
 import { Container } from 'semantic-ui-react'
-import routeConfig from '../../routes.config.js'
-import Navbar from '../navbar/Navbar'
-import Footer from '../footer/Footer'
-
-const Routes = (route) => (
-  <Route path={route.path} exact={route.exact} render={props => (
-    <route.component {...props} routes={route.routes} />
-  )} />
-)
+import routeHelper from '../../utils/routeHelper'
+import routeConfig from '../../routes.config'
+import Navbar from '../Navbar'
+import Footer from '../Footer'
 
 const App = () => (
   <Container className='flex-container'>
     <Navbar />
-    {routeConfig.map((route, i) => (
-      <Routes key={i} {...route} />
-    ))}
+    {routeHelper(routeConfig)}
     <Footer />
   </Container>
 )

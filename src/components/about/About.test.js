@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import About from './About'
+import About from './'
 
 describe('About', function() {
   it('renders without crashing', () => {

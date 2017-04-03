@@ -1,13 +1,6 @@
 import React, { Component } from 'react'
-import {
-  Button,
-  Divider,
-  Grid,
-  Icon,
-  Segment
-} from 'semantic-ui-react'
-import LoginForm from './LoginForm'
-import SignupForm from './SignupForm'
+import { Button, Divider, Grid, Icon, Segment } from 'semantic-ui-react'
+import { LoginForm, SignupForm } from './'
 
 export default class Login extends Component {
 

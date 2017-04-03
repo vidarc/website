@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Dimmer, Loader, Segment } from 'semantic-ui-react'
 import moment from 'moment'
-import BlogPost from './BlogPost'
+import { BlogPost } from './'
 
 export default class Blog extends Component {
 

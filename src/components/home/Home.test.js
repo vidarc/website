@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { MemoryRouter } from 'react-router-dom'
-import Home from './Home'
+import Home from './'
 
 describe('Home', function() {
   it('renders without crashing', () => {

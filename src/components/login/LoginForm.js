@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
-import {
-  Button,
-  Divider,
-  Form
-} from 'semantic-ui-react'
-import LoginFacebook from './LoginFacebook'
-import LoginGoogle from './LoginGoogle'
+import { Button, Divider, Form } from 'semantic-ui-react'
+import { LoginFacebook, LoginGoogle } from './'
 
 export default class LoginForm extends Component {
 
@@ -17,18 +12,15 @@ export default class LoginForm extends Component {
       username: '',
       password: ''
     }
-
-    this.handleChange = this.handleChange.bind(this)
-    this.handleClick = this.handleClick.bind(this)
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     })
   }
 
-  handleClick(event) {
+  handleClick = (event) => {
     console.log('wip')
   }
 

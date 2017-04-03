@@ -1,8 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Footer from './Footer'
-import LeftSide from './LeftSide'
-import RightSide from './RightSide'
+import Footer, { LeftSide, RightSide} from './'
 
 describe('Footer', function() {
   it('renders without crashing', () => {

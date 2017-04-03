@@ -1,10 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {
-  Input,
-  Menu
-} from 'semantic-ui-react'
-import LoginButton from '../login/LoginButton'
+import { Input, Menu } from 'semantic-ui-react'
+import { LoginButton } from '../Login'
 
 const processLinks = (links) => {
   return links.map((link, index) => (

@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Contact from './Contact'
+import Contact from './'
 
 describe('Contact', function() {
   it('renders without crashing', () => {

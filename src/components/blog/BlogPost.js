@@ -1,8 +1,5 @@
 import React from 'react'
-import {
-  Header,
-  Segment
-} from 'semantic-ui-react'
+import { Header, Segment } from 'semantic-ui-react'
 
 const BlogPost = (props) => {
   return (

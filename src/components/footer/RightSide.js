@@ -1,9 +1,5 @@
 import React from 'react'
-import {
-  Button,
-  Header,
-  Icon
-} from 'semantic-ui-react'
+import { Button, Header, Icon } from 'semantic-ui-react'
 
 const socials = [
   { key: 1, name: 'facebook', link: 'https://www.facebook.com/mattailes' },

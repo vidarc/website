@@ -1,10 +1,6 @@
 import React from 'react'
-import {
-  Grid,
-  Segment
-} from 'semantic-ui-react'
-import LeftSide from './LeftSide'
-import RightSide from './RightSide'
+import { Grid, Segment } from 'semantic-ui-react'
+import { LeftSide, RightSide } from './'
 
 const Footer = () => {
   return (

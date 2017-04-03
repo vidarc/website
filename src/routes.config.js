@@ -1,12 +1,14 @@
-import About from './components/about/About'
-import Admin from './components/admin/Admin'
-import Art from './components/projects/art/Art'
-import Blog from './components/blog/Blog'
-import Contact from './components/contact/Contact'
-import Home from './components/home/Home'
-import Login from './components/login/Login'
-import Playground from './components/projects/Projects'
-import Resume from './components/resume/Resume'
+import About from './components/About/'
+import Admin from './components/Admin'
+import Blog from './components/Blog'
+import Contact from './components/Contact'
+import Home from './components/Home'
+import Login from './components/Login'
+import Resume from './components/Resume'
+
+import Projects from './components/Projects'
+import Art from './components/Projects/Art'
+import Reddit from './components/Projects/Reddit'
 
 const routes = [
   {
@@ -36,11 +38,15 @@ const routes = [
   },
   {
     path: '/projects',
-    component: Playground,
+    component: Projects,
     routes: [
       {
         path: '/projects/art',
         component: Art
+      },
+      {
+        path: '/projects/reddit',
+        component: Reddit
       }
     ]
   },

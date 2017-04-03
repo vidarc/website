@@ -21,8 +21,8 @@ export default class Art extends Component {
   render() {
     return (
       <Container fluid>
-        {this.state.loading ? <Loader active /> : null}
         <Divider />
+        {this.state.loading ? <Loader active size='large' content='Loading Art'/> : null}
         <Card.Group>
           {this.state.artArray.map((art) => (
             <ArtCard key={art.id} art={art} />

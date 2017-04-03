@@ -1,7 +1,6 @@
 import React from 'react'
 import { Grid } from 'semantic-ui-react'
-import NavbarMenu from './NavbarMenu'
-import NavbarSidebar from './NavbarSidebar'
+import { NavbarMenu, NavbarSidebar } from './'
 import './Navbar.css'
 
 const Navbar = (props) => {

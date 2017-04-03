@@ -1,12 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import {
-  Icon,
-  Input,
-  Menu,
-  Sidebar
-} from 'semantic-ui-react'
-import LoginButton from '../login/LoginButton'
+import { Icon, Input, Menu, Sidebar } from 'semantic-ui-react'
+import { LoginButton } from '../Login'
 
 export default class NavbarSidebar extends Component {
 

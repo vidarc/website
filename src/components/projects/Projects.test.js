@@ -1,10 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { MemoryRouter } from 'react-router-dom'
-import Projects from './Projects'
-import LinkList from './LinkList'
-import Art from './art/Art'
-import ArtCard from './art/ArtCard'
+import Projects, { LinkList } from './'
+import Art, { ArtCard } from './Art'
 
 describe('Projects', function() {
   it('renders main page without crashing', () => {

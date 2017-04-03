@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Blog from './Blog'
-import BlogPost from './BlogPost'
+import Blog, { BlogPost } from './'
 
 describe('Blog', function() {
   it('renders without crashing', () => {
