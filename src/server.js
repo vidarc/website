@@ -42,6 +42,7 @@ server.get('/art/images', (req, res) => {
     { $match: { 'Is Public Domain': 'True' } },
     { $sample: { size: 50 } },
     { $project: {
+      'object_id': '$Object ID',
       'department': '$Department',
       'title': '$Title',
       'artist': '$Artist Display Name',

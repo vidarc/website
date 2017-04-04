@@ -12,23 +12,20 @@ export default class ArtCard extends Component {
   }
 
   componentDidMount() {
-    let url = 'http://www.mattailes.net/art/images/' + this.props.art.id + '.jpg'
+    let url = 'https://www.mattailes.net/art/images/' + this.props.art.object_id + '.jpg'
     fetch(url)
-      .then((response) => {
-        if (response.ok) {
-          this.setState({
-            image: url,
-            loading: false
-          })
-        }
-        else {
-          this.setState({
-            image: 'http://placehold.it/350x350',
-            loading: false
-          })
-        }
+      .then(response => {
+        this.setState({
+          image: url,
+          loading: false
+        })
       })
-      .catch((err) => console.log(err))
+      .catch(err => {
+        this.setState({
+          image: 'https://placehold.it/350x350',
+          loading: false
+        })
+      })
   }
 
   render() {
