@@ -11,7 +11,7 @@ export default class ArtCard extends Component {
     }
   }
 
-  getImage() {
+  componentDidMount() {
     let url = 'http://www.mattailes.net/art/images/' + this.props.art.id + '.jpg'
     fetch(url)
       .then((response) => {
