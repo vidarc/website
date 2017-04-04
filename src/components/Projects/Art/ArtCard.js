@@ -13,12 +13,12 @@ export default class ArtCard extends Component {
   }
 
   componentDidMount() {
-    let url = 'https://www.mattailes.net/art/images/' + this.props.art.object_id + '.jpg'
+    let url = 'https://www.mattailes.net/art/image/' + this.props.art.object_id
+
     fetch(url)
       .then(response => {
-        console.log(response)
         this.setState({
-          image: url,
+          image: response.webImageUrl,
           loading: false
         })
       })

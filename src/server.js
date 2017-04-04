@@ -3,16 +3,16 @@ import logger from 'morgan'
 import bodyParser from 'body-parser'
 import colors from 'colors'
 import mongodb from 'mongodb'
-import assert from 'assert'
 import path from 'path'
 import compression from 'compression'
 import fs from 'fs'
 import handlebars from 'handlebars'
-import Recaptcha from 'react-grecaptcha'
+import fetch from 'node-fetch'
 
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter, matchPath } from 'react-router-dom'
+import Recaptcha from 'react-grecaptcha'
 import App from './components/App'
 
 const server = express()
@@ -35,6 +35,17 @@ mongoClient.connect('mongodb://localhost:27017/website', (err, database) => {
   else {
     db = database
   }
+})
+
+server.get('/art/image/:id', (req, res) => {
+  let url = 'https://metmuseum.org/api/Collection/additionalImages?crdId=' + req.params.id
+
+  fetch(url)
+    .then(response => response.json())
+    .then(response => {
+      res.json(response.results[0])
+    })
+    .catch(err => res.json({ 'reponse': 'bad' }))
 })
 
 server.get('/art/images', (req, res) => {
