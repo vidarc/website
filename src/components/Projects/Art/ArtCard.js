@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Image, Loader } from 'semantic-ui-react'
+import { Card, Dimmer, Image, Loader } from 'semantic-ui-react'
 
 export default class ArtCard extends Component {
 
@@ -7,15 +7,37 @@ export default class ArtCard extends Component {
     super(props)
     this.state = {
       image: '',
-      loading: false
+      loading: true
     }
+  }
+
+  getImage() {
+    let url = 'http://www.mattailes.net/art/images/' + this.props.art.id + '.jpg'
+    fetch(url)
+      .then((response) => {
+        if (response.ok) {
+          this.setState({
+            image: url,
+            loading: false
+          })
+        }
+        else {
+          this.setState({
+            image: 'http://placehold.it/350x350',
+            loading: false
+          })
+        }
+      })
+      .catch((err) => console.log(err))
   }
 
   render() {
     return (
       <Card color='blue' centered>
-        <Image src='http://placehold.it/350x350' />
-        <Loader as='Img' />
+        <Dimmer active={this.state.loading}>
+          <Loader content='Loading Art Information' />
+        </Dimmer>
+        <Image src={this.state.image} />
         <Card.Content>
           {this.props.art.title ? <Card.Header content={this.props.art.title} /> : null}
           {this.props.art.department ? <Card.Meta content={this.props.art.department} /> : null}
