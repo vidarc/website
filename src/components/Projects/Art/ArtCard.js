@@ -7,7 +7,7 @@ export default class ArtCard extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      image: '',
+      image: placeholder,
       loading: true
     }
   }
@@ -16,18 +16,14 @@ export default class ArtCard extends Component {
     let url = 'https://www.mattailes.net/art/image/' + this.props.art.object_id
 
     fetch(url)
+      .then(response => response.json())
       .then(response => {
         this.setState({
           image: response.webImageUrl,
           loading: false
         })
       })
-      .catch(err => {
-        this.setState({
-          image: placeholder,
-          loading: false
-        })
-      })
+      .catch(err => this.setState({ loading: false }))
   }
 
   render() {
@@ -36,7 +32,7 @@ export default class ArtCard extends Component {
         <Dimmer active={this.state.loading}>
           <Loader content='Loading Art Information' />
         </Dimmer>
-        <Image src={this.state.loading ? placeholder : this.state.image} />
+        {this.state.loading ? <Image src={placeholder} /> : <Image src={this.state.image} />}
         <Card.Content>
           {this.props.art.title ? <Card.Header content={this.props.art.title} /> : null}
           {this.props.art.department ? <Card.Meta content={this.props.art.department} /> : null}
