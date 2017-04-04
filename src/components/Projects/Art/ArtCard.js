@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Card, Dimmer, Image, Loader } from 'semantic-ui-react'
+import placeholder from '../../../images/placeholder.png'
 
 export default class ArtCard extends Component {
 
@@ -15,6 +16,7 @@ export default class ArtCard extends Component {
     let url = 'https://www.mattailes.net/art/images/' + this.props.art.object_id + '.jpg'
     fetch(url)
       .then(response => {
+        console.log(response)
         this.setState({
           image: url,
           loading: false
@@ -22,7 +24,7 @@ export default class ArtCard extends Component {
       })
       .catch(err => {
         this.setState({
-          image: 'https://placehold.it/350x350',
+          image: placeholder,
           loading: false
         })
       })
@@ -34,7 +36,7 @@ export default class ArtCard extends Component {
         <Dimmer active={this.state.loading}>
           <Loader content='Loading Art Information' />
         </Dimmer>
-        <Image src={this.state.image} />
+        <Image src={this.state.loading ? placeholder : this.state.image} />
         <Card.Content>
           {this.props.art.title ? <Card.Header content={this.props.art.title} /> : null}
           {this.props.art.department ? <Card.Meta content={this.props.art.department} /> : null}

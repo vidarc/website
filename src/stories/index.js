@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf, action, linkTo } from '@kadira/storybook';
 import '../style/semantic/semantic.min.css'
-import ArtCard from '../components/playground/art/ArtCard'
-import Art from '../components/playground/art/Art'
+import Art, { ArtCard } from '../components/Projects/Art'
 
 const art = {
   image: 'http://images.metmuseum.org/CRDImages/ad/web-large/126417.jpg',
