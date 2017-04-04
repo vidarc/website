@@ -13,7 +13,7 @@ import Recaptcha from 'react-grecaptcha'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter, matchPath } from 'react-router-dom'
-import App from './components/app/App'
+import App from './components/App'
 
 const server = express()
 

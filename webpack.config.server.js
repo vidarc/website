@@ -41,7 +41,14 @@ module.exports = {
           limit: 10000
         },
       },
-    ]
+      {
+        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        loader: 'file-loader',
+        options: {
+          emitFile: false,
+        },
+      },
+    ],
   },
 
   plugins: [
