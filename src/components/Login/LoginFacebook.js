@@ -3,10 +3,6 @@ import { Button, Icon } from 'semantic-ui-react'
 
 export default class LoginFacebook extends Component {
 
-  constructor(props) {
-    super(props)
-  }
-
   facebookLogin = () => {
     console.log('wip')
   }

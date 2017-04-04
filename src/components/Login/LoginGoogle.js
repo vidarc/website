@@ -3,10 +3,6 @@ import { Button, Icon } from 'semantic-ui-react'
 
 export default class LoginGoogle extends Component {
 
-  constructor(props) {
-    super(props)
-  }
-
   googleLogin = () => {
     console.log('wip')
   }
