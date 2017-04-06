@@ -46,7 +46,6 @@ describe('Art from the Met', function() {
 
     const data = {
       id: 'some id',
-      image: 'an image',
       title: 'a title',
       department: 'a department',
       artist: 'an artist',

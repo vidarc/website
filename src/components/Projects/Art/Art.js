@@ -19,11 +19,14 @@ export default class Art extends Component {
   }
 
   render() {
+    let style = {
+      alignItems: 'center'
+    }
     return (
       <Container fluid>
         <Divider />
         {this.state.loading ? <Loader active size='large' content='Loading Art'/> : null}
-        <Card.Group>
+        <Card.Group style={style}>
           {this.state.artArray.map((art) => (
             <ArtCard key={art.id} art={art} />
           ))}

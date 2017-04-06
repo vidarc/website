@@ -32,15 +32,15 @@ export default class ArtCard extends Component {
         <Dimmer active={this.state.loading}>
           <Loader content='Loading Art Information' />
         </Dimmer>
-        {this.state.loading ? <Image src={placeholder} /> : <Image src={this.state.image} />}
+        <Image src={this.state.image} />
         <Card.Content>
           {this.props.art.title ? <Card.Header content={this.props.art.title} /> : null}
           {this.props.art.department ? <Card.Meta content={this.props.art.department} /> : null}
           <Card.Description>
-            {this.props.art.artist ? <div>Artist: {this.props.art.artist}</div> : null}
-            {this.props.art.artist_bio ? <div>Bio: {this.props.art.artist_bio}</div> : null}
-            {this.props.art.date ? <div>Date: {this.props.art.date}</div> : null}
-            {this.props.art.medium ? <div>Medium: {this.props.art.medium}</div> : null}
+            {this.props.art.artist ? <div><b>Artist:</b> {this.props.art.artist}</div> : null}
+            {this.props.art.artist_bio ? <div><b>Bio:</b> {this.props.art.artist_bio}</div> : null}
+            {this.props.art.date ? <div><b>Date:</b> {this.props.art.date}</div> : null}
+            {this.props.art.medium ? <div><b>Medium:</b> {this.props.art.medium}</div> : null}
           </Card.Description>
         </Card.Content>
       </Card>
