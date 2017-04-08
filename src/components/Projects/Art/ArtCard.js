@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Card, Dimmer, Image, Loader } from 'semantic-ui-react'
+import { ArtInfo } from './'
 import placeholder from '../../../images/placeholder.png'
 
 export default class ArtCard extends Component {
@@ -37,10 +38,10 @@ export default class ArtCard extends Component {
           {this.props.art.title ? <Card.Header content={this.props.art.title} /> : null}
           {this.props.art.department ? <Card.Meta content={this.props.art.department} /> : null}
           <Card.Description>
-            {this.props.art.artist ? <div><b>Artist:</b> {this.props.art.artist}</div> : null}
-            {this.props.art.artist_bio ? <div><b>Bio:</b> {this.props.art.artist_bio}</div> : null}
-            {this.props.art.date ? <div><b>Date:</b> {this.props.art.date}</div> : null}
-            {this.props.art.medium ? <div><b>Medium:</b> {this.props.art.medium}</div> : null}
+            <ArtInfo title='Artist' content={this.props.art.artist} />
+            <ArtInfo title='Bio' content={this.props.art.artist_bio} />
+            <ArtInfo title='Date' content={this.props.art.date} />
+            <ArtInfo title='Medium' content={this.props.art.medium} />
           </Card.Description>
         </Card.Content>
       </Card>

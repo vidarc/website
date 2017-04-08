@@ -4,6 +4,7 @@ import { LinkList } from './'
 import routeHelper from '../../utils/routeHelper'
 import metLogo from '../../images/the_met_logo.png'
 import reddit from '../../images/snoovatar.png'
+import './Projects.css'
 
 const links = [
   {
@@ -20,15 +21,14 @@ const links = [
   }
 ]
 
-const Projects = ({routes}) => (
-  <Container fluid>
-    <Container fluid textAlign='center'>
+const Projects = ({routes}) =>
+  <Container fluid className='projectsContainer'>
+    <Container fluid textAlign='center' className='linkContainer'>
       <List celled horizontal relaxed>
         {links.map((link) => <LinkList key={link.id} link={link} /> )}
       </List>
     </Container>
     {routeHelper(routes)}
   </Container>
-)
 
 export default Projects
