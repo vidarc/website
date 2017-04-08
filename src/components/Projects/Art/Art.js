@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Container, Dimmer, Loader } from 'semantic-ui-react'
+import { Card, Container, Loader } from 'semantic-ui-react'
 import ArtCard from './ArtCard'
 import './Art.css'
 
@@ -23,16 +23,14 @@ export default class Art extends Component {
     const { loading } = this.state
 
     return (
-      <Dimmer.Dimmable blurring as={Container} className='artContainer' active={loading}>
-        <Dimmer active={loading}>
-          <Loader content='Loading the Art' />
-        </Dimmer>
+      <Container className='artContainer'>
+        <Loader active={loading} content='Loading the Art' />
         <Card.Group className='cardGroup'>
           {this.state.artArray.map((art) => (
             <ArtCard key={art.id} art={art} />
           ))}
         </Card.Group>
-      </Dimmer.Dimmable>
+      </Container>
     )
   }
 }
