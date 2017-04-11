@@ -3,6 +3,7 @@
 }
 
 .artContainer {
+  min-height: 300px;
   padding-top: 2em;
   flex: 1 1 auto;
 }

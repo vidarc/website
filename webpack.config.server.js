@@ -1,27 +1,27 @@
-var fs = require('fs')
-var path = require('path')
-var webpack = require('webpack')
+const fs = require('fs')
+const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
 
   entry: path.resolve('src/server.js'),
 
   output: {
-    filename: 'build/server.bundle.js'
+    filename: 'build/server.bundle.js',
   },
 
   target: 'node',
 
   // keep node_module paths out of the bundle
   externals: fs.readdirSync(path.resolve('node_modules')).concat([
-    'react-dom/server'
-  ]).reduce(function (ext, mod) {
-    ext[mod] = 'commonjs ' + mod
+    'react-dom/server',
+  ]).reduce((ext, mod) => {
+    ext[mod] = `commonjs ${mod}`
     return ext
   }, {}),
 
   node: {
-    __dirname: false
+    __dirname: false,
   },
 
   module: {
@@ -31,14 +31,14 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react', 'stage-0']
-        }
+          presets: ['es2015', 'react', 'stage-0'],
+        },
       },
       {
         test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
         loader: 'url-loader',
         query: {
-          limit: 10000
+          limit: 10000,
         },
       },
       {
@@ -53,11 +53,10 @@ module.exports = {
 
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
-			compress: {
-				warnings: false,
-				screw_ie8: true
-			}
-		}),
-  ]
-
+      compress: {
+        warnings: false,
+        screw_ie8: true,
+      },
+    }),
+  ],
 }
