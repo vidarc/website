@@ -1,10 +1,23 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const style = {
-  fontWeight: 'bold'
+  fontWeight: 'bold',
 }
 
-export const ArtInfo = (props) =>
-  props.content
-    ? <div><span style={style}>{props.title}: </span>{props.content}</div>
+const ArtInfo = ({ title, content }) => (
+  content
+    ? <div><span style={style}>{title}: </span>{content}</div>
     : null
+)
+export default ArtInfo
+
+ArtInfo.propTypes = {
+  content: PropTypes.string,
+  title: PropTypes.string,
+}
+
+ArtInfo.defaultProps = {
+  content: null,
+  title: null,
+}

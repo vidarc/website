@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { Icon, Input, Menu, Sidebar } from 'semantic-ui-react'
 import { LoginButton } from '../Login'
@@ -44,4 +45,8 @@ export default class NavbarSidebar extends Component {
       </div>
     )
   }
+}
+
+NavbarSidebar.propTypes = {
+  links: PropTypes.arrayOf(PropTypes.object).isRequired,
 }

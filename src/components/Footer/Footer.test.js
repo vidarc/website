@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Footer, { LeftSide, RightSide} from './'
+import Footer, { LeftSide, RightSide } from './'
 
-describe('Footer', function() {
+describe('Footer', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
 
@@ -12,7 +12,7 @@ describe('Footer', function() {
   })
 })
 
-describe('LeftSide', function() {
+describe('LeftSide', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
 
@@ -22,7 +22,7 @@ describe('LeftSide', function() {
   })
 })
 
-describe('RightSide', function() {
+describe('RightSide', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
 

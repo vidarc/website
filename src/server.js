@@ -19,7 +19,7 @@ const server = express()
 
 server.set('port', process.env.PORT || 3000)
 server.use(compression())
-server.use(express.static(path.resolve(__dirname + '/'), { index: false }))
+server.use(express.static(path.resolve(`${__dirname}/`), { index: false }))
 server.use(logger('dev'))
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({ extended: true }))
@@ -29,8 +29,7 @@ const mongoClient = mongodb.MongoClient
 mongoClient.connect('mongodb://localhost:27017/website', (err, database) => {
   if (err) {
     console.log('unable to connect to the database')
-  }
-  else {
+  } else {
     db = database
   }
 })
@@ -43,14 +42,14 @@ mongoClient.connect('mongodb://localhost:27017/website', (err, database) => {
 // Get the image I can use based on the image ID
 // Returns a JSON object with a image url I can use
 server.get('/art/image/:id', (req, res) => {
-  let url = 'https://metmuseum.org/api/Collection/additionalImages?crdId=' + req.params.id
+  const url = `https://metmuseum.org/api/Collection/additionalImages?crdId=${req.params.id}`
 
   fetch(url)
     .then(response => response.json())
-    .then(response => {
+    .then((response) => {
       res.json(response.results[0])
     })
-    .catch(err => res.json({ 'reponse': 'bad' }))
+    .catch(err => res.json({ response: 'bad', error: err }))
 })
 
 // Return 50 randomized public domain images from my copy of their database
@@ -59,14 +58,14 @@ server.get('/art/images', (req, res) => {
     { $match: { 'Is Public Domain': 'True' } },
     { $sample: { size: 50 } },
     { $project: {
-      'object_id': '$Object ID',
-      'department': '$Department',
-      'title': '$Title',
-      'artist': '$Artist Display Name',
-      'artist_bio': '$Artist Display Bio',
-      'date': '$Object Date',
-      'medium': '$Medium'
-    } }
+      object_id: '$Object ID',
+      department: '$Department',
+      title: '$Title',
+      artist: '$Artist Display Name',
+      artist_bio: '$Artist Display Bio',
+      date: '$Object Date',
+      medium: '$Medium',
+    } },
   ]).toArray((err, result) => {
     res.json(result)
   })
@@ -75,17 +74,17 @@ server.get('/art/images', (req, res) => {
 // Return 50 randomized public domain images based upon art department
 server.get('/art/images/:department', (req, res) => {
   db.collection('art_images').aggregate([
-    { $match: { 'Is Public Domain': 'True', 'Department': req.params.department } },
+    { $match: { 'Is Public Domain': 'True', Department: req.params.department } },
     { $dample: { size: 50 } },
     { $project: {
-      'object_id': '$Object ID',
-      'department': '$Department',
-      'title': '$Title',
-      'artist': '$Artist Display Name',
-      'artist_bio': '$Artist Display Bio',
-      'date': '$Object Date',
-      'medium': '$Medium'
-    } }
+      object_id: '$Object ID',
+      department: '$Department',
+      title: '$Title',
+      artist: '$Artist Display Name',
+      artist_bio: '$Artist Display Bio',
+      date: '$Object Date',
+      medium: '$Medium',
+    } },
   ]).toArray((err, result) => {
     res.json(result)
   })
@@ -104,11 +103,12 @@ const routes = [
   '/login',
   '/projects',
   '/projects/art',
-  '/resume'
+  '/resume',
 ]
 
-server.get('*', function (req, res) {
-  const match = routes.reduce((acc, route) => matchPath(req.url, route, { exact: true }) || acc, null)
+server.get('*', (req, res) => {
+  const match = routes.reduce((acc, route) =>
+    matchPath(req.url, route, { exact: true }) || acc, null)
 
   if (!match) {
     res.send('page not found')
@@ -116,21 +116,21 @@ server.get('*', function (req, res) {
   }
 
   fs.readFile(path.resolve(__dirname, 'index.html'), 'utf8', (err, htmlData) => {
-    let reactApp = renderToString(
+    const reactApp = renderToString(
       <StaticRouter context={{}} location={req.url}>
         <App />
-      </StaticRouter>
+      </StaticRouter>,
     )
-    let context = { body: reactApp }
-    let template = handlebars.compile(htmlData)
+    const context = { body: reactApp }
+    const template = handlebars.compile(htmlData)
     res.send(template(context))
   })
 })
 
-const serverConfig = server.listen(server.get('port'), function () {
+const serverConfig = server.listen(server.get('port'), () => {
   const host = serverConfig.address().address
   const port = serverConfig.address().port
-  const message = 'Express server running at: ' + host + ' on port ' + port
+  const message = `Express server running at: ${host} on port ${port}`
 
   console.log(message.red.underline)
 })

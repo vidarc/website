@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Card, Dimmer, Image, Loader } from 'semantic-ui-react'
 import { ArtInfo } from './'
 import placeholder from '../../../images/placeholder.png'
@@ -9,19 +10,19 @@ export default class ArtCard extends Component {
     super(props)
     this.state = {
       image: placeholder,
-      loading: true
+      loading: true,
     }
   }
 
   componentDidMount() {
-    let url = 'https://www.mattailes.net/art/image/' + this.props.art.object_id
+    const url = `https://www.mattailes.net/art/image/${this.props.art.object_id}`
 
     fetch(url)
       .then(response => response.json())
-      .then(response => {
+      .then((response) => {
         this.setState({
           image: response.webImageUrl,
-          loading: false
+          loading: false,
         })
       })
       .catch(err => this.setState({ loading: false }))
@@ -47,4 +48,8 @@ export default class ArtCard extends Component {
       </Card>
     )
   }
+}
+
+ArtCard.propTypes = {
+  art: PropTypes.object.isRequired,
 }

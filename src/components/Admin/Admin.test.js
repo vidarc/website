@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Admin from './'
 
-describe('Admin', function() {
+describe('Admin', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
 

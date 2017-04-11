@@ -3,13 +3,13 @@ import { Grid } from 'semantic-ui-react'
 import { NavbarMenu, NavbarSidebar } from './'
 import './Navbar.css'
 
-const Navbar = (props) => {
-  let links = [
-    { content: 'My Blog', to: '/blog' },
-    { content: 'About Page', to: '/about' },
-    { content: 'Projects', to: '/projects' },
-    { content: 'My Resume', to: '/resume' },
-    { content: 'Contact Me', to: '/contact' },
+const Navbar = () => {
+  const links = [
+    { id: 1, content: 'My Blog', to: '/blog' },
+    { id: 2, content: 'About Page', to: '/about' },
+    { id: 3, content: 'Projects', to: '/projects' },
+    { id: 4, content: 'My Resume', to: '/resume' },
+    { id: 5, content: 'Contact Me', to: '/contact' },
   ]
 
   return (

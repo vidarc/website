@@ -14,27 +14,27 @@ const routes = [
   {
     path: '/',
     component: Home,
-    exact: true
+    exact: true,
   },
   {
     path: '/about',
-    component: About
+    component: About,
   },
   {
     path: '/admin',
-    component: Admin
+    component: Admin,
   },
   {
     path: '/blog',
-    component: Blog
+    component: Blog,
   },
   {
     path: '/contact',
-    component: Contact
+    component: Contact,
   },
   {
     path: '/login',
-    component: Login
+    component: Login,
   },
   {
     path: '/projects',
@@ -42,18 +42,18 @@ const routes = [
     routes: [
       {
         path: '/projects/art',
-        component: Art
+        component: Art,
       },
       {
         path: '/projects/reddit',
-        component: Reddit
-      }
-    ]
+        component: Reddit,
+      },
+    ],
   },
   {
     path: '/resume',
-    component: Resume
-  }
+    component: Resume,
+  },
 ]
 
 export default routes

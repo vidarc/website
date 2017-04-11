@@ -30,21 +30,21 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        options: {
+        query: {
           presets: ['es2015', 'react', 'stage-0']
         }
       },
       {
         test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
         loader: 'url-loader',
-        options: {
+        query: {
           limit: 10000
         },
       },
       {
         test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.css$/],
         loader: 'file-loader',
-        options: {
+        query: {
           emitFile: false,
         },
       },

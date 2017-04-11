@@ -2,9 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { MemoryRouter } from 'react-router-dom'
 import Projects, { LinkList } from './'
-import Art, { ArtCard } from './Art'
+import Art, { ArtCard, ArtInfo } from './Art'
 
-describe('Projects', function() {
+describe('Projects', () => {
   it('renders main page without crashing', () => {
     const div = document.createElement('div')
     const routes = []
@@ -32,8 +32,8 @@ describe('Projects', function() {
   })
 })
 
-describe('Art from the Met', function() {
-  if('renders the main page without crashing', () => {
+describe('Art from the Met', () => {
+  it('renders the main page without crashing', () => {
     const div = document.createElement('div')
 
     ReactDOM.render((
@@ -51,11 +51,19 @@ describe('Art from the Met', function() {
       artist: 'an artist',
       artist_bio: 'a super intersted bio',
       date: 'date',
-      medium: 'steel'
+      medium: 'steel',
     }
 
     ReactDOM.render((
       <ArtCard art={data} />
+    ), div)
+  })
+
+  it('renders some art info without crashing', () => {
+    const div = document.createElement('div')
+
+    ReactDOM.render((
+      <ArtInfo title='some text' content='some content' />
     ), div)
   })
 })

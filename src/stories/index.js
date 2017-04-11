@@ -1,7 +1,7 @@
-import React from 'react';
-import { storiesOf, action, linkTo } from '@kadira/storybook';
+import React from 'react'
+import { storiesOf, action, linkTo } from '@kadira/storybook'
 import '../style/semantic/semantic.min.css'
-import Art, { ArtCard } from '../components/Projects/Art'
+import Art, { ArtCard, ArtInfo } from '../components/Projects/Art'
 
 const art = {
   object_id: '33',
@@ -10,7 +10,7 @@ const art = {
   artist: 'Matthew Ailes',
   artist_bio: 'A man living in Richmond, VA',
   date: 'September 25, 2017',
-  medium: 'Bronze'
+  medium: 'Bronze',
 }
 
 storiesOf('Met Museum Art', module)
@@ -19,4 +19,7 @@ storiesOf('Met Museum Art', module)
   ))
   .add('Art page', () => (
     <Art />
+  ))
+  .add('Art Info', () => (
+    <ArtInfo title='A Title' content='Some Content' />
   ))

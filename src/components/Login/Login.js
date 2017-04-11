@@ -5,9 +5,9 @@ import { LoginForm, SignupForm } from './'
 export default class Login extends Component {
 
   constructor(props) {
-    super()
+    super(props)
     this.state = {
-      form: 'login'
+      form: 'login',
     }
 
     this.changeForm = this.changeForm.bind(this)
@@ -15,7 +15,7 @@ export default class Login extends Component {
 
   changeForm(event) {
     this.setState({
-      form: event.target.name
+      form: event.target.name,
     })
   }
 

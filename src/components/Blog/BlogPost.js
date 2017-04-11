@@ -1,13 +1,18 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Header, Segment } from 'semantic-ui-react'
 
-const BlogPost = (props) => {
-  return (
-    <Segment color='blue'>
-      <Header content={props.post.title} subheader={props.post.date} />
-      <p>{props.post.body}</p>
-    </Segment>
-  )
+const BlogPost = ({ title, date, body }) => (
+  <Segment color='blue'>
+    <Header content={title} subheader={date} />
+    <p>{body}</p>
+  </Segment>
+)
+
+BlogPost.propTypes = {
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
 }
 
 export default BlogPost

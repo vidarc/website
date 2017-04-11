@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { MemoryRouter } from 'react-router-dom'
 import Home from './'
 
-describe('Home', function() {
+describe('Home', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
 
