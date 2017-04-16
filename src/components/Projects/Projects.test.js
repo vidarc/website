@@ -21,12 +21,16 @@ describe('Projects', () => {
     const data = {
       image: 'image-link',
       path: '/a/url/path',
-      description: 'a description'
+      description: 'a description',
     }
 
     ReactDOM.render((
       <MemoryRouter>
-        <LinkList link={data} />
+        <LinkList
+          image={data.image}
+          path={data.path}
+          description={data.description}
+        />
       </MemoryRouter>
     ), div)
   })

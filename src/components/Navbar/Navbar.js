@@ -14,12 +14,12 @@ const Navbar = () => {
 
   return (
     <Grid>
-      <Grid.Column width={16} className='computer tablet only'>
+      <Grid.Column width={16} className='computer only'>
         <Grid.Row>
           <NavbarMenu links={links} />
         </Grid.Row>
       </Grid.Column>
-      <Grid.Column width={16} className='mobile only'>
+      <Grid.Column width={16} className='mobile tablet only'>
         <Grid.Row>
           <NavbarSidebar links={links} />
         </Grid.Row>

@@ -1,12 +1,20 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { Image, List } from 'semantic-ui-react'
 
-export const LinkList = (props) => (
+const LinkList = props => (
   <List.Item>
-    <Image avatar src={props.link.image} />
+    <Image avatar src={props.image} />
     <List.Content>
-      <Link to={props.link.path}>{props.link.description}</Link>
+      <Link to={props.path}>{props.description}</Link>
     </List.Content>
   </List.Item>
 )
+export default LinkList
+
+LinkList.propTypes = {
+  image: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+}

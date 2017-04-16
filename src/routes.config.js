@@ -6,7 +6,7 @@ import Home from './components/Home'
 import Login from './components/Login'
 import Resume from './components/Resume'
 
-import Projects from './components/Projects'
+import Projects, { ProjectsEntry } from './components/Projects'
 import Art from './components/Projects/Art'
 import Reddit from './components/Projects/Reddit'
 
@@ -40,6 +40,11 @@ const routes = [
     path: '/projects',
     component: Projects,
     routes: [
+      {
+        path: '/projects',
+        component: ProjectsEntry,
+        exact: true,
+      },
       {
         path: '/projects/art',
         component: Art,

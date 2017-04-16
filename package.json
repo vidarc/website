@@ -18,7 +18,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
-    "flow-bin": "^0.43.1",
+    "flow-bin": "^0.44.0",
     "react-scripts": "^0.9.5",
     "semantic-ui": "^2.2.6",
     "webpack": "^1.14.0"
