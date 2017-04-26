@@ -1,14 +1,19 @@
 import React, { Component } from 'react'
 import { Form, Header, Icon, Segment } from 'semantic-ui-react'
-import Recaptcha from 'react-grecaptcha'
 
 export default class Contact extends Component {
 
   state = {
-    fname: '',
-    lname: '',
+    first_name: '',
+    last_name: '',
     email: '',
     message: ''
+  }
+
+  componentDidMount() {
+    window.grecaptcha.render('recaptcha', {
+      'sitekey': process.env.REACT_APP_RECAPTCHA_SITE
+    })
   }
 
   handleChange = (event) => {
@@ -17,12 +22,19 @@ export default class Contact extends Component {
     })
   }
 
-  expiredCallback = () => {
-    window.grecaptcha.reset()
-  }
+  onSubmit = (event) => {
+    event.preventDefault()
 
-  verifyCallback = (response) => {
-    console.log(response)
+    let payload = {
+      secret: process.env.REACT_APP_RECAPTCHA_SECRET,
+      response: window.grecaptcha.getResponse()
+    }
+    fetch('https://www.google.com/recaptcha/api/siteverify', {
+      method: 'POST',
+      body: payload
+    })
+      .then(response => response.json())
+      .catch(error => console.log(error))
   }
 
   render() {
@@ -36,20 +48,40 @@ export default class Contact extends Component {
         </Header>
         <Form>
           <Form.Group widths='equal'>
-            <Form.Input label='First Name' name='fname' value={this.state.fname} placeholder='First Name' onChange={this._handleChange} />
-            <Form.Input label='Last Name' name='lname' value={this.state.lname} placeholder='Last Name' onChange={this._handleChange} />
-          </Form.Group>
-          <Form.Input type='email' label='E-Mail Address' name='email' value={this.state.email} placeholder='E-Mail Address' onChange={this._handleChange} />
-          <Form.TextArea label='Message' name='message' value={this.state.message} placeholder='Message' onChange={this._handleChange} />
-          <Form.Group>
-            <Recaptcha
-              sitekey={process.env.REACT_APP_RECAPTCHA_SITE}
-              callback={this.verifyCallback}
-              expiredCallback={this.expiredCallback}
-              locale="en-US"
+            <Form.Input
+              label='First Name'
+              name='first_name'
+              value={this.state.first_name}
+              placeholder='First Name'
+              onChange={this.handleChange}
+            />
+            <Form.Input
+              label='Last Name'
+              name='last_name'
+              value={this.state.last_name}
+              placeholder='Last Name'
+              onChange={this.handleChange}
             />
           </Form.Group>
-          <Form.Button primary type='submit' content='Send Message' />
+          <Form.Input
+            type='email'
+            label='E-Mail Address'
+            name='email'
+            value={this.state.email}
+            placeholder='E-Mail Address'
+            onChange={this.handleChange}
+          />
+          <Form.TextArea
+            label='Message'
+            name='message'
+            value={this.state.message}
+            placeholder='Message'
+            onChange={this.handleChange}
+          />
+          <Form.Group>
+            <div id='recaptcha' />
+          </Form.Group>
+          <Form.Button primary type='submit' content='Send Message' onClick={this.onSubmit} />
         </Form>
       </Segment>
     )

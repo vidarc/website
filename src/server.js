@@ -12,7 +12,6 @@ import fetch from 'node-fetch'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter, matchPath } from 'react-router-dom'
-import Recaptcha from 'react-grecaptcha'
 import App from './components/App'
 
 const server = express()

@@ -5,6 +5,7 @@ import { LinkList } from './'
 import routeHelper from '../../utils/routeHelper'
 import metLogo from '../../images/the_met_logo.png'
 import reddit from '../../images/snoovatar.png'
+import youtube from '../../images/youtube_logo.png'
 import './Projects.css'
 
 const links = [
@@ -19,6 +20,12 @@ const links = [
     image: reddit,
     path: '/projects/reddit',
     description: 'Reddit API',
+  },
+  {
+    id: 3,
+    image: youtube,
+    path: '/projects/youtube',
+    description: 'YouTube API',
   },
 ]
 
