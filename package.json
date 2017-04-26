@@ -20,6 +20,7 @@
     "eslint-plugin-react": "^6.10.3",
     "flow-bin": "^0.44.0",
     "react-scripts": "^0.9.5",
+    "react-test-renderer": "^15.5.4",
     "semantic-ui": "^2.2.6",
     "webpack": "^1.14.0"
   },

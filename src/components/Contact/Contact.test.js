@@ -1,13 +1,15 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import Shallow from 'react-test-renderer/shallow'
 import Contact from './'
 
 describe('Contact', () => {
   it('renders without crashing', () => {
-    const div = document.createElement('div')
+    const renderer = Shallow.createRenderer()
 
-    ReactDOM.render((
-      <Contact />
-    ), div)
+    const component = renderer.render(
+      <Contact />,
+    )
+
+    expect(component).toMatchSnapshot()
   })
 })
