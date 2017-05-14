@@ -11,9 +11,9 @@
       "packaged": "../src/style/semantic/",
       "uncompressed": "../src/style/semantic/components/",
       "compressed": "../src/style/semantic/components/",
-      "themes": "dist/themes/"
+      "themes": "../src/style/semantic/themes/"
     },
-    "clean": "dist/"
+    "clean": "../src/style/semantic/"
   },
   "permission": false,
   "autoInstall": false,
