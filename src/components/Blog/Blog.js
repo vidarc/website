@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react'
 import { Dimmer, Loader, Segment } from 'semantic-ui-react'
 import moment from 'moment'

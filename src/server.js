@@ -8,11 +8,14 @@ import compression from 'compression'
 import fs from 'fs'
 import handlebars from 'handlebars'
 import fetch from 'node-fetch'
+import dotenv from 'dotenv'
 
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter, matchPath } from 'react-router-dom'
 import App from './components/App'
+
+dotenv.config()
 
 const server = express()
 
@@ -21,7 +24,13 @@ server.use(compression())
 server.use(express.static(path.resolve(`${__dirname}/`), { index: false }))
 server.use(logger('dev'))
 server.use(bodyParser.json())
-server.use(bodyParser.urlencoded({ extended: true }))
+server.use(bodyParser.urlencoded({ extended: false }))
+
+server.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  next()
+})
 
 let db
 const mongoClient = mongodb.MongoClient
@@ -86,6 +95,27 @@ server.get('/art/images/:department', (req, res) => {
     } },
   ]).toArray((err, result) => {
     res.json(result)
+  })
+})
+
+/************************************************
+* api for the contact form                      *
+* verify recaptcha then email it off            *
+************************************************/
+server.post('/email', (req, res) => {
+  fetch('https://www.google.com/recaptcha/api/siteverify', {
+    method: 'POST',
+    body: JSON.stringify({
+      secret: process.env.REACT_APP_RECAPTCHA_SECRET,
+      response: req.body.response,
+    }),
+  })
+    .then(response => response.json())
+    .then(jsonResponse => console.log(jsonResponse.success))
+    .catch(error => console.log(error))
+
+  res.json({
+    success: 'true',
   })
 })
 

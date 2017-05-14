@@ -26,14 +26,23 @@ export default class Contact extends Component {
     event.preventDefault()
 
     let payload = {
-      secret: process.env.REACT_APP_RECAPTCHA_SECRET,
-      response: window.grecaptcha.getResponse()
+      response: window.grecaptcha.getResponse(),
+      first_name: this.state.first_name,
+      last_name: this.state.last_name,
+      email: this.state.email,
+      message: this.state.message
     }
-    fetch('https://www.google.com/recaptcha/api/siteverify', {
+
+    fetch('http://localhost:3000/email', {
       method: 'POST',
-      body: payload
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload)
     })
       .then(response => response.json())
+      .then(response => console.log(response))
       .catch(error => console.log(error))
   }
 

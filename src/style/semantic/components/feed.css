@@ -39,7 +39,7 @@
       -ms-flex-direction: row;
           flex-direction: row;
   width: 100%;
-  padding: 0em;
+  padding: 0.21428571rem 0em;
   margin: 0em;
   background: none;
   border-top: none;
@@ -58,7 +58,7 @@
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  width: 3em;
+  width: 2.5em;
   height: auto;
   -ms-flex-item-align: stretch;
       -ms-grid-row-align: stretch;
@@ -70,10 +70,10 @@
   font-size: 1.5em;
   width: 100%;
   padding: 0.25em;
-  background: #2196F3;
+  background: none;
   border: none;
-  border-radius: 500rem;
-  color: #FFFFFF;
+  border-radius: none;
+  color: rgba(0, 0, 0, 0.6);
 }
 .ui.feed > .event > .label img {
   width: 100%;
@@ -81,7 +81,7 @@
   border-radius: 500rem;
 }
 .ui.feed > .event > .label + .content {
-  margin: 0.75em 0em 2em 0.75em;
+  margin: 0.5em 0em 0.35714286em 1.14285714em;
 }
 
 /*--------------
@@ -131,7 +131,7 @@
   margin: 0em;
   font-size: 1em;
   font-weight: bold;
-  color: #212121;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 /* Summary Image */
@@ -186,7 +186,7 @@
   margin: 0.5em 0em 0em;
   background: none;
   padding: 0em;
-  color: #212121;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 /* Images */
@@ -202,7 +202,7 @@
   border-left: none;
   font-size: 1em;
   max-width: 500px;
-  line-height: 1.33;
+  line-height: 1.4285em;
 }
 
 /*--------------
@@ -212,13 +212,12 @@
 .ui.feed > .event > .content .meta {
   display: inline-block;
   font-size: 0.85714286em;
-  margin: 1em 0em 0em;
-  background: #FFFFFF -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
-  background: #FFFFFF linear-gradient(transparent, rgba(0, 0, 0, 0.05));
-  border: 1px solid #D4D4D5;
-  border-radius: 0.25em;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  padding: 0.5em 1em;
+  margin: 0.5em 0em 0em;
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0em;
   color: rgba(0, 0, 0, 0.6);
 }
 .ui.feed > .event > .content .meta > * {
@@ -286,30 +285,9 @@
 
 
 /*******************************
-    User Variable Overrides
+         Theme Overrides
 *******************************/
 
-.ui.feed > .event .label {
-  border-left: 3px solid #DDDDDD;
-}
-.ui.feed > .event:last-child .label {
-  border-left-color: transparent;
-}
-.ui.feed > .event > .label {
-  margin-left: 1.6em;
-}
-.ui.feed > .event > .label > img,
-.ui.feed > .event > .label > .icon {
-  background-color: #009FDA;
-  border-radius: 500rem;
-  color: #FFFFFF;
-  width: 3rem;
-  height: 3rem;
-  line-height: 1.5;
-  left: -1.6rem;
-  opacity: 1;
-  position: relative;
-}
 
 
 /*******************************

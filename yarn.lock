@@ -2388,6 +2388,10 @@ dotenv@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-2.0.0.tgz#bd759c357aaa70365e01c96b7b0bec08a6e0d949"
 
+dotenv@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-4.0.0.tgz#864ef1379aced55ce6f95debecdce179f7a0cd1d"
+
 duplexer2@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/duplexer2/-/duplexer2-0.0.2.tgz#c614dcf67e2fb14995a91711e5a617e8a60a31db"
@@ -3135,9 +3139,9 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
-flow-bin@^0.44.0:
-  version "0.44.2"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.44.2.tgz#3893c7db5de043ed82674f327a04b1309db208b5"
+flow-bin@^0.46.0:
+  version "0.46.0"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.46.0.tgz#06ad7fe19dddb1042264438064a2a32fee12b872"
 
 for-in@^1.0.1:
   version "1.0.2"
@@ -3936,8 +3940,8 @@ ignore@^3.2.0:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.2.7.tgz#4810ca5f1d8eca5595213a34b94f2eb4ed926bbd"
 
 image-size@~0.5.0:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.5.1.tgz#28eea8548a4b1443480ddddc1e083ae54652439f"
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.5.3.tgz#5cbe9fafc8436386ceb7e9e3a9d90c5b71b70ad9"
 
 immutable@^3.8.1:
   version "3.8.1"
@@ -6922,7 +6926,7 @@ semantic-ui-react@^0.68.0:
     lodash "^4.17.2"
     prop-types "15.5.8"
 
-semantic-ui@^2.2.6:
+semantic-ui@^2.2.10:
   version "2.2.10"
   resolved "https://registry.yarnpkg.com/semantic-ui/-/semantic-ui-2.2.10.tgz#3849094b0f9d1518a2976304b7afc749f43c1d40"
   dependencies:
@@ -8109,8 +8113,8 @@ yallist@^2.0.0:
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-2.1.2.tgz#1c11f9218f076089a47dd512f93c6699a6a81d52"
 
 yamljs@^0.2.8:
-  version "0.2.9"
-  resolved "https://registry.yarnpkg.com/yamljs/-/yamljs-0.2.9.tgz#bd3bdaa62ac09deb2a2e1ce803eeb4217b52a82f"
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/yamljs/-/yamljs-0.2.10.tgz#481cc7c25ca73af59f591f0c96e3ce56c757a40f"
   dependencies:
     argparse "^1.0.7"
     glob "^7.0.5"

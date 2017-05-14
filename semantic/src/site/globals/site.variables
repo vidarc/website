@@ -1,10 +1,13 @@
 /*******************************
      User Global Variables
 *******************************/
-@fontSmoothing: antialiased;
 
-@fontName: 'Roboto', sans-serif;
+/*-------------------
+       Fonts
+--------------------*/
 
-@importGoogleFonts: true;
-@googleFontName: 'Roboto';
-@googleFontSizes: '300,400,700';
+@headerFont        : 'Fira Mono';
+@pageFont          : 'Fira Mono';
+@googleFontName    : 'Fira+Mono';
+
+@headerFontWeight  : 700;
