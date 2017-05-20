@@ -1,22 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Contact renders without crashing 1`] = `
 <Segment
-  stacked={true}>
+  stacked={true}
+>
   <Header
     as="h3"
     icon={true}
-    textAlign="center">
+    textAlign="center"
+  >
     <Icon
       as="i"
       circular={true}
-      name="mail outline" />
+      name="mail outline"
+    />
     <HeaderContent>
       Send Me a Message
     </HeaderContent>
   </Header>
   <Form
-    as="form">
+    as="form"
+  >
     <FormGroup
-      widths="equal">
+      widths="equal"
+    >
       <FormInput
         as={[Function]}
         control={[Function]}
@@ -24,7 +31,8 @@ exports[`Contact renders without crashing 1`] = `
         name="first_name"
         onChange={[Function]}
         placeholder="First Name"
-        value="" />
+        value=""
+      />
       <FormInput
         as={[Function]}
         control={[Function]}
@@ -32,7 +40,8 @@ exports[`Contact renders without crashing 1`] = `
         name="last_name"
         onChange={[Function]}
         placeholder="Last Name"
-        value="" />
+        value=""
+      />
     </FormGroup>
     <FormInput
       as={[Function]}
@@ -42,7 +51,8 @@ exports[`Contact renders without crashing 1`] = `
       onChange={[Function]}
       placeholder="E-Mail Address"
       type="email"
-      value="" />
+      value=""
+    />
     <FormTextArea
       as={[Function]}
       control={[Function]}
@@ -50,10 +60,12 @@ exports[`Contact renders without crashing 1`] = `
       name="message"
       onChange={[Function]}
       placeholder="Message"
-      value="" />
+      value=""
+    />
     <FormGroup>
       <div
-        id="recaptcha" />
+        id="recaptcha"
+      />
     </FormGroup>
     <FormButton
       as={[Function]}
@@ -61,7 +73,8 @@ exports[`Contact renders without crashing 1`] = `
       control={[Function]}
       onClick={[Function]}
       primary={true}
-      type="submit" />
+      type="submit"
+    />
   </Form>
 </Segment>
 `;

@@ -5,9 +5,16 @@ import { Dimmer, Loader, Segment } from 'semantic-ui-react'
 import moment from 'moment'
 import { BlogPost } from './'
 
-export default class Blog extends Component {
-  constructor(props) {
-    super(props)
+type State = {
+  loading: boolean
+}
+
+export default class Blog extends Component<void, void, State> {
+
+  state: State
+
+  constructor() {
+    super()
     this.state = {
       loading: true,
     }
