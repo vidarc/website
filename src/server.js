@@ -11,7 +11,6 @@ import fetch from 'node-fetch'
 import dotenv from 'dotenv'
 
 import React from 'react'
-import ReactDOMNodeStream from 'react-dom/node-stream'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter, matchPath } from 'react-router-dom'
 import App from './components/App'
