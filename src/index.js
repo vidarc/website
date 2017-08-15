@@ -9,11 +9,12 @@ import './style/main.css'
 import './style/semantic/semantic.min.css'
 
 function render(Component) {
-  ReactDOM.render((
+  ReactDOM.render(
     <BrowserRouter>
       <Component />
-    </BrowserRouter>
-  ), document.getElementById('root'))
+    </BrowserRouter>,
+    document.getElementById('root'),
+  )
   serviceWorker()
 }
 

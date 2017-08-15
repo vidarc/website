@@ -4,12 +4,11 @@ import { Link } from 'react-router-dom'
 import { Input, Menu } from 'semantic-ui-react'
 import { LoginButton } from '../Login'
 
-const processLinks = links => links.map(link => (
-  <Menu.Item key={link.id} content={link.content} as={Link} to={link.to} />
-))
+const processLinks = links =>
+  links.map(link => <Menu.Item key={link.id} content={link.content} as={Link} to={link.to} />)
 
-const NavbarMenu = props => (
-  <Menu stackable size='tiny'>
+const NavbarMenu = props =>
+  (<Menu stackable size='tiny'>
     <Menu.Item content='Home Page' as={Link} to='/' />
     {processLinks(props.links)}
     <Menu.Menu position='right'>
@@ -20,8 +19,7 @@ const NavbarMenu = props => (
         <LoginButton />
       </Menu.Item>
     </Menu.Menu>
-  </Menu>
-)
+  </Menu>)
 
 NavbarMenu.propTypes = {
   links: PropTypes.arrayOf(PropTypes.object).isRequired,

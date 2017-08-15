@@ -14,12 +14,6 @@ const art = {
 }
 
 storiesOf('Met Museum Art', module)
-  .add('Art card', () => (
-    <ArtCard art={art} />
-  ))
-  .add('Art page', () => (
-    <Art />
-  ))
-  .add('Art Info', () => (
-    <ArtInfo title='A Title' content='Some Content' />
-  ))
+  .add('Art card', () => <ArtCard art={art} />)
+  .add('Art page', () => <Art />)
+  .add('Art Info', () => <ArtInfo title='A Title' content='Some Content' />)

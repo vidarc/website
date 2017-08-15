@@ -9,11 +9,12 @@ describe('Projects', () => {
     const div = document.createElement('div')
     const routes = []
 
-    ReactDOM.render((
+    ReactDOM.render(
       <MemoryRouter>
         <Projects routes={routes} />
-      </MemoryRouter>
-    ), div)
+      </MemoryRouter>,
+      div,
+    )
   })
 
   it('renders a listed link without crashing', () => {
@@ -24,15 +25,12 @@ describe('Projects', () => {
       description: 'a description',
     }
 
-    ReactDOM.render((
+    ReactDOM.render(
       <MemoryRouter>
-        <LinkList
-          image={data.image}
-          path={data.path}
-          description={data.description}
-        />
-      </MemoryRouter>
-    ), div)
+        <LinkList image={data.image} path={data.path} description={data.description} />
+      </MemoryRouter>,
+      div,
+    )
   })
 })
 
@@ -40,9 +38,7 @@ describe('Art from the Met', () => {
   it('renders the main page without crashing', () => {
     const div = document.createElement('div')
 
-    ReactDOM.render((
-      <Art />
-    ), div)
+    ReactDOM.render(<Art />, div)
   })
 
   it('renders the art card without crashing', () => {
@@ -58,16 +54,12 @@ describe('Art from the Met', () => {
       medium: 'steel',
     }
 
-    ReactDOM.render((
-      <ArtCard art={data} />
-    ), div)
+    ReactDOM.render(<ArtCard art={data} />, div)
   })
 
   it('renders some art info without crashing', () => {
     const div = document.createElement('div')
 
-    ReactDOM.render((
-      <ArtInfo title='some text' content='some content' />
-    ), div)
+    ReactDOM.render(<ArtInfo title='some text' content='some content' />, div)
   })
 })

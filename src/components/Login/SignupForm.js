@@ -2,18 +2,17 @@ import React, { Component } from 'react'
 import { Button, Form } from 'semantic-ui-react'
 
 export default class SignupForm extends Component {
-
   constructor(props) {
     super()
     this.state = {
-      form: 'login'
+      form: 'login',
     }
   }
 
   componentDidMount() {
     window.grecaptcha.render('recaptcha', {
       sitekey: process.env.REACT_APP_RECAPTCHA_SITE,
-      callback: this.verifyCallback
+      callback: this.verifyCallback,
     })
   }
 
@@ -24,14 +23,13 @@ export default class SignupForm extends Component {
 
     let body = {
       secret: process.env.REACT_APP_RECAPTCHA_SECRET,
-      response: formData['g-recaptcha-response']
+      response: formData['g-recaptcha-response'],
     }
 
     fetch('https://www.google.com/recaptcha/api/siteverify', {
       method: 'post',
-      body: body
-    })
-    .then(function(response) {
+      body: body,
+    }).then(function(response) {
       console.log(response)
     })
   }
@@ -40,19 +38,37 @@ export default class SignupForm extends Component {
     return (
       <Form onSubmit={this.handleClick}>
         <Form.Field>
-          <Form.Input icon='user' iconPosition='left' type='email' name='email' placeholder='Email Address...' />
+          <Form.Input
+            icon="user"
+            iconPosition="left"
+            type="email"
+            name="email"
+            placeholder="Email Address..."
+          />
         </Form.Field>
         <Form.Field>
-          <Form.Input icon='user' iconPosition='left' type='text' name='username' placeholder='Username...' />
+          <Form.Input
+            icon="user"
+            iconPosition="left"
+            type="text"
+            name="username"
+            placeholder="Username..."
+          />
         </Form.Field>
         <Form.Field>
-          <Form.Input icon='lock' iconPosition='left' type='password' name='password' placeholder='Password...' />
+          <Form.Input
+            icon="lock"
+            iconPosition="left"
+            type="password"
+            name="password"
+            placeholder="Password..."
+          />
         </Form.Field>
         <Form.Field>
-          <div id='recaptcha' />
+          <div id="recaptcha" />
         </Form.Field>
         <Form.Field>
-          <Button fluid primary icon='checkmark box' />
+          <Button fluid primary icon="checkmark box" />
         </Form.Field>
       </Form>
     )

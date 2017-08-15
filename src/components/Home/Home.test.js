@@ -7,10 +7,11 @@ describe('Home', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
 
-    ReactDOM.render((
+    ReactDOM.render(
       <MemoryRouter>
         <Home />
-      </MemoryRouter>
-    ), div)
+      </MemoryRouter>,
+      div,
+    )
   })
 })

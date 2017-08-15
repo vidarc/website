@@ -5,7 +5,6 @@ import { ArtInfo } from './'
 import placeholder from '../../../images/placeholder.png'
 
 export default class ArtCard extends Component {
-
   constructor(props) {
     super(props)
     this.state = {

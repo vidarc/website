@@ -6,10 +6,9 @@ import './Art.css'
 const api = 'https://www.mattailes.net/art/images'
 
 export default class Art extends Component {
-
   state = {
     artArray: [],
-    loading: true
+    loading: true,
   }
 
   componentDidMount() {
@@ -23,12 +22,10 @@ export default class Art extends Component {
     const { loading } = this.state
 
     return (
-      <Container className='artContainer'>
-        <Loader active={loading} content='Loading the Art' />
-        <Card.Group className='cardGroup'>
-          {this.state.artArray.map((art) => (
-            <ArtCard key={art.id} art={art} />
-          ))}
+      <Container className="artContainer">
+        <Loader active={loading} content="Loading the Art" />
+        <Card.Group className="cardGroup">
+          {this.state.artArray.map(art => <ArtCard key={art.id} art={art} />)}
         </Card.Group>
       </Container>
     )

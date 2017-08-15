@@ -11,6 +11,7 @@ import fetch from 'node-fetch'
 import dotenv from 'dotenv'
 
 import React from 'react'
+import ReactDOMNodeStream from 'react-dom/node-stream'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter, matchPath } from 'react-router-dom'
 import App from './components/App'
@@ -42,11 +43,11 @@ mongoClient.connect('mongodb://localhost:27017/website', (err, database) => {
   }
 })
 
-/************************************************
+/** **********************************************
 * My api for the Met Museum Public Domain art   *
 * database. Work around using their APIs and a  *
 * database running on MongoDB                   *
-************************************************/
+*********************************************** */
 // Get the image I can use based on the image ID
 // Returns a JSON object with a image url I can use
 server.get('/art/image/:id', (req, res) => {
@@ -62,46 +63,56 @@ server.get('/art/image/:id', (req, res) => {
 
 // Return 50 randomized public domain images from my copy of their database
 server.get('/art/images', (req, res) => {
-  db.collection('art_images').aggregate([
-    { $match: { 'Is Public Domain': 'True' } },
-    { $sample: { size: 50 } },
-    { $project: {
-      object_id: '$Object ID',
-      department: '$Department',
-      title: '$Title',
-      artist: '$Artist Display Name',
-      artist_bio: '$Artist Display Bio',
-      date: '$Object Date',
-      medium: '$Medium',
-    } },
-  ]).toArray((err, result) => {
-    res.json(result)
-  })
+  db
+    .collection('art_images')
+    .aggregate([
+      { $match: { 'Is Public Domain': 'True' } },
+      { $sample: { size: 50 } },
+      {
+        $project: {
+          object_id: '$Object ID',
+          department: '$Department',
+          title: '$Title',
+          artist: '$Artist Display Name',
+          artist_bio: '$Artist Display Bio',
+          date: '$Object Date',
+          medium: '$Medium',
+        },
+      },
+    ])
+    .toArray((err, result) => {
+      res.json(result)
+    })
 })
 
 // Return 50 randomized public domain images based upon art department
 server.get('/art/images/:department', (req, res) => {
-  db.collection('art_images').aggregate([
-    { $match: { 'Is Public Domain': 'True', Department: req.params.department } },
-    { $dample: { size: 50 } },
-    { $project: {
-      object_id: '$Object ID',
-      department: '$Department',
-      title: '$Title',
-      artist: '$Artist Display Name',
-      artist_bio: '$Artist Display Bio',
-      date: '$Object Date',
-      medium: '$Medium',
-    } },
-  ]).toArray((err, result) => {
-    res.json(result)
-  })
+  db
+    .collection('art_images')
+    .aggregate([
+      { $match: { 'Is Public Domain': 'True', Department: req.params.department } },
+      { $dample: { size: 50 } },
+      {
+        $project: {
+          object_id: '$Object ID',
+          department: '$Department',
+          title: '$Title',
+          artist: '$Artist Display Name',
+          artist_bio: '$Artist Display Bio',
+          date: '$Object Date',
+          medium: '$Medium',
+        },
+      },
+    ])
+    .toArray((err, result) => {
+      res.json(result)
+    })
 })
 
-/************************************************
+/** **********************************************
 * api for the contact form                      *
 * verify recaptcha then email it off            *
-************************************************/
+*********************************************** */
 server.post('/email', (req, res) => {
   fetch('https://www.google.com/recaptcha/api/siteverify', {
     method: 'POST',
@@ -119,10 +130,10 @@ server.post('/email', (req, res) => {
   })
 })
 
-/************************************************
+/** **********************************************
 * Server routing using React Router server side *
 * rendering.                                    *
-************************************************/
+*********************************************** */
 const routes = [
   '',
   '/about',
@@ -136,8 +147,10 @@ const routes = [
 ]
 
 server.get('*', (req, res) => {
-  const match = routes.reduce((acc, route) =>
-    matchPath(req.url, route, { exact: true }) || acc, null)
+  const match = routes.reduce(
+    (acc, route) => matchPath(req.url, route, { exact: true }) || acc,
+    null,
+  )
 
   if (!match) {
     res.send('page not found')

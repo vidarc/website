@@ -3,7 +3,6 @@ import { Button, Divider, Grid, Icon, Segment } from 'semantic-ui-react'
 import { LoginForm, SignupForm } from './'
 
 export default class Login extends Component {
-
   constructor(props) {
     super(props)
     this.state = {

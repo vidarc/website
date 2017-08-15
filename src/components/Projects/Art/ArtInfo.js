@@ -5,11 +5,15 @@ const style = {
   fontWeight: 'bold',
 }
 
-const ArtInfo = ({ title, content }) => (
+const ArtInfo = ({ title, content }) =>
   content
-    ? <div><span style={style}>{title}: </span>{content}</div>
+    ? <div>
+      <span style={style}>
+        {title}:{' '}
+      </span>
+      {content}
+    </div>
     : null
-)
 export default ArtInfo
 
 ArtInfo.propTypes = {
