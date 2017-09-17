@@ -24,7 +24,7 @@ export default class ArtCard extends Component {
           loading: false,
         })
       })
-      .catch(err => this.setState({ loading: false }))
+      .catch(() => this.setState({ loading: false }))
   }
 
   render() {

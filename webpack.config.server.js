@@ -3,7 +3,6 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
-
   entry: path.resolve('src/server.js'),
 
   output: {
@@ -13,12 +12,13 @@ module.exports = {
   target: 'node',
 
   // keep node_module paths out of the bundle
-  externals: fs.readdirSync(path.resolve('node_modules')).concat([
-    'react-dom/server',
-  ]).reduce((ext, mod) => {
-    ext[mod] = `commonjs ${mod}`
-    return ext
-  }, {}),
+  externals: fs
+    .readdirSync(path.resolve('node_modules'))
+    .concat(['react-dom/server'])
+    .reduce((ext, mod) => {
+      ext[mod] = `commonjs ${mod}`
+      return ext
+    }, {}),
 
   node: {
     __dirname: false,
