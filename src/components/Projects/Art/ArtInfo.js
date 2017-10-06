@@ -6,14 +6,12 @@ const style = {
 }
 
 const ArtInfo = ({ title, content }) =>
-  content
-    ? <div>
-      <span style={style}>
-        {title}:{' '}
-      </span>
+  (content ? (
+    <div>
+      <span style={style}>{title}: </span>
       {content}
     </div>
-    : null
+  ) : null)
 export default ArtInfo
 
 ArtInfo.propTypes = {

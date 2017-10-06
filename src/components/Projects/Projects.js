@@ -29,22 +29,23 @@ const links = [
   },
 ]
 
-const Projects = ({ routes }) =>
-  (<Container fluid className='projectsContainer'>
+const Projects = ({ routes }) => (
+  <Container fluid className='projectsContainer'>
     <Container fluid textAlign='center' className='linkContainer'>
       <List celled horizontal relaxed>
-        {links.map(link =>
-          (<LinkList
+        {links.map(link => (
+          <LinkList
             key={link.id}
             image={link.image}
             path={link.path}
             description={link.description}
-          />),
-        )}
+          />
+        ))}
       </List>
     </Container>
     {routeHelper(routes)}
-  </Container>)
+  </Container>
+)
 
 Projects.propTypes = {
   routes: PropTypes.arrayOf(PropTypes.object).isRequired,

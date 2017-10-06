@@ -9,10 +9,6 @@ export default class Admin extends Component {
   }
 
   render() {
-    return (
-      <Segment piled>
-        {this.state.content}
-      </Segment>
-    )
+    return <Segment piled>{this.state.content}</Segment>
   }
 }

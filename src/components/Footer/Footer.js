@@ -2,8 +2,8 @@ import React from 'react'
 import { Grid, Segment } from 'semantic-ui-react'
 import { LeftSide, RightSide } from './'
 
-const Footer = () =>
-  (<Segment inverted color='blue' secondary>
+const Footer = () => (
+  <Segment inverted color='blue' secondary>
     <Grid stackable columns={4}>
       <Grid.Column />
       <Grid.Column>
@@ -14,6 +14,7 @@ const Footer = () =>
       </Grid.Column>
       <Grid.Column />
     </Grid>
-  </Segment>)
+  </Segment>
+)
 
 export default Footer

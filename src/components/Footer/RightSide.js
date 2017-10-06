@@ -9,20 +9,21 @@ const socials = [
   { key: 5, name: 'twitter', link: 'https://twitter.com/mattailes' },
 ]
 
-const RightSide = () =>
-  (<div>
+const RightSide = () => (
+  <div>
     <Header sub dividing inverted>
       <Icon name='users' />
       <Header.Content>Connect With Me</Header.Content>
     </Header>
-    {socials.map(social =>
-      (<Button
+    {socials.map(social => (
+      <Button
         key={social.key}
         color={social.name === 'lastfm' ? 'red' : social.name}
         circular
         icon={social.name}
-      />),
-    )}
-  </div>)
+      />
+    ))}
+  </div>
+)
 
 export default RightSide

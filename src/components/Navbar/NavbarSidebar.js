@@ -12,9 +12,9 @@ export default class NavbarSidebar extends Component {
   toggleVisibility = () => this.setState({ visible: !this.state.visible })
 
   processLinks(links) {
-    return links.map((link, index) =>
-      <Menu.Item key={index} content={link.content} as={Link} to={link.to} />,
-    )
+    return links.map((link, index) => (
+      <Menu.Item key={index} content={link.content} as={Link} to={link.to} />
+    ))
   }
 
   render() {

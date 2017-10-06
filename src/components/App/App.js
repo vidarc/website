@@ -7,11 +7,12 @@ import routeConfig from '../../routes.config'
 import Navbar from '../Navbar'
 import Footer from '../Footer'
 
-const App = () =>
-  (<Container className='flex-container'>
+const App = () => (
+  <Container className='flex-container'>
     <Navbar />
     {routeHelper(routeConfig)}
     <Footer />
-  </Container>)
+  </Container>
+)
 
 export default App

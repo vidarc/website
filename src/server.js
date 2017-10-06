@@ -11,7 +11,7 @@ import fetch from 'node-fetch'
 import dotenv from 'dotenv'
 
 import React from 'react'
-import { renderToString } from 'react-dom/server'
+import ReactDOMServer from 'react-dom/server'
 import { StaticRouter, matchPath } from 'react-router-dom'
 import App from './components/App'
 
@@ -157,7 +157,7 @@ server.get('*', (req, res) => {
   }
 
   fs.readFile(path.resolve(__dirname, 'index.html'), 'utf8', (err, htmlData) => {
-    const reactApp = renderToString(
+    const reactApp = ReactDOMServer.renderToString(
       <StaticRouter context={{}} location={req.url}>
         <App />
       </StaticRouter>,

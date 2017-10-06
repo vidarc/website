@@ -1,8 +1,9 @@
 import React from 'react'
 import { Container } from 'semantic-ui-react'
 
-const ProjectsEntry = () =>
-  (<Container>
+const ProjectsEntry = () => (
+  <Container>
     <p>Some kind of content will go here</p>
-  </Container>)
+  </Container>
+)
 export default ProjectsEntry

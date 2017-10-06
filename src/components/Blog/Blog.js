@@ -74,13 +74,14 @@ export default class Blog extends Component<void, void, State> {
           </Dimmer>
         </Segment>
       )
+    } else {
+      return (
+        <div>
+          {posts.map(post => (
+            <BlogPost key={post.id} title={post.title} date={post.date} body={post.body} />
+          ))}
+        </div>
+      )
     }
-    return (
-      <div>
-        {posts.map(post =>
-          <BlogPost key={post.id} title={post.title} date={post.date} body={post.body} />,
-        )}
-      </div>
-    )
   }
 }
