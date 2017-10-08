@@ -1,7 +1,7 @@
-const url = 'https://www.mattailes.net/art/images'
+import { RANDOM_ART_COLLECTION_API_URL } from '../utils/constants'
 
-export function getRandomArt() {
-  return fetch(url)
+export default function getRandomArt() {
+  return fetch(RANDOM_ART_COLLECTION_API_URL)
     .then(response => response.json())
     .catch(error => console.log(error))
 }

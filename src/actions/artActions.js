@@ -1,4 +1,4 @@
-import { getRandomArt } from '../api/artApi'
+import getRandomArt from '../api/artApi'
 import * as types from './actionTypes'
 
 export function loadRandomArtSuccess(randomArtCollection) {

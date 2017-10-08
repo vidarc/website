@@ -14,7 +14,7 @@ class Art extends Component {
   render() {
     return (
       <Container className='artContainer'>
-        {/* <Loader active={loading} content='Loading the Art' /> */}
+        <Loader active={this.props.randomArtCollection.length === 0} content='Loading the Art' />
         <Card.Group className='cardGroup'>
           {this.props.randomArtCollection.map(art => <ArtCard key={art.object_id} art={art} />)}
         </Card.Group>
