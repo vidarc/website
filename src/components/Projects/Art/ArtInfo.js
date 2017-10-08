@@ -15,7 +15,7 @@ const ArtInfo = ({ title, content }) =>
 export default ArtInfo
 
 ArtInfo.propTypes = {
-  content: PropTypes.string,
+  content: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   title: PropTypes.string,
 }
 
