@@ -3,26 +3,32 @@
 import React from 'react'
 import { hydrate } from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
 import App from './components/App'
 import serviceWorker from './serviceWorker'
 import './style/main.css'
 import './style/semantic/semantic.min.css'
 
-function render(Component) {
+const appStore = createStore(App)
+
+function render(Component, store) {
   hydrate(
-    <BrowserRouter>
-      <Component />
-    </BrowserRouter>,
+    <Provider store={store}>
+      <BrowserRouter>
+        <Component />
+      </BrowserRouter>
+    </Provider>,
     document.getElementById('root'),
   )
   serviceWorker()
 }
 
-render(App)
+render(App, appStore)
 
 if (module.hot) {
   module.hot.accept('./components/App', () => {
     const Next = require('./components/App').default
-    render(Next)
+    render(Next, appStore)
   })
 }
