@@ -4,13 +4,14 @@ import React from 'react'
 import { hydrate } from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import configureStore from './store/configureStore'
+import { loadRandomArt } from './actions/artActions'
 import App from './components/App'
 import serviceWorker from './serviceWorker'
 import './style/main.css'
 import './style/semantic/semantic.min.css'
 
-const appStore = createStore(App)
+const store = configureStore()
 
 function render(Component, store) {
   hydrate(
@@ -24,11 +25,11 @@ function render(Component, store) {
   serviceWorker()
 }
 
-render(App, appStore)
+render(App)
 
 if (module.hot) {
   module.hot.accept('./components/App', () => {
     const Next = require('./components/App').default
-    render(Next, appStore)
+    render(Next)
   })
 }
