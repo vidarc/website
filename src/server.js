@@ -11,7 +11,7 @@ import fetch from 'node-fetch'
 import dotenv from 'dotenv'
 
 import React from 'react'
-import ReactDOMServer from 'react-dom/server'
+import { renderToString } from 'react-dom/server'
 import { StaticRouter, matchPath } from 'react-router-dom'
 import App from './components/App'
 
@@ -157,11 +157,9 @@ server.get('*', (req, res) => {
   }
 
   fs.readFile(path.resolve(__dirname, 'index.html'), 'utf8', (err, htmlData) => {
-    const reactApp = ReactDOMServer.renderToString(
-      <StaticRouter context={{}} location={req.url}>
-        <App />
-      </StaticRouter>,
-    )
+    const reactApp = renderToString(<StaticRouter context={{}} location={req.url}>
+      <App />
+    </StaticRouter>)
     const context = { body: reactApp }
     const template = handlebars.compile(htmlData)
     res.send(template(context))
@@ -169,8 +167,7 @@ server.get('*', (req, res) => {
 })
 
 const serverConfig = server.listen(server.get('port'), () => {
-  const host = serverConfig.address().address
-  const port = serverConfig.address().port
+  const { host, port } = serverConfig.address()
   const message = `Express server running at: ${host} on port ${port}`
 
   console.log(message.red.underline)
