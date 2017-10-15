@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { hydrate } from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import App from './components/App'
 import serviceWorker from './serviceWorker'
@@ -9,7 +9,7 @@ import './style/main.css'
 import './style/semantic/semantic.min.css'
 
 function render(Component) {
-  ReactDOM.render(
+  hydrate(
     <BrowserRouter>
       <Component />
     </BrowserRouter>,
