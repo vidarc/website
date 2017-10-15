@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import randomArtCollection from './artReducer'
+import artReducer from './artReducer'
 
 const rootReducer = combineReducers({
-  randomArtCollection,
+  artReducer,
 })
 
 export default rootReducer

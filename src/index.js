@@ -12,7 +12,7 @@ import './style/semantic/semantic.min.css'
 
 const store = configureStore()
 
-function render(Component, store) {
+function render(Component) {
   hydrate(
     <Provider store={store}>
       <BrowserRouter>

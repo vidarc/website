@@ -1,3 +1,6 @@
 export default {
-  randomArtCollection: [],
+  randomArt: {
+    isLoading: false,
+    collection: [],
+  },
 }

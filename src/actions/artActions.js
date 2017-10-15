@@ -1,16 +1,27 @@
-import getRandomArt from '../api/artApi'
 import * as types from './actionTypes'
+import { RANDOM_ART_COLLECTION_API_URL } from '../utils/constants'
 
-export function loadRandomArtSuccess(randomArtCollection) {
+export function requestRandomArt() {
   return {
-    type: types.LOAD_RANDOM_ART_SUCCESS,
-    randomArtCollection,
+    type: types.REQUEST_RANDOM_ART,
   }
 }
 
-export function loadRandomArt() {
-  return dispatch =>
-    getRandomArt()
-      .then(randomArtCollection => dispatch(loadRandomArtSuccess(randomArtCollection)))
-      .catch(error => console.log(error))
+export function loadRandomArt(collection) {
+  return {
+    type: types.LOAD_RANDOM_ART,
+    randomArt: {
+      isLoading: false,
+      collection,
+    },
+  }
+}
+
+export function fetchRandomArt() {
+  return (dispatch) => {
+    dispatch(requestRandomArt())
+    return fetch(RANDOM_ART_COLLECTION_API_URL)
+      .then(response => response.json())
+      .then(json => dispatch(loadRandomArt(json)))
+  }
 }
