@@ -5,16 +5,12 @@ export default function artReducer(state = initialState.randomArt, action) {
   switch (action.type) {
     case types.REQUEST_RANDOM_ART:
       return Object.assign({}, state, {
-        randomArt: {
-          isLoading: true,
-        },
+        isLoading: true,
       })
     case types.LOAD_RANDOM_ART:
       return Object.assign({}, state, {
-        randomArt: {
-          isLoading: false,
-          collection: action.collection,
-        },
+        isLoading: false,
+        collection: action.collection,
       })
     default:
       return state

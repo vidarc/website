@@ -30,10 +30,8 @@ describe('artReducer', () => {
       },
     ]
     const expectedState = {
-      randomArt: {
-        isLoading: false,
-        collection,
-      },
+      isLoading: false,
+      collection,
     }
 
     expect(artReducer(undefined, { type: types.LOAD_RANDOM_ART, collection })).toEqual(expectedState)

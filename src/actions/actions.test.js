@@ -20,16 +20,17 @@ describe('artActions', () => {
       })
 
     const expectedActions = [
-      { type: types.REQUEST_RANDOM_ART },
+      {
+        type: types.REQUEST_RANDOM_ART,
+        isLoading: true,
+      },
       {
         type: types.LOAD_RANDOM_ART,
-        randomArt: {
-          isLoading: false,
-          collection: [{ collection: 1, title: 'title one' }, { collection: 2, title: 'title two' }],
-        },
+        isLoading: false,
+        collection: [{ collection: 1, title: 'title one' }, { collection: 2, title: 'title two' }],
       },
     ]
-    const store = mockStore({ randomArt: { isLoading: false, collection: [] } })
+    const store = mockStore({ isLoading: false, collection: [] })
 
     return store.dispatch(artActions.fetchRandomArt()).then(() => {
       expect(store.getActions()).toEqual(expectedActions)
