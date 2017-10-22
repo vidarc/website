@@ -49,24 +49,26 @@ mongoClient.connect('mongodb://localhost:27017/website', (err, database) => {
 *********************************************** */
 // Get the image I can use based on the image ID
 // Returns a JSON object with a image url I can use
-server.get('/art/image/:id', (req, res) => {
-  const url = `https://metmuseum.org/api/Collection/additionalImages?crdId=${req.params.id}`
+function getImage(id) {
+  const url = `https://metmuseum.org/api/Collection/additionalImages?crdId=${id}`
 
-  fetch(url)
+  return fetch(url)
     .then(response => response.json())
-    .then((response) => {
-      res.json(response.results[0])
-    })
-    .catch(err => res.json({ response: 'bad', error: err }))
+    .then(response => response.results[0])
+    .catch(err => console.log(err))
+}
+
+server.get('/art/image/:id', (req, res) => {
+  res.send(getImage(req.params.id))
 })
 
-// Return 50 randomized public domain images from my copy of their database
+// Return 15 randomized public domain images from my copy of their database
 server.get('/art/images', (req, res) => {
   db
     .collection('art_images')
     .aggregate([
       { $match: { 'Is Public Domain': 'True' } },
-      { $sample: { size: 50 } },
+      { $sample: { size: 15 } },
       {
         $project: {
           object_id: '$Object ID',
@@ -80,17 +82,18 @@ server.get('/art/images', (req, res) => {
       },
     ])
     .toArray((err, result) => {
+      result.map(art => Object.assign(art, { image_url: getImage(art.object_id) }))
       res.json(result)
     })
 })
 
-// Return 50 randomized public domain images based upon art department
+// Return 15 randomized public domain images based upon art department
 server.get('/art/images/:department', (req, res) => {
   db
     .collection('art_images')
     .aggregate([
       { $match: { 'Is Public Domain': 'True', Department: req.params.department } },
-      { $dample: { size: 50 } },
+      { $dample: { size: 15 } },
       {
         $project: {
           object_id: '$Object ID',
@@ -133,23 +136,10 @@ server.post('/email', (req, res) => {
 * Server routing using React Router server side *
 * rendering.                                    *
 *********************************************** */
-const routes = [
-  '',
-  '/about',
-  '/admin',
-  '/blog',
-  '/contact',
-  '/login',
-  '/projects',
-  '/projects/art',
-  '/resume',
-]
+const routes = ['', '/about', '/admin', '/blog', '/contact', '/login', '/projects', '/projects/art', '/resume']
 
 server.get('*', (req, res) => {
-  const match = routes.reduce(
-    (acc, route) => matchPath(req.url, route, { exact: true }) || acc,
-    null,
-  )
+  const match = routes.reduce((acc, route) => matchPath(req.url, route, { exact: true }) || acc, null)
 
   if (!match) {
     res.send('page not found')
@@ -159,7 +149,7 @@ server.get('*', (req, res) => {
   fs.readFile(path.resolve(__dirname, 'index.html'), 'utf8', (err, htmlData) => {
     const reactApp = renderToString(<StaticRouter context={{}} location={req.url}>
       <App />
-    </StaticRouter>)
+                                    </StaticRouter>)
     const context = { body: reactApp }
     const template = handlebars.compile(htmlData)
     res.send(template(context))
