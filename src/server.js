@@ -54,12 +54,12 @@ function getImage(id) {
 
   return fetch(url)
     .then(response => response.json())
-    .then(response => response.results[0])
+    .then(response => response.results[0].imageUrl)
     .catch(err => console.log(err))
 }
 
 server.get('/art/image/:id', (req, res) => {
-  res.send(getImage(req.params.id))
+  getImage(req.params.id).then(response => res.send(response))
 })
 
 // Return 15 randomized public domain images from my copy of their database
@@ -82,7 +82,7 @@ server.get('/art/images', (req, res) => {
       },
     ])
     .toArray((err, result) => {
-      result.map(art => Object.assign(art, { image_url: getImage(art.object_id) }))
+      result.map(art => Object.assign(art, { image_url: getImage(art.object_id).then(response => response) }))
       res.json(result)
     })
 })
