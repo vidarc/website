@@ -14,9 +14,9 @@ class Art extends Component {
   render() {
     return (
       <Container className='artContainer'>
-        <Loader active={this.props.randomArtCollection.length === 0} content='Loading the Art' />
+        <Loader active={this.props.collection.length === 0} content='Loading the Art' />
         <Card.Group className='cardGroup'>
-          {this.props.randomArtCollection.map(art => <ArtCard key={art.object_id} art={art} />)}
+          {this.props.collection.map(art => <ArtCard key={art.object_id} art={art} />)}
         </Card.Group>
       </Container>
     )
@@ -24,23 +24,21 @@ class Art extends Component {
 }
 
 Art.propTypes = {
-  randomArtCollection: PropTypes.arrayOf(
-    PropTypes.shape({
-      object_id: PropTypes.number.isRequired,
-      department: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      artist: PropTypes.string.isRequired,
-      artist_bio: PropTypes.string.isRequired,
-      date: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-      medium: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
+  collection: PropTypes.arrayOf(PropTypes.shape({
+    object_id: PropTypes.number.isRequired,
+    department: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    artist: PropTypes.string.isRequired,
+    artist_bio: PropTypes.string.isRequired,
+    date: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    medium: PropTypes.string.isRequired,
+  })).isRequired,
   dispatch: PropTypes.func.isRequired,
 }
 
 function mapStateToProps(state, props) {
   return {
-    randomArtCollection: state.randomArtCollection,
+    collection: state.randomArt.collection,
   }
 }
 
