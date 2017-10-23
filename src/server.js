@@ -64,7 +64,7 @@ server.get('/art/image/:id', (req, res) => {
 
 // Return 15 randomized public domain images from my copy of their database
 server.get('/art/images', (req, res) => {
-  db
+  const collection = db
     .collection('art_images')
     .aggregate([
       { $match: { 'Is Public Domain': 'True' } },
@@ -81,10 +81,10 @@ server.get('/art/images', (req, res) => {
         },
       },
     ])
-    .toArray((err, result) => {
-      result.map(art => Object.assign(art, { image_url: getImage(art.object_id).then(response => response) }))
-      res.json(result)
-    })
+    .toArray((err, result) =>
+      result.map(art => Object.assign(art, { image_url: getImage(art.object_id).then(response => response) })))
+
+  Promise.all(collection).then(result => res.json(result))
 })
 
 // Return 15 randomized public domain images based upon art department
@@ -149,7 +149,7 @@ server.get('*', (req, res) => {
   fs.readFile(path.resolve(__dirname, 'index.html'), 'utf8', (err, htmlData) => {
     const reactApp = renderToString(<StaticRouter context={{}} location={req.url}>
       <App />
-                                    </StaticRouter>)
+    </StaticRouter>)
     const context = { body: reactApp }
     const template = handlebars.compile(htmlData)
     res.send(template(context))
