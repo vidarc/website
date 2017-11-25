@@ -43,10 +43,10 @@ mongoClient.connect('mongodb://localhost:27017/website', (err, database) => {
 })
 
 /** **********************************************
-* My api for the Met Museum Public Domain art   *
-* database. Work around using their APIs and a  *
-* database running on MongoDB                   *
-*********************************************** */
+ * My api for the Met Museum Public Domain art   *
+ * database. Work around using their APIs and a  *
+ * database running on MongoDB                   *
+ *********************************************** */
 // Get the image I can use based on the image ID
 // Returns a JSON object with a image url I can use
 function getImage(id) {
@@ -112,9 +112,9 @@ server.get('/art/images/:department', (req, res) => {
 })
 
 /** **********************************************
-* api for the contact form                      *
-* verify recaptcha then email it off            *
-*********************************************** */
+ * api for the contact form                      *
+ * verify recaptcha then email it off            *
+ *********************************************** */
 server.post('/email', (req, res) => {
   fetch('https://www.google.com/recaptcha/api/siteverify', {
     method: 'POST',
@@ -133,10 +133,15 @@ server.post('/email', (req, res) => {
 })
 
 /** **********************************************
-* Server routing using React Router server side *
-* rendering.                                    *
-*********************************************** */
+ * Server routing using React Router server side *
+ * rendering.                                    *
+ *********************************************** */
 const routes = ['', '/about', '/admin', '/blog', '/contact', '/login', '/projects', '/projects/art', '/resume']
+const staticRouter = url => (
+  <StaticRouter context={{}} location={url}>
+    <App />
+  </StaticRouter>
+)
 
 server.get('*', (req, res) => {
   const match = routes.reduce((acc, route) => matchPath(req.url, route, { exact: true }) || acc, null)
@@ -147,9 +152,7 @@ server.get('*', (req, res) => {
   }
 
   fs.readFile(path.resolve(__dirname, 'index.html'), 'utf8', (err, htmlData) => {
-    const reactApp = renderToString(<StaticRouter context={{}} location={req.url}>
-      <App />
-    </StaticRouter>)
+    const reactApp = renderToString(staticRouter(req.url))
     const context = { body: reactApp }
     const template = handlebars.compile(htmlData)
     res.send(template(context))

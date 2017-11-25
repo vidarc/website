@@ -4,7 +4,14 @@
   "private": true,
   "babel": {
     "presets": [
-      "latest"
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
     ]
   },
   "scripts": {
@@ -17,17 +24,11 @@
     "flow": "flow"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.js",
-      "!src/style/semantic/**/*.js",
-      "!src/stories/*.js"
-    ]
+    "collectCoverageFrom": ["src/**/*.js", "!src/style/semantic/**/*.js", "!src/stories/*.js"]
   },
   "devDependencies": {
     "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-latest": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-0": "^6.22.0",
     "eslint": "^4.6.1",
@@ -35,7 +36,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.0.1",
-    "flow-bin": "^0.58.0",
+    "flow-bin": "^0.59.0",
     "nock": "^9.0.22",
     "raf": "^3.4.0",
     "react-scripts": "^1.0.1",
@@ -67,6 +68,6 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
     "semantic-ui": "^2.2.10",
-    "semantic-ui-react": "^0.75.1"
+    "semantic-ui-react": "^0.76.0"
   }
 }

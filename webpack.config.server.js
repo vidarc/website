@@ -28,10 +28,10 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         options: {
-          presets: ['es2015', 'react', 'stage-0'],
+          presets: ['env', 'react', 'stage-0'],
         },
       },
       {
