@@ -55,11 +55,13 @@ function getImage(id) {
   return fetch(url)
     .then(response => response.json())
     .then(response => response.results[0].imageUrl)
-    .catch(err => console.log(err))
+    .catch(error => console.log(error))
 }
 
-server.get('/art/image/:id', (req, res) => {
-  getImage(req.params.id).then(response => res.send(response))
+server.get('/art/images/:id', (req, res) => {
+  getImage(req.params.id)
+    .then(response => res.send(response))
+    .catch(() => res.send('error with getting art image url'))
 })
 
 // Return 15 randomized public domain images from my copy of their database
@@ -82,9 +84,16 @@ server.get('/art/images', (req, res) => {
       },
     ])
     .toArray((err, result) =>
-      result.map(art => Object.assign(art, { image_url: getImage(art.object_id).then(response => response) })))
+      result.map(art =>
+        Object.assign(art, {
+          image_url: getImage(art.object_id)
+            .then(response => response)
+            .catch(() => res.send('error with array')),
+        })))
 
-  Promise.all(collection).then(result => res.json(result))
+  Promise.all(collection)
+    .then(result => res.json(result))
+    .catch(() => res.send('error with promise.all'))
 })
 
 // Return 15 randomized public domain images based upon art department

@@ -19,18 +19,23 @@
     "build": "react-scripts build",
     "build-server": "webpack --config webpack.config.server.js --progress --colors",
     "test": "react-scripts test --env=jsdom --setupFiles raf/polyfill --setupFiles whatwg-fetch",
-    "coverage": "react-scripts test --env=jsdom --coverage --setupFiles raf/polyfill --setupFiles whatwg-fetch",
+    "coverage": "yarn coverage:run && yarn coverage:submit && yarn coverage:cleanup",
+    "coverage:run": "react-scripts test --env=jsdom --coverage --setupFiles raf/polyfill --setupFiles whatwg-fetch",
+    "coverage:submit": "cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage",
+    "coverage:cleanup": "rm -rf ./coverage",
     "eject": "react-scripts eject",
     "flow": "flow"
   },
   "jest": {
-    "collectCoverageFrom": ["src/**/*.js", "!src/style/semantic/**/*.js", "!src/stories/*.js"]
+    "collectCoverageFrom": ["src/**/*.js", "!src/style/semantic/**/*.js", "!src/stories/*.js"],
+    "coverageReporters": ["text", "lcov"]
   },
   "devDependencies": {
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-0": "^6.22.0",
+    "codacy-coverage": "^2.0.3",
     "eslint": "^4.6.1",
     "eslint-config-airbnb": "^16.0.0",
     "eslint-plugin-import": "^2.2.0",
