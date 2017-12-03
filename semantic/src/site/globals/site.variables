@@ -1,0 +1,13 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+/*-------------------
+       Fonts
+--------------------*/
+
+@headerFont        : 'Fira Mono';
+@pageFont          : 'Fira Mono';
+@googleFontName    : 'Fira+Mono';
+
+@headerFontWeight  : 700;
