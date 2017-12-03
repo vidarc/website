@@ -2,12 +2,5 @@
      User Global Variables
 *******************************/
 
-/*-------------------
-       Fonts
---------------------*/
-
-@headerFont        : 'Fira Mono';
-@pageFont          : 'Fira Mono';
-@googleFontName    : 'Fira+Mono';
-
-@headerFontWeight  : 700;
+@pageFont: 'Fira Sans', sans-serif;
+@googleFontFamily: 'Fira+Sans:100,300,400,600,900';

@@ -9,8 +9,8 @@
     },
     "output": {
       "packaged": "../src/style/semantic/",
-      "uncompressed": "../src/style/semantic/components/",
-      "compressed": "../src/style/semantic/components/",
+      "uncompressed": "dist/components/",
+      "compressed": "dist/components/",
       "themes": "../src/style/semantic/themes/"
     },
     "clean": "../src/style/semantic/"

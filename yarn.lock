@@ -7381,7 +7381,7 @@ semantic-ui-react@^0.76.0:
     lodash "^4.17.4"
     prop-types "^15.5.10"
 
-semantic-ui@^2.2.10:
+semantic-ui@^2.2.13:
   version "2.2.13"
   resolved "https://registry.yarnpkg.com/semantic-ui/-/semantic-ui-2.2.13.tgz#8492c44defd25c66ca1fe92c84d365b41d1b1ead"
   dependencies:
