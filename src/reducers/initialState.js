@@ -1,6 +1,1 @@
-export default {
-  randomArt: {
-    isLoading: false,
-    collection: [],
-  },
-}
+export default {}

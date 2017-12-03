@@ -6,7 +6,6 @@ import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import configureStore from './store/configureStore'
 import App from './components/App'
-import serviceWorker from './serviceWorker'
 import './style/main.css'
 import './style/semantic/semantic.min.css'
 
@@ -21,7 +20,6 @@ function render(Component) {
     </Provider>,
     document.getElementById('root'),
   )
-  serviceWorker()
 }
 
 render(App)

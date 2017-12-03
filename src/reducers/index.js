@@ -1,8 +1,5 @@
 import { combineReducers } from 'redux'
-import artReducer from './artReducer'
 
-const rootReducer = combineReducers({
-  artReducer,
-})
+const rootReducer = combineReducers({})
 
 export default rootReducer
