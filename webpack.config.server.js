@@ -3,7 +3,7 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
-  entry: path.resolve('src/server.js'),
+  entry: path.resolve('src/server/server.js'),
 
   output: {
     filename: 'build/server.bundle.js',

@@ -4,10 +4,10 @@ import React from 'react'
 import { hydrate } from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import configureStore from './store/configureStore'
-import App from './components/App'
-import './style/main.css'
-import './style/semantic/semantic.min.css'
+import configureStore from './client/store/configureStore'
+import App from './client/components/App'
+import './client/style/main.css'
+import './client/style/semantic/semantic.min.css'
 
 const store = configureStore()
 
@@ -25,8 +25,8 @@ function render(Component) {
 render(App)
 
 if (module.hot) {
-  module.hot.accept('./components/App', () => {
-    const Next = require('./components/App').default
+  module.hot.accept('./client/components/App', () => {
+    const Next = require('./client/components/App').default
     render(Next)
   })
 }
