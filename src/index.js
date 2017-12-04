@@ -9,14 +9,26 @@ import App from './client/components/App'
 import './client/style/main.css'
 import './client/style/semantic/semantic.min.css'
 
+import { ApolloProvider } from 'react-apollo'
+import { ApolloClient } from 'apollo-client'
+import { HttpLink } from 'apollo-link-http'
+import { InMemoryCache } from 'apollo-cache-inmemory'
+
+const client = new ApolloClient({
+  link: new HttpLink(),
+  cache: new InMemoryCache(),
+})
+
 const store = configureStore()
 
 function render(Component) {
   hydrate(
     <Provider store={store}>
-      <BrowserRouter>
-        <Component />
-      </BrowserRouter>
+      <ApolloProvider client={client}>
+        <BrowserRouter>
+          <Component />
+        </BrowserRouter>
+      </ApolloProvider>
     </Provider>,
     document.getElementById('root'),
   )
