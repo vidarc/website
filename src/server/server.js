@@ -11,7 +11,7 @@ import dotenv from 'dotenv'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter, matchPath } from 'react-router-dom'
-import App from './components/App'
+import App from '../client/components/App'
 
 dotenv.config()
 
