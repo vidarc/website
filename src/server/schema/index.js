@@ -1,5 +1,5 @@
-import { makeExecutableSchema } from 'graphql-tools'
-import resolvers from './resolvers'
+const { makeExecutableSchema } = require('graphql-tools')
+const resolvers = require('./resolvers')
 
 const typeDefs = `
   type Link {
@@ -17,4 +17,4 @@ const typeDefs = `
   }
 `
 
-export default makeExecutableSchema({ typeDefs, resolvers })
+module.exports = makeExecutableSchema({ typeDefs, resolvers })

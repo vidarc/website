@@ -9,6 +9,7 @@
     "semi": [ERROR, "never"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     'jsx-quotes': ['error', 'prefer-single'],
-    'max-len': ['error', 120]
+    'max-len': ['error', 120],
+    'no-underscore-dangle': ["error", { "allow": ["_id"] }]
   }
 }

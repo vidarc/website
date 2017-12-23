@@ -4,7 +4,9 @@ const webpack = require('webpack')
 const NodemonPlugin = require('nodemon-webpack-plugin')
 
 module.exports = {
-  entry: path.resolve('src/server/server.js'),
+  devtool: 'cheap-module-source-map',
+
+  entry: ['babel-polyfill', path.resolve('src/server/server.js')],
 
   output: {
     filename: 'build/server.bundle.js',

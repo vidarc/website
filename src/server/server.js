@@ -14,52 +14,58 @@ import { StaticRouter, matchPath } from 'react-router-dom'
 
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express'
 import schema from './schema'
+import connectMongo from './connectors/mongo'
 
 import App from '../client/components/App'
 
 dotenv.config()
 
-const server = express()
+const start = async () => {
+  const mongo = await connectMongo()
+  const server = express()
 
-server.set('port', process.env.PORT || 3000)
-server.use(compression())
-server.use(express.static(path.resolve(`${__dirname}/`), { index: false }))
-server.use(logger('dev'))
-server.use(bodyParser.json())
-server.use(bodyParser.urlencoded({ extended: false }))
-server.use('/graphql', bodyParser.json(), graphqlExpress({ schema }))
-server.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }))
+  server.set('port', process.env.PORT || 3000)
+  server.use(compression())
+  server.use(express.static(path.resolve(`${__dirname}/`), { index: false }))
+  server.use(logger('dev'))
+  server.use(bodyParser.json())
+  server.use(bodyParser.urlencoded({ extended: false }))
+  server.use('/graphql', bodyParser.json(), graphqlExpress({ context: { mongo }, schema }))
+  server.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }))
 
-/** **********************************************
- * Server routing using React Router server side *
- * rendering.                                    *
- *********************************************** */
-const routes = ['']
-const staticRouter = url => (
-  <StaticRouter context={{}} location={url}>
-    <App />
-  </StaticRouter>
-)
+  /** **********************************************
+   * Server routing using React Router server side *
+   * rendering.                                    *
+   *********************************************** */
+  const routes = ['']
+  const staticRouter = url => (
+    <StaticRouter context={{}} location={url}>
+      <App />
+    </StaticRouter>
+  )
 
-server.get('*', (req, res) => {
-  const match = routes.reduce((acc, route) => matchPath(req.url, route, { exact: true }) || acc, null)
+  server.get('*', (req, res) => {
+    const match = routes.reduce((acc, route) => matchPath(req.url, route, { exact: true }) || acc, null)
 
-  if (!match) {
-    res.send('page not found')
-    return
-  }
+    if (!match) {
+      res.send('page not found')
+      return
+    }
 
-  fs.readFile(path.resolve(__dirname, 'index.html'), 'utf8', (err, htmlData) => {
-    const reactApp = renderToString(staticRouter(req.url))
-    const context = { body: reactApp }
-    const template = handlebars.compile(htmlData)
-    res.send(template(context))
+    fs.readFile(path.resolve(__dirname, 'index.html'), 'utf8', (err, htmlData) => {
+      const reactApp = renderToString(staticRouter(req.url))
+      const context = { body: reactApp }
+      const template = handlebars.compile(htmlData)
+      res.send(template(context))
+    })
   })
-})
 
-const serverConfig = server.listen(server.get('port'), () => {
-  const { host, port } = serverConfig.address()
-  const message = `Express server running at: ${host} on port ${port}`
+  const serverConfig = server.listen(server.get('port'), () => {
+    const { host, port } = serverConfig.address()
+    const message = `Express server running at: ${host} on port ${port}`
 
-  console.log(message.red.underline)
-})
+    console.log(message.red.underline)
+  })
+}
+
+start()
