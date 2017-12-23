@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
+const NodemonPlugin = require('nodemon-webpack-plugin')
 
 module.exports = {
   entry: path.resolve('src/server/server.js'),
@@ -58,5 +59,6 @@ module.exports = {
         screw_ie8: true,
       },
     }),
+    new NodemonPlugin(),
   ],
 }

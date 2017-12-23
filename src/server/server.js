@@ -11,6 +11,10 @@ import dotenv from 'dotenv'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter, matchPath } from 'react-router-dom'
+
+import { graphqlExpress, graphiqlExpress } from 'apollo-server-express'
+import schema from './schema'
+
 import App from '../client/components/App'
 
 dotenv.config()
@@ -23,6 +27,8 @@ server.use(express.static(path.resolve(`${__dirname}/`), { index: false }))
 server.use(logger('dev'))
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({ extended: false }))
+server.use('/graphql', bodyParser.json(), graphqlExpress({ schema }))
+server.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }))
 
 /** **********************************************
  * Server routing using React Router server side *
