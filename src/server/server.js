@@ -1,7 +1,5 @@
 import express from 'express'
-import logger from 'morgan'
 import bodyParser from 'body-parser'
-import colors from 'colors'
 import path from 'path'
 import compression from 'compression'
 import fs from 'fs'
@@ -17,6 +15,8 @@ import schema from './schema'
 import connectMongo from './connectors/mongo'
 
 import App from '../client/components/App'
+import logger from './logger'
+import { authenticate } from './authentication'
 
 dotenv.config()
 
@@ -27,10 +27,17 @@ const start = async () => {
   server.set('port', process.env.PORT || 3000)
   server.use(compression())
   server.use(express.static(path.resolve(`${__dirname}/`), { index: false }))
-  server.use(logger('dev'))
   server.use(bodyParser.json())
   server.use(bodyParser.urlencoded({ extended: false }))
-  server.use('/graphql', bodyParser.json(), graphqlExpress({ context: { mongo }, schema }))
+
+  const buildOptions = async (req, res) => {
+    const user = await authenticate(req, mongo.Users)
+    return {
+      context: { mongo, user },
+      schema,
+    }
+  }
+  server.use('/graphql', bodyParser.json(), graphqlExpress(buildOptions))
   server.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }))
 
   /** **********************************************
@@ -61,10 +68,8 @@ const start = async () => {
   })
 
   const serverConfig = server.listen(server.get('port'), () => {
-    const { host, port } = serverConfig.address()
-    const message = `Express server running at: ${host} on port ${port}`
-
-    console.log(message.red.underline)
+    const { address, port } = serverConfig.address()
+    logger.info(`Express server running at: ${address} on port ${port}`)
   })
 }
 
