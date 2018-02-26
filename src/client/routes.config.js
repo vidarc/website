@@ -1,4 +1,8 @@
-import Home from './modules/Home'
+// @flow
+
+import asyncComponent from './components/AsyncComponent'
+
+const Home = asyncComponent(() => import('./modules/Home'))
 
 const routes = [
   {
