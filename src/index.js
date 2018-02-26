@@ -11,7 +11,7 @@ import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
 import configureStore from './client/store/configureStore'
-import App from './client/components/App'
+import App from './client/App'
 import './client/style/main.css'
 import './client/style/semantic/semantic.min.css'
 
@@ -38,8 +38,8 @@ function render(Component) {
 render(App)
 
 if (module.hot) {
-  module.hot.accept('./client/components/App', () => {
-    const Next = require('./client/components/App').default
+  module.hot.accept('./client/App', () => {
+    const Next = import('./client/App')
     render(Next)
   })
 }
