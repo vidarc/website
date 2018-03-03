@@ -1,8 +1,18 @@
-const functions = require('firebase-functions');
+const functions = require('firebase-functions')
+const express = require('express')
+const compression = require('compression')
+const bodyParser = require('body-parser')
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
+const renderer = require('./build/renderer.bundle.js').default
+
+const server = express()
+
+server.use(compression())
+server.use(bodyParser.json())
+server.use(bodyParser.urlencoded({ extended: false }))
+
+server.get('*', (request, response) => {
+  renderer(request, response)
+})
+
+exports.server = functions.https.onRequest(server)

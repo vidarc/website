@@ -8,7 +8,7 @@
         "env",
         {
           "targets": {
-            "node": "current"
+            "node": "6.11.1"
           }
         }
       ]
@@ -29,15 +29,8 @@
     "flow": "flow"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.js",
-      "!src/style/semantic/**/*.js",
-      "!src/stories/*.js"
-    ],
-    "coverageReporters": [
-      "text",
-      "lcov"
-    ]
+    "collectCoverageFrom": ["src/**/*.js", "!src/style/semantic/**/*.js", "!src/stories/*.js"],
+    "coverageReporters": ["text", "lcov"]
   },
   "devDependencies": {
     "babel-loader": "^7.1.2",
