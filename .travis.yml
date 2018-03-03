@@ -1,31 +1,4 @@
-language: node_js
-node_js:
-- node
-addons:
-  ssh_known_hosts:
-  - mattailes.net
-before_script:
-- sudo apt-get install -qq sshpass
-branches:
-  only:
-  - master
-cache:
-  yarn: true
-  directories:
-  - /node_modules/
-script:
-- yarn test &&
-  yarn build &&
-  yarn build-server
 deploy:
-  skip_cleanup: true
-  provider: script
-  script: sh travis.sh $PASSWORD
-  on:
-    branch: master
-env:
-  global:
-    secure: ksPjMgj6tVyRNj/qQmJcvKiXg16y3IuFKYg20e5Ay6nHcxpBbrJvYBlVLeASLpeDe6r1Cv7zdIzjka0XqOTKdjNHbJfIaBOFXywiTVvM7TdHwVrAyqSWdarpKGN87OW6MZA0mtMhpHaoBkZxIZyvOnfoa5ANQ7NvubofZq61AbiVSW3XNmqmCFORwFCKSFVdLEJaCbmgfNMBjoWHqimq0maYv3LQbHhPxRG5sDf3YJt0CPIpAL/VbGCK+GyJqbkkwNULtofLoOz5pIWdMzuzUwuRjxYYA6Buztp3tvmX9tdc673qBEki4cAzGx2VXS7Fpd3CXDYlT3PcmlHl7r/klVnc4cfalETk5+SYTV+cOveo7+ycnX+l5heSz/AS6oS7t4ZlirHqUzQ0FWY8FVNTUdpl0YHa4QImH2zPh5B31seNUHft22cve1tVIPLd9BZiipOQL4noYJi1965gvqvh7wC4zUjlDSZqWMx7ZqmAdqa9Nu51MOVT3XdsMHcZqP7kdvUARW9Tc/G9PZmVzd31ZJvs6BlwNOsUC8nFrTYC9jWZuKDnlJn30V6KIVCuE74ieX+DIblZt3PLHlprbD44dayDr67rsjA/MDDxWlBjvP7eKgR70KtfAZQR4OYPoR9xBHjIJJWV161yUPVHJkLqY83L+WUAkJE9ahMw5jWlzfk=
-before_install:
-- openssl aes-256-cbc -K $encrypted_4f7e3a5fe483_key -iv $encrypted_4f7e3a5fe483_iv
-  -in .env.enc -out .env -d
+  provider: firebase
+  token:
+    secure: TlxdlfMK/lD+NGnOjmrZ0ZuRn57ZtrsPzQ4gguEu8z6VZXIOQCTdpuJvKxm0N0SBeOweANSkVMa2kk2kElYhLKXe5pf57/G4PT+RaobVJFCYE/I+4m+GgMRCGIoiXi04spxBQHAWm6S4Cq/zS+YLRF+5zBZwOP5C9u6Mc7uLXnuVkPYEXAm9i/880hJ8b+IWOj1xKFdZwH7bbajndlGiXD+NVeayNf/ZCvimMtFPuEccGZp+VHeQ+DnRdHoOWQkBYmEiR8yktZZZN1LmNiBt4YMc/1Hx3vJaVkduVnIUmk2wQ1yZf7UixOTuA6X2rijoOtV5nXJFYODNKQ6WtjnAN2CCzxQ7EXAZnAWDBJ7g0bFUOUtY6kwAY/7VHP0z0f0mjY7ksi4wtZLdder6FW+UldiTpzIaMFCQNX3jDAol+I/x3nK+6a17cEBgPbxQvmXbzQWbJSq9wgwyWD3mLpW3aIzOleEQscjewQs1OHBNGnTTOOoS1gARdsj7EOztWbVnGCUsH9JWzUUy80eqKTCDCj/5esuOaZAZXDw+/vQotGOmCfxdyLdVX3espObxDTXFYZZu44s+V8P1aj85r/4ttzBI+4cwBxnBULgwNc41YnNWxUGVyM0PxXcfx7H51tMiCbDjApgV5hTYn/tPE4qXkkLURUicPjdq31OcuXdGsK0=
