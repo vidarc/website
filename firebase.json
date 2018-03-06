@@ -1,13 +1,21 @@
 {
-  "functions": {},
+  "functions": {
+    "source": "functions/build"
+  },
   "hosting": {
     "public": "build",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
+        "source": "static/*",
+        "destination": "static/*"
+      },
+      {
         "source": "**",
-        "destination": "/index.html"
+        "function": "app"
       }
-    ]
+    ],
+    "cleanUrls": true,
+    "trailingSlash": false
   }
 }

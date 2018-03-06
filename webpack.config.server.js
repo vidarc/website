@@ -1,24 +1,21 @@
 const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
+const nodeExternals = require('webpack-node-externals')
+const NodemonPlugin = require('nodemon-webpack-plugin')
 
 module.exports = {
-  entry: path.resolve('src/server.js'),
+  entry: ['babel-polyfill', path.resolve('src/server/index.js')],
 
   output: {
-    filename: 'build/server.bundle.js',
+    filename: 'functions/build/index.js',
+    chunkFilename: 'functions/build/chunk[name].server.bundle.js',
+    libraryTarget: 'this',
   },
 
   target: 'node',
 
-  // keep node_module paths out of the bundle
-  externals: fs
-    .readdirSync(path.resolve('node_modules'))
-    .concat(['react-dom/server'])
-    .reduce((ext, mod) => {
-      ext[mod] = `commonjs ${mod}`
-      return ext
-    }, {}),
+  externals: [nodeExternals()],
 
   node: {
     __dirname: false,
@@ -31,7 +28,7 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         options: {
-          presets: ['env', 'react', 'stage-0'],
+          presets: ['env'],
         },
       },
       {
@@ -51,12 +48,5 @@ module.exports = {
     ],
   },
 
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        screw_ie8: true,
-      },
-    }),
-  ],
+  plugins: [new NodemonPlugin()],
 }
