@@ -39,3 +39,4 @@ secret.js
 Logs.zip
 *.log
 functions/index.html
+functions/index.js

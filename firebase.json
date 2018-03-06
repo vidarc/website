@@ -1,15 +1,9 @@
 {
-  "functions": {
-    "source": "functions/build"
-  },
+  "functions": {},
   "hosting": {
     "public": "build",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
-      {
-        "source": "static/*",
-        "destination": "static/*"
-      },
       {
         "source": "**",
         "function": "app"
