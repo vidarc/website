@@ -17,11 +17,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "yarn build:app && yarn build:server && yarn copy:public:entry",
+    "build": "yarn build:app && yarn build:server && yarn move:public:index",
     "build:app": "react-scripts build",
     "build:server": "webpack --config webpack.config.server.js --progress --colors",
     "build:semantic": "gulp --gulpfile ./semantic/gulpfile.js build",
-    "copy:public:entry": "cp build/index.html functions/index.html",
+    "move:public:index": "mv build/index.html functions/index.html",
     "watch:server": "webpack --config webpack.config.server.js --progress --colors --watch",
     "test": "react-scripts test --env=jsdom --setupFiles raf/polyfill --setupFiles whatwg-fetch",
     "coverage": "yarn coverage:run && yarn coverage:submit && yarn coverage:cleanup",
