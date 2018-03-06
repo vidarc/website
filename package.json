@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "babel": {
-    "plugins": ["transform-react-jsx", "syntax-dynamic-import"],
+    "plugins": [
+      "transform-react-jsx",
+      "syntax-dynamic-import"
+    ],
     "presets": [
       [
         "env",
@@ -32,8 +35,15 @@
     "flow": "flow"
   },
   "jest": {
-    "collectCoverageFrom": ["src/**/*.js", "!src/style/semantic/**/*.js", "!src/stories/*.js"],
-    "coverageReporters": ["text", "lcov"]
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/style/semantic/**/*.js",
+      "!src/stories/*.js"
+    ],
+    "coverageReporters": [
+      "text",
+      "lcov"
+    ]
   },
   "devDependencies": {
     "babel-loader": "^7.1.2",
