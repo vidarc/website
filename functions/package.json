@@ -15,10 +15,11 @@
     "cors": "^2.8.4",
     "dotenv": "^5.0.1",
     "express": "^4.16.2",
-    "firebase-admin": "~5.8.1",
+    "firebase-admin": "~5.9.1",
     "firebase-functions": "^0.8.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-router-config": "^1.0.0-beta.4",
     "react-router-dom": "^4.2.2",
     "semantic-ui-react": "^0.78.3",
     "winston": "^3.0.0-rc1"
