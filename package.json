@@ -3,10 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "babel": {
-    "plugins": [
-      "transform-react-jsx",
-      "syntax-dynamic-import"
-    ],
+    "plugins": ["transform-react-jsx", "syntax-dynamic-import", "react-loadable/babel"],
     "presets": [
       [
         "env",
@@ -25,6 +22,7 @@
     "build:server": "webpack --config webpack.config.server.js --progress --colors",
     "build:semantic": "gulp --gulpfile ./semantic/gulpfile.js build",
     "move:public:index": "mv build/index.html functions/index.html",
+    "serve": "firebase serve --only hosting,functions",
     "watch:server": "webpack --config webpack.config.server.js --progress --colors --watch",
     "test": "react-scripts test --env=jsdom --setupFiles raf/polyfill --setupFiles whatwg-fetch",
     "coverage": "yarn coverage:run && yarn coverage:submit && yarn coverage:cleanup",
@@ -35,15 +33,8 @@
     "flow": "flow"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.js",
-      "!src/style/semantic/**/*.js",
-      "!src/stories/*.js"
-    ],
-    "coverageReporters": [
-      "text",
-      "lcov"
-    ]
+    "collectCoverageFrom": ["src/**/*.js", "!src/style/semantic/**/*.js", "!src/stories/*.js"],
+    "coverageReporters": ["text", "lcov"]
   },
   "devDependencies": {
     "babel-loader": "^7.1.2",
@@ -82,7 +73,7 @@
     "dotenv": "^5.0.0",
     "express": "^4.14.0",
     "firebase-functions": "^0.8.1",
-    "graphql": "^0.12.3",
+    "graphql": "^0.13.1",
     "graphql-tag": "^2.5.0",
     "graphql-tools": "^2.14.1",
     "node-fetch": "^2.0.0",
@@ -90,12 +81,14 @@
     "react": "^16.0.0",
     "react-apollo": "^2.0.1",
     "react-dom": "^16.0.0",
+    "react-loadable": "^5.3.1",
     "react-redux": "^5.0.4",
     "react-router": "^4.0.0",
+    "react-router-config": "^1.0.0-beta.4",
     "react-router-dom": "^4.0.0",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
-    "semantic-ui-react": "^0.77.1",
+    "semantic-ui-react": "^0.78.3",
     "winston": "^3.0.0-rc1"
   }
 }
