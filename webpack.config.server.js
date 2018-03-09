@@ -8,8 +8,9 @@ module.exports = {
   entry: ['babel-polyfill', path.resolve('src/server/index.js')],
 
   output: {
-    filename: 'functions/index.js',
-    chunkFilename: 'functions/chunk[name].server.bundle.js',
+    path: path.resolve(__dirname, 'functions'),
+    filename: 'index.js',
+    chunkFilename: 'chunk-[name].server.bundle.js',
     libraryTarget: 'this',
   },
 

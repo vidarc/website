@@ -1,15 +1,19 @@
 // @flow
 
-// import asyncComponent from './components/AsyncComponent'
+import React from 'react'
+import Loadable from 'react-loadable'
 
-// const Home = asyncComponent(() => import('./modules/Home'))
-import Home from './modules/Home'
+const Loading = () => <div>Loading...</div>
 
 const routes = [
   {
     key: 0,
     path: '/',
-    component: Home,
+    component: Loadable({
+      loader: () => import('./modules/Home'),
+      loading: Loading,
+      delay: 500,
+    }),
     exact: true,
   },
 ]
