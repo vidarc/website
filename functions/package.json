@@ -19,6 +19,7 @@
     "firebase-functions": "^0.8.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-loadable": "^5.3.1",
     "react-router-config": "^1.0.0-beta.4",
     "react-router-dom": "^4.2.2",
     "semantic-ui-react": "^0.78.3",
