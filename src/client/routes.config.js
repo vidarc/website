@@ -16,6 +16,16 @@ const routes = [
     }),
     exact: true,
   },
+  {
+    key: 1,
+    path: '/todo',
+    component: Loadable({
+      loader: () => import('./modules/Todo'),
+      loading: Loading,
+      delay: 500,
+    }),
+    exact: true,
+  },
 ]
 
 export default routes
