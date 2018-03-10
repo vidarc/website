@@ -2,20 +2,21 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Button } from 'semantic-ui-react'
 
 const Link = ({ active, children, onClick }) => {
   if (active) {
     return <span>{children}</span>
   }
   return (
-    <button
+    <Button
       onClick={(e) => {
         e.preventDefault()
         onClick()
       }}
     >
       {children}
-    </button>
+    </Button>
   )
 }
 

@@ -1,33 +1,41 @@
 // @flow
 
-import React from 'react'
+import React, { Component } from 'react'
+import { Form } from 'semantic-ui-react'
 import { connect } from 'react-redux'
+
 import { addTodo } from '../actions'
 
-let AddTodo = ({ dispatch }) => {
-  let input
+class AddTodo extends Component {
+  constructor(props) {
+    super(props)
 
-  return (
-    <div>
-      <form
-        onSubmit={(event) => {
-          event.preventDefault()
-          if (!input.value.trim()) {
-            return
-          }
-          dispatch(addTodo(input.value))
-          input.value = ''
-        }}
-      >
-        <input
-          ref={(node) => {
-            input = node
-          }}
-        />
-        <button type='submit'>Add Todo</button>
-      </form>
-    </div>
-  )
+    this.state = {
+      todo: '',
+    }
+  }
+
+  handleSubmit = () => {
+    this.props.dispatch(addTodo(this.state.todo))
+    this.setState({ todo: '' })
+  }
+
+  handleChange = (event, { name, value }) => this.setState({ [name]: value })
+
+  render() {
+    const { todo } = this.state
+
+    return (
+      <div>
+        <Form onSubmit={this.handleSubmit}>
+          <Form.Group>
+            <Form.Input placeholder="Enter the todo..." name="todo" value={todo} onChange={this.handleChange} />
+            <Form.Button type="submit" content="Add Todo" />
+          </Form.Group>
+        </Form>
+      </div>
+    )
+  }
 }
 
 AddTodo = connect()(AddTodo)
