@@ -3,7 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "babel": {
-    "plugins": ["transform-react-jsx", "syntax-dynamic-import", "react-loadable/babel", "transform-object-rest-spread"],
+    "plugins": [
+      "transform-react-jsx",
+      "syntax-dynamic-import",
+      "react-loadable/babel",
+      "transform-object-rest-spread",
+      "transform-class-properties"
+    ],
     "presets": [
       [
         "env",
@@ -39,6 +45,7 @@
   "devDependencies": {
     "babel-loader": "^7.1.2",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-polyfill": "^6.26.0",

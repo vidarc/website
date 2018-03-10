@@ -29,6 +29,7 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         options: {
+          plugins: ['transform-class-properties'],
           presets: ['env'],
         },
       },
