@@ -2,10 +2,12 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
+import { List } from 'semantic-ui-react'
+
 import Todo from './Todo'
 
 const TodoList = ({ todos, onTodoClick }) => (
-  <ul>{todos.map((todo, index) => <Todo key={index} {...todo} onClick={() => onTodoClick(index)} />)}</ul>
+  <List bulleted>{todos.map((todo, index) => <Todo key={index} {...todo} onClick={() => onTodoClick(index)} />)}</List>
 )
 
 TodoList.propTypes = {
