@@ -3,8 +3,8 @@
 import React from 'react'
 import { Container } from 'semantic-ui-react'
 import routeHelper from './utils/routeHelper'
-import routeConfig from './routes.config'
+import routes from '../routes.config'
 
-const App = () => <Container>{routeHelper(routeConfig)}</Container>
+const App = () => <Container>{routeHelper(routes)}</Container>
 
 export default App

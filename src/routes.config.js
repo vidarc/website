@@ -3,16 +3,22 @@
 import React from 'react'
 import Loadable from 'react-loadable'
 
-const Loading = () => <div>Loading...</div>
+const Loading = ({ pastDelay }) => {
+  if (pastDelay) {
+    return <div>Loading...</div>
+  } else {
+    return null
+  }
+}
 
 const routes = [
   {
     key: 0,
     path: '/',
     component: Loadable({
-      loader: () => import('./modules/Home'),
+      loader: () => import('./client/modules/Home'),
       loading: Loading,
-      delay: 500,
+      delay: 200,
     }),
     exact: true,
   },
@@ -20,9 +26,9 @@ const routes = [
     key: 1,
     path: '/todo',
     component: Loadable({
-      loader: () => import('./modules/Todo'),
+      loader: () => import('./client/modules/Todo'),
       loading: Loading,
-      delay: 500,
+      delay: 200,
     }),
     exact: true,
   },
