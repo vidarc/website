@@ -11,25 +11,30 @@ const Loading = ({ pastDelay }) => {
   }
 }
 
+const loadableComponent = path =>
+  Loadable({
+    loader: () => import(path),
+    loading: Loading,
+    delay: 200,
+  })
+
 const routes = [
   {
     key: 0,
     path: '/',
-    component: Loadable({
-      loader: () => import('./client/modules/home'),
-      loading: Loading,
-      delay: 200,
-    }),
+    component: loadableComponent('./client/modules/home'),
     exact: true,
   },
   {
     key: 1,
     path: '/todo',
-    component: Loadable({
-      loader: () => import('./client/modules/todo'),
-      loading: Loading,
-      delay: 200,
-    }),
+    component: loadableComponent('./client/modules/todo'),
+    exact: true,
+  },
+  {
+    key: 2,
+    path: '/starwars',
+    component: loadableComponent('./client/modules/starwars'),
     exact: true,
   },
 ]
