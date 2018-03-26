@@ -10,7 +10,7 @@ const Loading = ({ pastDelay }) => {
   return null
 }
 
-const loadableComponent = (opts: Object) =>
+const loadableComponent = opts =>
   Loadable(
     Object.assign(
       {
