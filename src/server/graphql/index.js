@@ -15,7 +15,10 @@ const graphql = () => {
 
   server.use(compression())
 
-  const schema = makeExecutableSchema({ typeDefs, resolvers })
+  const schema = makeExecutableSchema({
+    typeDefs,
+    resolvers,
+  })
 
   // The GraphQL endpoint
   server.use('/graphql', bodyParser.json(), graphqlExpress({ schema }))

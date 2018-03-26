@@ -1,15 +1,19 @@
-export const Query = `
-  type Query { people: [People] }
-`
+import Film from './Film'
+import Person from './Person'
+import Planet from './Planet'
+import Species from './Species'
+import Starship from './Starship'
+import Vehicle from './Vehicle'
 
-export const People = `
-  type People {
-    name: String
+const Query = /* GraphQL */ `
+  type Query {
+    films: [Film],
+    people: [Person],
+    planets: [Planet],
+    species: [Species],
+    starships: [Starship],
+    vehicles: [Vehicle]
   }
 `
 
-const schema = `
-  ${Query}
-  ${People}
-`
-export default schema
+export default [Query, Film, Person, Planet, Species, Starship, Vehicle]
