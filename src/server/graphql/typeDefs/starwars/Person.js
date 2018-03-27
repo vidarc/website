@@ -1,7 +1,4 @@
-import Film from './Film'
-import Species from './Species'
-import Starship from './Starship'
-import Vehicle from './Vehicle'
+import { Film, Species, Starship, Vehicle } from './'
 
 const Person = /* GraphQL */ `
   type Person {

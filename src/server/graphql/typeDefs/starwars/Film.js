@@ -1,7 +1,9 @@
+import { Species, Starship, Vehicle, Person, Planet } from './'
+
 const Film = /* GraphQL */ `
   type Film {
     # The title of this film
-    title: String 
+    title: String
     # The episode number of this film.
     episode_id: Int
     # The opening paragraphs at the beginning of this film.
@@ -11,7 +13,7 @@ const Film = /* GraphQL */ `
     # The name(s) of the producer(s) of this film. Comma separated.
     producer: String
     # The ISO 8601 date format of film release at original creator country.
-    release_date: Date
+    # release_date: Date
     # An array of species resource URLs that are in this film.
     species: [Species]
     # An array of starship resource URLs that are in this film.
@@ -30,4 +32,4 @@ const Film = /* GraphQL */ `
     edited: String
   }
 `
-export default () => [Film]
+export default () => [Film, Species, Starship, Vehicle, Person, Planet]

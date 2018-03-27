@@ -1,3 +1,10 @@
-import starwars from './starwars'
+const typeDefs = require.context('./', true, /\/.*\/index\.js$/)
 
-export default starwars
+const requireAll = requireContext =>
+  requireContext
+    .keys()
+    .map(requireContext)
+    .map(context => [...context.default])
+    .reduce((accumulator, value) => [...accumulator, ...value])
+
+export default requireAll(typeDefs)
