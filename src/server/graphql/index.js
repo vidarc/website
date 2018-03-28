@@ -21,7 +21,7 @@ const graphql = () => {
   })
 
   // The GraphQL endpoint
-  server.use('/graphql', bodyParser.json(), graphqlExpress({ schema }))
+  server.use('/graphql', bodyParser.json(), graphqlExpress({ schema, tracing: true }))
 
   // GraphiQL, a visual editor for queries
   server.use('/graphiql', graphiqlExpress({ endpointURL: 'graphql' }))

@@ -1,23 +1,29 @@
 import fetch from 'cross-fetch'
+import DataLoader from 'dataloader'
 
-const get = async url =>
-  fetch(url)
+const getAll = async type =>
+  fetch(`https://swapi.co/api/${type}/`)
     .then(response => response.json())
     .then(response => response.results)
 
+const loader = new DataLoader((urls) => {
+  const promises = urls.map(url => fetch(url).then(response => response.json()))
+
+  return Promise.all(promises)
+})
+
 const resolvers = {
   Query: {
-    getFilms: () => get('https://swapi.co/api/films/'),
+    getFilms: () => getAll('films'),
+    getPeople: () => getAll('people'),
+    getPlanets: () => getAll('planets'),
+    getSpecies: () => getAll('species'),
+    getStarships: () => getAll('starships'),
+    getVehicles: () => getAll('vehicles'),
+  },
 
-    getPeople: () => get('https://swapi.co/api/people/'),
-
-    getPlanets: () => get('https://swapi.co/api/planets/'),
-
-    species: () => get('https://swapi.co/api/species/'),
-
-    getStarships: () => get('https://swapi.co/api/starships/'),
-
-    getVehicles: () => get('https://swapi.co/api/vehicles/'),
+  Film: {
+    species: ({ species }) => loader.loadMany(species),
   },
 }
 export default resolvers

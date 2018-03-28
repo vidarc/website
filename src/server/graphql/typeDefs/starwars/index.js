@@ -13,6 +13,8 @@ const Query = /* GraphQL */ `
     getSpecies: [Species]
     getStarships: [Starship]
     getVehicles: [Vehicle]
+
+    species: Species
   }
 `
 
