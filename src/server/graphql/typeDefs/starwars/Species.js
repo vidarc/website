@@ -4,34 +4,34 @@ const Species = /* GraphQL */ `
   type Species {
     # A comma-seperated string of common skin colors for this species,
     # none if this species does not typically have skin.
-    skin_colors: String,
+    skin_colors: String
     # A comma-seperated string of common hair colors for this species, none if this species
     # does not typically have hair.
-    hair_colors: String,
+    hair_colors: String
     # An array of People URL Resources that are a part of this species.
-    people: [Person],
+    people: [Person]
     # The average lifespan of this species in years.
-    average_lifespan: String,
+    average_lifespan: String
     # The ISO 8601 date format of the time that this resource was edited.
-    edited: String,
+    edited: String
     # The hypermedia URL of this resource.
-    url: String,
+    url: String
     # The classification of this species.
-    classification: String,
+    classification: String
     # A comma-seperated string of common eye colors for this species, none if this species does not typically have eyes.
-    eye_colors: String,
+    eye_colors: String
     # The URL of a planet resource, a planet that this species originates from.
-    homeworld: String,
+    homeworld: String
     # The language commonly spoken by this species.
-    language: String,
+    language: String
     # An array of Film URL Resources that this species has appeared in.
-    films: [Film],
+    films: [Film]
     # The name of this species.
-    name: String,
+    name: String
     # The average height of this person in centimeters.
-    average_height: String,
+    average_height: String
     # The designation of this species.
-    designation: String,
+    designation: String
     # The ISO 8601 date format of the time that this resource was created.
     created: String
   }

@@ -7,12 +7,12 @@ import Vehicle from './Vehicle'
 
 const Query = /* GraphQL */ `
   type Query {
-    films: [Film],
-    people: [Person],
-    planets: [Planet],
-    species: [Species],
-    starships: [Starship],
-    vehicles: [Vehicle]
+    getFilms: [Film]
+    getPeople: [Person]
+    getPlanets: [Planet]
+    getSpecies: [Species]
+    getStarships: [Starship]
+    getVehicles: [Vehicle]
   }
 `
 

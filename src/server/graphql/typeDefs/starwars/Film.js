@@ -13,7 +13,7 @@ const Film = /* GraphQL */ `
     # The name(s) of the producer(s) of this film. Comma separated.
     producer: String
     # The ISO 8601 date format of film release at original creator country.
-    # release_date: Date
+    release_date: String
     # An array of species resource URLs that are in this film.
     species: [Species]
     # An array of starship resource URLs that are in this film.
