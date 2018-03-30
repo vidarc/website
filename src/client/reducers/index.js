@@ -1,7 +1,7 @@
 // @flow
 
 import { combineReducers } from 'redux'
-import todoReducers from '../modules/Todo/reducers'
+import todoReducers from '../modules/todo/reducers'
 
 const rootReducer = combineReducers({ todoReducers })
 
