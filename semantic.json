@@ -8,12 +8,12 @@
       "themes": "src/themes/"
     },
     "output": {
-      "packaged": "../src/style/semantic/",
+      "packaged": "../src/client/style/semantic/",
       "uncompressed": "dist/components/",
       "compressed": "dist/components/",
-      "themes": "../src/style/semantic/themes/"
+      "themes": "../src/client/style/semantic/themes/"
     },
-    "clean": "../src/style/semantic/"
+    "clean": "../src/client/style/semantic/"
   },
   "permission": false,
   "autoInstall": false,
@@ -69,5 +69,5 @@
     "state",
     "visibility"
   ],
-  "version": "2.3.0"
+  "version": "2.3.1"
 }

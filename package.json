@@ -39,8 +39,15 @@
     "flow": "flow"
   },
   "jest": {
-    "collectCoverageFrom": ["src/**/*.js", "!src/style/semantic/**/*.js", "!src/stories/*.js"],
-    "coverageReporters": ["text", "lcov"]
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/style/semantic/**/*.js",
+      "!src/stories/*.js"
+    ],
+    "coverageReporters": [
+      "text",
+      "lcov"
+    ]
   },
   "devDependencies": {
     "babel-loader": "^7.1.2",
@@ -58,7 +65,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.0.1",
-    "flow-bin": "^0.66.0",
+    "flow-bin": "^0.69.0",
     "nock": "^9.0.22",
     "nodemon-webpack-plugin": "^0.1.6",
     "raf": "^3.4.0",
@@ -75,7 +82,7 @@
     "compression": "^1.6.2",
     "dotenv": "^5.0.0",
     "express": "^4.14.0",
-    "firebase-functions": "^0.8.1",
+    "firebase-functions": "^0.9.1",
     "node-fetch": "^2.0.0",
     "prop-types": "^15.5.4",
     "react": "^16.0.0",
@@ -87,7 +94,7 @@
     "react-router-dom": "^4.0.0",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
-    "semantic-ui-react": "^0.78.3",
+    "semantic-ui-react": "^0.79.0",
     "winston": "^3.0.0-rc1"
   }
 }
