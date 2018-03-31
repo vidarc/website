@@ -1,6 +1,8 @@
+import gql from 'graphql-tag'
+
 import { Species, Starship, Vehicle, Person, Planet } from './'
 
-const Film = /* GraphQL */ `
+const Film = gql`
   type Film {
     # The title of this film
     title: String

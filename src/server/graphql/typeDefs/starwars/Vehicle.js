@@ -1,6 +1,8 @@
+import gql from 'graphql-tag'
+
 import { Person, Film } from './'
 
-const Vehicle = /* GraphQL */ `
+const Vehicle = gql`
   type Vehicle {
     # The number of non-essential people this vehicle can transport.
     passengers: String

@@ -1,6 +1,8 @@
+import gql from 'graphql-tag'
+
 import { Film, Species, Starship, Vehicle } from './'
 
-const Person = /* GraphQL */ `
+const Person = gql`
   type Person {
     # The url of the planet resource that this person was born on.
     homeworld: String

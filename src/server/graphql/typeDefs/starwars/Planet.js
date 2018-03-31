@@ -1,6 +1,8 @@
+import gql from 'graphql-tag'
+
 import { Person, Film } from './'
 
-const Planet = /* GraphQL */ `
+const Planet = gql`
   type Planet {
     # The percentage of the planet surface that is naturally occuring water or bodies of water.
     surface_water: String

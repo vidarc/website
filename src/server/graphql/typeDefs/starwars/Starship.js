@@ -1,6 +1,8 @@
+import gql from 'graphql-tag'
+
 import { Person, Film } from './'
 
-const Starship = /* GraphQL */ `
+const Starship = gql`
   type Starship {
     # The number of non-essential people this starship can transport.
     passengers: String

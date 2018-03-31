@@ -38,8 +38,15 @@
     "flow": "flow"
   },
   "jest": {
-    "collectCoverageFrom": ["src/**/*.js", "!src/style/semantic/**/*.js", "!src/stories/*.js"],
-    "coverageReporters": ["text", "lcov"]
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/style/semantic/**/*.js",
+      "!src/stories/*.js"
+    ],
+    "coverageReporters": [
+      "text",
+      "lcov"
+    ]
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
@@ -82,6 +89,7 @@
     "express": "^4.14.0",
     "firebase-functions": "^1.0.2",
     "graphql": "^0.13.2",
+    "graphql-tag": "^2.8.0",
     "graphql-tools": "^2.23.1",
     "node-fetch": "^2.0.0",
     "prop-types": "^15.5.4",

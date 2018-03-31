@@ -1,6 +1,8 @@
+import gql from 'graphql-tag'
+
 import { Person, Film } from './'
 
-const Species = /* GraphQL */ `
+const Species = gql`
   type Species {
     # A comma-seperated string of common skin colors for this species,
     # none if this species does not typically have skin.

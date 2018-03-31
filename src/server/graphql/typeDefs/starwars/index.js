@@ -1,3 +1,5 @@
+import gql from 'graphql-tag'
+
 import Film from './Film'
 import Person from './Person'
 import Planet from './Planet'
@@ -5,7 +7,7 @@ import Species from './Species'
 import Starship from './Starship'
 import Vehicle from './Vehicle'
 
-const Query = /* GraphQL */ `
+const Query = gql`
   type Query {
     getFilms: [Film]
     getPeople: [Person]

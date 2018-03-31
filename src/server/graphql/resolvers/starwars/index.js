@@ -18,14 +18,31 @@ const resolvers = {
     planets: ({ planets }) => loader.loadMany(planets),
   },
 
-  // People: {},
-  //
-  // Planets: {},
-  //
-  // Species: {},
-  //
-  // Starships: {},
-  //
-  // Vehicles: {},
+  People: {
+    films: ({ films }) => loader.loadMany(films),
+    species: ({ species }) => loader.loadMany(species),
+    starships: ({ starships }) => loader.loadMany(starships),
+    vehicles: ({ vehicles }) => loader.loadMany(vehicles),
+  },
+
+  Planets: {
+    residents: ({ residents }) => loader.loadMany(residents),
+    films: ({ films }) => loader.loadMany(films),
+  },
+
+  Species: {
+    people: ({ people }) => loader.loadMany(people),
+    films: ({ films }) => loader.loadMany(films),
+  },
+
+  Starships: {
+    pilots: ({ pilots }) => loader.loadMany(pilots),
+    films: ({ films }) => loader.loadMany(films),
+  },
+
+  Vehicles: {
+    pilots: ({ pilots }) => loader.loadMany(pilots),
+    films: ({ films }) => loader.loadMany(films),
+  },
 }
 export default resolvers
