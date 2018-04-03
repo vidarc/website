@@ -82,7 +82,7 @@
     "compression": "^1.6.2",
     "dotenv": "^5.0.0",
     "express": "^4.14.0",
-    "firebase-functions": "^0.9.1",
+    "firebase-functions": "^1.0.0",
     "node-fetch": "^2.0.0",
     "prop-types": "^15.5.4",
     "react": "^16.0.0",
