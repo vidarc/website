@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react'
-import { hydrate } from 'react-dom'
+import { hydrate, render } from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import Loadable from 'react-loadable'
@@ -17,9 +17,11 @@ const store = configureStore()
 
 const apollo = new ApolloClient({ uri: 'https://www.mattailes.net/graphql' })
 
-function render(Component) {
+function renderApp(Component) {
+  const renderMethod = module.hot ? render : hydrate
+
   Loadable.preloadReady().then(() => {
-    hydrate(
+    renderMethod(
       <ApolloProvider client={apollo}>
         <Provider store={store}>
           <BrowserRouter>
@@ -32,11 +34,11 @@ function render(Component) {
   })
 }
 
-render(App)
+renderApp(App)
 
 if (module.hot) {
   module.hot.accept('./client/App', () => {
     const Next = import('./client/App')
-    render(Next)
+    renderApp(Next)
   })
 }
