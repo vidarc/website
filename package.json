@@ -28,7 +28,7 @@
     "build:server": "webpack --config webpack.config.server.js --progress --colors",
     "build:semantic": "gulp --gulpfile ./semantic/gulpfile.js build",
     "move:public:index": "mv build/index.html functions/index.html",
-    "serve": "firebase serve --only hosting,functions",
+    "serve": "firebase serve",
     "watch:server": "webpack --config webpack.config.server.js --progress --colors --watch",
     "test": "react-scripts test --env=jsdom --setupFiles raf/polyfill --setupFiles whatwg-fetch",
     "coverage": "yarn coverage:run && yarn coverage:submit && yarn coverage:cleanup",
@@ -39,15 +39,8 @@
     "flow": "flow"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.js",
-      "!src/style/semantic/**/*.js",
-      "!src/stories/*.js"
-    ],
-    "coverageReporters": [
-      "text",
-      "lcov"
-    ]
+    "collectCoverageFrom": ["src/**/*.js", "!src/style/semantic/**/*.js", "!src/stories/*.js"],
+    "coverageReporters": ["text", "lcov"]
   },
   "devDependencies": {
     "babel-loader": "^7.1.2",
@@ -82,7 +75,7 @@
     "compression": "^1.6.2",
     "dotenv": "^5.0.0",
     "express": "^4.14.0",
-    "firebase-functions": "^0.9.1",
+    "firebase-functions": "^1.0.0",
     "node-fetch": "^2.0.0",
     "prop-types": "^15.5.4",
     "react": "^16.0.0",
