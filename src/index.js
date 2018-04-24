@@ -15,7 +15,7 @@ import './client/style/semantic/semantic.min.css'
 
 const store = configureStore()
 
-const apollo = new ApolloClient({ uri: 'https://www.mattailes.net/graphql' })
+const apollo = new ApolloClient({ uri: '/graphql' })
 
 function renderApp(Component) {
   const renderMethod = module.hot ? render : hydrate

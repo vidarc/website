@@ -15,8 +15,6 @@ const Query = gql`
     getSpecies: [Species]
     getStarships: [Starship]
     getVehicles: [Vehicle]
-
-    species: Species
   }
 `
 

@@ -2,6 +2,7 @@
   "name": "Website",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5000/website-b10e5/us-central1/api",
   "babel": {
     "plugins": [
       "transform-react-jsx",
@@ -38,15 +39,8 @@
     "flow": "flow"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.js",
-      "!src/style/semantic/**/*.js",
-      "!src/stories/*.js"
-    ],
-    "coverageReporters": [
-      "text",
-      "lcov"
-    ]
+    "collectCoverageFrom": ["src/**/*.js", "!src/style/semantic/**/*.js", "!src/stories/*.js"],
+    "coverageReporters": ["text", "lcov"]
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
