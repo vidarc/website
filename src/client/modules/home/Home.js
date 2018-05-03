@@ -1,14 +1,20 @@
 // @flow
 
 import React from 'react'
-import { Container } from 'semantic-ui-react'
+import { Container, List } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 const Home = () => (
   <Container>
     <div>Hello everybody</div>
-    <Link to='/todo'>Todo App from redux.js.org</Link>
-    <Link to='/starwars'>Star Wars app with a GraphQL wrapper around swapi</Link>
+    <List bulleted>
+      <List.Item>
+        <Link to='/todo'>Todo App from redux.js.org</Link>
+      </List.Item>
+      <List.Item>
+        <Link to='/starwars'>Star Wars app with a GraphQL wrapper around swapi</Link>
+      </List.Item>
+    </List>
   </Container>
 )
 

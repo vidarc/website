@@ -41,4 +41,5 @@ Logs.zip
 functions/index.html
 functions/index.js
 *.bundle.js
-keys
+
+keys/

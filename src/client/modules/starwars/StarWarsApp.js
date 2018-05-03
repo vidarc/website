@@ -1,8 +1,7 @@
 // @flow
 
 import React from 'react'
-import Testing from './containers/Testing'
 
-const StarWarsApp = () => <Testing />
+const StarWarsApp = () => <div>Hello, my name is Matt. Hello again</div>
 
 export default StarWarsApp
