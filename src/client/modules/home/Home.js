@@ -1,12 +1,12 @@
 // @flow
 
-import React from 'react'
+import * as React from 'react'
 import { Container, List } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 const Home = () => (
   <Container>
-    <div>Hello everybody</div>
+    <div>Hello everybody! My name is Matthew Ailes.</div>
     <List bulleted>
       <List.Item>
         <Link to='/todo'>Todo App from redux.js.org</Link>

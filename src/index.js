@@ -1,10 +1,7 @@
-/* @flow */
-
-import React from 'react'
+import * as React from 'react'
 import { hydrate, render } from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import Loadable from 'react-loadable'
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
 
@@ -17,21 +14,19 @@ const store = configureStore()
 
 const apollo = new ApolloClient({ uri: '/graphql' })
 
-function renderApp(Component) {
+function renderApp(Component: React.Node) {
   const renderMethod = module.hot ? render : hydrate
 
-  Loadable.preloadReady().then(() => {
-    renderMethod(
-      <ApolloProvider client={apollo}>
-        <Provider store={store}>
-          <BrowserRouter>
-            <Component />
-          </BrowserRouter>
-        </Provider>
-      </ApolloProvider>,
-      document.getElementById('root'),
-    )
-  })
+  renderMethod(
+    <ApolloProvider client={apollo}>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Component />
+        </BrowserRouter>
+      </Provider>
+    </ApolloProvider>,
+    document.getElementById('root'),
+  )
 }
 
 renderApp(App)

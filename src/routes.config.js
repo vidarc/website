@@ -1,25 +1,21 @@
 // @flow
 
-import React from 'react'
+import * as React from 'react'
 import Loadable from 'react-loadable'
 
-const Loading = ({ pastDelay }) => {
+const Loading = ({ pastDelay }: { pastDelay: boolean }) => {
   if (pastDelay) {
     return <div>Loading...</div>
   }
   return null
 }
 
-const loadableComponent = opts =>
-  Loadable(
-    Object.assign(
-      {
-        loading: Loading,
-        delay: 200,
-      },
-      opts,
-    ),
-  )
+const loadableComponent = ({ loader }: { loader: Function }) =>
+  Loadable({
+    loader,
+    loading: Loading,
+    delay: 200,
+  })
 
 const routes = [
   {

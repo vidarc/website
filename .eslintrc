@@ -4,7 +4,7 @@
   "env": {
     "browser": true,
     "node": true,
-    "jest": true,
+    "jest": true
   },
   "rules": {
     "function-paren-newline": ["error", "consistent"],
@@ -13,5 +13,11 @@
     "no-underscore-dangle": ["error", { "allow": ["_id"] }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "semi": [ERROR, "never"],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"]
+      }
+    ]
   }
 }
