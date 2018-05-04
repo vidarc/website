@@ -26,12 +26,6 @@ const Film = gql`
     characters: [Person]
     # An array of planet resource URLs that are in this film.
     planets: [Planet]
-    # The hypermedia URL of this resource.
-    url: String
-    # the ISO 8601 date format of the time that this resource was created.
-    created: String
-    # the ISO 8601 date format of the time that this resource was edited.
-    edited: String
   }
 `
 export default () => [Film, Species, Starship, Vehicle, Person, Planet]

@@ -14,10 +14,6 @@ const Species = gql`
     people: [Person]
     # The average lifespan of this species in years.
     average_lifespan: String
-    # The ISO 8601 date format of the time that this resource was edited.
-    edited: String
-    # The hypermedia URL of this resource.
-    url: String
     # The classification of this species.
     classification: String
     # A comma-seperated string of common eye colors for this species, none if this species does not typically have eyes.
@@ -34,8 +30,6 @@ const Species = gql`
     average_height: String
     # The designation of this species.
     designation: String
-    # The ISO 8601 date format of the time that this resource was created.
-    created: String
   }
 `
 export default () => [Species, Person, Film]

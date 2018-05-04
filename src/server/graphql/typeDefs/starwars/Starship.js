@@ -6,8 +6,6 @@ const Starship = gql`
   type Starship {
     # The number of non-essential people this starship can transport.
     passengers: String
-    # The hypermedia URL of this resource.
-    url: String
     # The maximum length of time that this starship can provide consumables for its entire crew
     # without having to resupply.
     consumables: String
@@ -36,10 +34,6 @@ const Starship = gql`
     length: String
     # The name of this starship. The common name, such as Death Star.
     name: String
-    # the ISO 8601 date format of the time that this resource was edited.
-    edited: String
-    # The ISO 8601 date format of the time that this resource was created.
-    created: String
     # The maximum speed of this starship in atmosphere. n/a if this starship is incapable of atmosphering flight.
     max_atmosphering_speed: String
     # The cost of this starship new, in galactic credits.

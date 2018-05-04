@@ -8,14 +8,8 @@ const Person = gql`
     homeworld: String
     # The url of the species resource that this person is.
     species: [Species]
-    # the ISO 8601 date format of the time that this resource was edited.
-    edited: String
     # An array of urls of film resources that this person has been in.
     films: [Film]
-    # The ISO 8601 date format of the time that this resource was created.
-    created: String
-    # The url of this resource
-    url: String
     # The eye color of this person.
     eye_color: String
     # The gender of this person (if known).

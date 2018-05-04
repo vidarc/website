@@ -8,10 +8,6 @@ const Planet = gql`
     surface_water: String
     # The average populationof sentient beings inhabiting this planet.
     population: String
-    # the ISO 8601 date format of the time that this resource was edited.
-    edited: String
-    # The hypermedia URL of this resource.
-    url: String
     # The diameter of this planet in kilometers.
     diameter: String
     # An array of People URL Resources that live on this planet.
@@ -30,8 +26,6 @@ const Planet = gql`
     name: String
     # the terrain of this planet. Comma-seperated if diverse.
     terrain: String
-    # The ISO 8601 date format of the time that this resource was created.
-    created: String
   }
 `
 export default () => [Planet, Person, Film]

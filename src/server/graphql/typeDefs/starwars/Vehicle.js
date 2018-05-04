@@ -27,16 +27,10 @@ const Vehicle = gql`
     length: String
     # The name of this vehicle. The common name, such as Sand Crawler.
     name: String
-    # the ISO 8601 date format of the time that this resource was edited.
-    edited: String
-    # The ISO 8601 date format of the time that this resource was created.
-    created: String
     # The maximum speed of this vehicle in atmosphere.
     max_atmosphering_speed: String
     # The cost of this vehicle new, in galactic credits.
     cost_in_credits: String
-    # The hypermedia URL of this resource.
-    url: String
   }
 `
 export default () => [Vehicle, Person, Film]
