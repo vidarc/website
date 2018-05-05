@@ -12,11 +12,12 @@
       "transform-class-properties"
     ],
     "presets": [
+      "flow",
       [
         "env",
         {
           "targets": {
-            "node": "6.11.1"
+            "node": "6.11.5"
           }
         }
       ]
@@ -51,6 +52,7 @@
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-0": "^6.22.0",
     "codacy-coverage": "^3.0.0",
@@ -87,6 +89,7 @@
     "graphql": "^0.13.2",
     "graphql-tag": "^2.8.0",
     "graphql-tools": "^2.23.1",
+    "lodash": "^4.17.10",
     "node-fetch": "^2.0.0",
     "prop-types": "^15.5.4",
     "react": "^16.0.0",

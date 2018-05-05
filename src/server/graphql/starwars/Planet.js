@@ -1,8 +1,15 @@
+// @flow
+
 import gql from 'graphql-tag'
+import { loader, getAll, getOne } from './helpers'
+import type { Planet } from './../../../common/types/StarWars'
 
-import { Person, Film } from './'
+export const PlanetTypeDef = gql`
+  extend type Query {
+    getAllPlanets: [Planet]
+    getPlanet(id: Int): Planet
+  }
 
-const Planet = gql`
   type Planet {
     # The percentage of the planet surface that is naturally occuring water or bodies of water.
     surface_water: String
@@ -28,4 +35,15 @@ const Planet = gql`
     terrain: String
   }
 `
-export default () => [Planet, Person, Film]
+
+export const planetResolvers = {
+  Query: {
+    getAllPlanets: () => getAll('planets'),
+    getPlanet: (id: number) => getOne('planets', id),
+  },
+
+  Planet: {
+    residents: ({ residents }: Planet) => loader.loadMany(residents),
+    films: ({ films }: Planet) => loader.loadMany(films),
+  },
+}

@@ -2,11 +2,10 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import compression from 'compression'
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express'
-import { makeExecutableSchema } from 'graphql-tools'
+import { mergeSchemas } from 'graphql-tools'
 
 import logger from './../logger'
-import typeDefs from './typeDefs'
-import resolvers from './resolvers'
+import starwarsSchema from './starwars'
 
 const graphql = () => {
   const server = express()
@@ -15,10 +14,7 @@ const graphql = () => {
 
   server.use(compression())
 
-  const schema = makeExecutableSchema({
-    typeDefs,
-    resolvers,
-  })
+  const schema = mergeSchemas({ schemas: [starwarsSchema] })
 
   // The GraphQL endpoint
   server.use('/graphql', bodyParser.json(), graphqlExpress({ schema, tracing: true }))

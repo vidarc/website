@@ -1,8 +1,15 @@
+// @flow
+
 import gql from 'graphql-tag'
+import { loader, getAll, getOne } from './helpers'
+import type { Person } from './../../../common/types/StarWars'
 
-import { Film, Species, Starship, Vehicle } from './'
+export const PersonTypeDef = gql`
+  extend type Query {
+    getAllPeople: [Person]
+    getPerson(id: Int): Person
+  }
 
-const Person = gql`
   type Person {
     # The url of the planet resource that this person was born on.
     homeworld: String
@@ -32,4 +39,17 @@ const Person = gql`
     skin_color: String
   }
 `
-export default () => [Person, Species, Film, Starship, Vehicle]
+
+export const personResolvers = {
+  Query: {
+    getAllPeople: () => getAll('people'),
+    getPerson: (id: number) => getOne('people', id),
+  },
+
+  Person: {
+    films: ({ films }: Person) => loader.loadMany(films),
+    species: ({ species }: Person) => loader.loadMany(species),
+    starships: ({ starships }: Person) => loader.loadMany(starships),
+    vehicles: ({ vehicles }: Person) => loader.loadMany(vehicles),
+  },
+}

@@ -1,8 +1,15 @@
+// @flow
+
 import gql from 'graphql-tag'
+import { loader, getAll, getOne } from './helpers'
+import type { Starship } from './../../../common/types/StarWars'
 
-import { Person, Film } from './'
+export const StarshipTypeDef = gql`
+  extend type Query {
+    getAllStarships: [Starship]
+    getStarship(id: Int): Starship
+  }
 
-const Starship = gql`
   type Starship {
     # The number of non-essential people this starship can transport.
     passengers: String
@@ -40,4 +47,15 @@ const Starship = gql`
     cost_in_credits: String
   }
 `
-export default () => [Starship, Person, Film]
+
+export const starshipResolvers = {
+  Query: {
+    getAllStarships: () => getAll('starships'),
+    getStarship: (id: number) => getOne('starships', id),
+  },
+
+  Starship: {
+    pilots: ({ pilots }: Starship) => loader.loadMany(pilots),
+    films: ({ films }: Starship) => loader.loadMany(films),
+  },
+}

@@ -1,8 +1,15 @@
+// @flow
+
 import gql from 'graphql-tag'
+import { loader, getAll, getOne } from './helpers'
+import type { Vehicle } from './../../../common/types/StarWars'
 
-import { Person, Film } from './'
+export const VehicleTypeDef = gql`
+  extend type Query {
+    getAllVehicles: [Vehicle]
+    getVehicle(id: Int): Vehicle
+  }
 
-const Vehicle = gql`
   type Vehicle {
     # The number of non-essential people this vehicle can transport.
     passengers: String
@@ -33,4 +40,15 @@ const Vehicle = gql`
     cost_in_credits: String
   }
 `
-export default () => [Vehicle, Person, Film]
+
+export const vehicleResolvers = {
+  Query: {
+    getAllVehicles: () => getAll('vehicles'),
+    getVehicle: (id: number) => getOne('vehicles', id),
+  },
+
+  Vehicle: {
+    pilots: ({ pilots }: Vehicle) => loader.loadMany(pilots),
+    films: ({ films }: Vehicle) => loader.loadMany(films),
+  },
+}

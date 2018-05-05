@@ -1,8 +1,15 @@
+// @flow
+
 import gql from 'graphql-tag'
+import { loader, getAll, getOne } from './helpers'
+import type { Film } from './../../../common/types/StarWars'
 
-import { Species, Starship, Vehicle, Person, Planet } from './'
+export const FilmTypeDef = gql`
+  extend type Query {
+    getAllFilms: [Film]
+    getFilm(id: Int): Film
+  }
 
-const Film = gql`
   type Film {
     # The title of this film
     title: String
@@ -28,4 +35,18 @@ const Film = gql`
     planets: [Planet]
   }
 `
-export default () => [Film, Species, Starship, Vehicle, Person, Planet]
+
+export const filmResolvers = {
+  Query: {
+    getAllFilms: () => getAll('films'),
+    getFilm: (id: number) => getOne('films', id),
+  },
+
+  Film: {
+    species: ({ species }: Film) => loader.loadMany(species),
+    starships: ({ starships }: Film) => loader.loadMany(starships),
+    vehicles: ({ vehicles }: Film) => loader.loadMany(vehicles),
+    characters: ({ characters }: Film) => loader.loadMany(characters),
+    planets: ({ planets }: Film) => loader.loadMany(planets),
+  },
+}

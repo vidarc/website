@@ -1,8 +1,15 @@
+// @flow
+
 import gql from 'graphql-tag'
+import { loader, getAll, getOne } from './helpers'
+import { Species } from './../../../common/types/StarWars'
 
-import { Person, Film } from './'
+export const SpeciesTypeDef = gql`
+  extend type Query {
+    getAllSpecies: [Species]
+    getSpecies(id: Int): Species
+  }
 
-const Species = gql`
   type Species {
     # A comma-seperated string of common skin colors for this species,
     # none if this species does not typically have skin.
@@ -32,4 +39,15 @@ const Species = gql`
     designation: String
   }
 `
-export default () => [Species, Person, Film]
+
+export const speciesResolvers = {
+  Query: {
+    getAllSpecies: () => getAll('species'),
+    getSpecies: (id: number) => getOne('species', id),
+  },
+
+  Species: {
+    people: ({ people }: Species) => loader.loadMany(people),
+    films: ({ films }: Species) => loader.loadMany(films),
+  },
+}
