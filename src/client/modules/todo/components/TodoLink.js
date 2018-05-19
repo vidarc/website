@@ -1,23 +1,20 @@
 // @flow
 
-import React from 'react'
+import * as React from 'react'
 import PropTypes from 'prop-types'
 import { Button } from 'semantic-ui-react'
 
-const Link = ({ active, children, onClick }) => {
+export type Props = {
+  active: boolean,
+  children: React.Node,
+  onClick: Function,
+}
+
+const Link = ({ active, children, onClick }: Props) => {
   if (active) {
     return <span>{children}</span>
   }
-  return (
-    <Button
-      onClick={(e) => {
-        e.preventDefault()
-        onClick()
-      }}
-    >
-      {children}
-    </Button>
-  )
+  return <Button onClick={() => onClick()}>{children}</Button>
 }
 
 Link.propTypes = {

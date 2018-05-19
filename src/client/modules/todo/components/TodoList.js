@@ -5,9 +5,15 @@ import PropTypes from 'prop-types'
 import { List } from 'semantic-ui-react'
 
 import Todo from './Todo'
+import { type Todo as TodoProp } from '../constants'
 
-const TodoList = ({ todos, onTodoClick }) => (
-  <List bulleted>{todos.map((todo, index) => <Todo key={index} {...todo} onClick={() => onTodoClick(index)} />)}</List>
+export type Props = {
+  todos: Array<TodoProp>,
+  onTodoClick: Function,
+}
+
+const TodoList = ({ todos, onTodoClick }: Props) => (
+  <List bulleted>{todos.map(todo => <Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} />)}</List>
 )
 
 TodoList.propTypes = {

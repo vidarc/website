@@ -17,7 +17,7 @@
         "env",
         {
           "targets": {
-            "node": "6.11.5"
+            "node": "6.14.0"
           }
         }
       ]
@@ -33,6 +33,8 @@
     "serve": "firebase serve",
     "watch:server": "webpack --config webpack.config.server.js --progress --colors --watch",
     "test": "react-scripts test --env=jsdom --setupFiles raf/polyfill --setupFiles whatwg-fetch",
+    "test:debug":
+      "react-scripts --inspect-brk test --runInBand --env=jsdom --setupFiles raf/polyfill --setupFiles whatwg-fetch",
     "coverage": "yarn coverage:run && yarn coverage:cleanup",
     "coverage:run": "react-scripts test --env=jsdom --coverage --setupFiles raf/polyfill --setupFiles whatwg-fetch",
     "coverage:cleanup": "rm -rf ./coverage",
@@ -56,9 +58,9 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-0": "^6.22.0",
-    "codacy-coverage": "^3.0.0",
     "eslint": "^4.6.1",
     "eslint-config-airbnb": "^16.0.0",
+    "eslint-plugin-flowtype": "^2.46.3",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.0.1",
@@ -72,8 +74,7 @@
     "semantic-ui": "^2.2.13",
     "webpack": "^3.8.1",
     "webpack-cli": "^2.1.2",
-    "webpack-node-externals": "^1.6.0",
-    "whatwg-fetch": "^2.0.3"
+    "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
     "apollo-boost": "^0.1.6",
@@ -84,14 +85,16 @@
     "cross-fetch": "^2.1.0",
     "dataloader": "^1.4.0",
     "dotenv": "^5.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "express": "^4.14.0",
     "firebase-admin": "^5.12.0",
     "firebase-functions": "^1.0.2",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.8.0",
     "graphql-tools": "^2.23.1",
+    "jest-enzyme": "^6.0.0",
     "lodash": "^4.17.10",
-    "node-fetch": "^2.0.0",
     "prop-types": "^15.5.4",
     "react": "^16.0.0",
     "react-apollo": "^2.1.1",

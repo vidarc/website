@@ -1,18 +1,22 @@
 // @flow
 
-import React, { Component } from 'react'
+import * as React from 'react'
 import { Form } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 
 import { addTodo } from '../actions'
 
-class AddTodo extends Component {
-  constructor(props) {
-    super(props)
+type Props = {
+  dispatch: Function,
+}
 
-    this.state = {
-      todo: '',
-    }
+type State = {
+  todo: string,
+}
+
+class AddTodo extends React.Component<Props, State> {
+  state = {
+    todo: '',
   }
 
   handleSubmit = () => {
@@ -29,8 +33,8 @@ class AddTodo extends Component {
       <div>
         <Form onSubmit={this.handleSubmit}>
           <Form.Group>
-            <Form.Input placeholder="Enter the todo..." name="todo" value={todo} onChange={this.handleChange} />
-            <Form.Button type="submit" content="Add Todo" />
+            <Form.Input placeholder='Enter the todo...' name='todo' value={todo} onChange={this.handleChange} />
+            <Form.Button type='submit' content='Add Todo' />
           </Form.Group>
         </Form>
       </div>
@@ -38,6 +42,4 @@ class AddTodo extends Component {
   }
 }
 
-AddTodo = connect()(AddTodo)
-
-export default AddTodo
+export default connect()(AddTodo)

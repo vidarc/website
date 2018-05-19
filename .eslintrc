@@ -1,6 +1,7 @@
 {
   "extends": "airbnb",
   "parser": "babel-eslint",
+  "plugins": ["flowtype"],
   "env": {
     "browser": true,
     "node": true,
@@ -16,7 +17,9 @@
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
-        "components": ["Link"]
+        "components": ["Link"],
+        "specialLink": ["to", "hrefLeft", "hrefRight"],
+        "aspects": ["noHref", "invalidHref", "preferButton"]
       }
     ]
   }
