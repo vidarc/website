@@ -1,35 +1,39 @@
 // @flow
 
-import React from 'react'
+import * as React from 'react'
 import Loadable from 'react-loadable'
 
-const Loading = ({ pastDelay }) => {
+const Loading = ({ pastDelay }: { pastDelay: boolean }) => {
   if (pastDelay) {
     return <div>Loading...</div>
-  } else {
-    return null
   }
+  return null
 }
+
+const loadableComponent = ({ loader }: { loader: Function }) =>
+  Loadable({
+    loader,
+    loading: Loading,
+    delay: 200,
+  })
 
 const routes = [
   {
     key: 0,
     path: '/',
-    component: Loadable({
-      loader: () => import('./client/modules/home'),
-      loading: Loading,
-      delay: 200,
-    }),
+    component: loadableComponent({ loader: () => import('./client/modules/home') }),
     exact: true,
   },
   {
     key: 1,
     path: '/todo',
-    component: Loadable({
-      loader: () => import('./client/modules/todo'),
-      loading: Loading,
-      delay: 200,
-    }),
+    component: loadableComponent({ loader: () => import('./client/modules/todo') }),
+    exact: true,
+  },
+  {
+    key: 2,
+    path: '/starwars',
+    component: loadableComponent({ loader: () => import('./client/modules/starwars') }),
     exact: true,
   },
 ]

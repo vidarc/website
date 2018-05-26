@@ -1,36 +1,39 @@
-/* @flow */
-
-import React from 'react'
-import { hydrate } from 'react-dom'
+import * as React from 'react'
+import { hydrate, render } from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import Loadable from 'react-loadable'
+import ApolloClient from 'apollo-boost'
+import { ApolloProvider } from 'react-apollo'
 
-import configureStore from './client/store/configureStore'
+import configureStore from './client/ducks'
 import App from './client/App'
 import './client/style/main.css'
 import './client/style/semantic/semantic.min.css'
 
 const store = configureStore()
 
-function render(Component) {
-  Loadable.preloadReady().then(() => {
-    hydrate(
+const apollo = new ApolloClient({ uri: '/graphql' })
+
+function renderApp(Component: React.Node) {
+  const renderMethod = module.hot ? render : hydrate
+
+  renderMethod(
+    <ApolloProvider client={apollo}>
       <Provider store={store}>
         <BrowserRouter>
           <Component />
         </BrowserRouter>
-      </Provider>,
-      document.getElementById('root'),
-    )
-  })
+      </Provider>
+    </ApolloProvider>,
+    document.getElementById('root'),
+  )
 }
 
-render(App)
+renderApp(App)
 
 if (module.hot) {
   module.hot.accept('./client/App', () => {
     const Next = import('./client/App')
-    render(Next)
+    renderApp(Next)
   })
 }
