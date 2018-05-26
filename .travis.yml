@@ -18,7 +18,8 @@ script:
   yarn coverage:cleanup &&
   yarn build
 before_deploy:
-- cd functions &&
+- yarn predeploy &&
+  cd functions &&
   yarn install &&
   cd -
 deploy:
