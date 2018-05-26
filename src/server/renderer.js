@@ -9,7 +9,7 @@ import path from 'path'
 import App from '../client/App'
 import logger from './logger'
 import routes from '../routes.config'
-import configureStore from '../client/store/configureStore'
+import configureStore from '../client/ducks'
 
 /** **********************************************
  * Server routing using React Router server side *
