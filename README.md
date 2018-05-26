@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/vidarc/Website.svg?branch=master)](https://travis-ci.org/vidarc/Website)
+[![Build Status](https://travis-ci.org/vidarc/website.svg?branch=master)](https://travis-ci.org/vidarc/website)
 [![Greenkeeper badge](https://badges.greenkeeper.io/vidarc/website.svg)](https://greenkeeper.io/)
 [![codecov](https://codecov.io/gh/vidarc/website/branch/master/graph/badge.svg)](https://codecov.io/gh/vidarc/website)
 
