@@ -1,11 +1,11 @@
 // @flow
 
-import React from 'react'
+import * as React from 'react'
 import PropTypes from 'prop-types'
 import { List } from 'semantic-ui-react'
 
 import Todo from './Todo'
-import { type Todo as TodoProp } from '../constants'
+import { type Todo as TodoProp } from '../ducks/types'
 
 export type Props = {
   todos: Array<TodoProp>,
@@ -19,7 +19,7 @@ const TodoList = ({ todos, onTodoClick }: Props) => (
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       completed: PropTypes.bool.isRequired,
       text: PropTypes.string.isRequired,
     }).isRequired,

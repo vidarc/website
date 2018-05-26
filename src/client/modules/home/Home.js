@@ -1,6 +1,6 @@
 // @flow
 
-import * as React from 'react'
+import React from 'react'
 import { Container, List } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 

@@ -33,8 +33,7 @@
     "serve": "firebase serve",
     "watch:server": "webpack --config webpack.config.server.js --progress --colors --watch",
     "test": "react-scripts test --env=jsdom --setupFiles raf/polyfill --setupFiles whatwg-fetch",
-    "test:debug":
-      "react-scripts --inspect-brk test --runInBand --env=jsdom --setupFiles raf/polyfill --setupFiles whatwg-fetch",
+    "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom --setupFiles raf/polyfill --setupFiles whatwg-fetch",
     "coverage": "yarn coverage:run && yarn coverage:cleanup",
     "coverage:run": "react-scripts test --env=jsdom --coverage --setupFiles raf/polyfill --setupFiles whatwg-fetch",
     "coverage:cleanup": "rm -rf ./coverage",
@@ -42,8 +41,14 @@
     "flow": "flow"
   },
   "jest": {
-    "collectCoverageFrom": ["src/client/**/*.js", "!src/client/style/semantic/**/*.js"],
-    "coverageReporters": ["text", "lcov"]
+    "collectCoverageFrom": [
+      "src/client/**/*.js",
+      "!src/client/style/semantic/**/*.js"
+    ],
+    "coverageReporters": [
+      "text",
+      "lcov"
+    ]
   },
   "devDependencies": {
     "apollo-test-utils": "^0.3.2",
@@ -107,6 +112,7 @@
     "redux": "^4.0.0",
     "redux-thunk": "^2.2.0",
     "semantic-ui-react": "^0.80.0",
+    "shortid": "^2.2.8",
     "winston": "^3.0.0-rc1"
   }
 }

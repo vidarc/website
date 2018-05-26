@@ -1,12 +1,12 @@
 // @flow
 
-import { type Action, type Todo } from '../constants'
+import types, { type Action, type Todo } from '../types'
 
 type State = Array<Todo>
 
 const todos = (state: State = [], { type, payload }: Action<Todo>): State => {
   switch (type) {
-    case 'ADD_TODO':
+    case types.ADD_TODO:
       return [
         ...state,
         {
@@ -15,7 +15,7 @@ const todos = (state: State = [], { type, payload }: Action<Todo>): State => {
           completed: false,
         },
       ]
-    case 'TOGGLE_TODO':
+    case types.TOGGLE_TODO:
       return state.map((todo: Todo) => (todo.id === payload.id ? { ...todo, completed: !todo.completed } : todo))
     default:
       return state

@@ -1,10 +1,10 @@
 // @flow
 
-import * as React from 'react'
+import React from 'react'
 import { Form } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 
-import { addTodo } from '../actions'
+import actions from '../ducks/actions'
 
 type Props = {
   dispatch: Function,
@@ -20,7 +20,7 @@ class AddTodo extends React.Component<Props, State> {
   }
 
   handleSubmit = () => {
-    this.props.dispatch(addTodo(this.state.todo))
+    this.props.dispatch(actions.addTodo(this.state.todo))
     this.setState({ todo: '' })
   }
 

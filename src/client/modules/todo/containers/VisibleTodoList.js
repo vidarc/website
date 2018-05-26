@@ -1,17 +1,17 @@
 // @flow
 
 import { connect } from 'react-redux'
-import { toggleTodo } from '../actions'
+import actions from '../ducks/actions'
 import TodoList from '../components/TodoList'
-import { type Todo, type VisibilityFilter } from '../constants'
+import { type Todo, type VisibilityFilter, visibilityFilter } from '../ducks/types'
 
-const getVisibleTodos = (todos: Array<Todo>, filter: VisibilityFilter) => {
+const getVisibleTodos = (todos: Array<Todo>, { filter }: VisibilityFilter) => {
   switch (filter) {
-    case 'SHOW_COMPLETED':
-      return todos.filter(t => t.completed)
-    case 'SHOW_ACTIVE':
-      return todos.filter(t => !t.completed)
-    case 'SHOW_ALL':
+    case visibilityFilter.SHOW_COMPLETED:
+      return todos.filter(todo => todo.completed)
+    case visibilityFilter.SHOW_ACTIVE:
+      return todos.filter(todo => !todo.completed)
+    case visibilityFilter.SHOW_ALL:
     default:
       return todos
   }
@@ -22,8 +22,8 @@ const mapStateToProps = ({ todoReducers }) => ({
 })
 
 const mapDispatchToProps = (dispatch: Function) => ({
-  onTodoClick: (id) => {
-    dispatch(toggleTodo(id))
+  onTodoClick: (id: string) => {
+    dispatch(actions.toggleTodo(id))
   },
 })
 

@@ -3,7 +3,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import TodoLink from '../components/TodoLink'
+import TodoLink from '../TodoLink'
 
 describe('TodoLink component', () => {
   let props

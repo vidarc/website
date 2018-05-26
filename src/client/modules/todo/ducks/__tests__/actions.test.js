@@ -1,15 +1,16 @@
 // @flow
 
-import * as actions from './../actions'
+import actions from '../actions'
+import types, { visibilityFilter } from '../types'
 
 describe('actions', () => {
   it('should create an action to add a todo', () => {
     const text = 'some text'
 
     const expected = {
-      type: 'ADD_TODO',
+      type: types.ADD_TODO,
       payload: {
-        id: 0,
+        id: 'shortid',
         text,
       },
     }
@@ -19,47 +20,47 @@ describe('actions', () => {
 
   it('should create an action to toggle a todo', () => {
     const expected = {
-      type: 'TOGGLE_TODO',
+      type: types.TOGGLE_TODO,
       payload: {
-        id: 0,
+        id: 'shortid',
       },
     }
 
-    expect(actions.toggleTodo(0)).toEqual(expected)
+    expect(actions.toggleTodo('shortid')).toEqual(expected)
   })
 
   describe('set visibility filter', () => {
     it('should set the filter to show all', () => {
       const expected = {
-        type: 'SET_VISIBILITY_FILTER',
+        type: types.SET_VISIBILITY_FILTER,
         payload: {
-          filter: 'SHOW_ALL',
+          filter: visibilityFilter.SHOW_ALL,
         },
       }
 
-      expect(actions.setVisibilityFilter('SHOW_ALL')).toEqual(expected)
+      expect(actions.setVisibilityFilter(visibilityFilter.SHOW_ALL)).toEqual(expected)
     })
 
     it('should set the filter to show active', () => {
       const expected = {
-        type: 'SET_VISIBILITY_FILTER',
+        type: types.SET_VISIBILITY_FILTER,
         payload: {
-          filter: 'SHOW_ACTIVE',
+          filter: visibilityFilter.SHOW_ACTIVE,
         },
       }
 
-      expect(actions.setVisibilityFilter('SHOW_ACTIVE')).toEqual(expected)
+      expect(actions.setVisibilityFilter(visibilityFilter.SHOW_ACTIVE)).toEqual(expected)
     })
 
     it('should set the filter to show completed', () => {
       const expected = {
-        type: 'SET_VISIBILITY_FILTER',
+        type: types.SET_VISIBILITY_FILTER,
         payload: {
-          filter: 'SHOW_COMPLETED',
+          filter: visibilityFilter.SHOW_COMPLETED,
         },
       }
 
-      expect(actions.setVisibilityFilter('SHOW_COMPLETED')).toEqual(expected)
+      expect(actions.setVisibilityFilter(visibilityFilter.SHOW_COMPLETED)).toEqual(expected)
     })
   })
 })

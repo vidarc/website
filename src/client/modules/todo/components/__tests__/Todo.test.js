@@ -4,7 +4,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 import { List } from 'semantic-ui-react'
 
-import Todo, { type Props } from '../components/Todo'
+import Todo, { type Props } from '../Todo'
 
 describe('Todo component', () => {
   const props: Props = {

@@ -1,5 +1,5 @@
-// flow-typed signature: 5a7d4ea73593d948215858c8c05c0970
-// flow-typed version: e4ef32c255/react-apollo_v2.x.x/flow_>=v0.58.x
+// flow-typed signature: 5c9a9783e7e81a3585c1f797363aec1c
+// flow-typed version: 4f7bc36465/react-apollo_v2.x.x/flow_>=v0.58.x
 
 declare module "react-apollo" {
   /**
@@ -380,7 +380,7 @@ declare module "react-apollo" {
     [queryName: string]: MutationQueryReducer<T>
   };
 
-  declare class ApolloError extends Error {
+  declare export class ApolloError extends Error {
     message: string;
     graphQLErrors: Array<GraphQLError>;
     networkError: Error | null;
@@ -443,6 +443,8 @@ declare module "react-apollo" {
     reFetchObservableQueries(
       includeStandby?: boolean
     ): Promise<ApolloQueryResult<any>[]> | Promise<null>;
+    extract(optimistic?: boolean): TCacheShape;
+    restore(serializedState: TCacheShape): ApolloCache<TCacheShape>;
   }
 
   /* apollo-link types */

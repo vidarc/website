@@ -1,16 +1,16 @@
 // @flow
 
 import { connect } from 'react-redux'
-import { setVisibilityFilter } from '../actions'
+
+import actions from '../ducks/actions'
 import TodoLink from '../components/TodoLink'
-import { type VisibilityFilter } from '../constants'
 
 type State = {
-  visibilityFilter: VisibilityFilter,
+  visibilityFilter: string,
 }
 
 type Props = {
-  filter: VisibilityFilter,
+  filter: string,
 }
 
 const mapStateToProps = (state: State, ownProps: Props) => ({
@@ -19,7 +19,7 @@ const mapStateToProps = (state: State, ownProps: Props) => ({
 
 const mapDispatchToProps = (dispatch: Function, ownProps: Props) => ({
   onClick: () => {
-    dispatch(setVisibilityFilter(ownProps.filter))
+    dispatch(actions.setVisibilityFilter(ownProps.filter))
   },
 })
 
