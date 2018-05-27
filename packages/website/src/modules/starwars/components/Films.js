@@ -1,7 +1,6 @@
 // @flow
 
 import * as React from 'react'
-import { Table } from 'semantic-ui-react'
 import ArrayToList from './ArrayToList'
 
 type FilmData = {

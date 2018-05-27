@@ -1,7 +1,6 @@
 // @flow
 
 import React from 'react'
-import { Form } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 
 import actions from '../ducks/actions'
@@ -31,12 +30,12 @@ class AddTodo extends React.Component<Props, State> {
 
     return (
       <div>
-        <Form onSubmit={this.handleSubmit}>
-          <Form.Group>
-            <Form.Input placeholder='Enter the todo...' name='todo' value={todo} onChange={this.handleChange} />
-            <Form.Button type='submit' content='Add Todo' />
-          </Form.Group>
-        </Form>
+        <form onSubmit={this.handleSubmit}>
+          <div>
+            <input placeholder='Enter the todo...' name='todo' value={todo} onChange={this.handleChange} />
+            <button type='submit' content='Add Todo' />
+          </div>
+        </form>
       </div>
     )
   }

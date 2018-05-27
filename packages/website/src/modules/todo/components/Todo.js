@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 import PropTypes from 'prop-types'
-import { List } from 'semantic-ui-react'
 
 export type Props = {
   onClick: Function,
@@ -17,9 +16,9 @@ const Todo = ({ onClick, completed, text }: Props) => {
   }
 
   return (
-    <List.Item onClick={onClick} style={style}>
+    <li onClick={onClick} style={style}>
       {text}
-    </List.Item>
+    </li>
   )
 }
 

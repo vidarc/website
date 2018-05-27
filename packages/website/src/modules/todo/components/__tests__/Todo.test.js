@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { mount } from 'enzyme'
-import { List } from 'semantic-ui-react'
 
 import Todo, { type Props } from '../Todo'
 
@@ -19,8 +18,8 @@ describe('Todo component', () => {
     const actual = mount(<Todo {...props} />)
 
     expect(actual).toBeDefined()
-    expect(actual.find(List.Item).prop('style')).toEqual({ cursor: 'pointer', textDecoration: 'none' })
-    expect(actual.find(List.Item).text()).toEqual('todo text')
+    expect(actual.find('li').prop('style')).toEqual({ cursor: 'pointer', textDecoration: 'none' })
+    expect(actual.find('li').text()).toEqual('todo text')
   })
 
   it('should render correctly when completed', () => {
@@ -29,8 +28,8 @@ describe('Todo component', () => {
     const actual = mount(<Todo {...props} />)
 
     expect(actual).toBeDefined()
-    expect(actual.find(List.Item).prop('style')).toEqual({ cursor: 'pointer', textDecoration: 'line-through' })
-    expect(actual.find(List.Item).text()).toEqual('todo text')
+    expect(actual.find('li').prop('style')).toEqual({ cursor: 'pointer', textDecoration: 'line-through' })
+    expect(actual.find('li').text()).toEqual('todo text')
   })
 
   it('calls the function when List.Item is clicked', () => {

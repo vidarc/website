@@ -1,12 +1,11 @@
 // @flow
 
 import * as React from 'react'
-import { List } from 'semantic-ui-react'
 
 type Props = {
   data: Array<string>,
 }
 
-const ArrayToList = ({ data }: Props) => <List>{data.map(string => <List.Item>{string}</List.Item>)}</List>
+const ArrayToList = ({ data }: Props) => <ul>{data.map(string => <li>{string}</li>)}</ul>
 
 export default ArrayToList

@@ -1,21 +1,20 @@
 // @flow
 
 import React from 'react'
-import { Container, List } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 const Home = () => (
-  <Container>
+  <div>
     <div>Hello everybody! My name is Matthew Ailes</div>
-    <List bulleted>
-      <List.Item>
+    <ul>
+      <li>
         <Link to='/todo'>Todo App from redux.js.org</Link>
-      </List.Item>
-      <List.Item>
+      </li>
+      <li>
         <Link to='/starwars'>Star Wars app with a GraphQL wrapper around swapi</Link>
-      </List.Item>
-    </List>
-  </Container>
+      </li>
+    </ul>
+  </div>
 )
 
 export default Home

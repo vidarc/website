@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 import PropTypes from 'prop-types'
-import { List } from 'semantic-ui-react'
 
 import Todo from './Todo'
 import { type Todo as TodoProp } from '../ducks/types'
@@ -13,7 +12,7 @@ export type Props = {
 }
 
 const TodoList = ({ todos, onTodoClick }: Props) => (
-  <List bulleted>{todos.map(todo => <Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} />)}</List>
+  <ul>{todos.map(todo => <Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} />)}</ul>
 )
 
 TodoList.propTypes = {
