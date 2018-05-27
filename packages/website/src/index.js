@@ -1,28 +1,20 @@
 import * as React from 'react'
-import { hydrate, render } from 'react-dom'
+import { render } from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import ApolloClient from 'apollo-boost'
-import { ApolloProvider } from 'react-apollo'
 
 import configureStore from './ducks'
 import App from './App'
 
 const store = configureStore()
 
-const apollo = new ApolloClient({ uri: '/graphql' })
-
 function renderApp(Component: React.Node) {
-  const renderMethod = module.hot ? render : hydrate
-
-  renderMethod(
-    <ApolloProvider client={apollo}>
-      <Provider store={store}>
-        <BrowserRouter>
-          <Component />
-        </BrowserRouter>
-      </Provider>
-    </ApolloProvider>,
+  render(
+    <Provider store={store}>
+      <BrowserRouter>
+        <Component />
+      </BrowserRouter>
+    </Provider>,
     document.getElementById('root'),
   )
 }
@@ -30,8 +22,8 @@ function renderApp(Component: React.Node) {
 renderApp(App)
 
 if (module.hot) {
-  module.hot.accept('./client/App', () => {
-    const Next = import('./client/App')
+  module.hot.accept('./App', () => {
+    const Next = import('./App')
     renderApp(Next)
   })
 }
