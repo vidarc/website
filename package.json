@@ -6,6 +6,6 @@
     "clean:build": "rm -rf ./packages/*/build",
     "clean:node_modules": "rm -rf ./node_modules && rm -rf ./packages/*/node_modules",
     "test": "yarn test:website",
-    "test:website": "cd "
+    "test:website": "cd packages/website && yarn test && cd -"
   }
 }

@@ -31,4 +31,5 @@ const starwarsSchema = makeExecutableSchema({
     vehicleResolvers,
   ),
 })
+
 export default starwarsSchema

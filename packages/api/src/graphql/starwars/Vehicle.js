@@ -2,7 +2,7 @@
 
 import gql from 'graphql-tag'
 import { loader, getAll, getOne } from './helpers'
-import type { Vehicle } from './../../../common/types/StarWars'
+import { type Vehicle } from '@mattailes/common/types/StarWars'
 
 export const VehicleTypeDef = gql`
   extend type Query {

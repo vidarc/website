@@ -1,8 +1,8 @@
 // @flow
 
-export type { Film } from './Film'
-export type { Person } from './Person'
-export type { Planet } from './Planet'
-export type { Species } from './Species'
-export type { Starship } from './Starship'
-export type { Vehicle } from './Vehicle'
+export { Film } from './Film'
+export { Person } from './Person'
+export { Planet } from './Planet'
+export { Species } from './Species'
+export { Starship } from './Starship'
+export { Vehicle } from './Vehicle'
