@@ -5,10 +5,8 @@ import { Provider } from 'react-redux'
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
 
-import configureStore from './client/ducks'
-import App from './client/App'
-import './client/style/main.css'
-import './client/style/semantic/semantic.min.css'
+import configureStore from './ducks'
+import App from './App'
 
 const store = configureStore()
 
