@@ -16,7 +16,7 @@
     "flow": "flow"
   },
   "jest": {
-    "collectCoverageFrom": ["src/client/**/*.js", "!src/client/style/semantic/**/*.js"],
+    "collectCoverageFrom": ["src/**/*.js"],
     "coverageReporters": ["text", "lcov"]
   },
   "devDependencies": {
