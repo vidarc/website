@@ -9,8 +9,7 @@
     "test": "react-scripts test --env=jsdom --setupFiles raf/polyfill --setupFiles whatwg-fetch",
     "test:debug":
       "react-scripts --inspect-brk test --runInBand --env=jsdom --setupFiles raf/polyfill --setupFiles whatwg-fetch",
-    "coverage": "yarn coverage:run && yarn coverage:cleanup",
-    "coverage:run": "react-scripts test --env=jsdom --coverage --setupFiles raf/polyfill --setupFiles whatwg-fetch",
+    "coverage": "react-scripts test --env=jsdom --coverage --setupFiles raf/polyfill --setupFiles whatwg-fetch",
     "coverage:cleanup": "rm -rf ./coverage",
     "eject": "react-scripts eject",
     "flow": "flow"
