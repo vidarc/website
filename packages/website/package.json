@@ -7,8 +7,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --setupFiles raf/polyfill --setupFiles whatwg-fetch",
-    "test:debug":
-      "react-scripts --inspect-brk test --runInBand --env=jsdom --setupFiles raf/polyfill --setupFiles whatwg-fetch",
+    "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom --setupFiles raf/polyfill --setupFiles whatwg-fetch",
     "coverage": "react-scripts test --env=jsdom --coverage --setupFiles raf/polyfill --setupFiles whatwg-fetch",
     "coverage:cleanup": "rm -rf ./coverage",
     "eject": "react-scripts eject",
@@ -16,8 +15,13 @@
     "deploy": "firebase deploy --token $FIREBASE_TOKEN"
   },
   "jest": {
-    "collectCoverageFrom": ["src/**/*.js"],
-    "coverageReporters": ["text", "lcov"]
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coverageReporters": [
+      "text",
+      "lcov"
+    ]
   },
   "devDependencies": {
     "eslint": "^4.6.1",
@@ -38,6 +42,7 @@
     "apollo-boost": "^0.1.6",
     "cross-fetch": "^2.1.0",
     "dotenv": "^5.0.0",
+    "emotion": "^9.1.3",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest-enzyme": "^6.0.0",
