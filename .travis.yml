@@ -10,7 +10,8 @@ branches:
 
 install:
 - yarn global add codecov
-- yarn install
+- yarn global add lerna
+- lerna bootstrap
 
 script:
 - lerna run coverage &&
