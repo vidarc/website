@@ -1,6 +1,0 @@
-/*******************************
-     User Global Variables
-*******************************/
-
-@pageFont: 'Fira Sans', sans-serif;
-@googleFontFamily: 'Fira+Sans:100,300,400,600,900';
