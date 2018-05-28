@@ -1,28 +1,21 @@
 language: node_js
 node_js:
-- "lts/*"
+- lts/*
 cache: yarn
-
 branches:
   only:
   - master
-  - /^greenkeeper/.*$/
-
+  - "/^greenkeeper/.*$/"
 install:
 - yarn global add codecov
 - yarn global add lerna
 - lerna bootstrap
-
 script:
-- lerna run coverage &&
-  codecov &&
-  lerna run coverage:cleanup &&
-  lerna run build
-
-deploy:
-  provider: firebase
-  on:
-    branch: master
-  skip_cleanup: true
-  token:
-    secure: TlxdlfMK/lD+NGnOjmrZ0ZuRn57ZtrsPzQ4gguEu8z6VZXIOQCTdpuJvKxm0N0SBeOweANSkVMa2kk2kElYhLKXe5pf57/G4PT+RaobVJFCYE/I+4m+GgMRCGIoiXi04spxBQHAWm6S4Cq/zS+YLRF+5zBZwOP5C9u6Mc7uLXnuVkPYEXAm9i/880hJ8b+IWOj1xKFdZwH7bbajndlGiXD+NVeayNf/ZCvimMtFPuEccGZp+VHeQ+DnRdHoOWQkBYmEiR8yktZZZN1LmNiBt4YMc/1Hx3vJaVkduVnIUmk2wQ1yZf7UixOTuA6X2rijoOtV5nXJFYODNKQ6WtjnAN2CCzxQ7EXAZnAWDBJ7g0bFUOUtY6kwAY/7VHP0z0f0mjY7ksi4wtZLdder6FW+UldiTpzIaMFCQNX3jDAol+I/x3nK+6a17cEBgPbxQvmXbzQWbJSq9wgwyWD3mLpW3aIzOleEQscjewQs1OHBNGnTTOOoS1gARdsj7EOztWbVnGCUsH9JWzUUy80eqKTCDCj/5esuOaZAZXDw+/vQotGOmCfxdyLdVX3espObxDTXFYZZu44s+V8P1aj85r/4ttzBI+4cwBxnBULgwNc41YnNWxUGVyM0PxXcfx7H51tMiCbDjApgV5hTYn/tPE4qXkkLURUicPjdq31OcuXdGsK0=
+- lerna run coverage && codecov && lerna run coverage:cleanup && lerna run build
+stages:
+- name: deploy
+  if: branch = master
+  script: lerna run deploy
+env:
+  global:
+    secure: qqyO5TN+OnK6D3auk29IT2dbWbAt66Mn/HtcnqfuMwKyFVqhSRaRPetLlxjokMfpUaMSffQoP+WMC3Gq6cwxj7+ngIADC8eX7sloFaZ6KqR3xbrAoZbLU76d5EZ43KdGw/Zp6Z5jWkB8VI823omLtdNwvLm57gyb6DwomvH1JAE0cFnftRmugeWintwpmUffz0HsHwAqztYzd0EHBOGv+Q9D4Mggy5H48TpKhFaNHHD2Nc9Y9sMoZolNfW72pYjU04YNEi0QAo8YnkHdSSrPdV9WrfIE+Qb/DzrlUu1Xt9vra+Q5tKGhUwYKbZPKun6lF+9cZFv90EteIbpMGrn4kNB9RwbKmsXvXDW0Su+U2039meT+q6sT4vAIiTrJP83DL0uHxQJQQpZEI9KQyV2daQjRCdPlvfQRoTNmyfiT/ZnRUSo4ScTkKKEHMVN3d3yvhBQfPA9N2Qp/5adHagah/Ie1XlREFIIs/hKI/0LAbIz6d9n4aYprd2eCC3xIftkFKMBBHLYiAeomq54mlhhlwOuIa01EQ1lCScU1VRvqdh//OyOoN4cY+yitgAdWnnTWQT2LmyR47AnaNFyPRG2VkYM9DtqdVz9BctxKa7asC4g1lGOV8xFOt23KEm+1A1J26ducFRvvpNaav2GF8D1F4/Rv6WTyu3iCQHksYprYP5Y=

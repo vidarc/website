@@ -12,7 +12,8 @@
     "coverage": "react-scripts test --env=jsdom --coverage --setupFiles raf/polyfill --setupFiles whatwg-fetch",
     "coverage:cleanup": "rm -rf ./coverage",
     "eject": "react-scripts eject",
-    "flow": "flow"
+    "flow": "flow",
+    "deploy": "firebase deploy --token $FIREBASE_TOKEN"
   },
   "jest": {
     "collectCoverageFrom": ["src/**/*.js"],

@@ -5,7 +5,8 @@
   "scripts": {
     "build": "webpack --progress --colors",
     "watch:server": "webpack --progress --colors --watch",
-    "flow": "flow"
+    "flow": "flow",
+    "deploy": "firebase deploy --token $FIREBASE_TOKEN"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
