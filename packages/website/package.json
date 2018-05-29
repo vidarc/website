@@ -46,6 +46,7 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest-enzyme": "^6.0.0",
+    "normalize.css": "^8.0.0",
     "prop-types": "^15.5.4",
     "react": "^16.0.0",
     "react-apollo": "^2.1.1",
