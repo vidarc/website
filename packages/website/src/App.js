@@ -19,11 +19,6 @@ injectGlobal`
       width: 1024px;
     }
   }
-
-  button {
-    border-radius: 5px;
-    padding: 5px 10px;
-  }
 `
 
 const App = () => <div>{routeHelper(routes)}</div>
