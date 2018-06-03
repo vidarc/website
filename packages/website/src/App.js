@@ -16,7 +16,7 @@ injectGlobal`
     & div {
       text-align: left;
       margin: 0 auto;
-      width: 1024px;
+      max-width: 1024px;
     }
   }
 `

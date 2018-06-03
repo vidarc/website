@@ -14,4 +14,5 @@ const Footer = () => (
     <FilterLink filter={visibilityFilter.SHOW_COMPLETED}>Completed</FilterLink>
   </p>
 )
+
 export default Footer
