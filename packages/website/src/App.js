@@ -16,7 +16,7 @@ injectGlobal`
     text-align: center;
     box-sizing: border-box;
 
-    & * {
+    *, *:before, *:after {
       box-sizing: inherit;
     }
 
