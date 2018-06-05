@@ -31,12 +31,24 @@ const submenu = css`
   display: inline-block;
   position: relative;
 
+  hr {
+    margin: 0;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+
+  > p {
+    margin: 10px 0px;
+  }
+
   > div {
     display: none;
     position: absolute;
     min-width: 150px;
-    background-color: #cccccc;
-    border-top: 1px solid #000000;
+    background-color: #eeeeee;
+    border-top: 3px solid #000000;
+    border-bottom: 3px solid #000000;
 
     > a {
       display: block;
@@ -73,10 +85,6 @@ export default class Navigation extends React.Component<null, State> {
     window.addEventListener('resize', () => this._setWindowWidth(window.innerWidth))
   }
 
-  componentDidUpdate() {
-    console.log(this.state)
-  }
-
   componentWillUnmount() {
     window.removeEventListener('resize')
   }
@@ -92,6 +100,7 @@ export default class Navigation extends React.Component<null, State> {
           <p>Projects</p>
           <div>
             <Link to='/todo'>Todo</Link>
+            <hr />
             <Link to='/starwars'>Star Wars GraphQL</Link>
           </div>
         </div>

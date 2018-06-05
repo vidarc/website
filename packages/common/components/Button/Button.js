@@ -1,12 +1,12 @@
 // @flow
 
 import React from 'react'
-import PropTypes from 'prop-types'
 import { css } from 'emotion'
 
 type Props = {
   text: string,
   type: string,
+  onClick: Function,
 }
 
 const style = css`
@@ -14,15 +14,10 @@ const style = css`
   padding: 5px 10px;
 `
 
-const Button = ({ text, type }: Props) => (
-  <button className={style} type={type}>
+const Button = ({ text, type, onClick }: Props) => (
+  <button className={style} type={type} onClick={onClick}>
     {text}
   </button>
 )
-
-Button.propTypes = {
-  text: PropTypes.string.isRequired,
-  type: PropTypes.string,
-}
 
 export default Button
