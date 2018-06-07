@@ -12,7 +12,10 @@ install:
 - yarn global add lerna
 - lerna bootstrap
 script:
-- lerna run coverage && codecov && lerna run coverage:cleanup && lerna run build
+- lerna run coverage
+- codecov
+- lerna run coverage:cleanup 
+- lerna run build
 deploy:
   provider: script
   script: lerna run deploy
