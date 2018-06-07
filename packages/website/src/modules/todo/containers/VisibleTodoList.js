@@ -1,6 +1,7 @@
 // @flow
 
 import { connect } from 'react-redux'
+
 import actions from '../ducks/actions'
 import TodoList from '../components/TodoList'
 import { type Todo, type VisibilityFilter, visibilityFilter } from '../ducks/types'

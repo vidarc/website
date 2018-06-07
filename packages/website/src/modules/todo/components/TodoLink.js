@@ -14,7 +14,7 @@ const Link = ({ active, children, onClick }: Props) => {
   if (active) {
     return <span>{children}</span>
   }
-  return <Button text={children} onClick={onClick} />
+  return <Button primary text={children} onClick={onClick} />
 }
 
 export default Link
