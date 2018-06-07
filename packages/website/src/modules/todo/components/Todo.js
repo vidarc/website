@@ -1,7 +1,6 @@
 // @flow
 
 import * as React from 'react'
-import PropTypes from 'prop-types'
 
 export type Props = {
   onClick: Function,
@@ -20,12 +19,6 @@ const Todo = ({ onClick, completed, text }: Props) => {
       {text}
     </li>
   )
-}
-
-Todo.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  completed: PropTypes.bool.isRequired,
-  text: PropTypes.string.isRequired,
 }
 
 export default Todo

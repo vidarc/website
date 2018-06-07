@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
+import { Button } from '@mattailes/common/components'
 
 import actions from '../ducks/actions'
 
@@ -41,7 +42,7 @@ class AddTodo extends React.Component<Props, State> {
                 onChange={this.handleChange}
               />
             </label>
-            <button type='submit'>Add Todo</button>
+            <Button text='Add Todo' type='submit' />
           </div>
         </form>
       </div>

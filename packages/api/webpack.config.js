@@ -1,8 +1,10 @@
 const path = require('path')
 const nodeExternals = require('webpack-node-externals')
+const Stylish = require('webpack-stylish')
 
 module.exports = {
   mode: 'development',
+  stats: 'none',
 
   output: {
     path: path.resolve(__dirname),
@@ -32,4 +34,6 @@ module.exports = {
       },
     ],
   },
+
+  plugins: [new Stylish()],
 }

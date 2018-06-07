@@ -1,7 +1,8 @@
 // @flow
 
 import * as React from 'react'
-import PropTypes from 'prop-types'
+
+import { Button } from '@mattailes/common/components'
 
 export type Props = {
   active: boolean,
@@ -13,13 +14,7 @@ const Link = ({ active, children, onClick }: Props) => {
   if (active) {
     return <span>{children}</span>
   }
-  return <button onClick={() => onClick()}>{children}</button>
-}
-
-Link.propTypes = {
-  active: PropTypes.bool.isRequired,
-  children: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired,
+  return <Button primary text={children} onClick={onClick} />
 }
 
 export default Link

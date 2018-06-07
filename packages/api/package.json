@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "webpack --progress --colors",
-    "watch:server": "webpack --progress --colors --watch",
+    "build": "webpack-cli --progress --colors",
+    "watch:server": "webpack-cli --progress --colors --watch",
     "flow": "flow",
     "deploy": "firebase deploy --token $FIREBASE_TOKEN"
   },
@@ -15,7 +15,7 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-flow": "^6.23.0",
-    "eslint": "^4.6.1",
+    "eslint": "4.15.0",
     "eslint-config-airbnb": "^16.0.0",
     "eslint-plugin-flowtype": "^2.46.3",
     "eslint-plugin-import": "^2.2.0",
@@ -23,9 +23,10 @@
     "eslint-plugin-react": "^7.0.1",
     "flow-bin": "^0.73.0",
     "nodemon-webpack-plugin": "^3.0.1",
-    "webpack": "^4.9.1",
-    "webpack-cli": "^2.1.4",
-    "webpack-node-externals": "^1.7.2"
+    "webpack": "^4.11.1",
+    "webpack-cli": "^3.0.3",
+    "webpack-node-externals": "^1.7.2",
+    "webpack-stylish": "^0.1.8"
   },
   "dependencies": {
     "apollo-server-express": "^1.3.2",
