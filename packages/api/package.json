@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "webpack --progress --colors",
-    "watch:server": "webpack --progress --colors --watch",
+    "build": "./node_modules/.bin/webpack --progress --colors",
+    "watch:server": "./node_modules/.bin/webpack --progress --colors --watch",
     "flow": "flow",
     "deploy": "firebase deploy --token $FIREBASE_TOKEN"
   },

@@ -15,7 +15,7 @@ script:
 - lerna run coverage
 - codecov
 - lerna run coverage:cleanup
-- lerna run build --stream
+- lerna run build
 deploy:
   provider: script
   script: lerna run deploy
