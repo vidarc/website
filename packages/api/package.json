@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "./node_modules/.bin/webpack --progress --colors",
-    "watch:server": "./node_modules/.bin/webpack --progress --colors --watch",
+    "build": "webpack-cli --progress --colors",
+    "watch:server": "webpack-cli --progress --colors --watch",
     "flow": "flow",
     "deploy": "firebase deploy --token $FIREBASE_TOKEN"
   },
@@ -24,7 +24,7 @@
     "flow-bin": "^0.73.0",
     "nodemon-webpack-plugin": "^3.0.1",
     "webpack": "^4.11.1",
-    "webpack-cli": "^2.1.5",
+    "webpack-cli": "^3.0.3",
     "webpack-node-externals": "^1.7.2",
     "webpack-stylish": "^0.1.8"
   },
