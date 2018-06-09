@@ -2,6 +2,9 @@
   "name": "@mattailes/common",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "flow": "flow"
+  },
   "dependencies": {
     "emotion": "9.2.9",
     "react": "16.5.0",

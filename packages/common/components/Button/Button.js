@@ -3,7 +3,7 @@
 import React from 'react'
 import { css } from 'emotion'
 
-type Props = {
+export type ButtonProps = {
   text: string,
   type: string,
   primary: ?boolean,
@@ -13,7 +13,7 @@ type Props = {
 
 const Button = ({
   text, type, primary, cancel, onClick,
-}: Props) => {
+}: ButtonProps) => {
   let color
   if (primary) color = '#4286f4'
   if (cancel) color = '#e0184a'
