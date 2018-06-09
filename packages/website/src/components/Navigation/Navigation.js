@@ -6,6 +6,11 @@ import { Link } from 'react-router-dom'
 
 import avatar from '../../images/avatar.png'
 
+type State = {
+  width: number,
+  showSubmenu: boolean,
+}
+
 const menu = css`
   display: flex;
   height: 50px;
@@ -28,6 +33,7 @@ const menu = css`
 `
 
 const submenu = css`
+  cursor: pointer;
   display: inline-block;
   position: relative;
 
@@ -43,7 +49,6 @@ const submenu = css`
   }
 
   > div {
-    display: none;
     position: absolute;
     min-width: 150px;
     background-color: #eeeeee;
@@ -55,10 +60,6 @@ const submenu = css`
       padding: 5px;
     }
   }
-
-  :hover div {
-    display: block;
-  }
 `
 
 const avatarStyle = css`
@@ -67,38 +68,48 @@ const avatarStyle = css`
   border-radius: 50%;
 `
 
-type State = {
-  width: number,
-}
-
 export default class Navigation extends React.Component<null, State> {
   constructor() {
     super()
 
     this.state = {
       width: 0,
+      showSubmenu: false,
     }
   }
 
   componentDidMount() {
     this.setState({ width: window.innerWidth })
-    window.addEventListener('resize', () => this._setWindowWidth(window.innerWidth))
+    window.addEventListener('resize', () => this.setWindowWidth(window.innerWidth))
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize')
   }
 
-  _setWindowWidth = (width: number) => this.setState({ width })
+  setWindowWidth = (width: number) => this.setState({ width })
+
+  handleSubmenuClick = () => this.setState({ showSubmenu: !this.state.showSubmenu })
+
+  handleSubmenuHover = (event: Event, hover: boolean) => this.setState({ showSubmenu: hover })
 
   render() {
+    const style = {
+      display: this.state.showSubmenu ? 'block' : 'none',
+    }
+
     return (
       <nav className={menu}>
         <img src={avatar} className={avatarStyle} alt='avatar' />
         <Link to='/'>Home</Link>
-        <div className={submenu}>
+        <div
+          className={submenu}
+          onClick={this.handleSubmenuClick}
+          onMouseEnter={(event: Event) => this.handleSubmenuHover(event, true)}
+          onMouseLeave={(event: Event) => this.handleSubmenuHover(event, false)}
+        >
           <p>Projects</p>
-          <div>
+          <div style={style}>
             <Link to='/todo'>Todo</Link>
             <hr />
             <Link to='/starwars'>Star Wars GraphQL</Link>

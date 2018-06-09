@@ -24,6 +24,10 @@ const Button = ({
     cursor: pointer;
     font-size: 0.8em;
     padding: 5px 10px;
+
+    :focus {
+      outline: 0;
+    }
   `
 
   return (
