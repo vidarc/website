@@ -12,6 +12,7 @@ install:
 - yarn global add lerna
 - lerna bootstrap
 script:
+- lerna run flow
 - lerna run coverage
 - codecov
 - lerna run coverage:cleanup
