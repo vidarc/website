@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { css, injectGlobal } from 'emotion'
-import 'normalize.css'
+import 'sanitize.css'
 
 import routeHelper from './utils/routeHelper'
 import routes from './routes.config'

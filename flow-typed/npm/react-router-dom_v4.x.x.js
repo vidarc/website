@@ -17,14 +17,14 @@ declare module 'react-router-dom' {
     children?: React$Node,
   |}> {}
 
-  declare export class Link extends React$Component<{|
+  declare export class Link extends React$Component<{
     className?: string,
     to: string | LocationShape,
     replace?: boolean,
     children?: React$Node,
   |}> {}
 
-  declare export class NavLink extends React$Component<{|
+  declare export class NavLink extends React$Component<{
     to: string | LocationShape,
     activeClassName?: string,
     className?: string,

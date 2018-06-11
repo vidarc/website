@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { Button } from '@mattailes/common/components'
+import { Button } from '@mattailes/ui'
 
 export type Props = {
   active: boolean,
