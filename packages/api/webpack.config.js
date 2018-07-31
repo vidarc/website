@@ -27,7 +27,17 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['flow', 'env'],
+            presets: [
+              ['flow'],
+              [
+                'env',
+                {
+                  targets: {
+                    node: '8',
+                  },
+                },
+              ],
+            ],
             plugins: ['transform-runtime'],
           },
         },
