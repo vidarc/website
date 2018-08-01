@@ -91,7 +91,7 @@ export default class Navigation extends React.Component<null, State> {
 
   handleSubmenuClick = () => this.setState({ showSubmenu: !this.state.showSubmenu })
 
-  handleSubmenuHover = (event: Event, hover: boolean) => this.setState({ showSubmenu: hover })
+  handleSubmenuHover = (hover: boolean) => this.setState({ showSubmenu: hover })
 
   render() {
     const style = {
@@ -105,8 +105,8 @@ export default class Navigation extends React.Component<null, State> {
         <div
           className={submenu}
           onClick={this.handleSubmenuClick}
-          onMouseEnter={(event: Event) => this.handleSubmenuHover(event, true)}
-          onMouseLeave={(event: Event) => this.handleSubmenuHover(event, false)}
+          onMouseEnter={() => this.handleSubmenuHover(true)}
+          onMouseLeave={() => this.handleSubmenuHover(false)}
         >
           <p>Projects</p>
           <div style={style}>
