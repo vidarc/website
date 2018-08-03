@@ -8,6 +8,6 @@
     "react-dom": "^16.4.0"
   },
   "devDependencies": {
-    "eslint": "4.15.0"
+    "eslint": "5.2.0"
   }
 }
