@@ -1,4 +1,4 @@
-// flow-typed signature: 0890aec675bccd15c08a2907ffa3676a
+// flow-typed signature: 458713513c4730f138fe6c5f4dff298c
 // flow-typed version: <<STUB>>/winston_v^3.0.0-rc1
 
 /**
@@ -22,6 +22,18 @@ declare module 'winston' {
  * require those files directly. Feel free to delete any files that aren't
  * needed.
  */
+declare module 'winston/coverage/lcov-report/block-navigation' {
+  declare module.exports: any;
+}
+
+declare module 'winston/coverage/lcov-report/prettify' {
+  declare module.exports: any;
+}
+
+declare module 'winston/coverage/lcov-report/sorter' {
+  declare module.exports: any;
+}
+
 declare module 'winston/lib/winston' {
   declare module.exports: any;
 }
@@ -30,19 +42,7 @@ declare module 'winston/lib/winston/common' {
   declare module.exports: any;
 }
 
-declare module 'winston/lib/winston/config/cli' {
-  declare module.exports: any;
-}
-
 declare module 'winston/lib/winston/config/index' {
-  declare module.exports: any;
-}
-
-declare module 'winston/lib/winston/config/npm' {
-  declare module.exports: any;
-}
-
-declare module 'winston/lib/winston/config/syslog' {
   declare module.exports: any;
 }
 
@@ -94,7 +94,23 @@ declare module 'winston/lib/winston/transports/stream' {
   declare module.exports: any;
 }
 
+declare module 'winston/scratch/1144/index' {
+  declare module.exports: any;
+}
+
+declare module 'winston/scratch/1201' {
+  declare module.exports: any;
+}
+
 declare module 'winston/scratch/1276' {
+  declare module.exports: any;
+}
+
+declare module 'winston/scratch/1336' {
+  declare module.exports: any;
+}
+
+declare module 'winston/scratch/4oh' {
   declare module.exports: any;
 }
 
@@ -114,6 +130,18 @@ declare module 'winston/scratch/rejection' {
   declare module.exports: any;
 }
 
+declare module 'winston/scratch/wtf' {
+  declare module.exports: any;
+}
+
+declare module 'winston/test/transports/00-file-stress.test' {
+  declare module.exports: any;
+}
+
+declare module 'winston/test/transports/01-file-maxsize.test' {
+  declare module.exports: any;
+}
+
 declare module 'winston/test/transports/console.test' {
   declare module.exports: any;
 }
@@ -123,14 +151,6 @@ declare module 'winston/test/transports/file-archive-test' {
 }
 
 declare module 'winston/test/transports/file-maxfiles-test' {
-  declare module.exports: any;
-}
-
-declare module 'winston/test/transports/file-maxsize-test' {
-  declare module.exports: any;
-}
-
-declare module 'winston/test/transports/file-stress.test' {
   declare module.exports: any;
 }
 
@@ -151,23 +171,23 @@ declare module 'winston/test/transports/stream.test' {
 }
 
 // Filename aliases
+declare module 'winston/coverage/lcov-report/block-navigation.js' {
+  declare module.exports: $Exports<'winston/coverage/lcov-report/block-navigation'>;
+}
+declare module 'winston/coverage/lcov-report/prettify.js' {
+  declare module.exports: $Exports<'winston/coverage/lcov-report/prettify'>;
+}
+declare module 'winston/coverage/lcov-report/sorter.js' {
+  declare module.exports: $Exports<'winston/coverage/lcov-report/sorter'>;
+}
 declare module 'winston/lib/winston.js' {
   declare module.exports: $Exports<'winston/lib/winston'>;
 }
 declare module 'winston/lib/winston/common.js' {
   declare module.exports: $Exports<'winston/lib/winston/common'>;
 }
-declare module 'winston/lib/winston/config/cli.js' {
-  declare module.exports: $Exports<'winston/lib/winston/config/cli'>;
-}
 declare module 'winston/lib/winston/config/index.js' {
   declare module.exports: $Exports<'winston/lib/winston/config/index'>;
-}
-declare module 'winston/lib/winston/config/npm.js' {
-  declare module.exports: $Exports<'winston/lib/winston/config/npm'>;
-}
-declare module 'winston/lib/winston/config/syslog.js' {
-  declare module.exports: $Exports<'winston/lib/winston/config/syslog'>;
 }
 declare module 'winston/lib/winston/container.js' {
   declare module.exports: $Exports<'winston/lib/winston/container'>;
@@ -205,8 +225,20 @@ declare module 'winston/lib/winston/transports/index.js' {
 declare module 'winston/lib/winston/transports/stream.js' {
   declare module.exports: $Exports<'winston/lib/winston/transports/stream'>;
 }
+declare module 'winston/scratch/1144/index.js' {
+  declare module.exports: $Exports<'winston/scratch/1144/index'>;
+}
+declare module 'winston/scratch/1201.js' {
+  declare module.exports: $Exports<'winston/scratch/1201'>;
+}
 declare module 'winston/scratch/1276.js' {
   declare module.exports: $Exports<'winston/scratch/1276'>;
+}
+declare module 'winston/scratch/1336.js' {
+  declare module.exports: $Exports<'winston/scratch/1336'>;
+}
+declare module 'winston/scratch/4oh.js' {
+  declare module.exports: $Exports<'winston/scratch/4oh'>;
 }
 declare module 'winston/scratch/buffer.js' {
   declare module.exports: $Exports<'winston/scratch/buffer'>;
@@ -220,6 +252,15 @@ declare module 'winston/scratch/newlines.js' {
 declare module 'winston/scratch/rejection.js' {
   declare module.exports: $Exports<'winston/scratch/rejection'>;
 }
+declare module 'winston/scratch/wtf.js' {
+  declare module.exports: $Exports<'winston/scratch/wtf'>;
+}
+declare module 'winston/test/transports/00-file-stress.test.js' {
+  declare module.exports: $Exports<'winston/test/transports/00-file-stress.test'>;
+}
+declare module 'winston/test/transports/01-file-maxsize.test.js' {
+  declare module.exports: $Exports<'winston/test/transports/01-file-maxsize.test'>;
+}
 declare module 'winston/test/transports/console.test.js' {
   declare module.exports: $Exports<'winston/test/transports/console.test'>;
 }
@@ -228,12 +269,6 @@ declare module 'winston/test/transports/file-archive-test.js' {
 }
 declare module 'winston/test/transports/file-maxfiles-test.js' {
   declare module.exports: $Exports<'winston/test/transports/file-maxfiles-test'>;
-}
-declare module 'winston/test/transports/file-maxsize-test.js' {
-  declare module.exports: $Exports<'winston/test/transports/file-maxsize-test'>;
-}
-declare module 'winston/test/transports/file-stress.test.js' {
-  declare module.exports: $Exports<'winston/test/transports/file-stress.test'>;
 }
 declare module 'winston/test/transports/file-tailrolling-test.js' {
   declare module.exports: $Exports<'winston/test/transports/file-tailrolling-test'>;

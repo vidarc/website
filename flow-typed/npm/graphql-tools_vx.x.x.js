@@ -1,4 +1,4 @@
-// flow-typed signature: 02031628bed76105bf266a8168401f66
+// flow-typed signature: a2aefc1dec5ffd5f7d38722028c60596
 // flow-typed version: <<STUB>>/graphql-tools_v^3.0.2
 
 /**
@@ -22,6 +22,66 @@ declare module 'graphql-tools' {
  * require those files directly. Feel free to delete any files that aren't
  * needed.
  */
+declare module 'graphql-tools/dist/generate/addResolveFunctionsToSchema' {
+  declare module.exports: any;
+}
+
+declare module 'graphql-tools/dist/generate/addSchemaLevelResolveFunction' {
+  declare module.exports: any;
+}
+
+declare module 'graphql-tools/dist/generate/assertResolveFunctionsPresent' {
+  declare module.exports: any;
+}
+
+declare module 'graphql-tools/dist/generate/attachConnectorsToContext' {
+  declare module.exports: any;
+}
+
+declare module 'graphql-tools/dist/generate/attachDirectiveResolvers' {
+  declare module.exports: any;
+}
+
+declare module 'graphql-tools/dist/generate/buildSchemaFromTypeDefinitions' {
+  declare module.exports: any;
+}
+
+declare module 'graphql-tools/dist/generate/chainResolvers' {
+  declare module.exports: any;
+}
+
+declare module 'graphql-tools/dist/generate/checkForResolveTypeResolver' {
+  declare module.exports: any;
+}
+
+declare module 'graphql-tools/dist/generate/concatenateTypeDefs' {
+  declare module.exports: any;
+}
+
+declare module 'graphql-tools/dist/generate/decorateWithLogger' {
+  declare module.exports: any;
+}
+
+declare module 'graphql-tools/dist/generate/extendResolversFromInterfaces' {
+  declare module.exports: any;
+}
+
+declare module 'graphql-tools/dist/generate/extractExtensionDefinitions' {
+  declare module.exports: any;
+}
+
+declare module 'graphql-tools/dist/generate/forEachField' {
+  declare module.exports: any;
+}
+
+declare module 'graphql-tools/dist/generate/index' {
+  declare module.exports: any;
+}
+
+declare module 'graphql-tools/dist/generate/SchemaError' {
+  declare module.exports: any;
+}
+
 declare module 'graphql-tools/dist/implementsAbstractType' {
   declare module.exports: any;
 }
@@ -46,15 +106,15 @@ declare module 'graphql-tools/dist/Logger' {
   declare module.exports: any;
 }
 
+declare module 'graphql-tools/dist/makeExecutableSchema' {
+  declare module.exports: any;
+}
+
 declare module 'graphql-tools/dist/mergeDeep' {
   declare module.exports: any;
 }
 
 declare module 'graphql-tools/dist/mock' {
-  declare module.exports: any;
-}
-
-declare module 'graphql-tools/dist/schemaGenerator' {
   declare module.exports: any;
 }
 
@@ -183,6 +243,51 @@ declare module 'graphql-tools/dist/transforms/WrapQuery' {
 }
 
 // Filename aliases
+declare module 'graphql-tools/dist/generate/addResolveFunctionsToSchema.js' {
+  declare module.exports: $Exports<'graphql-tools/dist/generate/addResolveFunctionsToSchema'>;
+}
+declare module 'graphql-tools/dist/generate/addSchemaLevelResolveFunction.js' {
+  declare module.exports: $Exports<'graphql-tools/dist/generate/addSchemaLevelResolveFunction'>;
+}
+declare module 'graphql-tools/dist/generate/assertResolveFunctionsPresent.js' {
+  declare module.exports: $Exports<'graphql-tools/dist/generate/assertResolveFunctionsPresent'>;
+}
+declare module 'graphql-tools/dist/generate/attachConnectorsToContext.js' {
+  declare module.exports: $Exports<'graphql-tools/dist/generate/attachConnectorsToContext'>;
+}
+declare module 'graphql-tools/dist/generate/attachDirectiveResolvers.js' {
+  declare module.exports: $Exports<'graphql-tools/dist/generate/attachDirectiveResolvers'>;
+}
+declare module 'graphql-tools/dist/generate/buildSchemaFromTypeDefinitions.js' {
+  declare module.exports: $Exports<'graphql-tools/dist/generate/buildSchemaFromTypeDefinitions'>;
+}
+declare module 'graphql-tools/dist/generate/chainResolvers.js' {
+  declare module.exports: $Exports<'graphql-tools/dist/generate/chainResolvers'>;
+}
+declare module 'graphql-tools/dist/generate/checkForResolveTypeResolver.js' {
+  declare module.exports: $Exports<'graphql-tools/dist/generate/checkForResolveTypeResolver'>;
+}
+declare module 'graphql-tools/dist/generate/concatenateTypeDefs.js' {
+  declare module.exports: $Exports<'graphql-tools/dist/generate/concatenateTypeDefs'>;
+}
+declare module 'graphql-tools/dist/generate/decorateWithLogger.js' {
+  declare module.exports: $Exports<'graphql-tools/dist/generate/decorateWithLogger'>;
+}
+declare module 'graphql-tools/dist/generate/extendResolversFromInterfaces.js' {
+  declare module.exports: $Exports<'graphql-tools/dist/generate/extendResolversFromInterfaces'>;
+}
+declare module 'graphql-tools/dist/generate/extractExtensionDefinitions.js' {
+  declare module.exports: $Exports<'graphql-tools/dist/generate/extractExtensionDefinitions'>;
+}
+declare module 'graphql-tools/dist/generate/forEachField.js' {
+  declare module.exports: $Exports<'graphql-tools/dist/generate/forEachField'>;
+}
+declare module 'graphql-tools/dist/generate/index.js' {
+  declare module.exports: $Exports<'graphql-tools/dist/generate/index'>;
+}
+declare module 'graphql-tools/dist/generate/SchemaError.js' {
+  declare module.exports: $Exports<'graphql-tools/dist/generate/SchemaError'>;
+}
 declare module 'graphql-tools/dist/implementsAbstractType.js' {
   declare module.exports: $Exports<'graphql-tools/dist/implementsAbstractType'>;
 }
@@ -201,14 +306,14 @@ declare module 'graphql-tools/dist/isSpecifiedScalarType.js' {
 declare module 'graphql-tools/dist/Logger.js' {
   declare module.exports: $Exports<'graphql-tools/dist/Logger'>;
 }
+declare module 'graphql-tools/dist/makeExecutableSchema.js' {
+  declare module.exports: $Exports<'graphql-tools/dist/makeExecutableSchema'>;
+}
 declare module 'graphql-tools/dist/mergeDeep.js' {
   declare module.exports: $Exports<'graphql-tools/dist/mergeDeep'>;
 }
 declare module 'graphql-tools/dist/mock.js' {
   declare module.exports: $Exports<'graphql-tools/dist/mock'>;
-}
-declare module 'graphql-tools/dist/schemaGenerator.js' {
-  declare module.exports: $Exports<'graphql-tools/dist/schemaGenerator'>;
 }
 declare module 'graphql-tools/dist/schemaVisitor.js' {
   declare module.exports: $Exports<'graphql-tools/dist/schemaVisitor'>;

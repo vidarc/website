@@ -4,7 +4,7 @@ import compression from 'compression'
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express'
 import { mergeSchemas } from 'graphql-tools'
 
-import logger from './../logger'
+import logger from '../logger'
 import starwarsSchema from './starwars'
 
 const graphql = () => {

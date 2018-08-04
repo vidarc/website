@@ -1,4 +1,4 @@
-// flow-typed signature: 68d05c3e529c6606249a8b814ea3eee5
+// flow-typed signature: cc5ba933e2105cd6b51f661df9498584
 // flow-typed version: <<STUB>>/eslint-plugin-import_v^2.2.0
 
 /**
@@ -190,6 +190,10 @@ declare module 'eslint-plugin-import/lib/rules/no-nodejs-modules' {
   declare module.exports: any;
 }
 
+declare module 'eslint-plugin-import/lib/rules/no-relative-parent-imports' {
+  declare module.exports: any;
+}
+
 declare module 'eslint-plugin-import/lib/rules/no-restricted-paths' {
   declare module.exports: any;
 }
@@ -356,6 +360,9 @@ declare module 'eslint-plugin-import/lib/rules/no-namespace.js' {
 }
 declare module 'eslint-plugin-import/lib/rules/no-nodejs-modules.js' {
   declare module.exports: $Exports<'eslint-plugin-import/lib/rules/no-nodejs-modules'>;
+}
+declare module 'eslint-plugin-import/lib/rules/no-relative-parent-imports.js' {
+  declare module.exports: $Exports<'eslint-plugin-import/lib/rules/no-relative-parent-imports'>;
 }
 declare module 'eslint-plugin-import/lib/rules/no-restricted-paths.js' {
   declare module.exports: $Exports<'eslint-plugin-import/lib/rules/no-restricted-paths'>;
