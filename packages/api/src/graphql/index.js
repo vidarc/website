@@ -1,28 +1,24 @@
+// @flow
+
 import express from 'express'
-import bodyParser from 'body-parser'
-import compression from 'compression'
-import { graphqlExpress, graphiqlExpress } from 'apollo-server-express'
-import { mergeSchemas } from 'graphql-tools'
+import { ApolloServer, mergeSchemas } from 'apollo-server-express'
 
 import logger from '../logger'
 import starwarsSchema from './starwars'
 
 const graphql = () => {
-  const server = express()
-
   logger.info('setting up graphql server')
 
-  server.use(compression())
+  const app = express()
 
   const schema = mergeSchemas({ schemas: [starwarsSchema] })
 
-  // The GraphQL endpoint
-  server.use('/graphql', bodyParser.json(), graphqlExpress({ schema, tracing: true }))
+  const server = new ApolloServer({ schema })
+  server.applyMiddleware({
+    app,
+  })
 
-  // GraphiQL, a visual editor for queries
-  server.use('/graphiql', graphiqlExpress({ endpointURL: 'graphql' }))
-
-  return server
+  return app
 }
 
 export default graphql

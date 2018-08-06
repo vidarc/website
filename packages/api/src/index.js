@@ -1,6 +1,7 @@
 import { https } from 'firebase-functions'
 import graphql from './graphql'
 
-const api = graphql()
+const graphqlServer = graphql()
 
-exports.api = https.onRequest(api)
+// eslint-disable-next-line
+export const api = https.onRequest(graphqlServer)

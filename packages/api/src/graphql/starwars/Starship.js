@@ -1,8 +1,9 @@
 // @flow
 
-import gql from 'graphql-tag'
+import { gql } from 'apollo-server'
+import { type Starship } from '@mattailes/common/types'
+
 import { loader, getAll, getOne } from './helpers'
-import { type Starship } from '@mattailes/common/types/StarWars'
 
 export const StarshipTypeDef = gql`
   extend type Query {

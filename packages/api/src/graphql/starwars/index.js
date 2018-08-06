@@ -1,7 +1,6 @@
 // @flow
 
-import gql from 'graphql-tag'
-import { makeExecutableSchema } from 'graphql-tools'
+import { gql, makeExecutableSchema } from 'apollo-server'
 import { merge } from 'lodash'
 
 import { FilmTypeDef, filmResolvers } from './Film'
