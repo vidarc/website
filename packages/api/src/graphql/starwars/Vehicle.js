@@ -1,6 +1,6 @@
 // @flow
 
-import { gql } from 'apollo-server'
+import { gql } from 'apollo-server-express'
 import { type Vehicle } from '@mattailes/common/types'
 
 import { loader, getAll, getOne } from './helpers'
