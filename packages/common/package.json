@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "emotion": "9.2.6",
-    "react": "16.4.1",
-    "react-dom": "16.4.1"
+    "react": "16.4.2",
+    "react-dom": "16.4.2"
   },
   "devDependencies": {
     "eslint": "5.5.0"
