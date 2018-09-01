@@ -48,7 +48,7 @@
     "jest-enzyme": "6.0.2",
     "normalize.css": "8.0.0",
     "react": "16.4.2",
-    "react-apollo": "2.1.9",
+    "react-apollo": "2.1.11",
     "react-dom": "16.4.2",
     "react-loadable": "5.4.0",
     "react-redux": "5.0.7",
