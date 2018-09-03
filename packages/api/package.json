@@ -19,7 +19,7 @@
     "babel-preset-env": "1.7.0",
     "babel-preset-flow": "6.23.0",
     "eslint": "5.5.0",
-    "eslint-config-airbnb": "17.0.0",
+    "eslint-config-airbnb": "17.1.0",
     "eslint-plugin-flowtype": "2.50.0",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.1",
@@ -36,9 +36,9 @@
     "dataloader": "1.4.0",
     "express": "4.16.3",
     "firebase-admin": "6.0.0",
-    "firebase-functions": "2.0.2",
+    "firebase-functions": "2.0.5",
     "graphql": "14.0.0",
-    "graphql-tools": "3.0.5",
+    "graphql-tools": "3.1.1",
     "winston": "3.0.0"
   }
 }
