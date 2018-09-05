@@ -1,5 +1,9 @@
 {
-  "extends": [
-    "config:base"
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "schedule": "before 3am on Monday",
+      "groupName": "all"
+    }
   ]
 }
