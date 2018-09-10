@@ -12,12 +12,12 @@
     "deploy": "firebase deploy --token $FIREBASE_TOKEN"
   },
   "devDependencies": {
-    "babel-core": "6.26.3",
-    "babel-loader": "7.1.5",
-    "babel-plugin-transform-runtime": "6.23.0",
-    "babel-polyfill": "6.26.0",
-    "babel-preset-env": "1.7.0",
-    "babel-preset-flow": "6.23.0",
+    "@babel/core": "7.0.0",
+    "@babel/plugin-transform-runtime": "7.0.0",
+    "@babel/polyfill": "7.0.0",
+    "@babel/preset-env": "7.0.0",
+    "@babel/preset-flow": "7.0.0",
+    "babel-loader": "8.0.2",
     "eslint": "5.5.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-plugin-flowtype": "2.50.0",
