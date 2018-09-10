@@ -28,9 +28,9 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              ['flow'],
+              ['@babel/flow'],
               [
-                'env',
+                '@babel/env',
                 {
                   targets: {
                     node: '8',
@@ -38,7 +38,7 @@ module.exports = {
                 },
               ],
             ],
-            plugins: ['transform-runtime'],
+            plugins: ['@babel/transform-runtime'],
           },
         },
       },
