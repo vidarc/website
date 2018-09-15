@@ -1,4 +1,4 @@
-// flow-typed signature: 517a347ec0dfb0b40e9619ff071938aa
+// flow-typed signature: 77bbcdee834fa12be0f8bac70ba82d27
 // flow-typed version: <<STUB>>/@mattailes/types_v1.0.0
 
 /**
@@ -51,6 +51,12 @@ declare module '@mattailes/types/StarWars/Vehicle' {
 }
 
 // Filename aliases
+declare module '@mattailes/types/index' {
+  declare module.exports: $Exports<'@mattailes/types'>;
+}
+declare module '@mattailes/types/index.js' {
+  declare module.exports: $Exports<'@mattailes/types'>;
+}
 declare module '@mattailes/types/StarWars/Film.js' {
   declare module.exports: $Exports<'@mattailes/types/StarWars/Film'>;
 }
