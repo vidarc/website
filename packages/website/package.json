@@ -29,7 +29,7 @@
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.1",
     "eslint-plugin-react": "7.11.1",
-    "flow-bin": "0.80.0",
+    "flow-bin": "0.81.0",
     "nock": "9.6.1",
     "raf": "3.4.0",
     "react-scripts": "2.0.0-next.b2fd8db8",
