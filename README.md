@@ -1,5 +1,8 @@
-[![Build Status](https://travis-ci.org/vidarc/website.svg?branch=master)](https://travis-ci.org/vidarc/website)
-[![codecov](https://codecov.io/gh/vidarc/website/branch/master/graph/badge.svg)](https://codecov.io/gh/vidarc/website)
+![Am I Up](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=Am%20I%20Up?&style=for-the-badge)
+![Build Status](https://img.shields.io/travis/vidarc/website/master.svg?longCache=true&style=for-the-badge)
+![codecov](https://img.shields.io/codecov/c/github/vidarc/website/master.svg?longCache=true&style=for-the-badge)
+![LICENSE](https://img.shields.io/github/license/vidarc/website.svg?longCache=true&style=for-the-badge)
+![Twitter](https://img.shields.io/twitter/follow/mattailes.svg?label=Follow&longCache=true&style=social)
 
 # Website
 
