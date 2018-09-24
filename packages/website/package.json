@@ -37,7 +37,8 @@
     "redux-mock-store": "1.5.3"
   },
   "dependencies": {
-    "@mattailes/common": "1.0.0",
+    "@mattailes/types": "1.0.0",
+    "@mattailes/ui": "1.0.0",
     "apollo-boost": "0.1.16",
     "cross-fetch": "2.2.2",
     "dotenv": "6.0.0",
@@ -55,9 +56,9 @@
     "react-router": "4.3.1",
     "react-router-config": "1.0.0-beta.4",
     "react-router-dom": "4.3.1",
-    "react-scripts": "2.0.0-next.b2fd8db8",
     "redux": "4.0.0",
     "redux-thunk": "2.3.0",
+    "sanitize.css": "^7.0.3",
     "shortid": "2.2.13"
   },
   "browserslist": {

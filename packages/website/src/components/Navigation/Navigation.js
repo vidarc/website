@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom'
 import avatar from '../../images/avatar.png'
 
 type State = {
-  width: number,
   showSubmenu: boolean,
 }
 
@@ -73,21 +72,9 @@ export default class Navigation extends React.Component<null, State> {
     super()
 
     this.state = {
-      width: 0,
       showSubmenu: false,
     }
   }
-
-  componentDidMount() {
-    this.setState({ width: window.innerWidth })
-    window.addEventListener('resize', () => this.setWindowWidth(window.innerWidth))
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize')
-  }
-
-  setWindowWidth = (width: number) => this.setState({ width })
 
   handleSubmenuClick = () => this.setState({ showSubmenu: !this.state.showSubmenu })
 
@@ -103,6 +90,8 @@ export default class Navigation extends React.Component<null, State> {
         <img src={avatar} className={avatarStyle} alt='avatar' />
         <Link to='/'>Home</Link>
         <div
+          role='menu'
+          tabIndex='0'
           className={submenu}
           onClick={this.handleSubmenuClick}
           onMouseEnter={() => this.handleSubmenuHover(true)}

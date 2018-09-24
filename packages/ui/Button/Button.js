@@ -1,19 +1,19 @@
 // @flow
 
-import React from 'react'
+import * as React from 'react'
 import { css } from 'emotion'
 
-type Props = {
+export type ButtonProps = {
   text: string,
   type: string,
-  primary: ?boolean,
-  cancel: ?boolean,
+  primary?: boolean,
+  cancel?: boolean,
   onClick: Function,
 }
 
 const Button = ({
   text, type, primary, cancel, onClick,
-}: Props) => {
+}: ButtonProps) => {
   let color
   if (primary) color = '#4286f4'
   if (cancel) color = '#e0184a'
@@ -21,7 +21,6 @@ const Button = ({
   const style = css`
     background-color: ${color};
     border-radius: 5px;
-    cursor: pointer;
     font-size: 0.8em;
     padding: 5px 10px;
 
@@ -35,6 +34,11 @@ const Button = ({
       {text}
     </button>
   )
+}
+
+Button.defaultProps = {
+  primary: false,
+  cancel: false,
 }
 
 export default Button

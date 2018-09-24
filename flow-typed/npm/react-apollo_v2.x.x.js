@@ -1,7 +1,8 @@
-// flow-typed signature: 7a2d407d74daf7c6a314e73e9dd6f7d4
-// flow-typed version: efe6fe387a/react-apollo_v2.x.x/flow_>=v0.58.x
+// flow-typed signature: e7ee55425852983ff28d36727ef4e26d
+// flow-typed version: 8840f4cb4b/react-apollo_v2.x.x/flow_>=v0.58.x
 
 declare module "react-apollo" {
+  import type { ComponentType, Element, Node } from 'react';
   /**
    * Copied types from Apollo Client libdef
    * Please update apollo-client libdef as well if updating these types
@@ -46,7 +47,7 @@ declare module "react-apollo" {
       fetchResults?: boolean
     ): Promise<ApolloQueryResult<T>>;
     updateQuery(
-      mapFn: (previousQueryResult: any, options: UpdateQueryOptions) => any
+      mapFn: (previousQueryResult: any, options: UpdateQueryOptions) => mixed
     ): void;
     stopPolling(): void;
     startPolling(pollInterval: number): void;
@@ -63,7 +64,7 @@ declare module "react-apollo" {
       link: ApolloLink,
       queryDeduplication?: boolean,
       store: DataStore<TStore>,
-      onBroadcast?: () => void,
+      onBroadcast?: () => mixed,
       ssrMode?: boolean
     }): this;
 
@@ -189,7 +190,7 @@ declare module "react-apollo" {
       document: DocumentNode,
       variables: any,
       updateQueries: { [queryId: string]: QueryWithUpdater },
-      update: ((proxy: DataProxy, mutationResult: Object) => void) | void,
+      update: ((proxy: DataProxy, mutationResult: Object) => mixed) | void,
       optimisticResponse: Object | Function | void
     }): void;
     markMutationResult(mutation: {
@@ -198,7 +199,7 @@ declare module "react-apollo" {
       document: DocumentNode,
       variables: any,
       updateQueries: { [queryId: string]: QueryWithUpdater },
-      update: ((proxy: DataProxy, mutationResult: Object) => void) | void
+      update: ((proxy: DataProxy, mutationResult: Object) => mixed) | void
     }): void;
     markMutationComplete({
       mutationId: string,
@@ -273,7 +274,7 @@ declare module "react-apollo" {
     context?: any;
   }
 
-  declare type RefetchQueryDescription = Array<string | PureQueryOptions>;
+  declare export type RefetchQueryDescription = $ReadOnlyArray<string | PureQueryOptions>;
 
   declare interface MutationBaseOptions<T = { [key: string]: any }> {
     optimisticResponse?: Object | Function;
@@ -327,20 +328,20 @@ declare module "react-apollo" {
         variables: TSubscriptionVariables
       }
     ) => TData,
-    onError?: (error: Error) => void
+    onError?: (error: Error) => mixed
   };
 
   declare export type MutationUpdaterFn<T = OperationVariables> = (
     proxy: DataProxy,
     mutationResult: FetchResult<T>
-  ) => void;
+  ) => mixed;
 
   declare export type NetworkStatus = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
   declare export type QueryListener = (
     queryStoreValue: QueryStoreValue,
     newData?: any
-  ) => void;
+  ) => mixed;
 
   declare export type QueryStoreValue = {
     document: DocumentNode,
@@ -401,7 +402,7 @@ declare module "react-apollo" {
     +mutate?: MutationBaseOptions<>;
   }
 
-  declare type ApolloClientOptions<TCacheShape> = {
+  declare export type ApolloClientOptions<TCacheShape> = {
     link: ApolloLink,
     cache: ApolloCache<TCacheShape>,
     ssrMode?: boolean,
@@ -411,7 +412,7 @@ declare module "react-apollo" {
     defaultOptions?: DefaultOptions
   };
 
-  declare class ApolloClient<TCacheShape> {
+  declare export class ApolloClient<TCacheShape> {
     link: ApolloLink;
     store: DataStore<TCacheShape>;
     cache: ApolloCache<TCacheShape>;
@@ -435,7 +436,7 @@ declare module "react-apollo" {
     writeQuery(options: DataProxyWriteQueryOptions): void;
     writeFragment(options: DataProxyWriteFragmentOptions): void;
     writeData(options: DataProxyWriteDataOptions): void;
-    __actionHookForDevTools(cb: () => any): void;
+    __actionHookForDevTools(cb: () => mixed): void;
     __requestRaw(payload: GraphQLRequest): Observable<ExecutionResult<>>;
     initQueryManager(): void;
     resetStore(): Promise<Array<ApolloQueryResult<any>> | null>;
@@ -495,7 +496,7 @@ declare module "react-apollo" {
     toKey: () => string;
   }
 
-  declare type FetchResult<
+  declare export type FetchResult<
     C = { [key: string]: any },
     E = { [key: string]: any }
   > = ExecutionResult<C> & { extension?: E, context?: C };
@@ -509,12 +510,12 @@ declare module "react-apollo" {
 
   declare class Observable<T> {
     subscribe(
-      observerOrNext: ((value: T) => void) | ZenObservableObserver<T>,
-      error?: (error: any) => void,
-      complete?: () => void
+      observerOrNext: ((value: T) => mixed) | ZenObservableObserver<T>,
+      error?: (error: any) => mixed,
+      complete?: () => mixed
     ): ZenObservableSubscription;
 
-    forEach(fn: (value: T) => void): Promise<void>;
+    forEach(fn: (value: T) => mixed): Promise<void>;
 
     map<R>(fn: (value: T) => R): Observable<R>;
 
@@ -559,15 +560,15 @@ declare module "react-apollo" {
   }
 
   declare interface ZenObservableObserver<T> {
-    start?: (subscription: ZenObservableSubscription) => any;
-    next?: (value: T) => void;
-    error?: (errorValue: any) => void;
-    complete?: () => void;
+    start?: (subscription: ZenObservableSubscription) => mixed;
+    next?: (value: T) => mixed;
+    error?: (errorValue: any) => mixed;
+    complete?: () => mixed;
   }
 
   declare type ZenObservableSubscriber<T> = (
     observer: ZenObservableSubscriptionObserver<T>
-  ) => void | (() => void) | SubscriptionLINK;
+  ) => mixed | (() => mixed) | SubscriptionLINK;
 
   declare interface ZenObservableObservableLike<T> {
     subscribe?: ZenObservableSubscriber<T>;
@@ -610,9 +611,9 @@ declare module "react-apollo" {
     writeData(options: CacheWriteDataOptions): void;
   }
 
-  declare type Transaction<T> = (c: ApolloCache<T>) => void;
+  declare type Transaction<T> = (c: ApolloCache<T>) => mixed;
 
-  declare type CacheWatchCallback = (newData: any) => void;
+  declare type CacheWatchCallback = (newData: any) => mixed;
 
   declare interface CacheEvictionResult {
     success: boolean;
@@ -683,7 +684,7 @@ declare module "react-apollo" {
     complete?: boolean
   };
 
-  declare interface DataProxy {
+  declare export interface DataProxy {
     readQuery<QueryType>(
       options: DataProxyReadQueryOptions,
       optimistic?: boolean
@@ -716,11 +717,11 @@ declare module "react-apollo" {
 
   declare export interface ApolloProviderProps<TCache> {
     client: any; // ApolloClient<TCache>;
-    children: React$Node;
+    children: Node;
   }
 
   declare export interface ApolloConsumerProps {
-    children: (client: ApolloClient<any>) => React$Node;
+    children: (client: ApolloClient<any>) => Node;
   }
 
   declare export class ApolloConsumer extends React$Component<
@@ -765,12 +766,12 @@ declare module "react-apollo" {
 
   declare export type RefetchQueriesProviderFn = (
     ...args: any[]
-  ) => string[] | PureQueryOptions[];
+  ) => RefetchQueryDescription
 
   declare export type MutationOpts<TVariables> = {|
     variables?: TVariables,
     optimisticResponse?: Object,
-    refetchQueries?: string[] | PureQueryOptions[] | RefetchQueriesProviderFn,
+    refetchQueries?: RefetchQueryDescription | RefetchQueriesProviderFn,
     update?: MutationUpdaterFn<*>,
     errorPolicy?: ErrorPolicy
   |};
@@ -800,7 +801,7 @@ declare module "react-apollo" {
     stopPolling: () => void;
     subscribeToMore: (options: SubscribeToMoreOptions<any, any>) => () => void;
     updateQuery: (
-      mapFn: (previousQueryResult: any, options: UpdateQueryOptions) => any
+      mapFn: (previousQueryResult: any, options: UpdateQueryOptions) => mixed
     ) => void;
   }
 
@@ -843,8 +844,8 @@ declare module "react-apollo" {
     TMergedProps: Object = ChildProps<TOwnProps, TResult, TVariables>
   > {
     (
-      component: React$ComponentType<TMergedProps>
-    ): React$ComponentType<TOwnProps>;
+      component: ComponentType<TMergedProps>
+    ): ComponentType<TOwnProps>;
   }
 
   declare export function graphql<TResult, TProps, TVariables, TChildProps>(
@@ -857,9 +858,9 @@ declare module "react-apollo" {
   };
 
   declare export function withApollo<TProps>(
-    component: React$ComponentType<{ client: ApolloClient<any> } & TProps>,
+    component: ComponentType<{ client: ApolloClient<any> } & TProps>,
     operationOptions?: WithApolloOptions
-  ): React$ComponentType<TProps>;
+  ): ComponentType<TProps>;
 
   declare export interface IDocumentDefinition {
     type: DocumentType;
@@ -875,28 +876,28 @@ declare module "react-apollo" {
 
   declare export interface QueryResult {
     query: Promise<ApolloQueryResult<mixed>>;
-    element: React$Element<*>;
+    element: Element<*>;
     context: Context;
   }
 
   declare export function walkTree(
-    element: React$Node,
+    element: Node,
     context: Context,
     visitor: (
-      element: React$Node,
+      element: Node,
       instance: any,
       context: Context
     ) => boolean | void
   ): void;
 
   declare export function getDataFromTree(
-    rootElement: React$Element<*>,
+    rootElement: Element<*>,
     rootContext?: any,
     fetchRoot?: boolean
   ): Promise<void>;
 
   declare export function renderToStringWithData(
-    component: React$Element<*>
+    component: Element<*>
   ): Promise<string>;
 
   declare export function cleanupApolloState(apolloState: any): void;
@@ -927,13 +928,13 @@ declare module "react-apollo" {
     ) => () => void,
     updateQuery: (
       mapFn: (previousResult: TData, options: { variables: TVariables }) => TData
-    ) => any,
+    ) => mixed,
     client: ApolloClient<any>
   };
 
   declare export type QueryRenderPropFunction<TData, TVariables> = (
     QueryRenderProps<TData, TVariables>
-  ) => React$Node;
+  ) => Node;
 
   declare export class Query<TData, TVariables> extends React$Component<{
     query: DocumentNode,
@@ -957,7 +958,7 @@ declare module "react-apollo" {
 
   declare export type SubscriptionRenderPropFunction<TData, TVariables> = (
     result: SubscriptionResult<TData, TVariables>
-  ) => React$Node
+  ) => Node
 
   declare type SubscriptionProps<
     TData,
@@ -986,7 +987,7 @@ declare module "react-apollo" {
   > = (options: {
     variables?: TVariables,
     optimisticResponse?: Object,
-    refetchQueries?: string[] | PureQueryOptions[] | RefetchQueriesProviderFn,
+    refetchQueries?: RefetchQueryDescription | RefetchQueriesProviderFn,
     update?: MutationUpdaterFn<TData>
   }) => Promise<void | FetchResult<TData>>;
 
@@ -1001,7 +1002,7 @@ declare module "react-apollo" {
   declare export type MutationRenderPropFunction<TData, TVariables> = (
     mutate: MutationFunction<TData, TVariables>,
     result: MutationResult<TData>
-  ) => React$Node;
+  ) => Node;
 
   declare export class Mutation<
     TData,
@@ -1013,9 +1014,9 @@ declare module "react-apollo" {
     update?: MutationUpdaterFn<TData>,
     ignoreResults?: boolean,
     optimisticResponse?: Object,
-    refetchQueries?: string[] | PureQueryOptions[] | RefetchQueriesProviderFn,
-    onCompleted?: (data: TData) => void,
-    onError?: (error: ApolloError) => void,
+    refetchQueries?: RefetchQueryDescription | RefetchQueriesProviderFn,
+    onCompleted?: (data: TData) => mixed,
+    onError?: (error: ApolloError) => mixed,
     context?: { [string]: any }
   }> {}
 }

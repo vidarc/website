@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
-import { Button } from '@mattailes/common/components'
+import { Button } from '@mattailes/ui'
 
 import actions from '../ducks/actions'
 
