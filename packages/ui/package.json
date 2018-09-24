@@ -11,6 +11,7 @@
     "react-dom": "16.5.0"
   },
   "devDependencies": {
-    "flow-bin": "^0.81.0"
+    "eslint": "4.15.0",
+    "flow-bin": "0.81.0"
   }
 }
