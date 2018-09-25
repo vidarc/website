@@ -6,7 +6,7 @@
     "flow": "flow"
   },
   "dependencies": {
-    "emotion": "9.2.9",
+    "emotion": "9.2.10",
     "react": "16.5.0",
     "react-dom": "16.5.0"
   },
