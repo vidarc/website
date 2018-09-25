@@ -7,8 +7,8 @@
   },
   "dependencies": {
     "emotion": "9.2.10",
-    "react": "16.5.0",
-    "react-dom": "16.5.0"
+    "react": "16.5.2",
+    "react-dom": "16.5.2"
   },
   "devDependencies": {
     "eslint": "4.15.0",
