@@ -18,7 +18,6 @@
     "@babel/preset-env": "7.1.0",
     "@babel/preset-flow": "7.0.0",
     "babel-loader": "8.0.2",
-    "eslint": "4.15.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-plugin-flowtype": "2.50.0",
     "eslint-plugin-import": "2.14.0",
