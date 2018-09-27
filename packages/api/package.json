@@ -11,17 +11,13 @@
     "flow": "flow",
     "deploy": "firebase deploy --token $FIREBASE_TOKEN"
   },
-  "workspaces": {
-    "nohoist": [
-      "**"
-    ]
-  },
   "devDependencies": {
     "@babel/core": "7.1.0",
     "@babel/plugin-transform-runtime": "7.1.0",
     "@babel/polyfill": "7.0.0",
     "@babel/preset-env": "7.1.0",
     "@babel/preset-flow": "7.0.0",
+    "@mattailes/types": "1.0.0",
     "babel-loader": "8.0.2",
     "eslint": "4.15.0",
     "eslint-config-airbnb": "17.1.0",
@@ -37,7 +33,6 @@
     "webpack-stylish": "0.1.8"
   },
   "dependencies": {
-    "@mattailes/types": "1.0.0",
     "apollo-server-express": "2.0.7",
     "dataloader": "1.4.0",
     "express": "4.16.3",
