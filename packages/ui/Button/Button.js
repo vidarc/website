@@ -3,9 +3,9 @@
 import * as React from 'react'
 import { css } from 'emotion'
 
-export type ButtonProps = {
+type ButtonProps = {
   text: string,
-  type: string,
+  type?: 'button' | 'submit',
   primary?: boolean,
   cancel?: boolean,
   onClick: Function,
@@ -29,8 +29,16 @@ const Button = ({
     }
   `
 
+  if (type === 'submit') {
+    return (
+      <button className={style} type='submit' onClick={onClick}>
+        {text}
+      </button>
+    )
+  }
+
   return (
-    <button className={style} type={type} onClick={onClick}>
+    <button className={style} type='button' onClick={onClick}>
       {text}
     </button>
   )
@@ -39,6 +47,7 @@ const Button = ({
 Button.defaultProps = {
   primary: false,
   cancel: false,
+  type: 'button',
 }
 
 export default Button
