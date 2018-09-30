@@ -32,7 +32,7 @@
     "flow-bin": "0.81.0",
     "nock": "9.6.1",
     "raf": "3.4.0",
-    "react-scripts": "2.0.0-next.b2fd8db8",
+    "react-scripts": "2.0.1",
     "react-test-renderer": "16.5.2",
     "redux-mock-store": "1.5.3"
   },
