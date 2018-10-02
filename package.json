@@ -9,5 +9,29 @@
     "clean:node_modules": "rm -rf ./node_modules && rm -rf ./packages/*/node_modules",
     "test": "yarn test:website",
     "test:website": "cd packages/website && yarn test && cd -"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "lint-staged": {
+    "*.{js,jsx,json}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{css,scss,sass}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^1.1.0",
+    "lint-staged": "^7.3.0",
+    "prettier": "^1.14.3"
   }
 }
