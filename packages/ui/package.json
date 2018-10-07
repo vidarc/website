@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "flow": "flow"
+    "flow": "flow",
+    "build-prod": "webpack index.js --mode=production",
+    "build-dev": "webpack index.js --mode=development"
   },
   "dependencies": {
     "emotion": "9.2.12",
@@ -11,7 +13,15 @@
     "react-dom": "16.5.2"
   },
   "devDependencies": {
+    "@babel/core": "7.1.2",
+    "@babel/plugin-transform-runtime": "7.1.0",
+    "@babel/polyfill": "7.0.0",
+    "@babel/preset-env": "7.1.0",
+    "@babel/preset-flow": "7.0.0",
+    "babel-loader": "8.0.4",
     "flow-bin": "0.82.0",
-    "react-scripts": "2.0.4"
+    "react-scripts": "2.0.4",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
   }
 }
