@@ -10,11 +10,10 @@ export type Props = {
   onClick: Function
 }
 
-const Link = ({ active, children, onClick }: Props) =>
-  active ? (
-    <span>{children}</span>
-  ) : (
-    <Button primary text={children} onClick={onClick} />
-  )
+const Link = ({ active, children, onClick }: Props) => (active ? (
+  <span>{children}</span>
+) : (
+  <Button primary text={children} onClick={onClick} />
+))
 
 export default Link
