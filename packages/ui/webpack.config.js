@@ -1,4 +1,8 @@
+const Stylish = require('webpack-stylish')
+
 module.exports = {
+  stats: 'none',
+
   module: {
     rules: [
       {
@@ -23,5 +27,7 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+
+  plugins: [new Stylish()]
 }

@@ -7,6 +7,10 @@
     "build-prod": "webpack index.js --mode=production",
     "build-dev": "webpack index.js --mode=development"
   },
+  "main": "dist/main.js",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "emotion": "9.2.12",
     "react": "16.5.2",
@@ -22,6 +26,7 @@
     "flow-bin": "0.82.0",
     "react-scripts": "2.0.4",
     "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-stylish": "^0.1.8"
   }
 }

@@ -5,7 +5,7 @@
   "proxy": "http://localhost:5000/website-b10e5/us-central1/api",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "lerna exec yarn build-prod --scope '@mattailes/ui' && react-scripts build",
     "test": "react-scripts test --env=jsdom --setupFiles raf/polyfill --setupFiles whatwg-fetch",
     "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom --setupFiles raf/polyfill --setupFiles whatwg-fetch",
     "coverage": "react-scripts test --env=jsdom --coverage --setupFiles raf/polyfill --setupFiles whatwg-fetch",
