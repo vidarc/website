@@ -13,10 +13,10 @@ install:
   - lerna bootstrap
 script:
   - yarn library:prod
-  - lerna run coverage
+  - yarn coverage
   - codecov
-  - lerna run coverage:cleanup
-  - lerna run build
+  - yarn coverage:cleanup
+  - yarn build
 deploy:
   provider: script
   script: lerna run deploy

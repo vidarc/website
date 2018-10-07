@@ -11,7 +11,10 @@
     "test:website": "cd packages/website && yarn test && cd -",
     "library": "lerna run build-library:dev",
     "library:prod": "lerna run build-library:prod",
-    "start": "lerna run start"
+    "start": "lerna run start",
+    "build": "lerna run build",
+    "coverage": "lerna run coverage",
+    "coverage:cleanup": "lerna run coverage:cleanup"
   },
   "husky": {
     "hooks": {

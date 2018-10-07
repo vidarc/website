@@ -1,7 +1,18 @@
+const path = require('path')
 const Stylish = require('webpack-stylish')
+const nodeExternals = require('webpack-node-externals')
 
 module.exports = {
   stats: 'none',
+
+  output: {
+    path: path.resolve(__dirname, './build'),
+    filename: 'index.js',
+    library: '',
+    libraryTarget: 'commonjs',
+  },
+
+  externals: [nodeExternals()],
 
   module: {
     rules: [
@@ -12,22 +23,19 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              ['@babel/flow'],
-              [
-                '@babel/env',
-                {
-                  targets: {
-                    node: '8'
-                  }
-                }
-              ]
+              ['@babel/preset-env'],
+              ['@babel/preset-react'],
+              ['@babel/preset-flow'],
             ],
-            plugins: ['@babel/transform-runtime']
-          }
-        }
-      }
-    ]
+            plugins: [
+              '@babel/transform-runtime',
+              '@babel/plugin-proposal-export-default-from',
+            ],
+          },
+        },
+      },
+    ],
   },
 
-  plugins: [new Stylish()]
+  plugins: [new Stylish()],
 }
