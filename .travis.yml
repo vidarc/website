@@ -1,21 +1,22 @@
 language: node_js
 node_js:
-- lts/*
+  - lts/*
 cache: yarn
 branches:
   only:
-  - master
-  - "/^greenkeeper/.*$/"
+    - master
+    - '/^greenkeeper/.*$/'
 install:
-- yarn global add codecov
-- yarn global add firebase-tools
-- yarn global add lerna
-- lerna bootstrap
+  - yarn global add codecov
+  - yarn global add firebase-tools
+  - yarn global add lerna
+  - lerna bootstrap
 script:
-- lerna run coverage
-- codecov
-- lerna run coverage:cleanup
-- lerna run build
+  - lerna run coverage
+  - codecov
+  - lerna run coverage:cleanup
+  - lerna run build-library:prod
+  - lerna run build
 deploy:
   provider: script
   script: lerna run deploy
