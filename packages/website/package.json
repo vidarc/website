@@ -6,6 +6,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "lint": "../../node_modules/.bin/eslint ./src",
     "test": "react-scripts test --env=jsdom --setupFiles raf/polyfill --setupFiles whatwg-fetch",
     "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom --setupFiles raf/polyfill --setupFiles whatwg-fetch",
     "coverage": "react-scripts test --env=jsdom --coverage --setupFiles raf/polyfill --setupFiles whatwg-fetch",
@@ -24,7 +25,9 @@
     ]
   },
   "devDependencies": {
+    "eslint": "5.6.1",
     "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-babel": "5.2.1",
     "eslint-plugin-flowtype": "2.50.3",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.2",

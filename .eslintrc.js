@@ -1,4 +1,4 @@
-{
+module.exports = {
   "extends": "airbnb",
   "parser": "babel-eslint",
   "plugins": ["flowtype"],
@@ -13,7 +13,7 @@
     "max-len": ["error", 120],
     "no-underscore-dangle": ["error", { "allow": ["_id"] }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "semi": [ERROR, "never"],
+    "semi": ["error", "never"],
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
