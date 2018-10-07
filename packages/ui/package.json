@@ -6,12 +6,12 @@
     "flow": "flow"
   },
   "dependencies": {
-    "emotion": "9.2.10",
+    "emotion": "9.2.12",
     "react": "16.5.2",
     "react-dom": "16.5.2"
   },
   "devDependencies": {
-    "flow-bin": "0.81.0",
-    "react-scripts": "2.0.1"
+    "flow-bin": "0.82.0",
+    "react-scripts": "2.0.4"
   }
 }
