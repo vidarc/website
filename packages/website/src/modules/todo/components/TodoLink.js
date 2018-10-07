@@ -7,14 +7,13 @@ import { Button } from '@mattailes/ui'
 export type Props = {
   active: boolean,
   children: React.Node,
-  onClick: Function,
+  onClick: Function
 }
 
-const Link = ({ active, children, onClick }: Props) => {
-  if (active) {
-    return <span>{children}</span>
-  }
-  return <Button primary text={children} onClick={onClick} />
-}
+const Link = ({ active, children, onClick }: Props) => (active ? (
+  <span>{children}</span>
+) : (
+  <Button primary text={children} onClick={onClick} />
+))
 
 export default Link

@@ -10,12 +10,11 @@ const Loading = ({ pastDelay }: { pastDelay: boolean }) => {
   return null
 }
 
-const loadableComponent = ({ loader }: { loader: Function }) =>
-  Loadable({
-    loader,
-    loading: Loading,
-    delay: 200,
-  })
+const loadableComponent = ({ loader }: { loader: Function }) => Loadable({
+  loader,
+  loading: Loading,
+  delay: 200,
+})
 
 const routes = [
   {
@@ -33,7 +32,9 @@ const routes = [
   {
     key: 2,
     path: '/starwars',
-    component: loadableComponent({ loader: () => import('./modules/starwars') }),
+    component: loadableComponent({
+      loader: () => import('./modules/starwars'),
+    }),
     exact: true,
   },
 ]

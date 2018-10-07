@@ -8,6 +8,39 @@
     "clean:build": "rm -rf ./packages/*/build",
     "clean:node_modules": "rm -rf ./node_modules && rm -rf ./packages/*/node_modules",
     "test": "yarn test:website",
-    "test:website": "cd packages/website && yarn test && cd -"
+    "test:website": "cd packages/website && yarn test && cd -",
+    "library": "lerna run build-library:dev",
+    "library:prod": "lerna run build-library:prod",
+    "start": "lerna run start"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{css,scss,sass}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "husky": "1.1.0",
+    "lint-staged": "7.3.0",
+    "prettier": "1.14.3"
   }
 }

@@ -46,3 +46,4 @@ functions/
 *.bundle.js
 
 keys/
+es/

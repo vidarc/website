@@ -3,22 +3,24 @@
 import * as React from 'react'
 import { css } from 'emotion'
 
-export type ButtonProps = {
+import theme from '../../theme'
+
+type ButtonProps = {
   text: string,
-  type: string,
+  type?: 'button' | 'submit',
   primary?: boolean,
   cancel?: boolean,
-  onClick: Function,
+  onClick: Function
 }
 
 const Button = ({
   text, type, primary, cancel, onClick,
 }: ButtonProps) => {
   let color
-  if (primary) color = '#4286f4'
+  if (primary) color = theme.colors.blue
   if (cancel) color = '#e0184a'
 
-  const style = css`
+  const className = css`
     background-color: ${color};
     border-radius: 5px;
     font-size: 0.8em;
@@ -29,8 +31,16 @@ const Button = ({
     }
   `
 
+  if (type === 'submit') {
+    return (
+      <button className={className} type='submit' onClick={onClick}>
+        {text}
+      </button>
+    )
+  }
+
   return (
-    <button className={style} type={type} onClick={onClick}>
+    <button className={className} type='button' onClick={onClick}>
       {text}
     </button>
   )
@@ -39,6 +49,7 @@ const Button = ({
 Button.defaultProps = {
   primary: false,
   cancel: false,
+  type: 'button',
 }
 
 export default Button

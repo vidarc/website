@@ -7,7 +7,9 @@ import { visibilityFilter } from '../ducks/types'
 
 const Footer = () => (
   <p>
-    Show: <FilterLink filter={visibilityFilter.SHOW_ALL}>All</FilterLink>
+    Show:
+    {' '}
+    <FilterLink filter={visibilityFilter.SHOW_ALL}>All</FilterLink>
     {', '}
     <FilterLink filter={visibilityFilter.SHOW_ACTIVE}>Active</FilterLink>
     {', '}

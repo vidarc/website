@@ -3,15 +3,41 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "flow": "flow"
+    "flow": "flow",
+    "build-library:prod": "NODE_ENV=production babel ./src --out-dir es --copy-files --delete-dir-on-start",
+    "build-library:dev": "NODE_ENV=development babel ./src --out-dir es --copy-files --delete-dir-on-start",
+    "lint": "../../node_modules/.bin/eslint ./src"
   },
-  "dependencies": {
-    "emotion": "9.2.10",
+  "main": "es/index.js",
+  "module": "es/index.js",
+  "files": [
+    "es"
+  ],
+  "peerDependencies": {
+    "emotion": "9.2.12",
     "react": "16.5.2",
     "react-dom": "16.5.2"
   },
   "devDependencies": {
-    "eslint": "4.15.0",
-    "flow-bin": "0.81.0"
+    "@babel/cli": "7.1.2",
+    "@babel/core": "7.1.2",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-transform-runtime": "7.1.0",
+    "@babel/polyfill": "7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "8.0.4",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-babel": "5.2.1",
+    "eslint-plugin-flowtype": "2.50.3",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "eslint-plugin-react": "7.11.1",
+    "flow-bin": "0.82.0",
+    "react-scripts": "2.0.4",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-stylish": "^0.1.8"
   }
 }
