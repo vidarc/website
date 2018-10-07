@@ -20,7 +20,6 @@
     "@babel/preset-flow": "7.0.0",
     "@mattailes/types": "1.0.0",
     "babel-loader": "8.0.4",
-    "eslint": "5.6.1",
     "eslint-config-airbnb": "17.1.0",
     "eslint-plugin-babel": "5.2.1",
     "eslint-plugin-flowtype": "2.50.3",
