@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "flow": "flow",
-    "build-library:prod": "webpack index.js --mode=production --progress --colors",
-    "build-library:dev": "webpack index.js --mode=development --progress --colors"
+    "build-library:prod": "webpack-cli index.js --mode=production --progress --colors",
+    "build-library:dev": "webpack-cli index.js --mode=development --progress --colors"
   },
   "main": "dist/main.js",
   "files": [
