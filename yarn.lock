@@ -833,6 +833,13 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
+"@babel/runtime@^7.1.2":
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.1.2.tgz#81c89935f4647706fc54541145e6b4ecfef4b8e3"
+  integrity sha512-Y3SCjmhSupzFB6wcv1KmmFucH6gDVnI30WjOcicV10ju0cZjak3Jcs67YLIXBrmZYw1xCrVeJPbycFwrqNyxpg==
+  dependencies:
+    regenerator-runtime "^0.12.0"
+
 "@babel/template@7.0.0-beta.44":
   version "7.0.0-beta.44"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.0.0-beta.44.tgz#f8832f4fdcee5d59bf515e595fc5106c529b394f"
@@ -1164,7 +1171,7 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@storybook/addon-actions@3.4.11", "@storybook/addon-actions@^3.4.11":
+"@storybook/addon-actions@3.4.11":
   version "3.4.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.4.11.tgz#a51418c5b684fd3df2788c19ef266845d6068baf"
   integrity sha512-vA7KiMg6J3SlI0U9COhyX+nxoNNXsgXTKBA7oVjE+wduNwNc86WcbYGxKIxhCjJMBoAjZYBeRL9DmYWwaHb4xQ==
@@ -1180,7 +1187,7 @@
     react-inspector "^2.2.2"
     uuid "^3.2.1"
 
-"@storybook/addon-info@^3.4.11":
+"@storybook/addon-info@3.4.11":
   version "3.4.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-info/-/addon-info-3.4.11.tgz#eb4eafb2ec5a580acdaeacab0065ee8463eddefd"
   integrity sha512-ujIiTZUu4tP7w/gb5A3T1iXvW//V9xuP9mfeTloiuBlHpbujIJqPg80UqoLB9ZN06IkXlHigHrhvgYcEDGmcDA==
@@ -1197,7 +1204,7 @@
     react-addons-create-fragment "^15.5.3"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-links@3.4.11", "@storybook/addon-links@^3.4.11":
+"@storybook/addon-links@3.4.11":
   version "3.4.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.4.11.tgz#097b4fcf4b3af3903762ac0d7e65c5d37d14af88"
   integrity sha512-DFTBj359ANqKJBhcSw2zAojlWF4A4+U48sKOhcPZ96qwPPtZwMtUR1TYxP+6ssfEP4tlA9zs4dn0+yRye+ydNQ==
@@ -1207,7 +1214,7 @@
     global "^4.3.2"
     prop-types "^15.6.1"
 
-"@storybook/addons@3.4.11", "@storybook/addons@^3.4.11":
+"@storybook/addons@3.4.11":
   version "3.4.11"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.4.11.tgz#f3e27c46d80ad1f171888c4aad0a19a8a032d072"
   integrity sha512-Uf01aZ1arcpG1prrrCrBCUYW63lDaoG+r/i3TNo1iG9ZaNc+2UHWeuiEedLfHg0fi/q7UnqMNWDiyO3AkEwwrA==
@@ -1325,7 +1332,7 @@
   dependencies:
     babel-runtime "^6.5.0"
 
-"@storybook/react@^3.4.11":
+"@storybook/react@3.4.11":
   version "3.4.11"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-3.4.11.tgz#0496132d78ca2f66ace79d9c4f7e951402c962db"
   integrity sha512-e6U3Lh6mLlKD0hSdoVwXDMiiykKymH35TtYiL8PdRliQzZxPwIYJ4k6uViAVrKiaOoV2c0fcx+ADit4pCWE5zw==
