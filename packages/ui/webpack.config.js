@@ -30,6 +30,7 @@ module.exports = {
             plugins: [
               '@babel/transform-runtime',
               '@babel/plugin-proposal-export-default-from',
+              'emotion',
             ],
           },
         },

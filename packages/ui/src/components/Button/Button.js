@@ -6,7 +6,7 @@ import { css } from 'emotion'
 import theme from '../../theme'
 
 type ButtonProps = {
-  text: string,
+  children: React.Node,
   type?: 'button' | 'submit',
   primary?: boolean,
   cancel?: boolean,
@@ -14,7 +14,7 @@ type ButtonProps = {
 }
 
 const Button = ({
-  text, type, primary, cancel, onClick,
+  children, type, primary, cancel, onClick,
 }: ButtonProps) => {
   let color
   if (primary) color = theme.colors.blue
@@ -34,14 +34,14 @@ const Button = ({
   if (type === 'submit') {
     return (
       <button className={className} type='submit' onClick={onClick}>
-        {text}
+        {children}
       </button>
     )
   }
 
   return (
     <button className={className} type='button' onClick={onClick}>
-      {text}
+      {children}
     </button>
   )
 }

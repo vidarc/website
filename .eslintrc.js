@@ -29,6 +29,12 @@ module.exports = {
         ignoreMemberSort: false,
         memberSyntaxSortOrder: ['all', 'multiple', 'single', 'none']
       }
+    ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: ['**/*.stories.js', '**/webpack.config.js']
+      }
     ]
   }
 }
