@@ -14,7 +14,8 @@
     "start": "lerna run start",
     "build": "lerna run build",
     "coverage": "lerna run coverage",
-    "coverage:cleanup": "lerna run coverage:cleanup"
+    "coverage:cleanup": "lerna run coverage:cleanup",
+    "storybook": "yarn --cwd packages/ui/ storybook"
   },
   "husky": {
     "hooks": {

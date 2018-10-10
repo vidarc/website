@@ -1252,6 +1252,13 @@
     react-inspector "^2.3.0"
     uuid "^3.3.2"
 
+"@storybook/addon-centered@4.0.0-alpha.24":
+  version "4.0.0-alpha.24"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-centered/-/addon-centered-4.0.0-alpha.24.tgz#4612679d23def3cce50ee31aed659a13995dabc9"
+  integrity sha512-kSwzzaPIkjNCgiqMQf5u4t+JeIbOVylSLpstuFeaHIYy285D7zBOHfrw7SR8SPgCRb1DUMOD2YZgXbGqmt/U0w==
+  dependencies:
+    global "^4.3.2"
+
 "@storybook/addon-info@4.0.0-alpha.24":
   version "4.0.0-alpha.24"
   resolved "https://registry.yarnpkg.com/@storybook/addon-info/-/addon-info-4.0.0-alpha.24.tgz#a7a47d82a892c350da5224754355cd6ddec11501"
@@ -1280,6 +1287,14 @@
     "@storybook/core-events" "4.0.0-alpha.24"
     global "^4.3.2"
     prop-types "^15.6.2"
+
+"@storybook/addon-options@4.0.0-alpha.24":
+  version "4.0.0-alpha.24"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-options/-/addon-options-4.0.0-alpha.24.tgz#a2ace4b2c02c235d216273b9f90204eb5dc2533b"
+  integrity sha512-tnx49hRVVZPDb8qbmRnZ/Womqbru7XDBLpqrCWoBaTaomWgF9b6VU/hbHcFG0wEtUJgbCNiqnGS/dW3sW9iVYQ==
+  dependencies:
+    "@storybook/addons" "4.0.0-alpha.24"
+    util-deprecate "^1.0.2"
 
 "@storybook/addons@4.0.0-alpha.24":
   version "4.0.0-alpha.24"
