@@ -1,9 +1,11 @@
+// @flow
+
 import * as React from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 
-import Button from '../components/Button/Button'
+import Button from '../components/Button'
 
 storiesOf('Button', module).add(
   'Default',

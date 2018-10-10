@@ -4,7 +4,11 @@ import { connect } from 'react-redux'
 
 import actions from '../ducks/actions'
 import TodoList from '../components/TodoList'
-import { type Todo, type VisibilityFilter, visibilityFilter } from '../ducks/types'
+import {
+  type Todo,
+  type VisibilityFilter,
+  visibilityFilter,
+} from '../ducks/types'
 
 const getVisibleTodos = (todos: Array<Todo>, { filter }: VisibilityFilter) => {
   switch (filter) {
@@ -13,6 +17,7 @@ const getVisibleTodos = (todos: Array<Todo>, { filter }: VisibilityFilter) => {
     case visibilityFilter.SHOW_ACTIVE:
       return todos.filter(todo => !todo.completed)
     case visibilityFilter.SHOW_ALL:
+      return todos
     default:
       return todos
   }
@@ -28,6 +33,9 @@ const mapDispatchToProps = (dispatch: Function) => ({
   },
 })
 
-const VisibleTodoList = connect(mapStateToProps, mapDispatchToProps)(TodoList)
+const VisibleTodoList = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(TodoList)
 
 export default VisibleTodoList

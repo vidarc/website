@@ -13,7 +13,9 @@ export type Props = {
 const Link = ({ active, children, onClick }: Props) => (active ? (
   <span>{children}</span>
 ) : (
-  <Button primary text={children} onClick={onClick} />
+  <Button primary onClick={onClick}>
+    {children}
+  </Button>
 ))
 
 export default Link

@@ -5,7 +5,7 @@ import { css } from 'emotion'
 
 import theme from '../../theme'
 
-type ButtonProps = {
+export type ButtonProps = {
   children: React.Node,
   type?: 'button' | 'submit',
   primary?: boolean,
