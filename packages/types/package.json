@@ -6,7 +6,7 @@
     "flow": "flow"
   },
   "devDependencies": {
-    "flow-bin": "0.82.0",
-    "react-scripts": "2.0.4"
+    "flow-bin": "0.83.0",
+    "react-scripts": "2.0.5"
   }
 }
