@@ -1,13 +1,13 @@
 // @flow
 
 import * as React from 'react'
+import { Link } from '@reach/router'
 import { css } from 'emotion'
-import { Link } from 'react-router-dom'
 
 import avatar from '../../images/avatar.png'
 
 type State = {
-  showSubmenu: boolean,
+  showSubmenu: boolean
 }
 
 const menu = css`
@@ -40,7 +40,12 @@ const submenu = css`
     margin: 0;
     border: 0;
     height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0)
+    );
   }
 
   > p {
@@ -68,21 +73,19 @@ const avatarStyle = css`
 `
 
 export default class Navigation extends React.Component<null, State> {
-  constructor() {
-    super()
-
-    this.state = {
-      showSubmenu: false,
-    }
+  state = {
+    showSubmenu: false,
   }
 
-  handleSubmenuClick = () => this.setState({ showSubmenu: !this.state.showSubmenu })
+  handleSubmenuClick = (showSubmenu: boolean) => this.setState({ showSubmenu })
 
   handleSubmenuHover = (hover: boolean) => this.setState({ showSubmenu: hover })
 
   render() {
+    const { showSubmenu } = this.state
+
     const style = {
-      display: this.state.showSubmenu ? 'block' : 'none',
+      display: showSubmenu ? 'block' : 'none',
     }
 
     return (
@@ -93,7 +96,8 @@ export default class Navigation extends React.Component<null, State> {
           role='menu'
           tabIndex='0'
           className={submenu}
-          onClick={this.handleSubmenuClick}
+          onClick={() => this.handleSubmenuClick(!showSubmenu)}
+          onKeyPress={() => this.handleSubmenuClick(!showSubmenu)}
           onMouseEnter={() => this.handleSubmenuHover(true)}
           onMouseLeave={() => this.handleSubmenuHover(false)}
         >

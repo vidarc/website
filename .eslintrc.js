@@ -1,7 +1,7 @@
 module.exports = {
   extends: 'airbnb',
   parser: 'babel-eslint',
-  plugins: ['flowtype'],
+  plugins: ['flowtype', 'sort-imports-es6-autofix'],
   env: {
     browser: true,
     node: true,
@@ -20,6 +20,14 @@ module.exports = {
         components: ['Link'],
         specialLink: ['to', 'hrefLeft', 'hrefRight'],
         aspects: ['noHref', 'invalidHref', 'preferButton']
+      }
+    ],
+    'sort-imports-es6-autofix/sort-imports-es6': [
+      2,
+      {
+        ignoreCase: false,
+        ignoreMemberSort: false,
+        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single']
       }
     ]
   }
