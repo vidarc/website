@@ -1,6 +1,5 @@
 // @flow
 
-import 'sanitize.css'
 import * as React from 'react'
 import { Router } from '@reach/router'
 import { css, injectGlobal } from 'emotion'
@@ -8,6 +7,8 @@ import { css, injectGlobal } from 'emotion'
 import { Navigation } from './components/Navigation'
 import { loadableComponent } from './components/Loading'
 import NotFound from './components/NotFound'
+
+import 'sanitize.css'
 
 // eslint-disable-next-line no-unused-expressions
 injectGlobal`
