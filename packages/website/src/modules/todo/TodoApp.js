@@ -1,10 +1,10 @@
 // @flow
 
-import React from 'react'
-import { Link } from 'react-router-dom'
+import * as React from 'react'
+import { Link } from '@reach/router'
 
-import Footer from './components/Footer'
 import AddTodo from './containers/AddTodo'
+import Footer from './components/Footer'
 import VisibleTodoList from './containers/VisibleTodoList'
 
 const TodoApp = () => (

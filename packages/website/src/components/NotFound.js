@@ -4,9 +4,9 @@ import * as React from 'react'
 import { css } from 'emotion'
 
 const className = css`
-  display: 'flex';
-  align-items: 'center';
-  justify-content: 'center';
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 const NotFound = () => (

@@ -46,7 +46,7 @@ const App = () => (
     <Router>
       <AsyncHome path='/' />
       <AsyncStarWars path='/starwars' />
-      <AsyncTodo path='tdod' />
+      <AsyncTodo path='/todo' />
       <NotFound default />
     </Router>
   </div>
