@@ -1,15 +1,13 @@
-// flow-typed signature: 84ceb4b2ef91e1c229ab9f8b2991cb4a
-// flow-typed version: 61b2be7bf2/nock_v9.x.x/flow_>=v0.75.x
+// flow-typed signature: 5dce8cbf15f68fe0212db04d1f901aae
+// flow-typed version: 08b5253e98/nock_v10.x.x/flow_>=v0.75.x
 
-import EventEmitter from "eventemitter";
-
-declare type $npm$nock$Path = string | RegExp | ((url: string) => boolean);
+declare type $npm$nock$Path = string | RegExp | ((url: string) => boolean)
 declare type $npm$nock$Parameter =
   | string
   | RegExp
   | Array<mixed>
   | Object
-  | ((body: Object | Array<mixed>) => boolean);
+  | ((body: Object | Array<mixed>) => boolean)
 
 declare type $npm$nock$RecordedCall = {
   scope: string,
@@ -20,7 +18,7 @@ declare type $npm$nock$RecordedCall = {
   response: any,
   headers: Object,
   reqheader: Object
-};
+}
 
 declare class $npm$nock$Recorder {
   rec(options?: {
@@ -38,7 +36,7 @@ declare type $npm$nock$InterceptorOptions = {
   path: string,
   method: string,
   proto: string
-};
+}
 
 declare class $npm$nock$NockBack {
   [[call]](path: string, cb: (cb: Function) => any): void;
@@ -67,7 +65,7 @@ declare class $npm$nock$Nock {
   static removeInterceptor(
     interceptor: $npm$nock$Nock | $Shape<$npm$nock$InterceptorOptions>
   ): void;
-  static emitter: EventEmitter;
+  static emitter: events$EventEmitter;
   static recorder: $npm$nock$Recorder;
   static back: $npm$nock$NockBack;
   get(path: $npm$nock$Path, parameter?: $npm$nock$Parameter): this;
@@ -121,12 +119,12 @@ declare class $npm$nock$Nock {
   delayConnection(delay: number): this;
   delay(delay: number | { head: number, body: number }): this;
   socketDelay(delay: number): this;
-  filteringPath(path: RegExp, replace: string): this;
-  filteringPath(fn: (path: string) => string): this;
+  filtering$npm$nock$Path(path: RegExp, replace: string): this;
+  filtering$npm$nock$Path(fn: (path: string) => string): this;
   filteringRequestBody(body: RegExp, replace: string): this;
   filteringRequestBody(fn: (path: string) => string): this;
   matchHeader(header: string, value: mixed | ((value: mixed) => boolean)): this;
-  optionally(): this;
+  optionally(optional?: boolean): this;
   persist(): this;
 
   done(): void;
@@ -139,6 +137,6 @@ declare class $npm$nock$Nock {
   log(logFn: Function): this;
 }
 
-declare module "nock" {
-  declare module.exports: typeof $npm$nock$Nock;
+declare module 'nock' {
+  declare module.exports: typeof $npm$nock$Nock
 }
