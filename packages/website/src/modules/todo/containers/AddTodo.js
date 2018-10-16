@@ -48,9 +48,7 @@ class AddTodo extends React.Component<Props, State> {
                 onChange={this.handleChange}
               />
             </label>
-            <Button text='Add Todo' type='submit'>
-              Add Todo
-            </Button>
+            <Button type='submit'>Add Todo</Button>
           </div>
         </form>
       </div>

@@ -9,22 +9,28 @@ export type ButtonProps = {
   children: React.Node,
   type?: 'button' | 'submit',
   primary?: boolean,
-  cancel?: boolean,
+  secondary?: boolean,
   onClick: Function
 }
 
 const Button = ({
-  children, type, primary, cancel, onClick,
+  children,
+  type,
+  primary,
+  secondary,
+  onClick,
 }: ButtonProps) => {
   let color
   if (primary) color = theme.colors.blue
-  if (cancel) color = '#e0184a'
+  if (secondary) color = theme.colors.red
 
   const className = css`
+    color: ${theme.colors.white};
     background-color: ${color};
     border-radius: 5px;
-    font-size: 0.8em;
-    padding: 5px 10px;
+    font-size: 1em;
+    padding: 0.75em 2em;
+    cursor: pointer;
 
     :focus {
       outline: 0;
@@ -48,7 +54,7 @@ const Button = ({
 
 Button.defaultProps = {
   primary: false,
-  cancel: false,
+  secondary: false,
   type: 'button',
 }
 
