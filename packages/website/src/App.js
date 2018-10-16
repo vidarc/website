@@ -1,12 +1,14 @@
 // @flow
 
-import React from 'react'
+import * as React from 'react'
+import { Router } from '@reach/router'
 import { css, injectGlobal } from 'emotion'
-import 'sanitize.css'
 
-import routeHelper from './utils/routeHelper'
-import routes from './routes.config'
 import { Navigation } from './components/Navigation'
+import { loadableComponent } from './components/Loading'
+import NotFound from './components/NotFound'
+
+import 'sanitize.css'
 
 // eslint-disable-next-line no-unused-expressions
 injectGlobal`
@@ -32,10 +34,21 @@ const style = css`
   max-width: 1024px;
 `
 
+const AsyncHome = loadableComponent({ loader: () => import('./modules/home') })
+const AsyncStarWars = loadableComponent({
+  loader: () => import('./modules/starwars'),
+})
+const AsyncTodo = loadableComponent({ loader: () => import('./modules/todo') })
+
 const App = () => (
   <div className={style}>
     <Navigation />
-    {routeHelper(routes)}
+    <Router>
+      <AsyncHome path='/' />
+      <AsyncStarWars path='/starwars' />
+      <AsyncTodo path='/todo' />
+      <NotFound default />
+    </Router>
   </div>
 )
 

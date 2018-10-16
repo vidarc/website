@@ -1,4 +1,4 @@
-// flow-typed signature: 3a2e5514e3cb7a99277de9bc23c03522
+// flow-typed signature: 487e0d8cf279be5919c4a3b39fa585d1
 // flow-typed version: <<STUB>>/@mattailes/ui_v1.0.0
 
 /**
@@ -14,7 +14,7 @@
  */
 
 declare module '@mattailes/ui' {
-  declare module.exports: any;
+  declare module.exports: any
 }
 
 /**
@@ -22,24 +22,46 @@ declare module '@mattailes/ui' {
  * require those files directly. Feel free to delete any files that aren't
  * needed.
  */
-declare module '@mattailes/ui/Button/Button' {
-  declare module.exports: any;
+declare module '@mattailes/ui/build/index' {
+  declare module.exports: any
 }
 
-declare module '@mattailes/ui/Button/index' {
-  declare module.exports: any;
+declare module '@mattailes/ui/src/components/Button/Button' {
+  declare module.exports: any
+}
+
+declare module '@mattailes/ui/src/components/Button/index' {
+  declare module.exports: any
+}
+
+declare module '@mattailes/ui/src/index' {
+  declare module.exports: any
+}
+
+declare module '@mattailes/ui/src/theme/index' {
+  declare module.exports: any
+}
+
+declare module '@mattailes/ui/webpack.config' {
+  declare module.exports: any
 }
 
 // Filename aliases
-declare module '@mattailes/ui/Button/Button.js' {
-  declare module.exports: $Exports<'@mattailes/ui/Button/Button'>;
+declare module '@mattailes/ui/build/index.js' {
+  declare module.exports: $Exports<'@mattailes/ui/build/index'>
 }
-declare module '@mattailes/ui/Button/index.js' {
-  declare module.exports: $Exports<'@mattailes/ui/Button/index'>;
+declare module '@mattailes/ui/src/components/Button/Button.js' {
+  declare module.exports: $Exports<'@mattailes/ui/src/components/Button/Button'>
 }
-declare module '@mattailes/ui/index' {
-  declare module.exports: $Exports<'@mattailes/ui'>;
+declare module '@mattailes/ui/src/components/Button/index.js' {
+  declare module.exports: $Exports<'@mattailes/ui/src/components/Button/index'>
 }
-declare module '@mattailes/ui/index.js' {
-  declare module.exports: $Exports<'@mattailes/ui'>;
+declare module '@mattailes/ui/src/index.js' {
+  declare module.exports: $Exports<'@mattailes/ui/src/index'>
+}
+declare module '@mattailes/ui/src/theme/index.js' {
+  declare module.exports: $Exports<'@mattailes/ui/src/theme/index'>
+}
+declare module '@mattailes/ui/webpack.config.js' {
+  declare module.exports: $Exports<'@mattailes/ui/webpack.config'>
 }
