@@ -37,7 +37,7 @@
   "dependencies": {
     "@mattailes/types": "1.0.0",
     "apollo-server-express": "2.1.0",
-    "cross-fetch": "^2.2.2",
+    "cross-fetch": "2.2.2",
     "dataloader": "1.4.0",
     "express": "4.16.4",
     "firebase-admin": "6.0.0",
