@@ -14,7 +14,7 @@
  */
 
 declare module 'apollo-boost' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 /**
@@ -23,31 +23,31 @@ declare module 'apollo-boost' {
  * needed.
  */
 declare module 'apollo-boost/lib/bundle.umd' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 declare module 'apollo-boost/lib/index' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 declare module 'apollo-boost/lib/index.umd' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 declare module 'apollo-boost/rollup-bundle.config' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 // Filename aliases
 declare module 'apollo-boost/lib/bundle.umd.js' {
-  declare module.exports: $Exports<'apollo-boost/lib/bundle.umd'>
+  declare module.exports: $Exports<'apollo-boost/lib/bundle.umd'>;
 }
 declare module 'apollo-boost/lib/index.js' {
-  declare module.exports: $Exports<'apollo-boost/lib/index'>
+  declare module.exports: $Exports<'apollo-boost/lib/index'>;
 }
 declare module 'apollo-boost/lib/index.umd.js' {
-  declare module.exports: $Exports<'apollo-boost/lib/index.umd'>
+  declare module.exports: $Exports<'apollo-boost/lib/index.umd'>;
 }
 declare module 'apollo-boost/rollup-bundle.config.js' {
-  declare module.exports: $Exports<'apollo-boost/rollup-bundle.config'>
+  declare module.exports: $Exports<'apollo-boost/rollup-bundle.config'>;
 }

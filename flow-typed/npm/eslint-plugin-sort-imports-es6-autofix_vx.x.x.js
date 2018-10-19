@@ -14,7 +14,7 @@
  */
 
 declare module 'eslint-plugin-sort-imports-es6-autofix' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 /**
@@ -23,18 +23,16 @@ declare module 'eslint-plugin-sort-imports-es6-autofix' {
  * needed.
  */
 declare module 'eslint-plugin-sort-imports-es6-autofix/rules/sort-imports-es6' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 // Filename aliases
 declare module 'eslint-plugin-sort-imports-es6-autofix/index' {
-  declare module.exports: $Exports<'eslint-plugin-sort-imports-es6-autofix'>
+  declare module.exports: $Exports<'eslint-plugin-sort-imports-es6-autofix'>;
 }
 declare module 'eslint-plugin-sort-imports-es6-autofix/index.js' {
-  declare module.exports: $Exports<'eslint-plugin-sort-imports-es6-autofix'>
+  declare module.exports: $Exports<'eslint-plugin-sort-imports-es6-autofix'>;
 }
 declare module 'eslint-plugin-sort-imports-es6-autofix/rules/sort-imports-es6.js' {
-  declare module.exports: $Exports<
-    'eslint-plugin-sort-imports-es6-autofix/rules/sort-imports-es6'
-  >
+  declare module.exports: $Exports<'eslint-plugin-sort-imports-es6-autofix/rules/sort-imports-es6'>;
 }

@@ -14,7 +14,7 @@
  */
 
 declare module 'emotion' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 /**
@@ -23,38 +23,38 @@ declare module 'emotion' {
  * needed.
  */
 declare module 'emotion/dist/emotion.umd.min' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 declare module 'emotion/dist/index.cjs' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 declare module 'emotion/dist/index.esm' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 declare module 'emotion/macro' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 declare module 'emotion/src/index' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 // Filename aliases
 declare module 'emotion/dist/emotion.umd.min.js' {
-  declare module.exports: $Exports<'emotion/dist/emotion.umd.min'>
+  declare module.exports: $Exports<'emotion/dist/emotion.umd.min'>;
 }
 declare module 'emotion/dist/index.cjs.js' {
-  declare module.exports: $Exports<'emotion/dist/index.cjs'>
+  declare module.exports: $Exports<'emotion/dist/index.cjs'>;
 }
 declare module 'emotion/dist/index.esm.js' {
-  declare module.exports: $Exports<'emotion/dist/index.esm'>
+  declare module.exports: $Exports<'emotion/dist/index.esm'>;
 }
 declare module 'emotion/macro.js' {
-  declare module.exports: $Exports<'emotion/macro'>
+  declare module.exports: $Exports<'emotion/macro'>;
 }
 declare module 'emotion/src/index.js' {
-  declare module.exports: $Exports<'emotion/src/index'>
+  declare module.exports: $Exports<'emotion/src/index'>;
 }

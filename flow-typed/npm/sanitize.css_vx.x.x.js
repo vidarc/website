@@ -14,5 +14,5 @@
  */
 
 declare module 'sanitize.css' {
-  declare module.exports: any
+  declare module.exports: any;
 }

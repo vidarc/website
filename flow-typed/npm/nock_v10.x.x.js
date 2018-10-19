@@ -1,13 +1,13 @@
-// flow-typed signature: 5dce8cbf15f68fe0212db04d1f901aae
-// flow-typed version: 08b5253e98/nock_v10.x.x/flow_>=v0.75.x
+// flow-typed signature: f2350be8b4c83dca927aa028f7de6f35
+// flow-typed version: 00cdfecf02/nock_v10.x.x/flow_>=v0.75.x
 
-declare type $npm$nock$Path = string | RegExp | ((url: string) => boolean)
+declare type $npm$nock$Path = string | RegExp | ((url: string) => boolean);
 declare type $npm$nock$Parameter =
   | string
   | RegExp
   | Array<mixed>
   | Object
-  | ((body: Object | Array<mixed>) => boolean)
+  | ((body: Object | Array<mixed>) => boolean);
 
 declare type $npm$nock$RecordedCall = {
   scope: string,
@@ -18,7 +18,7 @@ declare type $npm$nock$RecordedCall = {
   response: any,
   headers: Object,
   reqheader: Object
-}
+};
 
 declare class $npm$nock$Recorder {
   rec(options?: {
@@ -36,16 +36,16 @@ declare type $npm$nock$InterceptorOptions = {
   path: string,
   method: string,
   proto: string
-}
+};
 
 declare class $npm$nock$NockBack {
-  [[call]](path: string, cb: (cb: Function) => any): void;
+  static (path: string, cb: (cb: Function) => any): void;
   fixtures: string;
   setMode(mode: string): void;
 }
 
 declare class $npm$nock$Nock {
-  static [[call]](
+  static (
     url: string | RegExp,
     options?: {
       reqheaders?: Object,
@@ -138,5 +138,5 @@ declare class $npm$nock$Nock {
 }
 
 declare module 'nock' {
-  declare module.exports: typeof $npm$nock$Nock
+  declare module.exports: typeof $npm$nock$Nock;
 }

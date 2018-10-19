@@ -9,7 +9,7 @@ declare module 'shortid' {
     worker(workerId: number): ShortIdModule,
     characters(characters: string): string,
     decode(id: string): { version: number, worker: number },
-    isValid(id: mixed): boolean
-  |}
-  declare module.exports: ShortIdModule
-}
+    isValid(id: mixed): boolean,
+  |};
+  declare module.exports: ShortIdModule;
+};

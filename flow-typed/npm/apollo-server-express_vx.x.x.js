@@ -14,7 +14,7 @@
  */
 
 declare module 'apollo-server-express' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 /**
@@ -23,31 +23,31 @@ declare module 'apollo-server-express' {
  * needed.
  */
 declare module 'apollo-server-express/dist/ApolloServer' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 declare module 'apollo-server-express/dist/connectApollo' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 declare module 'apollo-server-express/dist/expressApollo' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 declare module 'apollo-server-express/dist/index' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 // Filename aliases
 declare module 'apollo-server-express/dist/ApolloServer.js' {
-  declare module.exports: $Exports<'apollo-server-express/dist/ApolloServer'>
+  declare module.exports: $Exports<'apollo-server-express/dist/ApolloServer'>;
 }
 declare module 'apollo-server-express/dist/connectApollo.js' {
-  declare module.exports: $Exports<'apollo-server-express/dist/connectApollo'>
+  declare module.exports: $Exports<'apollo-server-express/dist/connectApollo'>;
 }
 declare module 'apollo-server-express/dist/expressApollo.js' {
-  declare module.exports: $Exports<'apollo-server-express/dist/expressApollo'>
+  declare module.exports: $Exports<'apollo-server-express/dist/expressApollo'>;
 }
 declare module 'apollo-server-express/dist/index.js' {
-  declare module.exports: $Exports<'apollo-server-express/dist/index'>
+  declare module.exports: $Exports<'apollo-server-express/dist/index'>;
 }
