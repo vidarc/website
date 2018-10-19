@@ -26,19 +26,24 @@
     "singleQuote": true
   },
   "lint-staged": {
-    "*.{js,jsx}": [
-      "prettier --write",
-      "eslint --fix",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.{css,scss,sass}": [
-      "prettier --write",
-      "eslint --fix",
-      "git add"
+    "linters": {
+      "*.{js,jsx}": [
+        "prettier --write",
+        "eslint --fix",
+        "git add"
+      ],
+      "*.json": [
+        "prettier --write",
+        "git add"
+      ],
+      "*.{css,scss,sass}": [
+        "prettier --write",
+        "eslint --fix",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "flow-typed/**/*"
     ]
   },
   "devDependencies": {

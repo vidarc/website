@@ -18,6 +18,7 @@
     "@babel/polyfill": "7.0.0",
     "@babel/preset-env": "7.1.0",
     "@babel/preset-flow": "7.0.0",
+    "@mattailes/types": "1.0.0",
     "babel-loader": "8.0.4",
     "eslint-config-airbnb": "17.1.0",
     "eslint-plugin-babel": "5.2.1",
@@ -35,7 +36,6 @@
     "webpack-stylish": "0.1.8"
   },
   "dependencies": {
-    "@mattailes/types": "1.0.0",
     "apollo-server-express": "2.1.0",
     "cross-fetch": "2.2.2",
     "dataloader": "1.4.0",
@@ -44,6 +44,7 @@
     "firebase-functions": "2.0.5",
     "graphql": "14.0.2",
     "graphql-tools": "4.0.1",
+    "lodash": "^4.17.11",
     "winston": "3.1.0"
   }
 }

@@ -1,5 +1,6 @@
 // @flow
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { type Starship } from '@mattailes/types'
 import { gql } from 'apollo-server-express'
 

@@ -1,5 +1,6 @@
 // @flow
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { type Person } from '@mattailes/types'
 import { gql } from 'apollo-server-express'
 
