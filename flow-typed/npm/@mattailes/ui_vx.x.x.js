@@ -14,7 +14,7 @@
  */
 
 declare module '@mattailes/ui' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 /**
@@ -23,45 +23,45 @@ declare module '@mattailes/ui' {
  * needed.
  */
 declare module '@mattailes/ui/build/index' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 declare module '@mattailes/ui/src/components/Button/Button' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 declare module '@mattailes/ui/src/components/Button/index' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 declare module '@mattailes/ui/src/index' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 declare module '@mattailes/ui/src/theme/index' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 declare module '@mattailes/ui/webpack.config' {
-  declare module.exports: any
+  declare module.exports: any;
 }
 
 // Filename aliases
 declare module '@mattailes/ui/build/index.js' {
-  declare module.exports: $Exports<'@mattailes/ui/build/index'>
+  declare module.exports: $Exports<'@mattailes/ui/build/index'>;
 }
 declare module '@mattailes/ui/src/components/Button/Button.js' {
-  declare module.exports: $Exports<'@mattailes/ui/src/components/Button/Button'>
+  declare module.exports: $Exports<'@mattailes/ui/src/components/Button/Button'>;
 }
 declare module '@mattailes/ui/src/components/Button/index.js' {
-  declare module.exports: $Exports<'@mattailes/ui/src/components/Button/index'>
+  declare module.exports: $Exports<'@mattailes/ui/src/components/Button/index'>;
 }
 declare module '@mattailes/ui/src/index.js' {
-  declare module.exports: $Exports<'@mattailes/ui/src/index'>
+  declare module.exports: $Exports<'@mattailes/ui/src/index'>;
 }
 declare module '@mattailes/ui/src/theme/index.js' {
-  declare module.exports: $Exports<'@mattailes/ui/src/theme/index'>
+  declare module.exports: $Exports<'@mattailes/ui/src/theme/index'>;
 }
 declare module '@mattailes/ui/webpack.config.js' {
-  declare module.exports: $Exports<'@mattailes/ui/webpack.config'>
+  declare module.exports: $Exports<'@mattailes/ui/webpack.config'>;
 }
