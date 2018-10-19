@@ -1,9 +1,9 @@
 // @flow
 
-import { gql } from 'apollo-server-express'
 import { type Person } from '@mattailes/types'
+import { gql } from 'apollo-server-express'
 
-import { loader, getAll, getOne } from './helpers'
+import { getAll, getOne, loader } from './helpers'
 
 export const PersonTypeDef = gql`
   extend type Query {
@@ -44,7 +44,7 @@ export const PersonTypeDef = gql`
 export const personResolvers = {
   Query: {
     getAllPeople: () => getAll('people'),
-    getPerson: (id: number) => getOne('people', id),
+    getPerson: (_: any, { id }: { id: number }) => getOne('people', id),
   },
 
   Person: {

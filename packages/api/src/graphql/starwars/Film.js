@@ -1,9 +1,9 @@
 // @flow
 
-import { gql } from 'apollo-server-express'
 import { type Film } from '@mattailes/types'
+import { gql } from 'apollo-server-express'
 
-import { loader, getAll, getOne } from './helpers'
+import { getAll, getOne, loader } from './helpers'
 
 export const FilmTypeDef = gql`
   extend type Query {
@@ -40,7 +40,7 @@ export const FilmTypeDef = gql`
 export const filmResolvers = {
   Query: {
     getAllFilms: () => getAll('films'),
-    getFilm: (id: number) => getOne('films', id),
+    getFilm: (_: any, { id }: { id: number }) => getOne('films', id),
   },
 
   Film: {

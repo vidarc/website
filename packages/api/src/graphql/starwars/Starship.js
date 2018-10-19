@@ -1,9 +1,9 @@
 // @flow
 
-import { gql } from 'apollo-server-express'
 import { type Starship } from '@mattailes/types'
+import { gql } from 'apollo-server-express'
 
-import { loader, getAll, getOne } from './helpers'
+import { getAll, getOne, loader } from './helpers'
 
 export const StarshipTypeDef = gql`
   extend type Query {
@@ -52,7 +52,7 @@ export const StarshipTypeDef = gql`
 export const starshipResolvers = {
   Query: {
     getAllStarships: () => getAll('starships'),
-    getStarship: (id: number) => getOne('starships', id),
+    getStarship: (_: any, { id }: { id: number }) => getOne('starships', id),
   },
 
   Starship: {
