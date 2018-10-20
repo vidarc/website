@@ -24,7 +24,7 @@
     "@babel/polyfill": "7.0.0",
     "@babel/preset-env": "7.1.0",
     "@babel/preset-flow": "7.0.0",
-    "@babel/runtime": "^7.1.2",
+    "@babel/runtime": "7.1.2",
     "@mattailes/types": "1.0.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-plugin-babel": "5.2.1",
