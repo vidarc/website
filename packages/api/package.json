@@ -6,20 +6,20 @@
     "node": "8"
   },
   "scripts": {
-    "build": "webpack-cli --progress --colors",
+    "build": "babel --delete-dir-on-start -d build/ --verbose src/",
     "lint": "../../node_modules/.bin/eslint ./src",
     "watch:server": "webpack-cli --progress --colors --watch",
     "flow": "flow",
     "deploy": "firebase deploy --token $FIREBASE_TOKEN"
   },
   "devDependencies": {
+    "@babel/cli": "7.1.2",
     "@babel/core": "7.1.2",
     "@babel/plugin-transform-runtime": "7.1.0",
     "@babel/polyfill": "7.0.0",
     "@babel/preset-env": "7.1.0",
     "@babel/preset-flow": "7.0.0",
     "@mattailes/types": "1.0.0",
-    "babel-loader": "8.0.4",
     "eslint-config-airbnb": "17.1.0",
     "eslint-plugin-babel": "5.2.1",
     "eslint-plugin-flowtype": "2.50.3",
@@ -29,11 +29,7 @@
     "eslint-plugin-sort-imports-es6-autofix": "0.3.0",
     "flow-bin": "0.83.0",
     "nodemon-webpack-plugin": "3.0.1",
-    "react-scripts": "2.0.5",
-    "webpack": "4.20.2",
-    "webpack-cli": "3.1.2",
-    "webpack-node-externals": "1.7.2",
-    "webpack-stylish": "0.1.8"
+    "react-scripts": "2.0.5"
   },
   "dependencies": {
     "apollo-server-express": "2.1.0",
