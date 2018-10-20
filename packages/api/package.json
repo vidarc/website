@@ -2,6 +2,11 @@
   "name": "@mattailes/api",
   "version": "1.0.0",
   "private": true,
+  "workspaces": {
+    "nohoist": [
+      "@babel/runtime"
+    ]
+  },
   "engines": {
     "node": "8"
   },
@@ -19,6 +24,7 @@
     "@babel/polyfill": "7.0.0",
     "@babel/preset-env": "7.1.0",
     "@babel/preset-flow": "7.0.0",
+    "@babel/runtime": "^7.1.2",
     "@mattailes/types": "1.0.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-plugin-babel": "5.2.1",

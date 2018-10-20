@@ -1,8 +1,10 @@
 {
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
   "scripts": {
     "clean": "yarn clean:build && yarn clean:node_modules",
     "clean:build": "rm -rf ./packages/*/build",
