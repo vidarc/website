@@ -10,9 +10,6 @@ coverage
 build
 dist
 
-# api built file
-packages/api/index.js
-
 # misc
 .DS_Store
 .env
