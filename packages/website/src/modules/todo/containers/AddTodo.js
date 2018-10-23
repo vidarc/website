@@ -1,8 +1,8 @@
 // @flow
 
-import React from 'react'
-import { connect } from 'react-redux'
+import * as React from 'react'
 import { Button } from '@mattailes/ui'
+import { connect } from 'react-redux'
 
 import actions from '../ducks/actions'
 
@@ -29,7 +29,9 @@ class AddTodo extends React.Component<Props, State> {
     this.setState({ todo: '' })
   }
 
-  handleChange = ({ target: { name, value } }) => this.setState({ [name]: value })
+  handleChange = ({
+    currentTarget: { name, value },
+  }: SyntheticEvent<HTMLInputElement>) => this.setState({ [name]: value })
 
   render() {
     const { todo } = this.state

@@ -2,15 +2,15 @@
 
 import { connect } from 'react-redux'
 
-import actions from '../ducks/actions'
 import TodoLink from '../components/TodoLink'
+import actions from '../ducks/actions'
 
 type State = {
-  visibilityFilter: string,
+  visibilityFilter: string
 }
 
 type Props = {
-  filter: string,
+  filter: string
 }
 
 const mapStateToProps = (state: State, ownProps: Props) => ({
@@ -23,6 +23,9 @@ const mapDispatchToProps = (dispatch: Function, ownProps: Props) => ({
   },
 })
 
-const FilterLink = connect(mapStateToProps, mapDispatchToProps)(TodoLink)
+const FilterLink = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(TodoLink)
 
 export default FilterLink

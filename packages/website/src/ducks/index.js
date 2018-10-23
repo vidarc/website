@@ -1,6 +1,6 @@
 // @flow
 
-import { createStore, applyMiddleware, combineReducers } from 'redux'
+import { applyMiddleware, combineReducers, createStore } from 'redux'
 import thunk from 'redux-thunk'
 
 import todoReducers from '../modules/todo/ducks'

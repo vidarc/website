@@ -8,7 +8,7 @@ import configureStore from './ducks'
 
 const store = configureStore()
 
-function renderApp(Component: React.Node) {
+function renderApp(Component) {
   render(
     <Provider store={store}>
       <Component />

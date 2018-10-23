@@ -3,6 +3,7 @@
 import * as React from 'react'
 
 import FilterLink from '../containers/FilterLink'
+
 import { visibilityFilter } from '../ducks/types'
 
 const Footer = () => (

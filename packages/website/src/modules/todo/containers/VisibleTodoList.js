@@ -2,8 +2,9 @@
 
 import { connect } from 'react-redux'
 
-import actions from '../ducks/actions'
 import TodoList from '../components/TodoList'
+import actions from '../ducks/actions'
+
 import {
   type Todo,
   type VisibilityFilter,
