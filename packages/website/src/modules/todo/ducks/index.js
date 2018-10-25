@@ -1,11 +1,5 @@
 // @flow
 
-import { combineReducers } from 'redux'
-import { todos, visibilityFilter } from './reducers'
+import todosReducer from './reducers'
 
-const todoApp = combineReducers({
-  todos,
-  visibilityFilter,
-})
-
-export default todoApp
+export default todosReducer
