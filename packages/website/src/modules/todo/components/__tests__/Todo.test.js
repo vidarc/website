@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react'
+
 import { mount } from 'enzyme'
 
 import Todo, { type Props } from '../Todo'
@@ -18,7 +19,10 @@ describe('Todo component', () => {
     const actual = mount(<Todo {...props} />)
 
     expect(actual).toBeDefined()
-    expect(actual.find('li').prop('style')).toEqual({ cursor: 'pointer', textDecoration: 'none' })
+    expect(actual.find('li').prop('style')).toEqual({
+      cursor: 'pointer',
+      textDecoration: 'none',
+    })
     expect(actual.find('li').text()).toEqual('todo text')
   })
 
@@ -28,7 +32,10 @@ describe('Todo component', () => {
     const actual = mount(<Todo {...props} />)
 
     expect(actual).toBeDefined()
-    expect(actual.find('li').prop('style')).toEqual({ cursor: 'pointer', textDecoration: 'line-through' })
+    expect(actual.find('li').prop('style')).toEqual({
+      cursor: 'pointer',
+      textDecoration: 'line-through',
+    })
     expect(actual.find('li').text()).toEqual('todo text')
   })
 

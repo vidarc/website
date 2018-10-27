@@ -1,7 +1,9 @@
 // @flow
 
-import React from 'react'
+import * as React from 'react'
 
-const StarWarsApp = () => <div>Hello, my name is Matt. Hello again</div>
+const StarWarsApp = () => (
+  <div>Star Wars app will go here at some point in time</div>
+)
 
 export default StarWarsApp

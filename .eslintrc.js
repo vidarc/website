@@ -1,5 +1,5 @@
 module.exports = {
-  extends: 'airbnb',
+  extends: ['airbnb', 'plugin:flowtype/recommended'],
   parser: 'babel-eslint',
   plugins: ['flowtype', 'sort-imports-es6-autofix'],
   env: {
@@ -28,6 +28,12 @@ module.exports = {
         ignoreCase: false,
         ignoreMemberSort: false,
         memberSyntaxSortOrder: ['all', 'multiple', 'single', 'none']
+      }
+    ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: ['**/*.stories.js', '**/webpack.config.js']
       }
     ]
   }

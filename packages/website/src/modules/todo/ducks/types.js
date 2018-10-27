@@ -1,33 +1,29 @@
 // @flow
 
-const ADD_TODO = 'ADD_TODO'
-const TOGGLE_TODO = 'TOGGLE_TODO'
+import type { Dispatch as ReduxDispatch, Store as ReduxStore } from 'redux'
 
-const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
+export type Todo = {
+  id?: string,
+  text?: string,
+  completed?: boolean
+}
 
-export const visibilityFilter = {
-  SHOW_ALL: 'SHOW_ALL',
-  SHOW_ACTIVE: 'SHOW_ACTIVE',
-  SHOW_COMPLETED: 'SHOW_COMPLETED',
+export type Todos = Array<Todo>
+
+export type VisibilityFilter = {
+  filter: 'SHOW_ALL' | 'SHOW_ACTIVE' | 'SHOW_COMPLETED'
+}
+
+export type State = {
+  +todos: Todos,
+  +visibilityFilter: VisibilityFilter
 }
 
 export type Action<T> = {
-  type: string,
-  payload: T,
+  type: 'ADD_TODO' | 'TOGGLE_TODO' | 'SET_VISIBILITY_FILTER',
+  payload: T
 }
 
-export type Todo = {
-  id: string,
-  text: string,
-  completed: boolean,
-}
+export type Store = ReduxStore<State, Action<>>
 
-export type VisibilityFilter = {
-  filter: string,
-}
-
-export default {
-  ADD_TODO,
-  TOGGLE_TODO,
-  SET_VISIBILITY_FILTER,
-}
+export type Dispatch = ReduxDispatch<Action<>>

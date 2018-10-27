@@ -1,17 +1,17 @@
 // @flow
 
-import React from 'react'
-import { connect } from 'react-redux'
+import * as React from 'react'
 import { Button } from '@mattailes/ui'
+import { connect } from 'react-redux'
 
 import actions from '../ducks/actions'
 
 type Props = {
-  dispatch: Function,
+  dispatch: Function
 }
 
 type State = {
-  todo: string,
+  todo: string
 }
 
 class AddTodo extends React.Component<Props, State> {
@@ -21,28 +21,36 @@ class AddTodo extends React.Component<Props, State> {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.dispatch(actions.addTodo(this.state.todo))
+    const { todo } = this.state
+    const { dispatch } = this.props
+
+    dispatch(actions.addTodo(todo))
+
     this.setState({ todo: '' })
   }
 
-  handleChange = ({ target: { name, value } }) => this.setState({ [name]: value })
+  handleChange = ({
+    currentTarget: { name, value },
+  }: SyntheticEvent<HTMLInputElement>) => this.setState({ [name]: value })
 
   render() {
+    const { todo } = this.state
+
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
           <div>
-            <label>
+            <label htmlFor='todo'>
               Todo:
               <input
                 placeholder='Enter the todo...'
                 type='text'
                 name='todo'
-                value={this.state.todo}
+                value={todo}
                 onChange={this.handleChange}
               />
             </label>
-            <Button text='Add Todo' type='submit' />
+            <Button type='submit'>Add Todo</Button>
           </div>
         </form>
       </div>

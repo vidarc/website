@@ -4,9 +4,9 @@ import * as React from 'react'
 import { Router } from '@reach/router'
 import { css, injectGlobal } from 'emotion'
 
-import { Navigation } from './components/Navigation'
-import { loadableComponent } from './components/Loading'
-import NotFound from './components/NotFound'
+import { Navigation } from './Navigation'
+import { loadableComponent } from './Loading'
+import NotFound from './NotFound'
 
 import 'sanitize.css'
 
@@ -34,11 +34,11 @@ const style = css`
   max-width: 1024px;
 `
 
-const AsyncHome = loadableComponent({ loader: () => import('./modules/home') })
+const AsyncHome = loadableComponent({ loader: () => import('../modules/home') })
 const AsyncStarWars = loadableComponent({
-  loader: () => import('./modules/starwars'),
+  loader: () => import('../modules/starwars'),
 })
-const AsyncTodo = loadableComponent({ loader: () => import('./modules/todo') })
+const AsyncTodo = loadableComponent({ loader: () => import('../modules/todo') })
 
 const App = () => (
   <div className={style}>
