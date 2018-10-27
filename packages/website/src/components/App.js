@@ -5,7 +5,7 @@ import { Router } from '@reach/router'
 import { css, injectGlobal } from 'emotion'
 
 import { Navigation } from './Navigation'
-import { loadableComponent } from './Loading'
+import Loading from './Loading'
 import NotFound from './NotFound'
 
 import 'sanitize.css'
@@ -34,21 +34,21 @@ const style = css`
   max-width: 1024px;
 `
 
-const AsyncHome = loadableComponent({ loader: () => import('../modules/home') })
-const AsyncStarWars = loadableComponent({
-  loader: () => import('../modules/starwars'),
-})
-const AsyncTodo = loadableComponent({ loader: () => import('../modules/todo') })
+const AsyncHome = React.lazy(() => import('../modules/home'))
+const AsyncStarWars = React.lazy(() => import('../modules/starwars'))
+const AsyncTodo = React.lazy(() => import('../modules/todo'))
 
 const App = () => (
   <div className={style}>
     <Navigation />
-    <Router>
-      <AsyncHome path='/' />
-      <AsyncStarWars path='/starwars' />
-      <AsyncTodo path='/todo' />
-      <NotFound default />
-    </Router>
+    <React.Suspense fallback={Loading}>
+      <Router>
+        <AsyncHome path='/' />
+        <AsyncStarWars path='/starwars' />
+        <AsyncTodo path='/todo' />
+        <NotFound default />
+      </Router>
+    </React.Suspense>
   </div>
 )
 
