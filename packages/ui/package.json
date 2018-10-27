@@ -37,7 +37,7 @@
     "@storybook/components": "4.0.0-alpha.24",
     "@storybook/react": "4.0.0-alpha.24",
     "babel-loader": "8.0.4",
-    "babel-plugin-emotion": "^9.2.11",
+    "babel-plugin-emotion": "9.2.11",
     "eslint-config-airbnb": "17.1.0",
     "eslint-plugin-babel": "5.2.1",
     "eslint-plugin-flowtype": "2.50.3",
