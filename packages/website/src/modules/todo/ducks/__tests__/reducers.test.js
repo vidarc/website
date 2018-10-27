@@ -1,18 +1,18 @@
 // @flow
 
-import types, { type Todo } from '../types'
+import type { State, Todo, VisibilityFilter } from '../types'
 
-import { todos, visibilityFilter } from '../reducers'
+import todosReducer from '../reducers'
 
 describe('reducers test', () => {
   describe('todos reducer', () => {
     it('should return an initial state of an empty array', () => {
-      const expected = []
+      const expected = { todos: [], visibilityFilter: { filter: 'SHOW_ALL' } }
 
       // $FlowIgnore
-      expect(todos(undefined, { type: undefined, payload: undefined })).toEqual(
-        expected,
-      )
+      expect(
+        todosReducer(undefined, { type: undefined, payload: undefined }),
+      ).toEqual(expected)
     })
 
     it('should add a todo', () => {
@@ -27,12 +27,21 @@ describe('reducers test', () => {
         completed: false,
       }
 
-      expect(todos([], { type: types.ADD_TODO, payload: todoOne })).toEqual([
-        todoOne,
-      ])
+      const expected: State = {
+        todos: [],
+        visibilityFilter: { filter: 'SHOW_ALL' },
+      }
+
+      expect(todosReducer({}, { type: 'ADD_TODO', payload: todoOne })).toEqual({
+        ...expected,
+        ...{ todos: [todoOne] },
+      })
       expect(
-        todos([todoOne], { type: types.ADD_TODO, payload: todoTwo }),
-      ).toEqual([todoOne, todoTwo])
+        todosReducer(
+          { todos: [todoOne] },
+          { type: 'ADD_TODO', payload: todoTwo },
+        ),
+      ).toEqual({ ...expected, ...{ todos: [todoOne, todoTwo] } })
     })
 
     it('should toggle a todo', () => {
@@ -47,30 +56,43 @@ describe('reducers test', () => {
         completed: true,
       }
 
-      expect(todos([todo], { type: types.TOGGLE_TODO, payload: todo })).toEqual(
-        [toggledTodo],
-      )
+      const expected: State = {
+        todos: [toggledTodo],
+        visibilityFilter: { filter: 'SHOW_ALL' },
+      }
+
+      expect(
+        todosReducer({ todos: [todo] }, { type: 'TOGGLE_TODO', payload: todo }),
+      ).toEqual(expected)
     })
   })
 
   describe('visibilityFilter reducer', () => {
     it('should default to SHOW_ALL', () => {
-      const expected = { filter: 'SHOW_ALL' }
+      const expected: State = {
+        todos: [],
+        visibilityFilter: { filter: 'SHOW_ALL' },
+      }
 
       // $FlowIgnore
       expect(
-        visibilityFilter(undefined, { type: undefined, payload: undefined }),
+        todosReducer(undefined, { type: undefined, payload: undefined }),
       ).toEqual(expected)
     })
 
     it('should return a filter when SET_VISIBILITY_FILTER', () => {
-      const expected = { filter: 'SHOW_ACTIVE' }
+      const expected: State = {
+        todos: [],
+        visibilityFilter: { filter: 'SHOW_ACTIVE' },
+      }
+
+      const visibilityFilter: VisibilityFilter = { filter: 'SHOW_ALL' }
 
       expect(
-        visibilityFilter(
-          { filter: 'SHOW_ALL' },
+        todosReducer(
+          { visibilityFilter },
           {
-            type: types.SET_VISIBILITY_FILTER,
+            type: 'SET_VISIBILITY_FILTER',
             payload: { filter: 'SHOW_ACTIVE' },
           },
         ),
