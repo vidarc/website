@@ -52,14 +52,13 @@
     "facepaint": "1.2.1",
     "jest-enzyme": "6.1.2",
     "normalize.css": "8.0.0",
-    "react": "16.5.2",
+    "react": "16.6.0",
     "react-apollo": "2.2.4",
-    "react-dom": "16.5.2",
-    "react-loadable": "5.5.0",
+    "react-dom": "16.6.0",
     "react-redux": "5.0.7",
     "redux": "4.0.1",
     "redux-thunk": "2.3.0",
-    "sanitize.css": "7.0.3",
+    "sanitize.css": "8.0.0",
     "shortid": "2.2.13"
   },
   "browserslist": {
