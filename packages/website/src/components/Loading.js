@@ -2,11 +2,6 @@
 
 import * as React from 'react'
 
-const Loading = ({ pastDelay }: { pastDelay: boolean }) => {
-  if (pastDelay) {
-    return <div>Loading...</div>
-  }
-  return null
-}
+const Loading = () => <div>Loading...</div>
 
 export default Loading

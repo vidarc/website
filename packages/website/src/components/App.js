@@ -41,7 +41,7 @@ const AsyncTodo = React.lazy(() => import('../modules/todo'))
 const App = () => (
   <div className={style}>
     <Navigation />
-    <React.Suspense fallback={Loading}>
+    <React.Suspense fallback={<Loading />}>
       <Router>
         <AsyncHome path='/' />
         <AsyncStarWars path='/starwars' />
