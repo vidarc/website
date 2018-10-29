@@ -16,8 +16,8 @@
   ],
   "peerDependencies": {
     "emotion": "9.2.12",
-    "react": "16.5.2",
-    "react-dom": "16.5.2"
+    "react": "16.6.0",
+    "react-dom": "16.6.0"
   },
   "devDependencies": {
     "@babel/core": "7.1.2",
