@@ -43,7 +43,7 @@
     "@mattailes/types": "1.0.0",
     "@mattailes/ui": "1.0.0",
     "@reach/router": "1.2.1",
-    "apollo-boost": "0.1.16",
+    "apollo-boost": "0.1.18",
     "cross-fetch": "2.2.3",
     "dotenv": "6.1.0",
     "emotion": "9.2.12",
