@@ -15,6 +15,7 @@
     "lint": "../../node_modules/.bin/eslint ./src",
     "watch:server": "webpack-cli --progress --colors --watch",
     "flow": "flow",
+    "flow:update": "flow-typed update",
     "deploy": "firebase deploy --token $FIREBASE_TOKEN"
   },
   "devDependencies": {
