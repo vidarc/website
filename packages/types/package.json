@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "flow": "flow"
+    "flow": "flow",
+    "flow:update": "flow-typed update"
   },
   "devDependencies": {
     "eslint-plugin-sort-imports-es6-autofix": "0.3.0",

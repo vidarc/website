@@ -13,6 +13,7 @@
     "coverage:cleanup": "rm -rf ./coverage",
     "eject": "react-scripts eject",
     "flow": "flow",
+    "flow:update": "flow-typed update",
     "deploy": "firebase deploy --token $FIREBASE_TOKEN"
   },
   "jest": {
