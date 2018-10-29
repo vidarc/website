@@ -1,8 +1,10 @@
-// flow-typed signature: b00823afcd31d0a5c10e11f475f9ec7d
-// flow-typed version: adbbf6f8b2/react-apollo_v2.x.x/flow_>=v0.58.x
+// flow-typed signature: 464ff978cfc4c428eef2ca6f02b5de79
+// flow-typed version: 37e87f954e/react-apollo_v2.x.x/flow_>=v0.58.x
 
 declare module "react-apollo" {
   import type { ComponentType, Element, Node } from 'react';
+
+  declare type MakeOptional = <V>(V) => ?V;
   /**
    * Copied types from Apollo Client libdef
    * Please update apollo-client libdef as well if updating these types
@@ -906,7 +908,7 @@ declare module "react-apollo" {
     TData = any,
     TVariables = OperationVariables
   > = {
-    data: TData | {||} | void,
+    data: $ObjMap<TData, MakeOptional> | void,
     loading: boolean,
     error?: ApolloError,
     variables: TVariables,
@@ -1019,4 +1021,6 @@ declare module "react-apollo" {
     onError?: (error: ApolloError) => mixed,
     context?: { [string]: any }
   }> {}
+
+  declare export var compose: $Compose;
 }
