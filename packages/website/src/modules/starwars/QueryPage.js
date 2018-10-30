@@ -3,57 +3,66 @@
 import * as React from 'react'
 
 import { Button } from '@mattailes/ui'
-import { Query } from 'react-apollo'
+import { graphql } from 'react-apollo'
 import type { Film } from '@mattailes/types'
+import type { OperationComponent } from 'react-apollo'
 
 import gql from 'graphql-tag'
 
-const query = gql`
-  {
+const FILM_QUERY = gql`
+  query {
     getAllFilms {
       title
       producer
+      episode_id
     }
   }
 `
 
-const QueryPage = () => (
-  <Query query={query} notifyOnNetworkStatusChange>
-    {({
-      loading, error, data, refetch, networkStatus,
-    }) => {
-      if (networkStatus === 4) {
-        return <p>Refetching.......</p>
-      }
-      if (loading) {
-        return <p>Loading.......</p>
-      }
+type Response = {
+  getAllFilms?: Array<Film>
+}
 
-      if (error) {
-        return (
-          <p>
-OMG ERROR -
-            {error.message}
+const withFilmQuery: OperationComponent<Response> = graphql(FILM_QUERY, {
+  options: {
+    notifyOnNetworkStatusChange: true,
+  },
+})
+
+const FilmQueryComponent = withFilmQuery(
+  ({
+    data: {
+      loading, error, getAllFilms, refetch, networkStatus,
+    },
+  }) => {
+    if (networkStatus === 4) {
+      return <p>Refetching.........</p>
+    }
+
+    if (loading) {
+      return <p>Loading............</p>
+    }
+
+    if (error || !getAllFilms) {
+      return <p>Error.............</p>
+    }
+
+    return (
+      <div>
+        {getAllFilms.map(film => (
+          <p key={film.episode_id}>
+            {film.title}
+            {' '}
+-
+            {film.producer}
           </p>
-        )
-      }
-
-      return [
-        <div>
-          {data.getAllFilms.map((film: Film) => (
-            <p key={film.episode_id}>
-              {film.title}
-              {' - '}
-              {film.producer}
-            </p>
-          ))}
-        </div>,
+        ))}
         <Button primary onClick={() => refetch()}>
           Refetch!
-        </Button>,
-      ]
-    }}
-  </Query>
+        </Button>
+      </div>
+    )
+  },
 )
 
-export default QueryPage
+export default FilmQueryComponent
