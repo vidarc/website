@@ -52,8 +52,7 @@ const FilmQueryComponent = withFilmQuery(
         {getAllFilms.map(film => (
           <p key={film.episode_id}>
             {film.title}
-            {' '}
--
+            {' - '}
             {film.producer}
           </p>
         ))}
