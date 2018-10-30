@@ -2,7 +2,7 @@
   "name": "@mattailes/website",
   "version": "1.1.4",
   "private": true,
-  "proxy": "http://localhost:5000/website-b10e5/us-central1/api",
+  "proxy": "https://us-central1-server-b6f04.cloudfunctions.net/api",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -51,6 +51,7 @@
     "enzyme": "3.7.0",
     "enzyme-adapter-react-16": "1.7.0",
     "facepaint": "1.2.1",
+    "graphql-tag": "2.10.0",
     "jest-enzyme": "6.1.2",
     "normalize.css": "8.0.1",
     "react": "16.6.0",
