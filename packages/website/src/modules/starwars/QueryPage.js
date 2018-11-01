@@ -10,17 +10,20 @@ import type { OperationComponent } from 'react-apollo'
 import gql from 'graphql-tag'
 
 const FILM_QUERY = gql`
-  query {
+  query FILM_QUERY {
     getAllFilms {
       title
-      producer
       episode_id
+      opening_crawl
+      director
+      producer
+      release_date
     }
   }
 `
 
 type Response = {
-  getAllFilms?: Array<Film>
+  getAllFilms: Array<Film>
 }
 
 const withFilmQuery: OperationComponent<Response> = graphql(FILM_QUERY, {
@@ -49,11 +52,13 @@ const FilmQueryComponent = withFilmQuery(
 
     return (
       <div>
-        {getAllFilms.map(film => (
+        {getAllFilms.sort((a, b) => a.episode_id - b.episode_id).map(film => (
           <p key={film.episode_id}>
+            {`Episode ${film.episode_id}`}
+            {' - '}
             {film.title}
             {' - '}
-            {film.producer}
+            {film.release_date}
           </p>
         ))}
         <Button primary onClick={() => refetch()}>
