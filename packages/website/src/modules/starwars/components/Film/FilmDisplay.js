@@ -3,11 +3,11 @@
 import * as React from 'react'
 import styled from 'react-emotion'
 
-const ContainerDiv = styled('div')`
+const Container = styled.div`
   display: flex;
 `
 
-const ItemDiv = styled('div')`
+const Item = styled.div`
   flex: 1 1 100%;
   max-width: ${props => props.width};
 `
@@ -19,10 +19,10 @@ const FilmDisplay = ({
   title: string,
   content: string | number
 }) => (
-  <ContainerDiv>
-    <ItemDiv width='25%'>{title}</ItemDiv>
-    <ItemDiv width='75%'>{content}</ItemDiv>
-  </ContainerDiv>
+  <Container>
+    <Item width='25%'>{title}</Item>
+    <Item width='75%'>{content}</Item>
+  </Container>
 )
 
 export default FilmDisplay
