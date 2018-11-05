@@ -1,5 +1,5 @@
-// flow-typed signature: 464ff978cfc4c428eef2ca6f02b5de79
-// flow-typed version: 37e87f954e/react-apollo_v2.x.x/flow_>=v0.58.x
+// flow-typed signature: 906b2a12a0a89ac58e467265dbf0d0a0
+// flow-typed version: a0c7c0b50b/react-apollo_v2.x.x/flow_>=v0.58.x
 
 declare module "react-apollo" {
   import type { ComponentType, Element, Node } from 'react';
@@ -784,7 +784,8 @@ declare module "react-apollo" {
     fetchPolicy?: FetchPolicy,
     pollInterval?: number,
     skip?: boolean,
-    errorPolicy?: ErrorPolicy
+    errorPolicy?: ErrorPolicy,
+    context?: { [key: string]: any }
   |};
 
   declare export interface GraphqlQueryControls<
