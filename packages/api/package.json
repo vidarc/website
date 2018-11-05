@@ -7,9 +7,6 @@
       "@babel/runtime"
     ]
   },
-  "engines": {
-    "node": "8"
-  },
   "scripts": {
     "build": "babel --delete-dir-on-start -d build/ --verbose src/",
     "lint": "../../node_modules/.bin/eslint ./src",
