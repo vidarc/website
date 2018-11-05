@@ -33,9 +33,9 @@
     "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-react": "7.11.1",
     "eslint-plugin-sort-imports-es6-autofix": "0.3.0",
-    "flow-bin": "0.84.0",
+    "flow-bin": "0.85.0",
     "nodemon-webpack-plugin": "3.0.1",
-    "react-scripts": "2.0.5"
+    "react-scripts": "2.1.1"
   },
   "dependencies": {
     "@babel/runtime": "7.1.2",
@@ -46,7 +46,7 @@
     "firebase-admin": "6.1.0",
     "firebase-functions": "2.1.0",
     "graphql": "14.0.2",
-    "graphql-tools": "4.0.2",
+    "graphql-tools": "4.0.3",
     "lodash": "4.17.11",
     "winston": "3.1.0"
   }
