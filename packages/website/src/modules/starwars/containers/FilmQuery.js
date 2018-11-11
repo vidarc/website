@@ -20,6 +20,21 @@ const FILM_QUERY = gql`
       director
       producer
       release_date
+      species {
+        name
+      }
+      starships {
+        name
+      }
+      vehicles {
+        name
+      }
+      characters {
+        name
+      }
+      planets {
+        name
+      }
     }
   }
 `

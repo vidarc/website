@@ -3,11 +3,11 @@
 import * as React from 'react'
 import styled from 'react-emotion'
 
-const Container = styled.div`
+const Container = styled('div')`
   display: flex;
 `
 
-const Item = styled.div`
+const Item = styled('div')`
   flex: 1 1 100%;
   max-width: ${props => props.width};
 `
