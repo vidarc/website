@@ -4,42 +4,15 @@ import * as React from 'react'
 
 import { Button } from '@mattailes/ui'
 import { graphql } from 'react-apollo'
+import { loader } from 'graphql.macro'
 import type { Film } from '@mattailes/types'
 import type { OperationComponent } from 'react-apollo'
 
-import gql from 'graphql-tag'
-
 import FilmInfo from '../components/FilmInfo'
 
-const getRandomId = () => Math.floor(Math.random() * 7) + 1
+const FILM_QUERY = loader('../schemas/getFilm.graphql')
 
-const FILM_QUERY = gql`
-  query FILM_QUERY($id: Int) {
-    getFilm(id: $id) {
-      title
-      episode_id
-      opening_crawl
-      director
-      producer
-      release_date
-      species {
-        name
-      }
-      starships {
-        name
-      }
-      vehicles {
-        name
-      }
-      characters {
-        name
-      }
-      planets {
-        name
-      }
-    }
-  }
-`
+const getRandomId = () => Math.floor(Math.random() * 7) + 1
 
 type Response = {
   getFilm: Film

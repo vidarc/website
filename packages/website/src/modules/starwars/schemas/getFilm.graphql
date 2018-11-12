@@ -1,0 +1,25 @@
+query FILM_QUERY($id: Int) {
+  getFilm(id: $id) {
+    title
+    episode_id
+    opening_crawl
+    director
+    producer
+    release_date
+    species {
+      name
+    }
+    starships {
+      name
+    }
+    vehicles {
+      name
+    }
+    characters {
+      name
+    }
+    planets {
+      name
+    }
+  }
+}
