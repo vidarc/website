@@ -9,11 +9,13 @@ import type { OperationComponent } from 'react-apollo'
 
 import gql from 'graphql-tag'
 
-import { FilmInfo } from '../components/Film'
+import FilmInfo from '../components/FilmInfo'
+
+const getRandomId = () => Math.floor(Math.random() * 7) + 1
 
 const FILM_QUERY = gql`
-  query FILM_QUERY {
-    getAllFilms {
+  query FILM_QUERY($id: Int) {
+    getFilm(id: $id) {
       title
       episode_id
       opening_crawl
@@ -40,19 +42,22 @@ const FILM_QUERY = gql`
 `
 
 type Response = {
-  getAllFilms: Array<Film>
+  getFilm: Film
 }
 
 const withFilmQuery: OperationComponent<Response> = graphql(FILM_QUERY, {
   options: {
     notifyOnNetworkStatusChange: true,
+    variables: {
+      id: getRandomId(),
+    },
   },
 })
 
 const FilmQueryComponent = withFilmQuery(
   ({
     data: {
-      loading, error, getAllFilms, refetch, networkStatus,
+      loading, error, getFilm, refetch, networkStatus,
     },
   }) => {
     if (networkStatus === 4) {
@@ -63,16 +68,14 @@ const FilmQueryComponent = withFilmQuery(
       return <p>Loading............</p>
     }
 
-    if (error || !getAllFilms) {
+    if (error || !getFilm) {
       return <p>Error.............</p>
     }
 
     return (
       <div>
-        {getAllFilms.sort((a, b) => a.episode_id - b.episode_id).map(film => (
-          <FilmInfo {...film} key={film.episode_id} />
-        ))}
-        <Button primary onClick={() => refetch()}>
+        <FilmInfo {...getFilm} />
+        <Button primary onClick={() => refetch({ id: getRandomId() })}>
           Refetch!
         </Button>
       </div>

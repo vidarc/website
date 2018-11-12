@@ -2,7 +2,7 @@
   "name": "@mattailes/website",
   "version": "1.1.4",
   "private": true,
-  "proxy": "https://us-central1-server-b6f04.cloudfunctions.net/api",
+  "proxy": "https://us-central1-server-b6f04.cloudfunctions.net/api/graphql",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
