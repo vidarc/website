@@ -1,0 +1,4 @@
+fragment BaseFilm on Film {
+  episode_id
+  title
+}

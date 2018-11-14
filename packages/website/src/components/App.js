@@ -44,8 +44,8 @@ const App = () => (
     <React.Suspense fallback={<Loading />}>
       <Router>
         <AsyncHome path='/' />
-        <AsyncStarWars path='/starwars' />
-        <AsyncTodo path='/todo' />
+        <AsyncStarWars path='starwars/*' />
+        <AsyncTodo path='todo' />
         <NotFound default />
       </Router>
     </React.Suspense>

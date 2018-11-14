@@ -1,7 +1,8 @@
+#import './baseFilm.graphql'
+
 query FILM_QUERY($id: Int) {
   getFilm(id: $id) {
-    title
-    episode_id
+    ...BaseFilm
     opening_crawl
     director
     producer
