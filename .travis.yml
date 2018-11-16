@@ -4,10 +4,6 @@ language: node_js
 node_js:
   - lts/*
 cache: yarn
-branches:
-  only:
-    - master
-    - '/^greenkeeper/.*$/'
 
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
@@ -23,7 +19,7 @@ script:
   - codecov
   - yarn coverage:cleanup
   - yarn build
-  - lerna version minor --yes
+  - .travis/lernaVersion.sh
 
 deploy:
   provider: script
