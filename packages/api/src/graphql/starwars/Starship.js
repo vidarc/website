@@ -13,6 +13,7 @@ export const StarshipTypeDef = gql`
   }
 
   type Starship {
+    id: Int
     # The number of non-essential people this starship can transport.
     passengers: String
     # The maximum length of time that this starship can provide consumables for its entire crew

@@ -13,6 +13,7 @@ export const PlanetTypeDef = gql`
   }
 
   type Planet {
+    id: Int
     # The percentage of the planet surface that is naturally occuring water or bodies of water.
     surface_water: String
     # The average populationof sentient beings inhabiting this planet.

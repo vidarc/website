@@ -13,6 +13,7 @@ export const SpeciesTypeDef = gql`
   }
 
   type Species {
+    id: Int
     # A comma-seperated string of common skin colors for this species,
     # none if this species does not typically have skin.
     skin_colors: String

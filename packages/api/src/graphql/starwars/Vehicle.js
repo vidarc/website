@@ -13,6 +13,7 @@ export const VehicleTypeDef = gql`
   }
 
   type Vehicle {
+    id: Int
     # The number of non-essential people this vehicle can transport.
     passengers: String
     # The class of this vehicle, such as Wheeled.
