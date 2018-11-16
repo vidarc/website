@@ -24,7 +24,7 @@ deploy:
   skip_cleanup: true
   on:
     branch: master
-after-deploy:
+after_deploy:
   script: .travis/lernaVersion.sh
   on:
     branch: master
