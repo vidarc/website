@@ -1,6 +1,7 @@
 // @flow
 
 export type Planet = {
+  id: number,
   surface_water: string,
   population: string,
   diameter: string,
@@ -11,5 +12,5 @@ export type Planet = {
   orbital_period: string,
   climate: string,
   name: string,
-  terrain: string,
+  terrain: string
 }

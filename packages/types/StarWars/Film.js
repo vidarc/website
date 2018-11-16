@@ -1,6 +1,7 @@
 // @flow
 
 export type Film = {
+  id: number,
   title: string,
   episode_id: number,
   opening_crawl: string,
@@ -11,5 +12,5 @@ export type Film = {
   starships: Array<string>,
   vehicles: Array<string>,
   characters: Array<string>,
-  planets: Array<string>,
+  planets: Array<string>
 }
