@@ -18,11 +18,14 @@ script:
 - codecov
 - yarn coverage:cleanup
 - yarn build
-- ".travis/lernaVersion.sh"
 deploy:
   provider: script
   script: lerna run deploy --since
   skip_cleanup: true
+  on:
+    branch: master
+after-deploy:
+  script: .travis/lernaVersion.sh
   on:
     branch: master
 env:

@@ -13,6 +13,7 @@ export const PlanetTypeDef = gql`
   }
 
   type Planet {
+    # The id of the planet in the database
     id: Int
     # The percentage of the planet surface that is naturally occuring water or bodies of water.
     surface_water: String

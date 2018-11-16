@@ -7,7 +7,7 @@ setup_git() {
 }
 
 version() {
-  lerna version minor --yes --no-commit-hooks --git-remote with-credentials
+  lerna version patch --yes --no-commit-hooks --git-remote with-credentials
 }
 
 setup_git
