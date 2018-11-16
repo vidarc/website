@@ -12,6 +12,7 @@ install:
   - yarn global add codecov
   - yarn global add firebase-tools
   - git checkout master
+  - yarn
   - lerna bootstrap
 script:
   - yarn library:prod
