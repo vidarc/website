@@ -13,6 +13,7 @@ export const FilmTypeDef = gql`
   }
 
   type Film {
+    # The id to match in the database
     id: Int
     # The title of this film
     title: String
