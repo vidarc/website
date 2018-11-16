@@ -22,7 +22,7 @@ script:
   - yarn build
 deploy:
   provider: script
-  script: lerna run deploy
+  script: lerna run deploy --since master
   skip_cleanup: true
   on:
     branch: master
