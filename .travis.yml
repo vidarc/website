@@ -1,3 +1,5 @@
+if: tag IS blank
+
 language: node_js
 node_js:
   - lts/*
@@ -6,6 +8,7 @@ branches:
   only:
     - master
     - '/^greenkeeper/.*$/'
+
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH="$HOME/.yarn/bin:$PATH"
@@ -20,9 +23,11 @@ script:
   - codecov
   - yarn coverage:cleanup
   - yarn build
+  - lerna version minor --yes
+
 deploy:
   provider: script
-  script: lerna run deploy --since master
+  script: lerna run deploy --since
   skip_cleanup: true
   on:
     branch: master
