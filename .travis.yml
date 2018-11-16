@@ -15,30 +15,20 @@ install:
   - yarn install --frozen-lockfile
   - lerna bootstrap
 
-jobs:
-  include:
-    - stage: library
-      script:
-        - yarn library:prod
-    - stage: coverage
-      script:
-        - yarn coverage
-        - codecov
-        - yarn coverage:cleanup
-    - stage: build
-      script:
-        - yarn build
-    - stage: version
-      script:
-        - .travis/lernaVersion.sh
-    - stage: deploy to firebase
-      script: skip
-      deploy:
-        provider: script
-        script: lerna run deploy --since
-        skip_cleanup: true
-        on:
-          branch: master
+script:
+  - yarn library:prod
+  - yarn coverage
+  - codecov
+  - yarn coverage:cleanup
+  - yarn build
+  - .travis/lernaVersion.sh
+
+deploy:
+  provider: script
+  script: lerna run deploy --since
+  skip_cleanup: true
+  on:
+    branch: master
 
 env:
   global:
