@@ -4,7 +4,7 @@ import * as React from 'react'
 import { Router } from '@reach/router'
 import styled from 'react-emotion'
 
-import FilmQuery from './containers/FilmQuery'
+import FilmWithQuery from './containers/FilmWithQuery'
 import TabLink from './components/TabLink'
 
 const Wrapper = styled('div')`
@@ -41,7 +41,7 @@ const StarWarsApp = () => (
       <TabLink to='vehicle'>Random Vehicle</TabLink>
     </Wrapper>
     <Router>
-      <FilmQuery path='film' />
+      <FilmWithQuery path='film' />
     </Router>
   </div>
 )
