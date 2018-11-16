@@ -13,6 +13,7 @@ export const FilmTypeDef = gql`
   }
 
   type Film {
+    id: Int
     # The title of this film
     title: String
     # The episode number of this film.

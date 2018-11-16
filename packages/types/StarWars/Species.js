@@ -1,6 +1,7 @@
 // @flow
 
 export type Species = {
+  id: number,
   skin_colors: string,
   hair_colors: string,
   people: Array<string>,
@@ -12,5 +13,5 @@ export type Species = {
   films: Array<string>,
   name: string,
   average_height: string,
-  designation: string,
+  designation: string
 }

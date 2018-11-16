@@ -1,6 +1,7 @@
 // @flow
 
 export type Starship = {
+  id: number,
   passengers: string,
   consumables: string,
   model: string,
@@ -15,5 +16,5 @@ export type Starship = {
   length: string,
   name: string,
   max_atmosphering_speed: string,
-  cost_in_credits: string,
+  cost_in_credits: string
 }

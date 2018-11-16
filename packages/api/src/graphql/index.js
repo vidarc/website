@@ -1,7 +1,8 @@
 // @flow
 
-import express from 'express'
 import { ApolloServer, mergeSchemas } from 'apollo-server-express'
+
+import express from 'express'
 
 import logger from '../logger'
 import starwarsSchema from './starwars'

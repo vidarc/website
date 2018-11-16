@@ -13,6 +13,7 @@ export const PersonTypeDef = gql`
   }
 
   type Person {
+    id: Int
     # The url of the planet resource that this person was born on.
     homeworld: String
     # The url of the species resource that this person is.

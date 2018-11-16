@@ -1,6 +1,7 @@
 // @flow
 
 export type Vehicle = {
+  id: number,
   passengers: string,
   vehicle_class: string,
   consumables: string,
@@ -13,5 +14,5 @@ export type Vehicle = {
   length: string,
   name: string,
   max_atmosphering_speed: string,
-  cost_in_credits: string,
+  cost_in_credits: string
 }
