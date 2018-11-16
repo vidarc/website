@@ -12,17 +12,15 @@ const Item = styled('div')`
   max-width: ${props => props.width};
 `
 
-const FilmDisplay = ({
+export default ({
   title,
-  content,
+  children,
 }: {
   title: string,
-  content: string | number
+  children: React.Node
 }) => (
   <Container>
     <Item width='25%'>{title}</Item>
-    <Item width='75%'>{content}</Item>
+    <Item width='75%'>{children}</Item>
   </Container>
 )
-
-export default FilmDisplay

@@ -8,18 +8,23 @@ query FILM_QUERY($id: Int) {
     producer
     release_date
     species {
+      id
       name
     }
     starships {
+      id
       name
     }
     vehicles {
+      id
       name
     }
     characters {
+      id
       name
     }
     planets {
+      id
       name
     }
   }

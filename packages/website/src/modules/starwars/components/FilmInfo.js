@@ -1,11 +1,12 @@
 // @flow
 
 import * as React from 'react'
+import { Link } from '@reach/router'
 import { css } from 'emotion'
 
 import type { Film } from '@mattailes/types'
 
-import FilmDisplay from './FilmDisplay'
+import ContentRow from './ContentRow'
 
 const FilmInfo = ({
   title,
@@ -26,32 +27,30 @@ const FilmInfo = ({
       flex-direction: column;
     `}
   >
-    <FilmDisplay title='Episode' content={episodeId} />
-    <FilmDisplay title='Title' content={title} />
-    <FilmDisplay title='Release Date' content={releaseDate} />
-    <FilmDisplay title='Opening Crawl' content={openingCrawl} />
-    <FilmDisplay title='Director' content={director} />
-    <FilmDisplay title='Producer' content={producer} />
-    <FilmDisplay
-      title='Species'
-      content={species.map(data => data.name).join(', ')}
-    />
-    <FilmDisplay
-      title='Starships'
-      content={starships.map(data => data.name).join(', ')}
-    />
-    <FilmDisplay
-      title='Vehicles'
-      content={vehicles.map(data => data.name).join(', ')}
-    />
-    <FilmDisplay
-      title='Characters'
-      content={characters.map(data => data.name).join(', ')}
-    />
-    <FilmDisplay
-      title='Planets'
-      content={planets.map(data => data.name).join(', ')}
-    />
+    <ContentRow title='Episode'>{episodeId}</ContentRow>
+    <ContentRow title='Title'>{title}</ContentRow>
+    <ContentRow title='Release Date'>{releaseDate}</ContentRow>
+    <ContentRow title='Opening Crawl'>{openingCrawl}</ContentRow>
+    <ContentRow title='Director'>{director}</ContentRow>
+    <ContentRow title='Producer'>{producer}</ContentRow>
+    <ContentRow title='Species'>
+      {console.log(species)}
+      {species.map(({ id, name }) => (
+        <Link to={`/species/${id}`}>{name}</Link>
+      ))}
+    </ContentRow>
+    <ContentRow title='Starships'>
+      {starships.map(data => data.name).join(', ')}
+    </ContentRow>
+    <ContentRow title='Vehicles'>
+      {vehicles.map(data => data.name).join(', ')}
+    </ContentRow>
+    <ContentRow title='Characters'>
+      {characters.map(data => data.name).join(', ')}
+    </ContentRow>
+    <ContentRow title='Planets'>
+      {planets.map(data => data.name).join(', ')}
+    </ContentRow>
   </div>
 )
 

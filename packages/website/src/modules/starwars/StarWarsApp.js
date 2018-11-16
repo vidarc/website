@@ -29,7 +29,7 @@ const Wrapper = styled('div')`
   }
 `
 
-const StarWarsApp = () => (
+export default () => (
   <div>
     <h1>Star Wars Database (based on swapi.com)</h1>
     <Wrapper>
@@ -45,5 +45,3 @@ const StarWarsApp = () => (
     </Router>
   </div>
 )
-
-export default StarWarsApp
