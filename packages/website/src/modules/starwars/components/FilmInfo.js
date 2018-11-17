@@ -1,12 +1,12 @@
 // @flow
 
 import * as React from 'react'
-import { Link } from '@reach/router'
 import { css } from 'emotion'
 
 import type { Film } from '@mattailes/types'
 
 import ContentRow from './ContentRow'
+import DisplayArray from './DisplayArray'
 
 const FilmInfo = ({
   title,
@@ -34,21 +34,19 @@ const FilmInfo = ({
     <ContentRow title='Director'>{director}</ContentRow>
     <ContentRow title='Producer'>{producer}</ContentRow>
     <ContentRow title='Species'>
-      {species.map(({ id, name }) => (
-        <Link to={`/species/${id}`}>{name}</Link>
-      ))}
+      <DisplayArray array={species} url='../species/' />
     </ContentRow>
     <ContentRow title='Starships'>
-      {starships.map(data => data.name).join(', ')}
+      <DisplayArray array={starships} url='../starship/' />
     </ContentRow>
     <ContentRow title='Vehicles'>
-      {vehicles.map(data => data.name).join(', ')}
+      <DisplayArray array={vehicles} url='../vehicle/' />
     </ContentRow>
     <ContentRow title='Characters'>
-      {characters.map(data => data.name).join(', ')}
+      <DisplayArray array={characters} url='../person/' />
     </ContentRow>
     <ContentRow title='Planets'>
-      {planets.map(data => data.name).join(', ')}
+      <DisplayArray array={planets} url='../planet/' />
     </ContentRow>
   </div>
 )
