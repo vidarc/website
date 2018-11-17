@@ -9,7 +9,6 @@ before_install:
 install:
 - yarn global add codecov
 - yarn global add firebase-tools
-- git checkout master
 - yarn install --frozen-lockfile
 - lerna bootstrap
 script:

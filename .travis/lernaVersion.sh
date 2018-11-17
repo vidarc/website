@@ -7,6 +7,7 @@ setup_git() {
 }
 
 version() {
+  git checkout master
   lerna version patch --yes --no-commit-hooks --git-remote with-credentials
 }
 
