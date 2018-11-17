@@ -1,4 +1,9 @@
 #import './baseFilm.graphql'
+#import './basePerson.graphql'
+#import './basePlanet.graphql'
+#import './baseSpecies.graphql'
+#import './baseStarship.graphql'
+#import './baseVehicle.graphql'
 
 query FILM_QUERY($id: Int) {
   getFilm(id: $id) {
@@ -8,24 +13,19 @@ query FILM_QUERY($id: Int) {
     producer
     release_date
     species {
-      id
-      name
+      ...BaseSpecies
     }
     starships {
-      id
-      name
+      ...BaseStarship
     }
     vehicles {
-      id
-      name
+      ...BaseVehicle
     }
     characters {
-      id
-      name
+      ...BasePerson
     }
     planets {
-      id
-      name
+      ...BasePlanet
     }
   }
 }

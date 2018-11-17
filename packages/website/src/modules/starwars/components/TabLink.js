@@ -15,7 +15,7 @@ const TabLink = (props: Props) => {
   return (
     <Link
       {...props}
-      getProps={({ isCurrent }) => ({ class: isCurrent ? 'active' : null })}
+      getProps={({ isCurrent }) => ({ className: isCurrent ? 'active' : null })}
     >
       {children}
     </Link>

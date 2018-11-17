@@ -1,0 +1,4 @@
+fragment BaseStarship on Starship {
+  id
+  name
+}

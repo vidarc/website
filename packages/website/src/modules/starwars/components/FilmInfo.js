@@ -34,7 +34,6 @@ const FilmInfo = ({
     <ContentRow title='Director'>{director}</ContentRow>
     <ContentRow title='Producer'>{producer}</ContentRow>
     <ContentRow title='Species'>
-      {console.log(species)}
       {species.map(({ id, name }) => (
         <Link to={`/species/${id}`}>{name}</Link>
       ))}

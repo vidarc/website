@@ -1,0 +1,4 @@
+fragment BaseSpecies on Species {
+  id
+  name
+}
