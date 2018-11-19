@@ -5,6 +5,7 @@ import { Router } from '@reach/router'
 import styled from 'react-emotion'
 
 import FilmWithQuery from './containers/FilmWithQuery'
+import SpeciesWithQuery from './containers/SpeciesWithQuery'
 import TabLink from './components/TabLink'
 
 const Wrapper = styled('div')`
@@ -41,7 +42,8 @@ export default () => (
       <TabLink to='vehicle'>Random Vehicle</TabLink>
     </Wrapper>
     <Router>
-      <FilmWithQuery path='film' />
+      <FilmWithQuery path='film/*' />
+      <SpeciesWithQuery path='species/*' />
     </Router>
   </div>
 )

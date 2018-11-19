@@ -10,9 +10,9 @@ type Props = {
 }
 
 export default ({ array, url }: Props) => array
-  .map(({ id, name }) => (
+  .map(({ id, name, title }) => (
     <Link to={url + id} key={id}>
-      {name}
+      {name || title}
     </Link>
   ))
   .reduce((prev, curr) => [prev, ', ', curr])

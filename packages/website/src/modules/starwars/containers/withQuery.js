@@ -3,31 +3,39 @@ import * as React from 'react'
 import { Button } from '@mattailes/ui'
 import { Query } from 'react-apollo'
 
-export default (query, variables, Component) => () => (
-  <Query query={query} variables={variables}>
-    {({
-      networkStatus, loading, error, data, refetch,
-    }) => {
-      if (networkStatus === 4) {
-        return <p>refetching............</p>
-      }
+export default (query, Component) => (props) => {
+  const { '*': pathParam } = props
 
-      if (loading) {
-        return <p>loading..........</p>
-      }
+  const variables = {
+    id: +pathParam || 1,
+  }
 
-      if (error) {
-        return <p>error.............</p>
-      }
+  return (
+    <Query query={query} variables={variables}>
+      {({
+        networkStatus, loading, error, data, refetch,
+      }) => {
+        if (networkStatus === 4) {
+          return <p>refetching............</p>
+        }
 
-      return (
-        <div>
-          <Component {...data} />
-          <Button primary onClick={() => refetch()}>
-            Refetch!
-          </Button>
-        </div>
-      )
-    }}
-  </Query>
-)
+        if (loading) {
+          return <p>loading..........</p>
+        }
+
+        if (error) {
+          return <p>error.............</p>
+        }
+
+        return (
+          <div>
+            <Component {...data} />
+            <Button primary onClick={() => refetch()}>
+              Refetch!
+            </Button>
+          </div>
+        )
+      }}
+    </Query>
+  )
+}
