@@ -29,7 +29,7 @@ export const SpeciesTypeDef = gql`
     # A comma-seperated string of common eye colors for this species, none if this species does not typically have eyes.
     eye_colors: String
     # The URL of a planet resource, a planet that this species originates from.
-    homeworld: String
+    homeworld: Planet
     # The language commonly spoken by this species.
     language: String
     # An array of Film URL Resources that this species has appeared in.
@@ -52,5 +52,6 @@ export const speciesResolvers = {
   Species: {
     people: ({ people }: Species) => loader.loadMany(people),
     films: ({ films }: Species) => loader.loadMany(films),
+    homeworld: ({ homeworld }: Species) => loader.load(homeworld),
   },
 }

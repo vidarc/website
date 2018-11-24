@@ -15,7 +15,7 @@ export const PersonTypeDef = gql`
   type Person {
     id: Int
     # The url of the planet resource that this person was born on.
-    homeworld: String
+    homeworld: Planet
     # The url of the species resource that this person is.
     species: [Species]
     # An array of urls of film resources that this person has been in.
@@ -50,6 +50,7 @@ export const personResolvers = {
   },
 
   Person: {
+    homeworld: ({ homeworld }: Person) => loader.load(homeworld),
     films: ({ films }: Person) => loader.loadMany(films),
     species: ({ species }: Person) => loader.loadMany(species),
     starships: ({ starships }: Person) => loader.loadMany(starships),
