@@ -7,4 +7,8 @@ import withQuery from './withQuery'
 
 const query = loader('../schemas/getFilm.graphql')
 
-export default withQuery(query, ({ getFilm }) => <FilmInfo {...getFilm} />)
+const FilmWithQuery = withQuery(query, ({ getFilm }) => (
+  <FilmInfo {...getFilm} />
+))
+
+export default FilmWithQuery

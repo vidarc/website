@@ -7,6 +7,8 @@ import withQuery from './withQuery'
 
 const query = loader('../schemas/getSpecies.graphql')
 
-export default withQuery(query, ({ getSpecies }) => (
+const SpeciesWithQuery = withQuery(query, ({ getSpecies }) => (
   <SpeciesInfo {...getSpecies} />
 ))
+
+export default SpeciesWithQuery

@@ -12,7 +12,7 @@ const Item = styled('div')`
   max-width: ${props => props.width};
 `
 
-export default ({
+const ContentRow = ({
   title,
   children,
 }: {
@@ -24,3 +24,5 @@ export default ({
     <Item width='75%'>{children}</Item>
   </Container>
 )
+
+export default ContentRow

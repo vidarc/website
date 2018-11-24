@@ -8,7 +8,7 @@ import type { Species } from '@mattailes/types'
 import ContentRow from './ContentRow'
 import DisplayArray from './DisplayArray'
 
-export default ({
+const SpeciesInfo = ({
   skin_colors: skinColors,
   hair_colors: hairColors,
   people,
@@ -46,3 +46,5 @@ export default ({
     <ContentRow title='Designation'>{designation}</ContentRow>
   </div>
 )
+
+export default SpeciesInfo
