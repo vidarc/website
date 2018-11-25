@@ -2,6 +2,8 @@
 
 import * as React from 'react'
 
+import styled from 'react-emotion'
+
 import { Link } from '@reach/router'
 
 type Props = {
@@ -9,12 +11,20 @@ type Props = {
   url: string
 }
 
-const DisplayArray = ({ array, url }: Props) => array
+const StyledLink = styled(Link)`
+  color: blue;
+
+  &:visited {
+    color: blue;
+  }
+`
+
+const DisplayArray = ({ array = [], url }: Props) => array
   .map(({ id, name, title }) => (
-    <Link to={url + id} key={id}>
+    <StyledLink to={`${url}/${id}`} key={id}>
       {name || title}
-    </Link>
+    </StyledLink>
   ))
-  .reduce((prev, curr) => [prev, ', ', curr])
+  .reduce((prev, next) => (prev.length > 0 ? [prev, ', ', next] : [next]), [])
 
 export default DisplayArray

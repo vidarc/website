@@ -1,12 +1,12 @@
 // @flow
 
 import * as React from 'react'
-import { css } from 'emotion'
 
 import type { Species } from '@mattailes/types'
 
 import ContentRow from './ContentRow'
 import DisplayArray from './DisplayArray'
+import FlexContainer from './FlexContainer'
 
 const SpeciesInfo = ({
   skin_colors: skinColors,
@@ -22,29 +22,26 @@ const SpeciesInfo = ({
   average_height: averageHeight,
   designation,
 }: Species) => (
-  <div
-    className={css`
-      display: flex;
-      flex-direction: column;
-    `}
-  >
+  <FlexContainer direction='column'>
     <ContentRow title='Name'>{name}</ContentRow>
-    <ContentRow title='Homeworld'>{homeworld}</ContentRow>
     <ContentRow title='Skin Colors'>{skinColors}</ContentRow>
     <ContentRow title='Hair Colors'>{hairColors}</ContentRow>
-    <ContentRow title='People'>
-      <DisplayArray array={people} url='../person/' />
-    </ContentRow>
     <ContentRow title='Average Lifespan'>{averageLifespan}</ContentRow>
     <ContentRow title='Classification'>{classification}</ContentRow>
     <ContentRow title='Eye Colors'>{eyeColors}</ContentRow>
     <ContentRow title='Language'>{language}</ContentRow>
+    <ContentRow title='Average Height'>{averageHeight}</ContentRow>
+    <ContentRow title='Designation'>{designation}</ContentRow>
+    <ContentRow title='Homeworld'>
+      <DisplayArray array={[homeworld]} url='../planet/' />
+    </ContentRow>
+    <ContentRow title='People'>
+      <DisplayArray array={people} url='../person/' />
+    </ContentRow>
     <ContentRow title='Films'>
       <DisplayArray array={films} url='../film/' />
     </ContentRow>
-    <ContentRow title='Average Heigh'>{averageHeight}</ContentRow>
-    <ContentRow title='Designation'>{designation}</ContentRow>
-  </div>
+  </FlexContainer>
 )
 
 export default SpeciesInfo

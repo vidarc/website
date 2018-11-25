@@ -4,10 +4,10 @@ import { Button } from '@mattailes/ui'
 import { Query } from 'react-apollo'
 
 export default (query, Component) => (props) => {
-  const { '*': pathParam } = props
+  const { '*': pathParam, defaultId } = props
 
   const variables = {
-    id: +pathParam || 1,
+    id: +pathParam || defaultId,
   }
 
   return (

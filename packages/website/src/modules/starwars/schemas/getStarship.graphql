@@ -1,0 +1,27 @@
+#import './base/baseStarship.graphql'
+#import './base/basePerson.graphql'
+#import './base/baseFilm.graphql'
+
+query STARSHIP_QUERY($id: Int) {
+  getStarship(id: $id) {
+    ...BaseStarship
+    passengers
+    consumables
+    model
+    starship_class
+    crew
+    hyperdrive_rating
+    MGLT
+    manufacturer
+    cargo_capacity
+    length
+    max_atmosphering_speed
+    cost_in_credits
+    pilots {
+      ...BasePerson
+    }
+    films {
+      ...BaseFilm
+    }
+  }
+}

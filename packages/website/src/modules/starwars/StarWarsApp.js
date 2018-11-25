@@ -1,11 +1,9 @@
 // @flow
 
 import * as React from 'react'
-import { Router } from '@reach/router'
 import styled from 'react-emotion'
 
-import FilmWithQuery from './containers/FilmWithQuery'
-import SpeciesWithQuery from './containers/SpeciesWithQuery'
+import QueryPages from './containers/QueryPages'
 import TabLink from './components/TabLink'
 
 const Wrapper = styled('div')`
@@ -41,11 +39,8 @@ const StarWarsApp = () => (
       <TabLink to='starship'>Random Starship</TabLink>
       <TabLink to='vehicle'>Random Vehicle</TabLink>
     </Wrapper>
-    <Router>
-      <FilmWithQuery path='film/*' />
-      <SpeciesWithQuery path='species/*' />
-    </Router>
+    <QueryPages />
   </div>
 )
 
-export default StarWarsApp()
+export default StarWarsApp

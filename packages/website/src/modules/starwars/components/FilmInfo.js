@@ -1,12 +1,12 @@
 // @flow
 
 import * as React from 'react'
-import { css } from 'emotion'
 
 import type { Film } from '@mattailes/types'
 
 import ContentRow from './ContentRow'
 import DisplayArray from './DisplayArray'
+import FlexContainer from './FlexContainer'
 
 const FilmInfo = ({
   title,
@@ -21,12 +21,7 @@ const FilmInfo = ({
   characters,
   planets,
 }: Film) => (
-  <div
-    className={css`
-      display: flex;
-      flex-direction: column;
-    `}
-  >
+  <FlexContainer direction='column'>
     <ContentRow title='Episode'>{episodeId}</ContentRow>
     <ContentRow title='Title'>{title}</ContentRow>
     <ContentRow title='Release Date'>{releaseDate}</ContentRow>
@@ -48,7 +43,7 @@ const FilmInfo = ({
     <ContentRow title='Planets'>
       <DisplayArray array={planets} url='../planet/' />
     </ContentRow>
-  </div>
+  </FlexContainer>
 )
 
 export default FilmInfo

@@ -1,0 +1,23 @@
+#import './base/basePlanet.graphql'
+#import './base/basePerson.graphql'
+#import './base/baseFilm.graphql'
+
+query PLANET_QUERY($id: Int) {
+  getPlanet(id: $id) {
+    ...BasePlanet
+    surface_water
+    population
+    diameter
+    gravity
+    rotation_period
+    orbital_period
+    climate
+    terrain
+    residents {
+      ...BasePerson
+    }
+    films {
+      ...BaseFilm
+    }
+  }
+}
