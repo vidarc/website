@@ -32,7 +32,12 @@ module.exports = {
     'import/no-extraneous-dependencies': [
       'error',
       {
-        devDependencies: ['**/*.stories.js', '**/webpack.config.js']
+        devDependencies: [
+          '**/*.stories.js',
+          '**/webpack.config.js',
+          '**/*.test.js',
+          '**/setupTests.js'
+        ]
       }
     ]
   }

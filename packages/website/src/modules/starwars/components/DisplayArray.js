@@ -19,7 +19,7 @@ const StyledLink = styled(Link)`
   }
 `
 
-const DisplayArray = ({ array = [], url }: Props) => array
+const DisplayArray = ({ array, url }: Props) => array
   .map(({ id, name, title }) => (
     <StyledLink to={`${url}/${id}`} key={id}>
       {name || title}
