@@ -1,6 +1,6 @@
 {
   "name": "@mattailes/website",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "private": true,
   "proxy": "https://us-central1-server-b6f04.cloudfunctions.net/api/graphql",
   "scripts": {
@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@mattailes/types": "^1.1.6",
-    "@mattailes/ui": "^1.1.7",
+    "@mattailes/ui": "^1.1.9",
     "@reach/router": "1.2.1",
     "apollo-boost": "0.1.22",
     "cross-fetch": "2.2.3",
