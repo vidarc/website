@@ -13,39 +13,9 @@
   "files": [
     "es"
   ],
-  "peerDependencies": {
+  "dependencies": {
     "emotion": "9.2.12",
     "react": "16.6.0",
     "react-dom": "16.6.0"
-  },
-  "devDependencies": {
-    "@babel/core": "7.1.2",
-    "@babel/plugin-proposal-export-default-from": "7.0.0",
-    "@babel/plugin-transform-runtime": "7.1.0",
-    "@babel/polyfill": "7.0.0",
-    "@babel/preset-env": "7.1.0",
-    "@babel/preset-react": "7.0.0",
-    "@babel/runtime": "7.1.2",
-    "@storybook/addon-actions": "4.0.0",
-    "@storybook/addon-centered": "4.0.0",
-    "@storybook/addon-info": "4.0.0",
-    "@storybook/addon-links": "4.0.0",
-    "@storybook/addon-options": "4.0.0",
-    "@storybook/addons": "4.0.0",
-    "@storybook/components": "4.0.0",
-    "@storybook/react": "4.0.0",
-    "babel-loader": "8.0.4",
-    "babel-plugin-emotion": "9.2.11",
-    "eslint-config-airbnb": "17.1.0",
-    "eslint-plugin-babel": "5.3.0",
-    "eslint-plugin-import": "2.14.0",
-    "eslint-plugin-jsx-a11y": "6.1.2",
-    "eslint-plugin-react": "7.11.1",
-    "eslint-plugin-sort-imports-es6-autofix": "0.3.0",
-    "react-scripts": "2.1.1",
-    "webpack": "4.26.1",
-    "webpack-cli": "3.1.2",
-    "webpack-node-externals": "1.7.2",
-    "webpack-stylish": "0.1.8"
   }
 }
