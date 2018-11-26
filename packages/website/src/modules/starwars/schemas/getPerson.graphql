@@ -1,0 +1,34 @@
+#import './base/basePerson.graphql'
+#import './base/basePlanet.graphql'
+#import './base/baseSpecies.graphql'
+#import './base/baseFilm.graphql'
+#import './base/baseStarship.graphql'
+#import './base/baseVehicle.graphql'
+
+query PERSON_QUERY($id: Int) {
+  getPerson(id: $id) {
+    ...BasePerson
+    eye_color
+    gender
+    height
+    hair_color
+    birth_year
+    mass
+    skin_color
+    homeworld {
+      ...BasePlanet
+    }
+    species {
+      ...BaseSpecies
+    }
+    films {
+      ...BaseFilm
+    }
+    starships {
+      ...BaseStarship
+    }
+    vehicles {
+      ...BaseVehicle
+    }
+  }
+}

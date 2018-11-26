@@ -1,0 +1,4 @@
+fragment BaseVehicle on Vehicle {
+  id
+  name
+}

@@ -1,0 +1,27 @@
+#import './base/baseSpecies.graphql
+#import './base/basePerson.graphql
+#import './base/baseFilm.graphql
+#import './base/basePlanet.graphql
+
+query SPECIES_QUERY($id: Int) {
+  getSpecies(id: $id) {
+    ...BaseSpecies
+    skin_colors
+    hair_colors
+    average_lifespan
+    classification
+    eye_colors
+    language
+    average_height
+    designation
+    people {
+      ...BasePerson
+    }
+    homeworld {
+      ...BasePlanet
+    }
+    films {
+      ...BaseFilm
+    }
+  }
+}

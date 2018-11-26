@@ -1,0 +1,25 @@
+#import './base/baseVehicle.graphql'
+#import './base/basePerson.graphql'
+#import './base/baseFilm.graphql'
+
+query VEHICLE_QUERY($id: Int) {
+  getVehicle(id: $id) {
+    ...BaseVehicle
+    passengers
+    vehicle_class
+    consumables
+    model
+    crew
+    manufacturer
+    cargo_capacity
+    length
+    max_atmosphering_speed
+    cost_in_credits
+    pilots {
+      ...BasePerson
+    }
+    films {
+      ...BaseFilm
+    }
+  }
+}

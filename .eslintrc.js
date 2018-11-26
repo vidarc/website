@@ -10,7 +10,6 @@ module.exports = {
   rules: {
     'function-paren-newline': ['error', 'consistent'],
     'jsx-quotes': ['error', 'prefer-single'],
-    'max-len': ['error', 120],
     'no-underscore-dangle': ['error', { allow: ['_id'] }],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     semi: ['error', 'never'],
@@ -33,7 +32,12 @@ module.exports = {
     'import/no-extraneous-dependencies': [
       'error',
       {
-        devDependencies: ['**/*.stories.js', '**/webpack.config.js']
+        devDependencies: [
+          '**/*.stories.js',
+          '**/webpack.config.js',
+          '**/*.test.js',
+          '**/setupTests.js'
+        ]
       }
     ]
   }

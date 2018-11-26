@@ -19,7 +19,7 @@ class AddTodo extends React.Component<Props, State> {
     todo: '',
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = (event: SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault()
     const { todo } = this.state
     const { dispatch } = this.props

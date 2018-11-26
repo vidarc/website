@@ -1,0 +1,31 @@
+#import './base/baseFilm.graphql'
+#import './base/basePerson.graphql'
+#import './base/basePlanet.graphql'
+#import './base/baseSpecies.graphql'
+#import './base/baseStarship.graphql'
+#import './base/baseVehicle.graphql'
+
+query FILM_QUERY($id: Int) {
+  getFilm(id: $id) {
+    ...BaseFilm
+    opening_crawl
+    director
+    producer
+    release_date
+    species {
+      ...BaseSpecies
+    }
+    starships {
+      ...BaseStarship
+    }
+    vehicles {
+      ...BaseVehicle
+    }
+    characters {
+      ...BasePerson
+    }
+    planets {
+      ...BasePlanet
+    }
+  }
+}

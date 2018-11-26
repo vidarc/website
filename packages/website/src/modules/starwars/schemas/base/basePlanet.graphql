@@ -1,0 +1,4 @@
+fragment BasePlanet on Planet {
+  id
+  name
+}

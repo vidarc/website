@@ -1,0 +1,4 @@
+fragment BasePerson on Person {
+  id
+  name
+}

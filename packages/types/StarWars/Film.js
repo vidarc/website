@@ -1,5 +1,9 @@
 // @flow
 
+import type {
+  Person, Planet, Species, Starship, Vehicle,
+} from '.'
+
 export type Film = {
   id: number,
   title: string,
@@ -8,9 +12,9 @@ export type Film = {
   director: string,
   producer: string,
   release_date: string,
-  species: Array<string>,
-  starships: Array<string>,
-  vehicles: Array<string>,
-  characters: Array<string>,
-  planets: Array<string>
+  species: Array<Species>,
+  starships: Array<Starship>,
+  vehicles: Array<Vehicle>,
+  characters: Array<Person>,
+  planets: Array<Planet>
 }

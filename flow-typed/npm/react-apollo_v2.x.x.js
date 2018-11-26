@@ -775,7 +775,8 @@ declare module "react-apollo" {
     optimisticResponse?: Object,
     refetchQueries?: RefetchQueryDescription | RefetchQueriesProviderFn,
     update?: MutationUpdaterFn<*>,
-    errorPolicy?: ErrorPolicy
+    errorPolicy?: ErrorPolicy,
+    notifyOnNetworkStatusChange?: boolean
   |};
 
   declare export type QueryOpts<TVariables> = {|
@@ -785,7 +786,8 @@ declare module "react-apollo" {
     pollInterval?: number,
     skip?: boolean,
     errorPolicy?: ErrorPolicy,
-    context?: { [key: string]: any }
+    context?: { [key: string]: any },
+    notifyOnNetworkStatusChange?: boolean
   |};
 
   declare export interface GraphqlQueryControls<
