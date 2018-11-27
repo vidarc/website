@@ -3,8 +3,6 @@
   "version": "1.1.9",
   "private": true,
   "scripts": {
-    "flow": "flow",
-    "flow:update": "flow-typed update",
     "build-library:prod": "rm -rf ./build && webpack-cli --mode=production --progress --colors",
     "build-library:dev": "rm -rf ./build && webpack-cli --mode=development --progress --colors",
     "lint": "../../node_modules/.bin/eslint ./src",
@@ -15,7 +13,7 @@
   "files": [
     "es"
   ],
-  "peerDependencies": {
+  "dependencies": {
     "emotion": "9.2.12",
     "react": "16.6.3",
     "react-dom": "16.6.3"
@@ -26,7 +24,6 @@
     "@babel/plugin-transform-runtime": "7.1.0",
     "@babel/polyfill": "7.0.0",
     "@babel/preset-env": "7.1.6",
-    "@babel/preset-flow": "7.0.0",
     "@babel/preset-react": "7.0.0",
     "@babel/runtime": "7.1.5",
     "@storybook/addon-actions": "4.0.0",
@@ -41,12 +38,10 @@
     "babel-plugin-emotion": "9.2.11",
     "eslint-config-airbnb": "17.1.0",
     "eslint-plugin-babel": "5.3.0",
-    "eslint-plugin-flowtype": "2.50.3",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-react": "7.11.1",
     "eslint-plugin-sort-imports-es6-autofix": "0.3.0",
-    "flow-bin": "0.86.0",
     "react-scripts": "2.1.1",
     "webpack": "4.26.1",
     "webpack-cli": "3.1.2",
