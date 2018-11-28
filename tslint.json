@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-prettier",
+    "tslint-config-airbnb",
+    "tslint-react"
+  ],
+  "linterOptions": {
+    "exclude": ["node_modules/**/*.ts"]
+  },
+  "rules": {
+    "import-name": false,
+    "interface-name": [true, "never-prefix"],
+    "member-access": [true, "no-public"],
+    "ordered-imports": [
+      true,
+      {
+        "grouped-imports": true
+      }
+    ],
+    "semicolon": [true, "never"],
+    "variable-name": [false]
+  }
+}

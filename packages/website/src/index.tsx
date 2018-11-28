@@ -1,8 +1,8 @@
 import * as React from 'react'
 
 import { ApolloProvider } from 'react-apollo'
-import { Provider } from 'react-redux'
 import { render } from 'react-dom'
+import { Provider } from 'react-redux'
 
 import ApolloClient from 'apollo-boost'
 
@@ -14,7 +14,7 @@ const client = new ApolloClient({
   uri: 'https://us-central1-server-b6f04.cloudfunctions.net/api/graphql',
 })
 
-function renderApp(Component) {
+function renderApp(Component: React.Component) {
   render(
     <ApolloProvider client={client}>
       <Provider store={store}>

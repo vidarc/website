@@ -1,6 +1,4 @@
-// @flow
-
-import React from 'react'
+import react from 'react'
 
 import { shallow } from 'enzyme'
 
