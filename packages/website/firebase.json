@@ -13,7 +13,7 @@
         "source": "**/*.@(jpg|jpeg|gif|png|css)",
         "headers": [
           {
-            "key": "Cache Control",
+            "key": "Cache-Control",
             "value": "max-age=31536000"
           }
         ]
@@ -22,7 +22,7 @@
         "source": "**/*.@(js|json)",
         "headers": [
           {
-            "key": "Cache Control",
+            "key": "Cache-Control",
             "value": "private, max-age=31536000"
           }
         ]
