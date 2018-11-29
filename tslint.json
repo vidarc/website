@@ -15,7 +15,10 @@
     "ordered-imports": [
       true,
       {
-        "grouped-imports": true
+        "import-sources-order": "case-insensitive",
+        "grouped-imports": true,
+        "module-source-path": "basename",
+        "named-imports-order": "case-insensitive"
       }
     ],
     "semicolon": [true, "never"],
