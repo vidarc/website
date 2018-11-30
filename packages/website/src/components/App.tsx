@@ -4,8 +4,8 @@ import * as React from 'react'
 import 'sanitize.css'
 
 import { Home } from '../modules/Home'
-import { StarWarsApp } from '../modules/StarWars'
-import { TodoApp } from '../modules/Todo'
+import { StarWarsApp } from '../modules/StarWarsApp'
+import { TodoApp } from '../modules/TodoApp'
 
 import Loading from './Loading'
 import { Navigation } from './Navigation'

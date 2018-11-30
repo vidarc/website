@@ -2,8 +2,8 @@ import { RouteComponentProps } from '@reach/router'
 import * as React from 'react'
 import styled from 'react-emotion'
 
-import TabLink from './components/TabLink'
 import QueryPages from './containers/QueryPages'
+import TabLink from './components/TabLink'
 
 const Wrapper = styled('div')`
   width: 100%;
