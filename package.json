@@ -48,6 +48,8 @@
     ]
   },
   "devDependencies": {
+    "eslint-config-prettier": "3.3.0",
+    "eslint-plugin-prettier": "3.0.0",
     "husky": "1.2.0",
     "lerna": "3.4.3",
     "lint-staged": "7.3.0",

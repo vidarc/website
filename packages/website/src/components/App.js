@@ -34,9 +34,9 @@ const style = css`
   max-width: 1024px;
 `
 
-const AsyncHome = React.lazy(() => import('../modules/home'))
-const AsyncStarWars = React.lazy(() => import('../modules/starwars'))
-const AsyncTodo = React.lazy(() => import('../modules/todo'))
+const AsyncHome = React.lazy(() => import('../modules/Home'))
+const AsyncStarWars = React.lazy(() => import('../modules/StarWarsApp'))
+const AsyncTodo = React.lazy(() => import('../modules/TodoApp'))
 
 const App = () => (
   <div className={style}>
