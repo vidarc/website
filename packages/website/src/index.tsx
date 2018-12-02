@@ -14,7 +14,7 @@ const client = new ApolloClient({
   uri: 'https://us-central1-server-b6f04.cloudfunctions.net/api/graphql',
 })
 
-function renderApp(Component: React.Component) {
+function renderApp(Component: React.ComponentType) {
   render(
     <ApolloProvider client={client}>
       <Provider store={store}>
