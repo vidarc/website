@@ -10,7 +10,7 @@ const className = css`
 
 const NotFound: React.SFC<RouteComponentProps> = () => (
   <div className={className}>
-    <img src="https://http.cat/404" alt="404 cat" />
+    <img src='https://http.cat/404' alt='404 cat' />
   </div>
 )
 

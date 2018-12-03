@@ -31,12 +31,12 @@ const StarWarsApp: React.SFC<RouteComponentProps> = () => (
   <div>
     <h1>Star Wars Database (based on swapi.com)</h1>
     <Wrapper>
-      <TabLink to="film">Random Film</TabLink>
-      <TabLink to="person">Random Character</TabLink>
-      <TabLink to="planet">Random Planet</TabLink>
-      <TabLink to="species">Random Species</TabLink>
-      <TabLink to="starship">Random Starship</TabLink>
-      <TabLink to="vehicle">Random Vehicle</TabLink>
+      <TabLink to='film'>Random Film</TabLink>
+      <TabLink to='person'>Random Character</TabLink>
+      <TabLink to='planet'>Random Planet</TabLink>
+      <TabLink to='species'>Random Species</TabLink>
+      <TabLink to='starship'>Random Starship</TabLink>
+      <TabLink to='vehicle'>Random Vehicle</TabLink>
     </Wrapper>
     <QueryPages />
   </div>

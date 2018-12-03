@@ -33,10 +33,10 @@ export default class Navigation extends React.Component<{}, State> {
 
     return (
       <StyledNav>
-        <img src={avatarPng} className={avatarStyle} alt="avatar" />
-        <Link to="/">Home</Link>
+        <img src={avatarPng} className={avatarStyle} alt='avatar' />
+        <Link to='/'>Home</Link>
         <StyledSubmenu
-          role="menu"
+          role='menu'
           tabIndex={0}
           onClick={this.handleSubmenuClick}
           onKeyPress={this.handleSubmenuClick}
@@ -45,9 +45,9 @@ export default class Navigation extends React.Component<{}, State> {
         >
           <p>Projects</p>
           <SubmenuItems show={showSubmenu}>
-            <Link to="/todo">Todo</Link>
+            <Link to='/todo'>Todo</Link>
             <hr />
-            <Link to="/starwars">Star Wars GraphQL</Link>
+            <Link to='/starwars'>Star Wars GraphQL</Link>
           </SubmenuItems>
         </StyledSubmenu>
       </StyledNav>

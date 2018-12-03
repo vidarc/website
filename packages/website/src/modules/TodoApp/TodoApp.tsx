@@ -12,7 +12,7 @@ const TodoApp: React.SFC<RouteComponentProps> = () => (
       <VisibleTodoList />
       <Footer />
     </div>
-    <Link to="/">Go Back Home</Link>
+    <Link to='/'>Go Back Home</Link>
   </div>
 )
 
