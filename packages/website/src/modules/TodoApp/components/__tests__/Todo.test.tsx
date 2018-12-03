@@ -1,8 +1,13 @@
 import React from 'react'
 
+import * as emotion from 'emotion'
 import { mount } from 'enzyme'
+import { createMatchers } from 'jest-emotion'
+import renderer from 'react-test-renderer'
 
 import Todo, { Props } from '../Todo'
+
+expect.extend(createMatchers(emotion))
 
 describe('Todo component', () => {
   const props: Props = {
@@ -14,27 +19,27 @@ describe('Todo component', () => {
   it('should render correctly when not completed', () => {
     props.completed = false
 
-    const actual = mount(<Todo {...props} />)
+    const actual = renderer.create(<Todo {...props} />).toJSON()
 
     expect(actual).toBeDefined()
-    expect(actual.find('li').prop('style')).toEqual({
-      cursor: 'pointer',
-      textDecoration: 'none',
-    })
-    expect(actual.find('li').text()).toEqual('todo text')
+    expect(actual).toHaveStyleRule('cursor', 'pointer')
+    expect(actual).toHaveStyleRule('text-decoration', 'none')
   })
 
   it('should render correctly when completed', () => {
     props.completed = true
 
-    const actual = mount(<Todo {...props} />)
+    const actual = renderer.create(<Todo {...props} />).toJSON()
 
     expect(actual).toBeDefined()
-    expect(actual.find('li').prop('style')).toEqual({
-      cursor: 'pointer',
-      textDecoration: 'line-through',
-    })
-    expect(actual.find('li').text()).toEqual('todo text')
+    expect(actual).toHaveStyleRule('cursor', 'pointer')
+    expect(actual).toHaveStyleRule('text-decoration', 'line-through')
+  })
+
+  it('should have the correct text value', () => {
+    const actual = mount(<Todo {...props} />)
+
+    expect(actual).toIncludeText('todo text')
   })
 
   it('calls the function when List.Item is clicked', () => {

@@ -1,16 +1,9 @@
 import shortid from 'shortid'
 
-import {
-  Action,
-  ADD_TODO,
-  SET_VISIBILITY_FILTER,
-  Todo,
-  TOGGLE_TODO,
-  VisibilityFilter,
-} from './types'
+import { Action, Todo, types, VisibilityFilter } from './types'
 
 const addTodo = (text: string): Action<Todo> => ({
-  type: ADD_TODO,
+  type: types.ADD_TODO,
   payload: {
     text,
     id: shortid.generate(),
@@ -18,7 +11,7 @@ const addTodo = (text: string): Action<Todo> => ({
 })
 
 const toggleTodo = (id: string): Action<Todo> => ({
-  type: TOGGLE_TODO,
+  type: types.TOGGLE_TODO,
   payload: {
     id,
   },
@@ -27,7 +20,7 @@ const toggleTodo = (id: string): Action<Todo> => ({
 const setVisibilityFilter = ({
   filter,
 }: VisibilityFilter): Action<VisibilityFilter> => ({
-  type: SET_VISIBILITY_FILTER,
+  type: types.SET_VISIBILITY_FILTER,
   payload: {
     filter,
   },

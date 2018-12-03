@@ -21,6 +21,6 @@ describe('Footer component', () => {
   })
 
   it('should render 7 children of the p element', () => {
-    expect(wrapper.getElements()[0].props.children.length).toBe(7)
+    expect(wrapper.getElements()[0].props.children.length).toBe(6)
   })
 })

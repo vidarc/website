@@ -1,23 +1,13 @@
 import actions from '../actions'
 
-import {
-  Action,
-  ADD_TODO,
-  SET_VISIBILITY_FILTER,
-  SHOW_ACTIVE,
-  SHOW_ALL,
-  SHOW_COMPLETED,
-  Todo,
-  TOGGLE_TODO,
-  VisibilityFilter,
-} from '../types'
+import { Action, Todo, types, VisibilityFilter } from '../types'
 
 describe('actions', () => {
   it('should create an action to add a todo', () => {
     const text = 'some text'
 
     const expected: Action<Todo> = {
-      type: ADD_TODO,
+      type: types.ADD_TODO,
       payload: {
         text,
         id: 'shortid',
@@ -29,7 +19,7 @@ describe('actions', () => {
 
   it('should create an action to toggle a todo', () => {
     const expected: Action<Todo> = {
-      type: TOGGLE_TODO,
+      type: types.TOGGLE_TODO,
       payload: {
         id: 'shortid',
       },
@@ -41,39 +31,39 @@ describe('actions', () => {
   describe('set visibility filter', () => {
     it('should set the filter to show all', () => {
       const expected: Action<VisibilityFilter> = {
-        type: SET_VISIBILITY_FILTER,
+        type: types.SET_VISIBILITY_FILTER,
         payload: {
-          filter: SHOW_ALL,
+          filter: types.SHOW_ALL,
         },
       }
 
-      const filter: VisibilityFilter = { filter: SHOW_ALL }
+      const filter: VisibilityFilter = { filter: types.SHOW_ALL }
 
       expect(actions.setVisibilityFilter(filter)).toEqual(expected)
     })
 
     it('should set the filter to show active', () => {
       const expected: Action<VisibilityFilter> = {
-        type: SET_VISIBILITY_FILTER,
+        type: types.SET_VISIBILITY_FILTER,
         payload: {
-          filter: SHOW_ACTIVE,
+          filter: types.SHOW_ACTIVE,
         },
       }
 
-      const filter: VisibilityFilter = { filter: SHOW_ACTIVE }
+      const filter: VisibilityFilter = { filter: types.SHOW_ACTIVE }
 
       expect(actions.setVisibilityFilter(filter)).toEqual(expected)
     })
 
     it('should set the filter to show completed', () => {
       const expected: Action<VisibilityFilter> = {
-        type: SET_VISIBILITY_FILTER,
+        type: types.SET_VISIBILITY_FILTER,
         payload: {
-          filter: SHOW_COMPLETED,
+          filter: types.SHOW_COMPLETED,
         },
       }
 
-      const filter: VisibilityFilter = { filter: SHOW_COMPLETED }
+      const filter: VisibilityFilter = { filter: types.SHOW_COMPLETED }
 
       expect(actions.setVisibilityFilter(filter)).toEqual(expected)
     })

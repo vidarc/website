@@ -17,7 +17,7 @@ const StyledLink = styled(Link)`
   }
 `
 
-const DisplayArray = ({ array, url }: Props) =>
+const DisplayArray = ({ array, url }): React.Component<Props> =>
   array
     .map(({ id, name, title }) => (
       <StyledLink to={url + id} key={id}>

@@ -1,12 +1,13 @@
 import { Dispatch as ReduxDispatch, Store as ReduxStore } from 'redux'
 
-export const SHOW_ALL = 'SHOW_ALL'
-export const SHOW_ACTIVE = 'SHOW_ACTIVE'
-export const SHOW_COMPLETED = 'SHOW_COMPLETED'
-export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
-
-export const ADD_TODO = 'ADD_TODO'
-export const TOGGLE_TODO = 'TOGGLE_TODO'
+export enum types {
+  SHOW_ALL = 'SHOW_ALL',
+  SHOW_ACTIVE = 'SHOW_ACTIVE',
+  SHOW_COMPLETED = 'SHOW_COMPLETED',
+  SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER',
+  ADD_TODO = 'ADD_TODO',
+  TOGGLE_TODO = 'TOGGLE_TODO',
+}
 
 export interface Todo {
   id?: string
@@ -17,7 +18,7 @@ export interface Todo {
 export type Todos = Todo[]
 
 export interface VisibilityFilter {
-  filter: 'SHOW_ALL' | 'SHOW_ACTIVE' | 'SHOW_COMPLETED'
+  filter: types.SHOW_ALL | types.SHOW_ACTIVE | types.SHOW_COMPLETED
 }
 
 export interface State {
@@ -26,7 +27,7 @@ export interface State {
 }
 
 export interface Action<T> {
-  type: 'ADD_TODO' | 'TOGGLE_TODO' | 'SET_VISIBILITY_FILTER'
+  type: types.ADD_TODO | types.TOGGLE_TODO | types.SET_VISIBILITY_FILTER
   payload: T
 }
 

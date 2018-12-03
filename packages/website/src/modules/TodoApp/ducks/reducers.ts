@@ -1,19 +1,10 @@
 import { combineReducers } from 'redux'
 
-import {
-  Action,
-  ADD_TODO,
-  SET_VISIBILITY_FILTER,
-  SHOW_ALL,
-  Todo,
-  Todos,
-  TOGGLE_TODO,
-  VisibilityFilter,
-} from './types'
+import { Action, Todo, Todos, types, VisibilityFilter } from './types'
 
 const todos = (state: Todos = [], { type, payload }: Action<Todo>): Todos => {
   switch (type) {
-    case ADD_TODO:
+    case types.ADD_TODO:
       return [
         ...state,
         {
@@ -22,7 +13,7 @@ const todos = (state: Todos = [], { type, payload }: Action<Todo>): Todos => {
           completed: false,
         },
       ]
-    case TOGGLE_TODO:
+    case types.TOGGLE_TODO:
       return state.map((todo: Todo) =>
         todo.id === payload.id ? { ...todo, completed: !todo.completed } : todo,
       )
@@ -31,8 +22,8 @@ const todos = (state: Todos = [], { type, payload }: Action<Todo>): Todos => {
   }
 }
 
-const initialFilter = {
-  filter: SHOW_ALL,
+const initialFilter: VisibilityFilter = {
+  filter: types.SHOW_ALL,
 }
 
 const visibilityFilter = (
@@ -40,7 +31,7 @@ const visibilityFilter = (
   { type, payload }: Action<VisibilityFilter>,
 ): VisibilityFilter => {
   switch (type) {
-    case SET_VISIBILITY_FILTER:
+    case types.SET_VISIBILITY_FILTER:
       return payload
     default:
       return state

@@ -10,9 +10,9 @@ export interface Props {
 interface StyledLiProps {
   completed: boolean
 }
-const StyledLi = styled.li<StyledLiProps>`
+const StyledLi = styled('li')<StyledLiProps>`
   text-decoration: ${props => (props.completed ? 'line-through' : 'none')};
-  cursor: 'pointer';
+  cursor: pointer;
 `
 
 const Todo = ({ onClick, completed, text }: Props) => (
