@@ -3,10 +3,6 @@ import { css, injectGlobal } from 'emotion'
 import * as React from 'react'
 import 'sanitize.css'
 
-import { Home } from '../modules/Home'
-import { StarWarsApp } from '../modules/StarWarsApp'
-import { TodoApp } from '../modules/TodoApp'
-
 import Loading from './Loading'
 import { Navigation } from './Navigation'
 import NotFound from './NotFound'
@@ -35,9 +31,11 @@ const style = css`
   max-width: 1024px;
 `
 
-const AsyncHome = React.lazy(async () => ({ default: Home }))
-const AsyncStarWars = React.lazy(async () => ({ default: StarWarsApp }))
-const AsyncTodo = React.lazy(async () => ({ default: TodoApp }))
+const AsyncHome = React.lazy(() => import('../modules/Home/Home'))
+const AsyncStarWars = React.lazy(() =>
+  import('../modules/StarWarsApp/StarWarsApp'),
+)
+const AsyncTodo = React.lazy(() => import('../modules/TodoApp/TodoApp'))
 
 const App: React.FunctionComponent = () => (
   <div className={style}>
