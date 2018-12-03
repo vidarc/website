@@ -33,6 +33,11 @@
         "eslint --fix",
         "git add"
       ],
+      "*.{ts,tsx}": [
+        "prettier --write",
+        "tslint --fix",
+        "git add"
+      ],
       "*.json": [
         "prettier --write",
         "git add"
@@ -42,17 +47,26 @@
         "eslint --fix",
         "git add"
       ]
-    },
-    "ignore": [
-      "flow-typed/**/*"
-    ]
+    }
   },
   "devDependencies": {
+    "@types/jest": "23.3.9",
+    "@types/node": "10.12.10",
+    "@types/reach__router": "1.2.2",
+    "@types/react": "16.7.7",
+    "@types/react-dom": "16.0.10",
+    "@types/webpack-env": "1.13.6",
     "eslint-config-prettier": "3.3.0",
     "eslint-plugin-prettier": "3.0.0",
     "husky": "1.2.0",
     "lerna": "3.4.3",
     "lint-staged": "7.3.0",
-    "prettier": "1.15.2"
+    "prettier": "1.15.2",
+    "tslint": "5.11.0",
+    "tslint-config-airbnb": "5.11.1",
+    "tslint-config-prettier": "1.16.0",
+    "tslint-react": "3.6.0",
+    "typescript": "3.1.6",
+    "yarn": "1.12.3"
   }
 }
