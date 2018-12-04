@@ -4,11 +4,6 @@ import styled from 'react-emotion'
 
 import { Link } from '@reach/router'
 
-interface Props {
-  array: any[]
-  url: string
-}
-
 const StyledLink = styled(Link)`
   color: blue;
 
@@ -17,7 +12,7 @@ const StyledLink = styled(Link)`
   }
 `
 
-const DisplayArray = ({ array, url }): React.Component<Props> =>
+const DisplayArray = ({ array, url }) =>
   array
     .map(({ id, name, title }) => (
       <StyledLink to={url + id} key={id}>
