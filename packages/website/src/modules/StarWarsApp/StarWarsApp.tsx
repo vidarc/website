@@ -1,6 +1,7 @@
-import { RouteComponentProps } from '@reach/router'
 import * as React from 'react'
-import styled from 'react-emotion'
+
+import styled from '@emotion/styled'
+import { RouteComponentProps } from '@reach/router'
 
 import QueryPages from './containers/QueryPages'
 import TabLink from './components/TabLink'
