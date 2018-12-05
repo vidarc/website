@@ -1,13 +1,9 @@
 import React from 'react'
 
 import { mount } from 'enzyme'
-import serializer, { matchers } from 'jest-emotion'
 import renderer from 'react-test-renderer'
 
 import Todo, { Props } from '../Todo'
-
-expect.addSnapshotSerializer(serializer)
-expect.extend(matchers)
 
 describe('Todo component', () => {
   const props: Props = {

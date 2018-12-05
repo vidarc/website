@@ -1,17 +1,18 @@
-import { RouteComponentProps } from '@reach/router'
-import { css } from 'emotion'
 import * as React from 'react'
 
-const className = css`
+import styled from '@emotion/styled'
+import { RouteComponentProps } from '@reach/router'
+
+const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
 `
 
 const NotFound: React.SFC<RouteComponentProps> = () => (
-  <div className={className}>
+  <ImageContainer>
     <img src='https://http.cat/404' alt='404 cat' />
-  </div>
+  </ImageContainer>
 )
 
 export default NotFound

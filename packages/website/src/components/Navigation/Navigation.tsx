@@ -1,6 +1,7 @@
-import { Link } from '@reach/router'
-import { css } from 'emotion'
 import * as React from 'react'
+
+import { css } from '@emotion/core'
+import { Link } from '@reach/router'
 
 import avatarPng from '../../images/avatar.png'
 
@@ -33,7 +34,7 @@ export default class Navigation extends React.Component<{}, State> {
 
     return (
       <StyledNav>
-        <img src={avatarPng} className={avatarStyle} alt='avatar' />
+        <img src={avatarPng} css={avatarStyle} alt='avatar' />
         <Link to='/'>Home</Link>
         <StyledSubmenu
           role='menu'

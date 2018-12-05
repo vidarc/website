@@ -3,10 +3,10 @@ import Adapter from 'enzyme-adapter-react-16'
 
 import 'jest-enzyme'
 
-import * as emotion from 'emotion'
-import { createSerializer } from 'jest-emotion'
+import serializer, { matchers } from 'jest-emotion'
 
-expect.addSnapshotSerializer(createSerializer(emotion))
+expect.addSnapshotSerializer(serializer)
+expect.extend(matchers)
 
 jest.mock('shortid', () => ({
   generate: () => 'shortid',
