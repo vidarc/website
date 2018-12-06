@@ -1,16 +1,15 @@
-// @flow
-
 import * as React from 'react'
+
 import { css } from '@emotion/core'
 
-import theme from '../../theme'
+import theme from '../theme'
 
-export type ButtonProps = {
-  children: React.Node,
-  type?: 'button' | 'submit',
-  primary?: boolean,
-  secondary?: boolean,
-  onClick: Function
+export interface ButtonProps {
+  children: React.ReactChild
+  type?: 'button' | 'submit'
+  primary?: boolean
+  secondary?: boolean
+  onClick: () => void
 }
 
 const Button = ({
@@ -39,14 +38,14 @@ const Button = ({
 
   if (type === 'submit') {
     return (
-      <button className={className} type='submit' onClick={onClick}>
+      <button css={className} type='submit' onClick={onClick}>
         {children}
       </button>
     )
   }
 
   return (
-    <button className={className} type='button' onClick={onClick}>
+    <button css={className} type='button' onClick={onClick}>
       {children}
     </button>
   )

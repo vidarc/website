@@ -1,12 +1,10 @@
-// @flow
-
 import * as React from 'react'
 
-import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
 import { decorate } from '@storybook/addon-actions'
+import { withInfo } from '@storybook/addon-info'
+import { storiesOf } from '@storybook/react'
 
-import { Button } from '../components/Button'
+import Button from '../components/Button'
 
 const pickNative = decorate([args => [args[0].nativeEvent]])
 
@@ -24,7 +22,7 @@ storiesOf('Components|Button', module)
     ),
     {
       info: {
-        inline: true,
-      },
-    },
+        inline: true
+      }
+    }
   )

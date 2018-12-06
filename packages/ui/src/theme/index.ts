@@ -1,11 +1,9 @@
-// @flow
-
 const theme = {
   colors: {
     blue: '#2185d0',
     red: '#e0184a',
-    white: '#eeeeee',
-  },
+    white: '#eeeeee'
+  }
 }
 
 export default theme
