@@ -1,11 +1,12 @@
-import { RouteComponentProps } from '@reach/router'
 import * as React from 'react'
-import styled from 'react-emotion'
+
+import styled from '@emotion/styled/macro'
+import { RouteComponentProps } from '@reach/router'
 
 import QueryPages from './containers/QueryPages'
 import TabLink from './components/TabLink'
 
-const Wrapper = styled('div')`
+const Wrapper = styled.div`
   width: 100%;
   display: flex;
   margin-bottom: 10px;

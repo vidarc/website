@@ -1,6 +1,6 @@
-import styled from 'react-emotion'
+import styled from '@emotion/styled/macro'
 
-export const StyledNav = styled('nav')`
+export const StyledNav = styled.nav`
   display: flex;
   height: 50px;
   width: 100%;
@@ -21,7 +21,7 @@ export const StyledNav = styled('nav')`
   }
 `
 
-export const StyledSubmenu = styled('div')`
+export const StyledSubmenu = styled.div`
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -59,6 +59,6 @@ export const StyledSubmenu = styled('div')`
 interface SubmenuItemsProps {
   show: boolean
 }
-export const SubmenuItems = styled('div')`
+export const SubmenuItems = styled.div`
   display: ${(props: SubmenuItemsProps) => (props.show ? 'block' : 'none')};
 `

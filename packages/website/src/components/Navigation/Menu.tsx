@@ -1,7 +1,5 @@
 import * as React from 'react'
 
-import MenuItem from './MenuItem'
-
 export interface MenuProps {
   children: React.ReactChild[]
 }

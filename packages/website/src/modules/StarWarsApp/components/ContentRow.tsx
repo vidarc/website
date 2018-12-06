@@ -1,14 +1,15 @@
 import * as React from 'react'
-import styled from 'react-emotion'
 
-const Container = styled('div')`
+import styled from '@emotion/styled/macro'
+
+const Container = styled.div`
   display: flex;
 `
 
 interface ItemProps {
   width: string
 }
-const Item = styled('div')<ItemProps>`
+const Item = styled.div<ItemProps>`
   flex: 1 1 100%;
   max-width: ${props => props.width};
 `

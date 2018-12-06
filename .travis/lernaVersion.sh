@@ -9,7 +9,7 @@ setup_git() {
 version() {
   git fetch with-credentials
   git checkout master
-  lerna version patch --yes --no-commit-hooks --git-remote with-credentials
+  lerna version minor --yes --no-commit-hooks --git-remote with-credentials
 }
 
 setup_git

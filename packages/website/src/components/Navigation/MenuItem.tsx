@@ -1,5 +1,6 @@
-import { Link } from '@reach/router'
 import * as React from 'react'
+
+import { Link } from '@reach/router'
 
 export interface MenuItemProps {
   children: string

@@ -1,5 +1,6 @@
 import * as React from 'react'
-import styled from 'react-emotion'
+
+import styled from '@emotion/styled/macro'
 
 export interface Props {
   onClick: () => void
@@ -10,7 +11,7 @@ export interface Props {
 interface StyledLiProps {
   completed: boolean
 }
-const StyledLi = styled('li')<StyledLiProps>`
+const StyledLi = styled.li<StyledLiProps>`
   text-decoration: ${props => (props.completed ? 'line-through' : 'none')};
   cursor: pointer;
 `

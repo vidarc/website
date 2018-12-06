@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react'
-import { css } from 'emotion'
+import { css } from '@emotion/core'
 
 import theme from '../../theme'
 
@@ -18,7 +18,7 @@ const Button = ({
   type,
   primary,
   secondary,
-  onClick,
+  onClick
 }: ButtonProps) => {
   let color
   if (primary) color = theme.colors.blue
@@ -55,7 +55,7 @@ const Button = ({
 Button.defaultProps = {
   primary: false,
   secondary: false,
-  type: 'button',
+  type: 'button'
 }
 
 export default Button
