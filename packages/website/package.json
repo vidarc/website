@@ -4,15 +4,15 @@
   "private": true,
   "proxy": "https://us-central1-server-b6f04.cloudfunctions.net/api/graphql",
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "../../node_modules/.bin/eslint ./src",
-    "test": "react-scripts test --env=jsdom",
-    "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom",
-    "coverage": "react-scripts test --env=jsdom --coverage",
     "coverage:cleanup": "rm -rf ./coverage",
+    "coverage": "react-scripts test --env=jsdom --coverage",
+    "deploy": "firebase deploy --token $FIREBASE_TOKEN",
     "eject": "react-scripts eject",
-    "deploy": "firebase deploy --token $FIREBASE_TOKEN"
+    "lint": "../../node_modules/.bin/eslint ./src",
+    "start": "react-scripts start",
+    "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom",
+    "test": "react-scripts test --env=jsdom"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -30,6 +30,7 @@
     "react-scripts": "2.1.1",
     "react-test-renderer": "16.6.3",
     "redux-mock-store": "1.5.3",
+    "source-map-explorer": "1.6.0",
     "webpack-bundle-analyzer": "3.0.3"
   },
   "dependencies": {
