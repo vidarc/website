@@ -25,10 +25,11 @@ export default (query, Component) => props => {
           return <p>error.............</p>
         }
 
+        // tslint:disable:jsx-no-lambda
         return (
           <div>
             <Component {...data} />
-            <Button primary onClick={refetch}>
+            <Button primary onClick={() => refetch()}>
               Refetch!
             </Button>
           </div>
