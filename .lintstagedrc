@@ -1,0 +1,24 @@
+{
+  "linters": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "tslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{css,scss,sass}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "concurrent": false
+}
