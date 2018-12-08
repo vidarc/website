@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-import { css } from '@emotion/core'
+import styled from '@emotion/styled'
 import { Link } from '@reach/router'
 
-import avatarPng from '../../images/avatar.png'
+import avatar from '../../images/avatar-small.png'
 
 import { StyledNav, StyledSubmenu, SubmenuItems } from './StyledComponents'
 
@@ -11,7 +11,7 @@ interface State {
   showSubmenu: boolean
 }
 
-const avatarStyle = css`
+const AvatarImg = styled.img`
   height: 32px;
   width: 32px;
   border-radius: 50%;
@@ -34,7 +34,7 @@ export default class Navigation extends React.Component<{}, State> {
 
     return (
       <StyledNav>
-        <img src={avatarPng} css={avatarStyle} alt='avatar' />
+        <AvatarImg src={avatar} alt='avatar' />
         <Link to='/'>Home</Link>
         <StyledSubmenu
           role='menu'

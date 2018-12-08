@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { css, Global } from '@emotion/core'
+import styled from '@emotion/styled'
 import { Router } from '@reach/router'
 import 'sanitize.css'
 
@@ -27,7 +28,7 @@ const globalStyles = css`
   }
 `
 
-const style = css`
+const StyledDiv = styled.div`
   text-align: left;
   margin: 0 auto;
   max-width: 1024px;
@@ -40,19 +41,18 @@ const AsyncStarWars = React.lazy(() =>
 const AsyncTodo = React.lazy(() => import('../modules/TodoApp/TodoApp'))
 
 const App: React.FunctionComponent = () => (
-  <Global styles={globalStyles}>
-    <div css={style}>
-      <Navigation />
-      <React.Suspense fallback={<Loading />}>
-        <Router>
-          <AsyncHome path='/' />
-          <AsyncStarWars path='starwars/*' />
-          <AsyncTodo path='todo' />
-          <NotFound default={true} />
-        </Router>
-      </React.Suspense>
-    </div>
-  </Global>
+  <StyledDiv>
+    <Global styles={globalStyles} />
+    <Navigation />
+    <React.Suspense fallback={<Loading />}>
+      <Router>
+        <AsyncHome path='/' />
+        <AsyncStarWars path='starwars/*' />
+        <AsyncTodo path='todo' />
+        <NotFound default={true} />
+      </Router>
+    </React.Suspense>
+  </StyledDiv>
 )
 
 export default App
