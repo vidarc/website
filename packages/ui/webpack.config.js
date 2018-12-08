@@ -1,6 +1,5 @@
 const path = require('path')
 const Stylish = require('webpack-stylish')
-const nodeExternals = require('webpack-node-externals')
 
 module.exports = {
   stats: 'none',
@@ -9,10 +8,8 @@ module.exports = {
     path: path.resolve(__dirname, './build'),
     filename: 'index.js',
     library: '',
-    libraryTarget: 'commonjs',
+    libraryTarget: 'commonjs'
   },
-
-  externals: [nodeExternals()],
 
   module: {
     rules: [
@@ -25,18 +22,18 @@ module.exports = {
             presets: [
               ['@babel/preset-env'],
               ['@babel/preset-react'],
-              ['@babel/preset-flow'],
+              ['@babel/preset-flow']
             ],
             plugins: [
               '@babel/transform-runtime',
               '@babel/plugin-proposal-export-default-from',
-              'emotion',
-            ],
-          },
-        },
-      },
-    ],
+              'emotion'
+            ]
+          }
+        }
+      }
+    ]
   },
 
-  plugins: [new Stylish()],
+  plugins: [new Stylish()]
 }

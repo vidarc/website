@@ -45,7 +45,6 @@
     "react-scripts": "2.1.1",
     "webpack": "4.26.1",
     "webpack-cli": "3.1.2",
-    "webpack-node-externals": "1.7.2",
     "webpack-stylish": "0.1.8"
   }
 }

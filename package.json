@@ -26,29 +26,6 @@
     "semi": false,
     "singleQuote": true
   },
-  "lint-staged": {
-    "linters": {
-      "*.{js,jsx}": [
-        "prettier --write",
-        "eslint --fix",
-        "git add"
-      ],
-      "*.{ts,tsx}": [
-        "prettier --write",
-        "tslint --fix",
-        "git add"
-      ],
-      "*.json": [
-        "prettier --write",
-        "git add"
-      ],
-      "*.{css,scss,sass}": [
-        "prettier --write",
-        "eslint --fix",
-        "git add"
-      ]
-    }
-  },
   "devDependencies": {
     "@types/jest": "23.3.10",
     "@types/node": "10.12.11",

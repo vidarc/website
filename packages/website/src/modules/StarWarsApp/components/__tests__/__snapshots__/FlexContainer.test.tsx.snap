@@ -12,7 +12,7 @@ exports[`FlexContainer matches the snapshot 1`] = `
 }
 
 <div
-  className="emotion-0 emotion-1"
+  className="emotion-0"
 />
 `;
 
@@ -28,7 +28,7 @@ exports[`FlexContainer matches the snapshot when direction is specified 1`] = `
 }
 
 <div
-  className="emotion-0 emotion-1"
+  className="emotion-0"
   direction="column"
 />
 `;

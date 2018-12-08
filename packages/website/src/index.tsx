@@ -14,7 +14,7 @@ const client = new ApolloClient({
   uri: 'https://us-central1-server-b6f04.cloudfunctions.net/api/graphql',
 })
 
-function renderApp(Component: React.ComponentType) {
+function renderApp(Component: any) {
   render(
     <ApolloProvider client={client}>
       <Provider store={store}>
@@ -30,7 +30,6 @@ renderApp(App)
 if (module.hot) {
   module.hot.accept('./components/App', () => {
     const Next = import('./components/App')
-    // @ts-ignore
     renderApp(Next)
   })
 }
