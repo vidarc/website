@@ -4,15 +4,16 @@
   "private": true,
   "proxy": "https://us-central1-server-b6f04.cloudfunctions.net/api/graphql",
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "../../node_modules/.bin/eslint ./src",
-    "test": "react-scripts test --env=jsdom",
-    "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom",
-    "coverage": "react-scripts test --env=jsdom --coverage",
     "coverage:cleanup": "rm -rf ./coverage",
+    "coverage": "react-scripts test --env=jsdom --coverage",
+    "deploy": "firebase deploy --token $FIREBASE_TOKEN",
     "eject": "react-scripts eject",
-    "deploy": "firebase deploy --token $FIREBASE_TOKEN"
+    "lint": "../../node_modules/.bin/eslint ./src",
+    "postbuild": "react-snap",
+    "start": "react-scripts start",
+    "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom",
+    "test": "react-scripts test --env=jsdom"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -23,13 +24,20 @@
       "lcov"
     ]
   },
+  "reactSnap": {
+    "exclude": [
+      "/starwars/**"
+    ]
+  },
   "devDependencies": {
     "jest-emotion": "10.0.2",
     "nock": "10.0.2",
     "raf": "3.4.1",
     "react-scripts": "2.1.1",
+    "react-snap": "https://github.com/vidarc/react-snap.git",
     "react-test-renderer": "16.6.3",
     "redux-mock-store": "1.5.3",
+    "source-map-explorer": "1.6.0",
     "webpack-bundle-analyzer": "3.0.3"
   },
   "dependencies": {
@@ -50,6 +58,7 @@
     "react": "16.6.3",
     "react-apollo": "2.3.2",
     "react-dom": "16.6.3",
+    "react-helmet": "5.2.0",
     "react-redux": "5.1.1",
     "redux": "4.0.1",
     "redux-thunk": "2.3.0",

@@ -2,6 +2,7 @@ import * as React from 'react'
 
 import styled from '@emotion/styled'
 import { RouteComponentProps } from '@reach/router'
+import { Helmet } from 'react-helmet'
 
 const ImageContainer = styled.div`
   display: flex;
@@ -11,6 +12,9 @@ const ImageContainer = styled.div`
 
 const NotFound: React.SFC<RouteComponentProps> = () => (
   <ImageContainer>
+    <Helmet>
+      <title>404 - Not Found</title>
+    </Helmet>
     <img src='https://http.cat/404' alt='404 cat' />
   </ImageContainer>
 )
