@@ -1,8 +1,10 @@
 import * as React from 'react'
 
-import { css } from '@emotion/core'
+import { css, jsx } from '@emotion/core'
 
 import theme from '../theme'
+
+const using = jsx
 
 export interface ButtonProps {
   children: React.ReactChild
