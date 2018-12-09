@@ -24,15 +24,17 @@
       "lcov"
     ]
   },
-  "react-snap": {
-    "skipThirdPartyRequests": true
+  "reactSnap": {
+    "exclude": [
+      "/starwars/**"
+    ]
   },
   "devDependencies": {
     "jest-emotion": "10.0.2",
     "nock": "10.0.2",
     "raf": "3.4.1",
     "react-scripts": "2.1.1",
-    "react-snap": "1.22.1",
+    "react-snap": "https://github.com/vidarc/react-snap.git",
     "react-test-renderer": "16.6.3",
     "redux-mock-store": "1.5.3",
     "source-map-explorer": "1.6.0",
@@ -56,6 +58,7 @@
     "react": "16.6.3",
     "react-apollo": "2.3.2",
     "react-dom": "16.6.3",
+    "react-helmet": "5.2.0",
     "react-redux": "5.1.1",
     "redux": "4.0.1",
     "redux-thunk": "2.3.0",
