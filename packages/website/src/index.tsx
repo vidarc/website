@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { ApolloProvider } from 'react-apollo'
-import { render } from 'react-dom'
+import { hydrate, render } from 'react-dom'
 import { Provider } from 'react-redux'
 
 import ApolloClient from 'apollo-boost'
@@ -14,22 +14,31 @@ const client = new ApolloClient({
   uri: 'https://us-central1-server-b6f04.cloudfunctions.net/api/graphql',
 })
 
-function renderApp(Component: any) {
-  render(
+function initApp(Component: any, element: HTMLElement) {
+  if (element.hasChildNodes()) {
+    renderApp(Component, element, hydrate)
+  } else {
+    renderApp(Component, element, render)
+  }
+}
+
+function renderApp(Component: any, element: HTMLElement, renderFunction: any) {
+  renderFunction(
     <ApolloProvider client={client}>
       <Provider store={store}>
         <Component />
       </Provider>
     </ApolloProvider>,
-    document.getElementById('root'),
+    element,
   )
 }
 
-renderApp(App)
+const rootElement = document.getElementById('root')
+initApp(App, rootElement)
 
 if (module.hot) {
   module.hot.accept('./components/App', () => {
     const Next = import('./components/App')
-    renderApp(Next)
+    renderApp(Next, rootElement, hydrate)
   })
 }
