@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "jest-emotion": "10.0.2",
-    "nock": "10.0.2",
+    "nock": "10.0.4",
     "raf": "3.4.1",
     "react-scripts": "2.1.1",
     "react-snap": "https://github.com/vidarc/react-snap.git",
@@ -48,7 +48,7 @@
     "@reach/router": "1.2.1",
     "apollo-boost": "0.1.22",
     "cross-fetch": "2.2.3",
-    "dotenv": "6.1.0",
+    "dotenv": "6.2.0",
     "enzyme": "3.7.0",
     "enzyme-adapter-react-16": "1.7.0",
     "facepaint": "1.2.1",
