@@ -1,18 +1,20 @@
 import * as React from 'react'
 
+import { typography } from '@mattailes/ui'
+import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
 import { hydrate, render } from 'react-dom'
 import { Provider } from 'react-redux'
-
-import ApolloClient from 'apollo-boost'
 
 import App from './components/App'
 import configureStore from './ducks'
 
 const store = configureStore()
 const client = new ApolloClient({
-  uri: 'https://us-central1-server-b6f04.cloudfunctions.net/api/graphql',
+  uri: 'https://us-central1-server-b6f04.cloudfunctions.net/api/graphql'
 })
+
+typography.injectStyles()
 
 function initApp(Component: any, element: HTMLElement) {
   if (element.hasChildNodes()) {
@@ -29,7 +31,7 @@ function renderApp(Component: any, element: HTMLElement, renderFunction: any) {
         <Component />
       </Provider>
     </ApolloProvider>,
-    element,
+    element
   )
 }
 

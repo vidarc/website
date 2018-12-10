@@ -15,11 +15,12 @@ const AvatarImg = styled.img`
   height: 32px;
   width: 32px;
   border-radius: 50%;
+  margin: 0;
 `
 
 export default class Navigation extends React.Component<{}, State> {
   state = {
-    showSubmenu: false,
+    showSubmenu: false
   }
 
   handleSubmenuClick = () =>
