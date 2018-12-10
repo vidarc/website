@@ -1,0 +1,16 @@
+import { Film, Person } from '.'
+
+export interface Planet {
+  id: number
+  surface_water: string
+  population: string
+  diameter: string
+  residents: Person[]
+  gravity: string
+  rotation_period: string
+  films: Film[]
+  orbital_period: string
+  climate: string
+  name: string
+  terrain: string
+}

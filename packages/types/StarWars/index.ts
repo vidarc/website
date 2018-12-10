@@ -1,5 +1,3 @@
-// @flow
-
 export { Film } from './Film'
 export { Person } from './Person'
 export { Planet } from './Planet'
