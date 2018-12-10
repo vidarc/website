@@ -889,7 +889,7 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@babel/runtime@7.2.0", "@babel/runtime@^7.1.2":
+"@babel/runtime@7.2.0", "@babel/runtime@^7.2.0":
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.2.0.tgz#b03e42eeddf5898e00646e4c840fa07ba8dcad7f"
   integrity sha512-oouEibCbHMVdZSDlJBO6bZmID/zA/G/Qx3H1d3rSNPTD+L8UNKvCat7aKWSJ74zYbm5zWGh0GQN0hKj8zYFTCg==
@@ -4411,13 +4411,13 @@ create-react-context@^0.2.1:
     fbjs "^0.8.0"
     gud "^1.0.0"
 
-cross-fetch@2.2.3:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-2.2.3.tgz#e8a0b3c54598136e037f8650f8e823ccdfac198e"
-  integrity sha512-PrWWNH3yL2NYIb/7WF/5vFG3DCQiXDOVf8k3ijatbrtnwNuhMWLC7YF7uqf53tbTFDzHIUD8oITw4Bxt8ST3Nw==
+cross-fetch@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.0.0.tgz#fb7fa6906f39c7233aa7ab8de1785e980532b899"
+  integrity sha512-P8HyKlMwT1ed9LqEWlJu+zfcxfn0KI4Nl4nxyvu1a8sg4vgtHdwhElZOgSNzoar44zQMdliZcve4QG/04AUi9Q==
   dependencies:
-    node-fetch "2.1.2"
-    whatwg-fetch "2.0.4"
+    node-fetch "2.3.0"
+    whatwg-fetch "3.0.0"
 
 cross-spawn@6.0.5, cross-spawn@^6.0.0, cross-spawn@^6.0.5:
   version "6.0.5"
@@ -7047,7 +7047,7 @@ hoek@4.x.x:
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-4.2.1.tgz#9634502aa12c445dd5a7c5734b572bb8738aacbb"
   integrity sha512-QLg82fGkfnJ/4iy1xZ81/9SIJiq1NGFUMGs6ParyjBZr6jW2Ufj/snDqTHixNlHdPNwN2RLVD0Pi3igeK9+JfA==
 
-hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.1.0:
+hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.2.1.tgz#c09c0555c84b38a7ede6912b61efddafd6e75e1e"
   integrity sha512-TFsu3TV3YLY+zFTZDrN8L2DTFanObwmBLpWvJs1qfUuEQ5bTAdFcwfx2T/bsCXfM9QHSLvjfP+nihEl0yvozxw==
@@ -9897,10 +9897,10 @@ node-fetch-npm@^2.0.2:
     json-parse-better-errors "^1.0.0"
     safe-buffer "^5.1.1"
 
-node-fetch@2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.1.2.tgz#ab884e8e7e57e38a944753cec706f788d1768bb5"
-  integrity sha1-q4hOjn5X44qUR1POxwb3iNF2i7U=
+node-fetch@2.3.0, node-fetch@^2.1.2, node-fetch@^2.2.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.3.0.tgz#1a1d940bbfb916a1d3e0219f037e89e71f8c5fa5"
+  integrity sha512-MOd8pV3fxENbryESLgVIeaGKrdl+uaYhCSSVkjeOb/31/njTpcis5aWfdqgNlHIrKOLRbMnfPINPOML2CIFeXA==
 
 node-fetch@^1.0.1:
   version "1.7.3"
@@ -9909,11 +9909,6 @@ node-fetch@^1.0.1:
   dependencies:
     encoding "^0.1.11"
     is-stream "^1.0.1"
-
-node-fetch@^2.1.2, node-fetch@^2.2.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.3.0.tgz#1a1d940bbfb916a1d3e0219f037e89e71f8c5fa5"
-  integrity sha512-MOd8pV3fxENbryESLgVIeaGKrdl+uaYhCSSVkjeOb/31/njTpcis5aWfdqgNlHIrKOLRbMnfPINPOML2CIFeXA==
 
 node-forge@0.7.4:
   version "0.7.4"
@@ -11972,28 +11967,27 @@ react-helmet@5.2.0:
     prop-types "^15.5.4"
     react-side-effect "^1.1.0"
 
-react-is@^16.3.2, react-is@^16.6.0, react-is@^16.6.1, react-is@^16.6.3:
+react-is@^16.3.2, react-is@^16.6.1, react-is@^16.6.3:
   version "16.6.3"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.6.3.tgz#d2d7462fcfcbe6ec0da56ad69047e47e56e7eac0"
   integrity sha512-u7FDWtthB4rWibG/+mFbVd5FvdI20yde86qKGx4lVUTWmPlSWQ4QxbBIrrs+HnXGbxOUlUzTAP/VDmvCwaP2yA==
 
-react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.4:
+react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-redux@5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.1.1.tgz#88e368682c7fa80e34e055cd7ac56f5936b0f52f"
-  integrity sha512-LE7Ned+cv5qe7tMV5BPYkGQ5Lpg8gzgItK07c67yHvJ8t0iaD9kPFPAli/mYkiyJYrs2pJgExR2ZgsGqlrOApg==
+react-redux@6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-6.0.0.tgz#09e86eeed5febb98e9442458ad2970c8f1a173ef"
+  integrity sha512-EmbC3uLl60pw2VqSSkj6HpZ6jTk12RMrwXMBdYtM6niq0MdEaRq9KYCwpJflkOZj349BLGQm1MI/JO1W96kLWQ==
   dependencies:
-    "@babel/runtime" "^7.1.2"
-    hoist-non-react-statics "^3.1.0"
+    "@babel/runtime" "^7.2.0"
+    hoist-non-react-statics "^3.2.1"
     invariant "^2.2.4"
-    loose-envify "^1.1.0"
-    prop-types "^15.6.1"
-    react-is "^16.6.0"
-    react-lifecycles-compat "^3.0.0"
+    loose-envify "^1.4.0"
+    prop-types "^15.6.2"
+    react-is "^16.6.3"
 
 react-scripts@2.1.1:
   version "2.1.1"
@@ -14581,11 +14575,6 @@ whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3, whatwg-encoding@^1.0.5:
   integrity sha512-b5lim54JOPN9HtzvK9HFXvBma/rnfFeqsic0hSpjtDbVxR3dJKLc+KB4V6GgiGOvl7CY/KNh8rxSo9DKQrnUEw==
   dependencies:
     iconv-lite "0.4.24"
-
-whatwg-fetch@2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.4.tgz#dde6a5df315f9d39991aa17621853d720b85566f"
-  integrity sha512-dcQ1GWpOD/eEQ97k66aiEVpNnapVj90/+R+SXTPYGHpYBBypfKJEQjLrvMZ7YXbKm21gXd4NcuxUTjiv1YtLng==
 
 whatwg-fetch@3.0.0, whatwg-fetch@>=0.10.0:
   version "3.0.0"
