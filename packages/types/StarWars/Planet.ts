@@ -5,10 +5,10 @@ export interface Planet {
   surface_water: string
   population: string
   diameter: string
-  residents: Person[]
+  residents: Person[] | string[]
   gravity: string
   rotation_period: string
-  films: Film[]
+  films: Film[] | string[]
   orbital_period: string
   climate: string
   name: string

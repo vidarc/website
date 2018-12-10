@@ -1,7 +1,4 @@
-// @flow
-
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { type Person } from '@mattailes/types'
+import { Person } from '@mattailes/types/StarWars'
 import { gql } from 'apollo-server-express'
 
 import { getAll, getOne, loader } from './helpers'
@@ -46,14 +43,15 @@ export const PersonTypeDef = gql`
 export const personResolvers = {
   Query: {
     getAllPeople: () => getAll('people'),
-    getPerson: (_: any, { id }: { id: number }) => getOne('people', id),
+    getPerson: (_: any, { id }: { id: number }) => getOne('people', id)
   },
 
   Person: {
     homeworld: ({ homeworld }: Person) => loader.load(homeworld),
-    films: ({ films }: Person) => loader.loadMany(films),
-    species: ({ species }: Person) => loader.loadMany(species),
-    starships: ({ starships }: Person) => loader.loadMany(starships),
-    vehicles: ({ vehicles }: Person) => loader.loadMany(vehicles),
-  },
+    films: ({ films }: Person) => loader.loadMany(films as string[]),
+    species: ({ species }: Person) => loader.loadMany(species as string[]),
+    starships: ({ starships }: Person) =>
+      loader.loadMany(starships as string[]),
+    vehicles: ({ vehicles }: Person) => loader.loadMany(vehicles as string[])
+  }
 }

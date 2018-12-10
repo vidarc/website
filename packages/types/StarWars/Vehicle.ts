@@ -6,11 +6,11 @@ export interface Vehicle {
   vehicle_class: string
   consumables: string
   model: string
-  pilots: Person[]
+  pilots: Person[] | string[]
   crew: string
   manufacturer: string
   cargo_capacity: string
-  films: Film[]
+  films: Film[] | string[]
   length: string
   name: string
   max_atmosphering_speed: string

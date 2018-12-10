@@ -1,5 +1,3 @@
-// @flow
-
 import { ApolloServer, mergeSchemas } from 'apollo-server-express'
 
 import express from 'express'
@@ -16,7 +14,7 @@ const graphql = () => {
 
   const server = new ApolloServer({ schema })
   server.applyMiddleware({
-    app,
+    app
   })
 
   return app

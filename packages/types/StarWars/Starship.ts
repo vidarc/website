@@ -6,13 +6,13 @@ export interface Starship {
   consumables: string
   model: string
   starship_class: string
-  pilots: Person[]
+  pilots: Person[] | string[]
   crew: string
   hyperdrive_rating: string
   MGLT: string
   manufacturer: string
   cargo_capacity: string
-  films: Film[]
+  films: Film[] | string[]
   length: string
   name: string
   max_atmosphering_speed: string

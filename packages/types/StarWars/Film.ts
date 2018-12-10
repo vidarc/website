@@ -8,9 +8,9 @@ export interface Film {
   director: string
   producer: string
   release_date: string
-  species: Species[]
-  starships: Starship[]
-  vehicles: Vehicle[]
-  characters: Person[]
-  planets: Planet[]
+  species: Species[] | string[]
+  starships: Starship[] | string[]
+  vehicles: Vehicle[] | string[]
+  characters: Person[] | string[]
+  planets: Planet[] | string[]
 }
