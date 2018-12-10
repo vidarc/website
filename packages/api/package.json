@@ -25,7 +25,7 @@
   "dependencies": {
     "@babel/runtime": "7.2.0",
     "apollo-server-express": "2.2.6",
-    "cross-fetch": "2.2.3",
+    "cross-fetch": "3.0.0",
     "dataloader": "1.4.0",
     "express": "4.16.4",
     "firebase-admin": "6.3.0",
