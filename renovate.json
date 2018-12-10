@@ -1,6 +1,13 @@
 {
   "extends": ["config:base"],
   "schedule": "before 3am on Monday",
-  "groupName": "all",
-  "ignoreDeps": ["eslint"]
+  "groupName": "all dependencies",
+  "groupSlug": "all",
+  "packageRules": [
+    {
+      "packagePatterns": ["*"],
+      "groupName": "all dependencies",
+      "groupSlug": "all"
+    }
+  ]
 }
