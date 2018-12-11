@@ -26,4 +26,5 @@ version() {
 
 setup_git
 VERSION=$(getVersionBump)
+echo doing a $VERSION bump
 version
