@@ -1,12 +1,7 @@
 import DataLoader from 'dataloader'
 import admin, { ServiceAccount } from 'firebase-admin'
 
-import cert from '../../../../../keys/server.json'
-
-admin.initializeApp({
-  credential: admin.credential.cert(cert as ServiceAccount),
-  databaseURL: 'https://server-b6f04.firebaseio.com'
-})
+admin.initializeApp()
 const firestore = admin.firestore()
 firestore.settings({ timestampsInSnapshots: true })
 
