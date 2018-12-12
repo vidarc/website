@@ -50,6 +50,6 @@ export const speciesResolvers = {
     people: ({ people }: Species) => batchLoad(people as number[], 'people'),
     films: ({ films }: Species) => batchLoad(films as number[], 'films'),
     homeworld: ({ homeworld }: Species) =>
-      loader.load({ id: homeworld, type: 'planet' })
+      loader.load({ id: homeworld, type: 'planets' })
   }
 }
