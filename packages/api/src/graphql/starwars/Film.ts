@@ -50,7 +50,7 @@ export const filmResolvers = {
     vehicles: ({ vehicles }: Film) =>
       batchLoad(vehicles as number[], 'vehicles'),
     characters: ({ characters }: Film) =>
-      batchLoad(characters as number[], 'characters'),
+      batchLoad(characters as number[], 'people'),
     planets: ({ planets }: Film) => batchLoad(planets as number[], 'planets')
   }
 }
