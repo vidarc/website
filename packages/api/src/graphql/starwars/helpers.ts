@@ -1,8 +1,6 @@
-import fetch from 'cross-fetch'
 import DataLoader from 'dataloader'
 import admin, { ServiceAccount } from 'firebase-admin'
 
-import logger from '../../logger'
 import cert from '../../../../../keys/server.json'
 
 admin.initializeApp({
@@ -43,6 +41,7 @@ const loader = new DataLoader<Props, {}>(keys =>
       firestore
         .collection(`starwars_${key.type}`)
         .where('id', '==', key.id)
+        .limit(1)
         .get()
         .then(docs => {
           const array = []
@@ -55,4 +54,7 @@ const loader = new DataLoader<Props, {}>(keys =>
   )
 )
 
-export { getAll, getOne, loader }
+const batchLoad = (ids: number[], type: string) =>
+  loader.loadMany(ids.map(id => ({ id, type })))
+
+export { getAll, getOne, loader, batchLoad }

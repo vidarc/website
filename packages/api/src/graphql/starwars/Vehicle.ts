@@ -1,7 +1,7 @@
 import { Vehicle } from '@mattailes/types/StarWars'
 import { gql } from 'apollo-server-express'
 
-import { getAll, getOne, loader } from './helpers'
+import { batchLoad, getAll, getOne } from './helpers'
 
 export const VehicleTypeDef = gql`
   extend type Query {
@@ -48,7 +48,7 @@ export const vehicleResolvers = {
   },
 
   Vehicle: {
-    pilots: ({ pilots }: Vehicle) => loader.loadMany(pilots as string[]),
-    films: ({ films }: Vehicle) => loader.loadMany(films as string[])
+    pilots: ({ pilots }: Vehicle) => batchLoad(pilots as number[], 'people'),
+    films: ({ films }: Vehicle) => batchLoad(films as number[], 'films')
   }
 }

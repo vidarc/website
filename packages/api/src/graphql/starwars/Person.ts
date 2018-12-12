@@ -1,7 +1,7 @@
 import { Person } from '@mattailes/types/StarWars'
 import { gql } from 'apollo-server-express'
 
-import { getAll, getOne, loader } from './helpers'
+import { batchLoad, getAll, getOne, loader } from './helpers'
 
 export const PersonTypeDef = gql`
   extend type Query {
@@ -47,11 +47,13 @@ export const personResolvers = {
   },
 
   Person: {
-    homeworld: ({ homeworld }: Person) => loader.load(homeworld),
-    films: ({ films }: Person) => loader.loadMany(films as string[]),
-    species: ({ species }: Person) => loader.loadMany(species as string[]),
+    homeworld: ({ homeworld }: Person) =>
+      loader.load({ id: homeworld, type: 'homeworld' }),
+    films: ({ films }: Person) => batchLoad(films as number[], 'films'),
+    species: ({ species }: Person) => batchLoad(species as number[], 'species'),
     starships: ({ starships }: Person) =>
-      loader.loadMany(starships as string[]),
-    vehicles: ({ vehicles }: Person) => loader.loadMany(vehicles as string[])
+      batchLoad(starships as number[], 'starships'),
+    vehicles: ({ vehicles }: Person) =>
+      batchLoad(vehicles as number[], 'vehicles')
   }
 }

@@ -1,7 +1,7 @@
 import { Planet } from '@mattailes/types/StarWars'
 import { gql } from 'apollo-server-express'
 
-import { getAll, getOne, loader } from './helpers'
+import { batchLoad, getAll, getOne } from './helpers'
 
 export const PlanetTypeDef = gql`
   extend type Query {
@@ -45,7 +45,7 @@ export const planetResolvers = {
 
   Planet: {
     residents: ({ residents }: Planet) =>
-      loader.loadMany(residents as string[]),
-    films: ({ films }: Planet) => loader.loadMany(films as string[])
+      batchLoad(residents as number[], 'people'),
+    films: ({ films }: Planet) => batchLoad(films as number[], 'films')
   }
 }
