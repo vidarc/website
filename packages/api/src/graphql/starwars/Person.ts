@@ -48,7 +48,7 @@ export const personResolvers = {
 
   Person: {
     homeworld: ({ homeworld }: Person) =>
-      loader.load({ id: homeworld, type: 'homeworld' }),
+      loader.load({ id: homeworld, type: 'people' }),
     films: ({ films }: Person) => batchLoad(films as number[], 'films'),
     species: ({ species }: Person) => batchLoad(species as number[], 'species'),
     starships: ({ starships }: Person) =>
