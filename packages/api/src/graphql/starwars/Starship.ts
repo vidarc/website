@@ -1,7 +1,7 @@
 import { Starship } from '@mattailes/types/StarWars'
 import { gql } from 'apollo-server-express'
 
-import { getAll, getOne, loader } from './helpers'
+import { batchLoad, getAll, getOne } from './helpers'
 
 export const StarshipTypeDef = gql`
   extend type Query {
@@ -55,7 +55,7 @@ export const starshipResolvers = {
   },
 
   Starship: {
-    pilots: ({ pilots }: Starship) => loader.loadMany(pilots as string[]),
-    films: ({ films }: Starship) => loader.loadMany(films as string[])
+    pilots: ({ pilots }: Starship) => batchLoad(pilots as number[], 'people'),
+    films: ({ films }: Starship) => batchLoad(films as number[], 'films')
   }
 }

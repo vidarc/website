@@ -1,7 +1,7 @@
 import { Film } from '@mattailes/types/StarWars'
 import { gql } from 'apollo-server-express'
 
-import { getAll, getOne, loader } from './helpers'
+import { batchLoad, getAll, getOne } from './helpers'
 
 export const FilmTypeDef = gql`
   extend type Query {
@@ -44,11 +44,13 @@ export const filmResolvers = {
   },
 
   Film: {
-    species: ({ species }: Film) => loader.loadMany(species as string[]),
-    starships: ({ starships }: Film) => loader.loadMany(starships as string[]),
-    vehicles: ({ vehicles }: Film) => loader.loadMany(vehicles as string[]),
+    species: ({ species }: Film) => batchLoad(species as number[], 'species'),
+    starships: ({ starships }: Film) =>
+      batchLoad(starships as number[], 'starships'),
+    vehicles: ({ vehicles }: Film) =>
+      batchLoad(vehicles as number[], 'vehicles'),
     characters: ({ characters }: Film) =>
-      loader.loadMany(characters as string[]),
-    planets: ({ planets }: Film) => loader.loadMany(planets as string[])
+      batchLoad(characters as number[], 'characters'),
+    planets: ({ planets }: Film) => batchLoad(planets as number[], 'planets')
   }
 }

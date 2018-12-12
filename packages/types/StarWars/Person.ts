@@ -2,17 +2,17 @@ import { Film, Species, Starship, Vehicle } from '.'
 
 export interface Person {
   id: number
-  homeworld: string
-  species: Species[] | string[]
-  films: Film[] | string[]
+  homeworld: number
+  species: Species[] | number[]
+  films: Film[] | number[]
   eye_color: string
   gender: string
   height: string
   hair_color: string
-  starships: Starship[] | string[]
+  starships: Starship[] | number[]
   birth_year: string
   name: string
   mass: string
-  vehicles: Vehicle[] | string[]
+  vehicles: Vehicle[] | number[]
   skin_color: string
 }
