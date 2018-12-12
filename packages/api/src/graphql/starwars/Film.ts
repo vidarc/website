@@ -1,4 +1,4 @@
-import { Film } from '@mattailes/types/StarWars'
+import { Film, Species } from '@mattailes/types/StarWars'
 import { gql } from 'apollo-server-express'
 
 import { getAll, getOne, loader } from './helpers'
@@ -44,7 +44,16 @@ export const filmResolvers = {
   },
 
   Film: {
-    species: ({ species }: Film) => loader.loadMany(species as string[]),
+    species: ({ species }: Film) => {
+      const speciesArray = species as number[]
+
+      return loader.loadMany(
+        speciesArray.map(id => ({
+          id,
+          type: 'species'
+        }))
+      )
+    },
     starships: ({ starships }: Film) => loader.loadMany(starships as string[]),
     vehicles: ({ vehicles }: Film) => loader.loadMany(vehicles as string[]),
     characters: ({ characters }: Film) =>
