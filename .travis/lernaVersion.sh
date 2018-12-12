@@ -19,4 +19,4 @@ echo doing a $VERSION bump
 
 git fetch with-credentials
 git checkout master
-lerna version $1 --yes --no-commit-hooks --git-remote with-credentials
+lerna version $VERSION --yes --no-commit-hooks --git-remote with-credentials
