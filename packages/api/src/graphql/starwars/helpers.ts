@@ -1,5 +1,5 @@
 import DataLoader from 'dataloader'
-import admin, { ServiceAccount } from 'firebase-admin'
+import admin from 'firebase-admin'
 
 admin.initializeApp()
 const firestore = admin.firestore()

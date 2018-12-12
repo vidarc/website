@@ -1,4 +1,4 @@
-import { Film, Species } from '@mattailes/types/StarWars'
+import { Film } from '@mattailes/types/StarWars'
 import { gql } from 'apollo-server-express'
 
 import { batchLoad, getAll, getOne } from './helpers'
