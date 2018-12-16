@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 import { Router } from '@reach/router'
 import 'sanitize.css'
 
+import ErrorBoundary from './ErrorBoundary'
 import GlobalStyles from './GlobalStyles'
 import Loading from './Loading'
 import { Navigation } from './Navigation'
@@ -22,18 +23,20 @@ const AsyncStarWars = React.lazy(() =>
 const AsyncTodo = React.lazy(() => import('../modules/TodoApp/TodoApp'))
 
 const App: React.FunctionComponent = () => (
-  <StyledDiv>
-    <GlobalStyles />
-    <Navigation />
-    <React.Suspense fallback={<Loading />}>
-      <Router>
-        <AsyncHome path='/' />
-        <AsyncStarWars path='starwars/*' />
-        <AsyncTodo path='todo' />
-        <NotFound default={true} />
-      </Router>
-    </React.Suspense>
-  </StyledDiv>
+  <ErrorBoundary>
+    <StyledDiv>
+      <GlobalStyles />
+      <Navigation />
+      <React.Suspense fallback={<Loading />}>
+        <Router>
+          <AsyncHome path='/' />
+          <AsyncStarWars path='starwars/*' />
+          <AsyncTodo path='todo' />
+          <NotFound default={true} />
+        </Router>
+      </React.Suspense>
+    </StyledDiv>
+  </ErrorBoundary>
 )
 
 export default App
