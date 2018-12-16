@@ -32,7 +32,6 @@
     "firebase-functions": "2.1.0",
     "graphql": "14.0.2",
     "graphql-tools": "4.0.3",
-    "lodash": "4.17.11",
-    "winston": "3.1.0"
+    "lodash.merge": "4.6.1"
   }
 }
