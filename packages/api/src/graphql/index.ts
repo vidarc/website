@@ -1,13 +1,9 @@
 import { ApolloServer, mergeSchemas } from 'apollo-server-express'
-
 import express from 'express'
 
-import logger from '../logger'
 import starwarsSchema from './starwars'
 
 const graphql = () => {
-  logger.info('setting up graphql server')
-
   const app = express()
 
   const schema = mergeSchemas({ schemas: [starwarsSchema] })
