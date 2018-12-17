@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@babel/cli": "7.2.0",
-    "@babel/core": "7.2.0",
+    "@babel/core": "7.2.2",
     "@babel/plugin-transform-runtime": "7.2.0",
     "@babel/polyfill": "7.0.0",
     "@babel/preset-env": "7.2.0",
@@ -24,11 +24,11 @@
   },
   "dependencies": {
     "@babel/runtime": "7.2.0",
-    "apollo-server-express": "2.2.6",
+    "apollo-server-express": "2.3.1",
     "cross-fetch": "3.0.0",
     "dataloader": "1.4.0",
     "express": "4.16.4",
-    "firebase-admin": "6.3.0",
+    "firebase-admin": "6.4.0",
     "firebase-functions": "2.1.0",
     "graphql": "14.0.2",
     "graphql-tools": "4.0.3",
