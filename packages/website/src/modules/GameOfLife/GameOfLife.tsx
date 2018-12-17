@@ -2,6 +2,8 @@ import React from 'react'
 
 import { RouteComponentProps } from '@reach/router'
 
+import GameBoard from './components/GameBoard'
+
 interface Props extends RouteComponentProps {}
 
 const GameOfLife = (props: Props) => (
@@ -13,6 +15,8 @@ const GameOfLife = (props: Props) => (
         Wikiepdia entry
       </a>
     </small>
+    <hr />
+    <GameBoard />
   </>
 )
 
