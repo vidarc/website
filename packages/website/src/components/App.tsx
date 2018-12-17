@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import styled from '@emotion/styled'
 import { Router } from '@reach/router'
@@ -21,6 +21,9 @@ const AsyncStarWars = React.lazy(() =>
   import('../modules/StarWarsApp/StarWarsApp')
 )
 const AsyncTodo = React.lazy(() => import('../modules/TodoApp/TodoApp'))
+const AsyncGameOfLife = React.lazy(() =>
+  import('../modules/GameOfLife/GameOfLife')
+)
 
 const App: React.FunctionComponent = () => (
   <ErrorBoundary>
@@ -32,6 +35,7 @@ const App: React.FunctionComponent = () => (
           <AsyncHome path='/' />
           <AsyncStarWars path='starwars/*' />
           <AsyncTodo path='todo' />
+          <AsyncGameOfLife path='gameoflife' />
           <NotFound default={true} />
         </Router>
       </React.Suspense>

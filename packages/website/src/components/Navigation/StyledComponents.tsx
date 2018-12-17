@@ -44,7 +44,7 @@ export const StyledSubmenu = styled.div`
 
   > div {
     position: absolute;
-    min-width: 150px;
+    min-width: 300px;
     background-color: #eeeeee;
     border-top: 3px solid #000000;
     border-bottom: 3px solid #000000;
