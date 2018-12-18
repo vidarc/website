@@ -18,7 +18,7 @@ export default class GameBoardCell extends React.PureComponent<
   render() {
     const StyledCell = styled.div`
       border: 1px solid black;
-      width: ${((1 / this.props.perRow) * 100).toFixed(2)}%};
+      width: ${((1 / this.props.perRow) * 100).toFixed(2)}%;
 
       &::after {
         content: '';
