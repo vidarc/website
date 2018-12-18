@@ -1,15 +1,8 @@
 import React from 'react'
 
 import styled from '@emotion/styled'
-
-const rows = []
-for (let i = 0; i < 50; i += 1) {
-  rows.push(i)
-}
-const columns = []
-for (let i = 0; i < 50; i += 1) {
-  columns.push(i)
-}
+import GameBoardRow from './GameBoardRow'
+import { Tile } from '../ducks/types'
 
 const Board = styled.div`
   border: 1px solid black;
@@ -17,37 +10,15 @@ const Board = styled.div`
   width: 75%;
 `
 
-const Row = styled.div`
-  display: flex;
-`
+let i = 0
 
-interface CellProps {
-  perRow: number
-  alive: boolean
+interface Props {
+  tiles: Tile[][]
 }
-const Cell = styled.div`
-  border: 1px solid black;
-  width: ${(props: CellProps) => `${((1 / props.perRow) * 100).toFixed(2)}%`};
-
-  &::after {
-    content: '';
-    background-color: ${(props: CellProps) => (props.alive ? 'blue' : 'white')};
-    display: block;
-    padding-bottom: 100%;
-  }
-`
-
-const GameBoard = () => (
+const GameBoard: React.SFC<Props> = ({ tiles }) => (
   <Board>
-    {rows.map(number => (
-      <Row key={number}>
-        {columns.map(number => (
-          <Cell
-            perRow={columns.length}
-            alive={Math.floor(Math.random() * 10) > 5}
-          />
-        ))}
-      </Row>
+    {tiles.map(row => (
+      <GameBoardRow key={(i += 1)} tiles={row} />
     ))}
   </Board>
 )
