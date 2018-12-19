@@ -7,27 +7,20 @@ interface CellProps {
   alive: boolean
 }
 
-export default class GameBoardCell extends React.PureComponent<
-  CellProps,
-  null
-> {
-  constructor(props) {
-    super(props)
+const StyledCell = styled.div`
+  border: 1px solid black;
+  width: ${(props: CellProps) => ((1 / props.perRow) * 100).toFixed(2)}%;
+
+  &::after {
+    content: '';
+    background-color: ${(props: CellProps) => (props.alive ? 'blue' : 'white')};
+    display: block;
+    padding-bottom: 100%;
   }
+`
 
-  render() {
-    const StyledCell = styled.div`
-      border: 1px solid black;
-      width: ${((1 / this.props.perRow) * 100).toFixed(2)}%;
+const areEqual = (prevProps, nextProps) => prevProps.alive === nextProps.alive
 
-      &::after {
-        content: '';
-        background-color: ${this.props.alive ? 'blue' : 'white'};
-        display: block;
-        padding-bottom: 100%;
-      }
-    `
+const GameBoardCell: React.SFC<CellProps> = props => <StyledCell {...props} />
 
-    return <StyledCell />
-  }
-}
+export default React.memo(GameBoardCell, areEqual)

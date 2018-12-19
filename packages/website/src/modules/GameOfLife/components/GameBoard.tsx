@@ -10,17 +10,15 @@ const Board = styled.div`
   width: 75%;
 `
 
-let i = 0
-
 interface Props {
   tiles: Tile[][]
 }
 const GameBoard: React.SFC<Props> = ({ tiles }) => (
   <Board>
-    {tiles.map(row => (
-      <GameBoardRow key={(i += 1)} tiles={row} />
+    {tiles.map((row, index) => (
+      <GameBoardRow key={index} tiles={row} />
     ))}
   </Board>
 )
 
-export default GameBoard
+export default React.memo(GameBoard)

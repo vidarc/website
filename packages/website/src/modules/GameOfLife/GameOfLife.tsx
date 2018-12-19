@@ -13,6 +13,8 @@ interface Props extends RouteComponentProps {
 class GameOfLife extends React.Component<Props, null> {
   componentDidMount() {
     this.props.dispatch(actions.initGame())
+
+    setInterval(() => this.props.dispatch(actions.initGame()), 250)
   }
 
   render() {
@@ -26,7 +28,7 @@ class GameOfLife extends React.Component<Props, null> {
           </a>
         </small>
         <hr />
-        <GameContainer />
+        <GameContainer {...this.state} />
       </>
     )
   }

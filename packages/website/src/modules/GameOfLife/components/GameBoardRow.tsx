@@ -11,6 +11,7 @@ const Row = styled.div`
 interface Props {
   tiles: Tile[]
 }
+
 const GameBoardRow: React.SFC<Props> = ({ tiles }) => (
   <Row>
     {tiles.map(cell => (
@@ -19,4 +20,4 @@ const GameBoardRow: React.SFC<Props> = ({ tiles }) => (
   </Row>
 )
 
-export default GameBoardRow
+export default React.memo(GameBoardRow)

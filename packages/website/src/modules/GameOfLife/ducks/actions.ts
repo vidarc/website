@@ -9,7 +9,7 @@ const initGame = () => {
         .fill(null)
         .map(entry => ({
           id: i += 1,
-          alive: Math.floor(Math.random() * 100) < 50
+          alive: Math.floor(Math.random() * 100) < 25
         }))
     )
 
