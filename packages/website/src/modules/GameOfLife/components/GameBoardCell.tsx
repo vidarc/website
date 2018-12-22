@@ -19,8 +19,8 @@ const StyledCell = styled.div`
   }
 `
 
-const areEqual = (prevProps, nextProps) => prevProps.alive === nextProps.alive
+// const areEqual = (prevProps, nextProps) => prevProps.alive !== nextProps.alive
 
 const GameBoardCell: React.SFC<CellProps> = props => <StyledCell {...props} />
 
-export default React.memo(GameBoardCell, areEqual)
+export default GameBoardCell

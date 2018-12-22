@@ -20,4 +20,4 @@ const GameBoardRow: React.SFC<Props> = ({ tiles }) => (
   </Row>
 )
 
-export default React.memo(GameBoardRow)
+export default GameBoardRow

@@ -21,4 +21,4 @@ const GameBoard: React.SFC<Props> = ({ tiles }) => (
   </Board>
 )
 
-export default React.memo(GameBoard)
+export default GameBoard
