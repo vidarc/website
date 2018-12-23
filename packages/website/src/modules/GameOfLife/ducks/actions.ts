@@ -74,50 +74,38 @@ export const calculateNeighbors = (gameBoard: Tile[][], coords: { rowNum: number
   const { rowNum, colNum } = coords
   let neighbors = 0
 
-  if (rowNum - 1 >= 0 && colNum - 1 >= 0) {
-    if (gameBoard[rowNum - 1][colNum - 1].alive) {
+  if (colNum - 1 >= 0) {
+    if (rowNum - 1 >= 0 && gameBoard[rowNum - 1][colNum - 1].alive) {
       neighbors += 1
     }
-  }
 
-  if (colNum - 1 >= 0) {
+    if (rowNum + 1 < gameBoard.length && gameBoard[rowNum + 1][colNum - 1].alive) {
+      neighbors += 1
+    }
+
     if (gameBoard[rowNum][colNum - 1].alive) {
       neighbors += 1
     }
   }
 
-  if (rowNum + 1 < gameBoard.length && colNum - 1 >= 0) {
-    if (gameBoard[rowNum + 1][colNum - 1].alive) {
-      neighbors += 1
-    }
+  if (rowNum - 1 >= 0 && gameBoard[rowNum - 1][colNum].alive) {
+    neighbors += 1
   }
 
-  if (rowNum - 1 >= 0) {
-    if (gameBoard[rowNum - 1][colNum].alive) {
-      neighbors += 1
-    }
-  }
-
-  if (rowNum + 1 < gameBoard.length) {
-    if (gameBoard[rowNum + 1][colNum].alive) {
-      neighbors += 1
-    }
-  }
-
-  if (rowNum - 1 >= 0 && colNum + 1 < gameBoard.length) {
-    if (gameBoard[rowNum - 1][colNum + 1].alive) {
-      neighbors += 1
-    }
+  if (rowNum + 1 < gameBoard.length && gameBoard[rowNum + 1][colNum].alive) {
+    neighbors += 1
   }
 
   if (colNum + 1 < gameBoard.length) {
-    if (gameBoard[rowNum][colNum + 1].alive) {
+    if (rowNum - 1 >= 0 && gameBoard[rowNum - 1][colNum + 1].alive) {
       neighbors += 1
     }
-  }
 
-  if (rowNum + 1 < gameBoard.length && colNum + 1 < gameBoard.length) {
-    if (gameBoard[rowNum + 1][colNum + 1].alive) {
+    if (rowNum + 1 < gameBoard.length && gameBoard[rowNum + 1][colNum + 1].alive) {
+      neighbors += 1
+    }
+
+    if (gameBoard[rowNum][colNum + 1].alive) {
       neighbors += 1
     }
   }
