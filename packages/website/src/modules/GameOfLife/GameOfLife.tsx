@@ -4,6 +4,7 @@ import { RouteComponentProps } from '@reach/router'
 import { connect } from 'react-redux'
 
 import { initGame, processGeneration } from './ducks/actions'
+import Controls from './components/Controls'
 import GameContainer from './containers/GameContainer'
 
 interface Props extends RouteComponentProps {
@@ -25,6 +26,7 @@ class GameOfLife extends React.Component<Props, null> {
           About: <a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life">Wikiepdia entry</a>
         </small>
         <hr />
+        <Controls />
         <GameContainer {...this.state} />
       </>
     )

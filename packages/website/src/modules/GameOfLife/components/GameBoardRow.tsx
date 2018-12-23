@@ -15,7 +15,7 @@ interface Props {
 const GameBoardRow: React.SFC<Props> = ({ tiles }) => (
   <Row>
     {tiles.map(cell => (
-      <GameBoardCell key={cell.id} alive={cell.alive} perRow={50} />
+      <GameBoardCell key={cell.id} alive={cell.alive} perRow={tiles.length} />
     ))}
   </Row>
 )

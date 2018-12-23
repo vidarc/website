@@ -2,10 +2,10 @@ import { INCREMENT_GENERATION, Tile, UPDATE_GAME } from './types'
 
 export const initGame = () => {
   let i = 0
-  const tiles: Tile[][] = Array(50)
+  const tiles: Tile[][] = Array(25)
     .fill(null)
     .map(row =>
-      Array(50)
+      Array(26)
         .fill(null)
         .map(entry => ({
           id: i += 1,
@@ -70,7 +70,7 @@ export const processGeneration = () => (dispatch, getState) => {
   dispatch(incrementGeneration(gameOfLife.generation + 1))
 }
 
-const calculateNeighbors = (gameBoard: Tile[][], coords: { rowNum: number; colNum: number }) => {
+export const calculateNeighbors = (gameBoard: Tile[][], coords: { rowNum: number; colNum: number }) => {
   const { rowNum, colNum } = coords
   let neighbors = 0
 

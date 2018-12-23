@@ -1,3 +1,4 @@
+/** @jsx jsx */
 import * as React from 'react'
 
 import { css, jsx } from '@emotion/core'
@@ -14,13 +15,7 @@ export interface ButtonProps {
   onClick: () => void
 }
 
-const Button = ({
-  children,
-  type,
-  primary,
-  secondary,
-  onClick
-}: ButtonProps) => {
+const Button = ({ children, type, primary, secondary, onClick }: ButtonProps) => {
   let color
   if (primary) color = theme.colors.blue
   if (secondary) color = theme.colors.red
