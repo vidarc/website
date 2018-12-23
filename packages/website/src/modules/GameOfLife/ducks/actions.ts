@@ -74,41 +74,21 @@ export const calculateNeighbors = (gameBoard: Tile[][], coords: { rowNum: number
   const { rowNum, colNum } = coords
   let neighbors = 0
 
-  if (colNum - 1 >= 0) {
-    if (rowNum - 1 >= 0 && gameBoard[rowNum - 1][colNum - 1].alive) {
-      neighbors += 1
-    }
+  const matrix = [
+    [rowNum - 1, colNum - 1],
+    [rowNum, colNum - 1],
+    [rowNum + 1, colNum - 1],
+    [rowNum - 1, colNum],
+    [rowNum + 1, colNum],
+    [rowNum - 1, colNum + 1],
+    [rowNum, colNum + 1],
+    [rowNum + 1, colNum + 1]
+  ]
 
-    if (rowNum + 1 < gameBoard.length && gameBoard[rowNum + 1][colNum - 1].alive) {
-      neighbors += 1
-    }
-
-    if (gameBoard[rowNum][colNum - 1].alive) {
-      neighbors += 1
-    }
-  }
-
-  if (rowNum - 1 >= 0 && gameBoard[rowNum - 1][colNum].alive) {
-    neighbors += 1
-  }
-
-  if (rowNum + 1 < gameBoard.length && gameBoard[rowNum + 1][colNum].alive) {
-    neighbors += 1
-  }
-
-  if (colNum + 1 < gameBoard.length) {
-    if (rowNum - 1 >= 0 && gameBoard[rowNum - 1][colNum + 1].alive) {
-      neighbors += 1
-    }
-
-    if (rowNum + 1 < gameBoard.length && gameBoard[rowNum + 1][colNum + 1].alive) {
-      neighbors += 1
-    }
-
-    if (gameBoard[rowNum][colNum + 1].alive) {
-      neighbors += 1
-    }
-  }
+  matrix.forEach(([row, col]) => (tileIsAlive(row, col, gameBoard) ? (neighbors += 1) : null))
 
   return neighbors
 }
+
+const tileIsAlive = (row: number, col: number, gameBoard: Tile[][]) =>
+  row >= 0 && row < gameBoard.length && col >= 0 && col < gameBoard.length && gameBoard[row][col].alive
