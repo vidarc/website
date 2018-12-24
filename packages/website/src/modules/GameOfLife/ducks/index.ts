@@ -1,3 +1,2 @@
-import gameOfLife from './reducers'
-
-export default gameOfLife
+export { default as reducers } from './reducers'
+export * from './sagas'

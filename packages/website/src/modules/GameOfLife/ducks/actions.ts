@@ -1,8 +1,8 @@
-import { INCREMENT_GENERATION, Tile, UPDATE_GAME } from './types'
+import { Action, INCREMENT_GENERATION, START_GAME_OF_LIFE, Tile, UPDATE_GAME } from './types'
 
-export const initGame = () => {
+export const initGame = (): Action<Tile[][]> => {
   let i = 0
-  const tiles: Tile[][] = Array(25)
+  const payload: Tile[][] = Array(25)
     .fill(null)
     .map(row =>
       Array(26)
@@ -14,10 +14,14 @@ export const initGame = () => {
     )
 
   return {
-    type: UPDATE_GAME,
-    payload: tiles
+    payload,
+    type: UPDATE_GAME
   }
 }
+
+export const startGameOfLife = () => ({
+  type: START_GAME_OF_LIFE
+})
 
 export const updateGameBoard = payload => ({
   payload,
@@ -28,67 +32,3 @@ export const incrementGeneration = payload => ({
   payload,
   type: INCREMENT_GENERATION
 })
-
-export const processGeneration = () => (dispatch, getState) => {
-  const { gameOfLife } = getState()
-
-  const payload = [...gameOfLife.tiles]
-
-  gameOfLife.tiles.forEach((row, rowNum) =>
-    row.forEach((cell, colNum) => {
-      if (cell.alive) {
-        if (
-          calculateNeighbors(gameOfLife.tiles, {
-            rowNum,
-            colNum
-          }) < 2
-        ) {
-          payload[rowNum][colNum].alive = false
-        } else if (
-          calculateNeighbors(gameOfLife.tiles, {
-            rowNum,
-            colNum
-          }) > 3
-        ) {
-          payload[rowNum][colNum].alive = false
-        }
-      }
-
-      if (
-        !cell.alive &&
-        calculateNeighbors(gameOfLife.tiles, {
-          rowNum,
-          colNum
-        }) === 3
-      ) {
-        payload[rowNum][colNum].alive = true
-      }
-    })
-  )
-
-  dispatch(updateGameBoard(payload))
-  dispatch(incrementGeneration(gameOfLife.generation + 1))
-}
-
-export const calculateNeighbors = (gameBoard: Tile[][], coords: { rowNum: number; colNum: number }) => {
-  const { rowNum, colNum } = coords
-  let neighbors = 0
-
-  const matrix = [
-    [rowNum - 1, colNum - 1],
-    [rowNum, colNum - 1],
-    [rowNum + 1, colNum - 1],
-    [rowNum - 1, colNum],
-    [rowNum + 1, colNum],
-    [rowNum - 1, colNum + 1],
-    [rowNum, colNum + 1],
-    [rowNum + 1, colNum + 1]
-  ]
-
-  matrix.forEach(([row, col]) => (tileIsAlive(row, col, gameBoard) ? (neighbors += 1) : null))
-
-  return neighbors
-}
-
-const tileIsAlive = (row: number, col: number, gameBoard: Tile[][]) =>
-  row >= 0 && row < gameBoard.length && col >= 0 && col < gameBoard.length && gameBoard[row][col].alive

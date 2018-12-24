@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import { typography } from '@mattailes/ui'
 import ApolloClient from 'apollo-boost'
@@ -7,9 +7,10 @@ import { hydrate, render } from 'react-dom'
 import { Provider } from 'react-redux'
 
 import App from './components/App'
-import configureStore from './ducks'
+import { configureStore, rootSaga, sagaMiddleware } from './ducks'
 
 const store = configureStore()
+sagaMiddleware.run(rootSaga)
 const client = new ApolloClient({
   uri: 'https://us-central1-server-b6f04.cloudfunctions.net/api/graphql'
 })

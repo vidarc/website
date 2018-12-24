@@ -1,21 +1,18 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import { RouteComponentProps } from '@reach/router'
 import { connect } from 'react-redux'
 
-import { initGame, processGeneration } from './ducks/actions'
-import Controls from './components/Controls'
-import GameContainer from './containers/GameContainer'
+import { initGame } from './ducks/actions'
+import { Controls, GameContainer } from './containers'
 
 interface Props extends RouteComponentProps {
   dispatch: Function
 }
 
-class GameOfLife extends React.Component<Props, null> {
+class GameOfLife extends Component<Props, null> {
   componentDidMount() {
     this.props.dispatch(initGame())
-
-    setInterval(() => this.props.dispatch(processGeneration()), 1000)
   }
 
   render() {

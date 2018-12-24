@@ -1,4 +1,4 @@
-import { INCREMENT_GENERATION, Tile, UPDATE_GAME } from './types'
+import { INCREMENT_GENERATION, START_GAME_OF_LIFE, Tile, UPDATE_GAME } from './types'
 
 interface State {
   generation: number
@@ -10,8 +10,10 @@ const initialState: State = {
   tiles: [[]]
 }
 
-const gameOfLife = (state: State = initialState, { type, payload }) => {
+const reducers = (state: State = initialState, { type, payload }) => {
   switch (type) {
+    case START_GAME_OF_LIFE:
+      return { ...state }
     case UPDATE_GAME:
       return { ...state, tiles: payload }
     case INCREMENT_GENERATION:
@@ -21,4 +23,4 @@ const gameOfLife = (state: State = initialState, { type, payload }) => {
   }
 }
 
-export default gameOfLife
+export default reducers
