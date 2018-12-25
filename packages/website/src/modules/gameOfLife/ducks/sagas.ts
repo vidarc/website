@@ -1,34 +1,45 @@
-import { put, select, takeEvery } from 'redux-saga/effects'
+import { delay } from 'redux-saga'
+import { call, put, race, select, take, takeEvery } from 'redux-saga/effects'
 
-import { START_GAME_OF_LIFE, Tile, UPDATE_GAME } from './types'
+import { incrementGeneration, updateGameBoard } from './actions'
+import { INCREMENT_GENERATION, PAUSE_GAME_OF_LIFE, START_GAME_OF_LIFE, Tile } from './types'
 
 export function* watchStart() {
-  yield takeEvery(START_GAME_OF_LIFE, runGameOfLife)
+  while (true) {
+    yield take(START_GAME_OF_LIFE)
+
+    while (true) {
+      const { pause } = yield race({
+        pause: take(PAUSE_GAME_OF_LIFE),
+        tick: call(runGameOfLife)
+      })
+
+      if (pause) break
+    }
+  }
 }
 
 export function* runGameOfLife() {
-  const state = yield select()
+  yield delay(500)
 
-  const nextGeneration = processGeneration(state)
-
-  yield put({ type: UPDATE_GAME, payload: nextGeneration })
+  const { gameOfLife } = yield select()
+  yield put(updateGameBoard(processGeneration(gameOfLife)))
+  yield put(incrementGeneration(gameOfLife.generation + 1))
 }
 
-export const processGeneration = state => {
-  const { gameOfLife } = state
+export const processGeneration = ({ tiles }): Tile[][] => {
+  const payload = [...tiles]
 
-  const payload = [...gameOfLife.tiles]
-
-  gameOfLife.tiles.forEach((row, rowNum) =>
+  tiles.forEach((row, rowNum) =>
     row.forEach((cell, colNum) => {
       if (
-        (cell.alive && calculateNeighbors(gameOfLife.tiles, { rowNum, colNum }) < 2) ||
-        calculateNeighbors(gameOfLife.tiles, { rowNum, colNum }) > 3
+        (cell.alive && calculateNeighbors(tiles, { rowNum, colNum }) < 2) ||
+        calculateNeighbors(tiles, { rowNum, colNum }) > 3
       ) {
         payload[rowNum][colNum].alive = false
       }
 
-      if (!cell.alive && calculateNeighbors(gameOfLife.tiles, { rowNum, colNum }) === 3) {
+      if (!cell.alive && calculateNeighbors(tiles, { rowNum, colNum }) === 3) {
         payload[rowNum][colNum].alive = true
       }
     })

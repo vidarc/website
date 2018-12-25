@@ -4,11 +4,11 @@ import createSagaMiddleware from 'redux-saga'
 import { all } from 'redux-saga/effects'
 
 import todoReducers from '../modules/todoApp/ducks'
-import * as gameOfLife from '../modules/gameOfLife/ducks'
+import { reducers as gameOfLife, watchStart } from '../modules/gameOfLife/ducks'
 
 import initialState from './initialState'
 
-const rootReducer = combineReducers({ todoReducers, gameOfLife: gameOfLife.reducers })
+const rootReducer = combineReducers({ todoReducers, gameOfLife })
 
 export const sagaMiddleware = createSagaMiddleware()
 
@@ -16,7 +16,6 @@ export function configureStore() {
   return createStore(rootReducer, initialState, composeWithDevTools(applyMiddleware(sagaMiddleware)))
 }
 
-const { watchStart } = gameOfLife
 export function* rootSaga() {
   yield all([watchStart()])
 }

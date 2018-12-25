@@ -1,11 +1,13 @@
-import { INCREMENT_GENERATION, START_GAME_OF_LIFE, Tile, UPDATE_GAME } from './types'
+import { INCREMENT_GENERATION, PAUSE_GAME_OF_LIFE, START_GAME_OF_LIFE, Tile, UPDATE_GAME } from './types'
 
 interface State {
+  running: boolean
   generation: number
   tiles: Tile[][]
 }
 
 const initialState: State = {
+  running: false,
   generation: 0,
   tiles: [[]]
 }
@@ -13,7 +15,9 @@ const initialState: State = {
 const reducers = (state: State = initialState, { type, payload }) => {
   switch (type) {
     case START_GAME_OF_LIFE:
-      return { ...state }
+      return { ...state, running: true }
+    case PAUSE_GAME_OF_LIFE:
+      return { ...state, running: false }
     case UPDATE_GAME:
       return { ...state, tiles: payload }
     case INCREMENT_GENERATION:

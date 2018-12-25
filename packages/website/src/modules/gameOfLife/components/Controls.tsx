@@ -3,7 +3,7 @@ import React, { SyntheticEvent } from 'react'
 import styled from '@emotion/styled'
 import { PauseIcon, PlayIcon } from '@mattailes/ui'
 
-import { startGameOfLife } from '../ducks/actions'
+import { pauseGameOfLife, startGameOfLife } from '../ducks/actions'
 
 const StyledDiv = styled.div`
   display: flex;
@@ -22,7 +22,7 @@ const Controls = ({ dispatch, generation }) => {
 
   function handlePauseClick(event: SyntheticEvent) {
     event.preventDefault()
-    console.log('pausing')
+    dispatch(pauseGameOfLife())
   }
 
   return (
