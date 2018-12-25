@@ -3,8 +3,8 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import createSagaMiddleware from 'redux-saga'
 import { all } from 'redux-saga/effects'
 
-import todoReducers from '../modules/TodoApp/ducks'
-import * as gameOfLife from '../modules/GameOfLife/ducks'
+import todoReducers from '../modules/todoApp/ducks'
+import * as gameOfLife from '../modules/gameOfLife/ducks'
 
 import initialState from './initialState'
 

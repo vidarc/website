@@ -16,14 +16,10 @@ const StyledDiv = styled.div`
   max-width: 1024px;
 `
 
-const AsyncHome = React.lazy(() => import('../modules/Home/Home'))
-const AsyncStarWars = React.lazy(() =>
-  import('../modules/StarWarsApp/StarWarsApp')
-)
-const AsyncTodo = React.lazy(() => import('../modules/TodoApp/TodoApp'))
-const AsyncGameOfLife = React.lazy(() =>
-  import('../modules/GameOfLife/GameOfLife')
-)
+const AsyncHome = React.lazy(() => import('../modules/home/Home'))
+const AsyncStarWars = React.lazy(() => import('../modules/starWarsApp/StarWarsApp'))
+const AsyncTodo = React.lazy(() => import('../modules/todoApp/TodoApp'))
+const AsyncGameOfLife = React.lazy(() => import('../modules/gameOfLife/GameOfLife'))
 
 const App: React.FunctionComponent = () => (
   <ErrorBoundary>
