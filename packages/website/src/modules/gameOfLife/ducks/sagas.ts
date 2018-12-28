@@ -1,20 +1,21 @@
 import { delay } from 'redux-saga'
-import { call, put, race, select, take, takeEvery } from 'redux-saga/effects'
+import { call, put, race, select, take } from 'redux-saga/effects'
 
 import { incrementGeneration, updateGameBoard } from './actions'
-import { INCREMENT_GENERATION, PAUSE_GAME_OF_LIFE, START_GAME_OF_LIFE, Tile } from './types'
+import { PAUSE_GAME_OF_LIFE, RESTART_GAME_OF_LIFE, START_GAME_OF_LIFE, Tile } from './types'
 
 export function* watchStart() {
   while (true) {
     yield take(START_GAME_OF_LIFE)
 
     while (true) {
-      const { pause } = yield race({
+      const { pause, restart } = yield race({
         pause: take(PAUSE_GAME_OF_LIFE),
+        restart: take(RESTART_GAME_OF_LIFE),
         tick: call(runGameOfLife)
       })
 
-      if (pause) break
+      if (pause || restart) break
     }
   }
 }

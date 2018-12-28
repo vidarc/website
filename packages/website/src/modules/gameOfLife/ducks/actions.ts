@@ -1,23 +1,31 @@
-import { Action, INCREMENT_GENERATION, PAUSE_GAME_OF_LIFE, START_GAME_OF_LIFE, Tile, UPDATE_GAME } from './types'
+import {
+  Action,
+  INCREMENT_GENERATION,
+  PAUSE_GAME_OF_LIFE,
+  RESTART_GAME_OF_LIFE,
+  START_GAME_OF_LIFE,
+  Tile,
+  UPDATE_GAME
+} from './types'
 
-export const initGame = (): Action<Tile[][]> => {
+export const fillBoardWithRandomData = (size: number = 25): Tile[][] => {
   let i = 0
-  const payload: Tile[][] = Array(25)
+  return Array(size)
     .fill(null)
     .map(row =>
-      Array(26)
+      Array(size)
         .fill(null)
         .map(entry => ({
           id: i += 1,
           alive: Math.floor(Math.random() * 100) < 25
         }))
     )
-
-  return {
-    payload,
-    type: UPDATE_GAME
-  }
 }
+
+export const initGame = (): Action<Tile[][]> => ({
+  payload: fillBoardWithRandomData(),
+  type: UPDATE_GAME
+})
 
 export const startGameOfLife = (): Action<null> => ({
   type: START_GAME_OF_LIFE
@@ -25,6 +33,10 @@ export const startGameOfLife = (): Action<null> => ({
 
 export const pauseGameOfLife = (): Action<null> => ({
   type: PAUSE_GAME_OF_LIFE
+})
+
+export const restartGameOfLife = (): Action<null> => ({
+  type: RESTART_GAME_OF_LIFE
 })
 
 export const updateGameBoard = (payload): Action<Tile[][]> => ({

@@ -1,9 +1,9 @@
 import React, { SyntheticEvent } from 'react'
 
 import styled from '@emotion/styled'
-import { PauseIcon, PlayIcon } from '@mattailes/ui'
+import { PauseIcon, PlayIcon, RestartIcon } from '@mattailes/ui'
 
-import { pauseGameOfLife, startGameOfLife } from '../ducks/actions'
+import { pauseGameOfLife, restartGameOfLife, startGameOfLife } from '../ducks/actions'
 
 const StyledDiv = styled.div`
   display: flex;
@@ -25,10 +25,16 @@ const Controls = ({ dispatch, generation }) => {
     dispatch(pauseGameOfLife())
   }
 
+  function handleRestartClick(event: SyntheticEvent) {
+    event.preventDefault()
+    dispatch(restartGameOfLife())
+  }
+
   return (
     <StyledDiv>
       <PlayIcon onClick={handlePlayClick} />
       <PauseIcon onClick={handlePauseClick} />
+      <RestartIcon onClick={handleRestartClick} />
       <div>
         <p>Generation: {generation}</p>
       </div>
