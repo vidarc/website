@@ -15,7 +15,7 @@ interface State {
 
 class AddTodo extends React.Component<Props, State> {
   state = {
-    todo: ''
+    todo: '',
   }
 
   handleSubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {

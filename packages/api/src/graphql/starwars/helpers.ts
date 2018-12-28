@@ -29,10 +29,7 @@ async function getOne(type: string | number, id: string | number) {
 
     snapshots.forEach(snapshot => (result = snapshot.data()))
   } catch (error) {
-    console.error(
-      `Error in getOne function for type: ${type} and id: ${id}`,
-      error
-    )
+    console.error(`Error in getOne function for type: ${type} and id: ${id}`, error)
   } finally {
     return result
   }
@@ -57,15 +54,14 @@ const loader = new DataLoader<Props, {}>(keys => {
             docs.forEach(doc => array.push(doc.data()))
 
             return array[0]
-          })
-      )
+          }),
+      ),
     )
   } catch (error) {
     console.error('Error in dataloader', error)
   }
 })
 
-const batchLoad = (ids: number[], type: string) =>
-  loader.loadMany(ids.map(id => ({ id, type })))
+const batchLoad = (ids: number[], type: string) => loader.loadMany(ids.map(id => ({ id, type })))
 
 export { getAll, getOne, loader, batchLoad }

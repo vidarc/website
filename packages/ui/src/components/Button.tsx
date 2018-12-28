@@ -51,7 +51,7 @@ const Button = ({ children, type, primary, secondary, onClick }: ButtonProps) =>
 Button.defaultProps = {
   primary: false,
   secondary: false,
-  type: 'button'
+  type: 'button',
 }
 
 export default Button

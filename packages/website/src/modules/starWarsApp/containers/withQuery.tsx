@@ -7,7 +7,7 @@ export default (query, Component) => props => {
   const { '*': pathParam, defaultId } = props
 
   const variables = {
-    id: +pathParam || defaultId
+    id: +pathParam || defaultId,
   }
 
   return (

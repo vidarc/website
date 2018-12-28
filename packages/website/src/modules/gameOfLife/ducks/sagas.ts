@@ -12,7 +12,7 @@ export function* watchStart() {
       const { pause, restart } = yield race({
         pause: take(PAUSE_GAME_OF_LIFE),
         restart: take(RESTART_GAME_OF_LIFE),
-        tick: call(runGameOfLife)
+        tick: call(runGameOfLife),
       })
 
       if (pause || restart) break
@@ -43,7 +43,7 @@ export const processGeneration = ({ tiles }): Tile[][] => {
       if (!cell.alive && calculateNeighbors(tiles, { rowNum, colNum }) === 3) {
         payload[rowNum][colNum].alive = true
       }
-    })
+    }),
   )
 
   return payload
@@ -61,7 +61,7 @@ export const calculateNeighbors = (gameBoard: Tile[][], coords: { rowNum: number
     [rowNum, colNum + 1],
     [rowNum + 1, colNum - 1],
     [rowNum + 1, colNum],
-    [rowNum + 1, colNum + 1]
+    [rowNum + 1, colNum + 1],
   ]
 
   matrix.forEach(([row, col]) => (tileIsAlive(row, col, gameBoard) ? (neighbors += 1) : null))

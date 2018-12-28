@@ -11,14 +11,14 @@ describe('TodoList component', () => {
       {
         completed: false,
         id: 'shortid01',
-        text: 'hello'
+        text: 'hello',
       },
       {
         completed: true,
         id: 'shortid02',
-        text: 'another todo'
-      }
-    ]
+        text: 'another todo',
+      },
+    ],
   }
 
   it('renders without crashing', () => {

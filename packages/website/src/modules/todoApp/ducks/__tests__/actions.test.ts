@@ -10,8 +10,8 @@ describe('actions', () => {
       type: types.ADD_TODO,
       payload: {
         text,
-        id: 'shortid'
-      }
+        id: 'shortid',
+      },
     }
 
     expect(actions.addTodo(text)).toEqual(expected)
@@ -21,8 +21,8 @@ describe('actions', () => {
     const expected: Action<Todo> = {
       type: types.TOGGLE_TODO,
       payload: {
-        id: 'shortid'
-      }
+        id: 'shortid',
+      },
     }
 
     expect(actions.toggleTodo('shortid')).toEqual(expected)
@@ -33,8 +33,8 @@ describe('actions', () => {
       const expected: Action<VisibilityFilter> = {
         type: types.SET_VISIBILITY_FILTER,
         payload: {
-          filter: types.SHOW_ALL
-        }
+          filter: types.SHOW_ALL,
+        },
       }
 
       const filter: VisibilityFilter = { filter: types.SHOW_ALL }
@@ -46,8 +46,8 @@ describe('actions', () => {
       const expected: Action<VisibilityFilter> = {
         type: types.SET_VISIBILITY_FILTER,
         payload: {
-          filter: types.SHOW_ACTIVE
-        }
+          filter: types.SHOW_ACTIVE,
+        },
       }
 
       const filter: VisibilityFilter = { filter: types.SHOW_ACTIVE }
@@ -59,8 +59,8 @@ describe('actions', () => {
       const expected: Action<VisibilityFilter> = {
         type: types.SET_VISIBILITY_FILTER,
         payload: {
-          filter: types.SHOW_COMPLETED
-        }
+          filter: types.SHOW_COMPLETED,
+        },
       }
 
       const filter: VisibilityFilter = { filter: types.SHOW_COMPLETED }

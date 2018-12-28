@@ -21,7 +21,7 @@ const StarshipInfo = ({
   max_atmosphering_speed: maxAtmospheringSpeed,
   cost_in_credits: costInCredits,
   pilots,
-  films
+  films,
 }: Starship) => (
   <FlexContainer direction='column'>
     <ContentRow title='Name'>{name}</ContentRow>

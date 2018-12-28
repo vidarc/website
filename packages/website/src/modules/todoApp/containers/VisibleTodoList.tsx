@@ -18,18 +18,18 @@ const getVisibleTodos = (todos: Todo[], { filter }: VisibilityFilter) => {
 }
 
 const mapStateToProps = ({ todoReducers }) => ({
-  todos: getVisibleTodos(todoReducers.todos, todoReducers.visibilityFilter)
+  todos: getVisibleTodos(todoReducers.todos, todoReducers.visibilityFilter),
 })
 
 const mapDispatchToProps = (dispatch: (string) => void) => ({
   onTodoClick: (id: string) => {
     dispatch(actions.toggleTodo(id))
-  }
+  },
 })
 
 const VisibleTodoList = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(TodoList)
 
 export default VisibleTodoList

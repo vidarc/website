@@ -10,8 +10,8 @@ describe('ContentRow component', () => {
       mount(
         <ContentRow title='Title'>
           <p>Hello</p>
-        </ContentRow>
-      )
+        </ContentRow>,
+      ),
     ).toBeTruthy()
   })
 })

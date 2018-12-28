@@ -21,7 +21,7 @@ describe('PersonInfo component', () => {
       name: 'name',
       mass: 'mass',
       vehicles: [],
-      skin_color: ''
+      skin_color: '',
     }
 
     expect(shallow(<PersonInfo {...data} />)).toBeTruthy()

@@ -9,7 +9,7 @@ describe('Todo component', () => {
   const props: Props = {
     completed: false,
     onClick: jest.fn(),
-    text: 'todo text'
+    text: 'todo text',
   }
 
   it('should render correctly when not completed', () => {

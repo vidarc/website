@@ -19,7 +19,7 @@ describe('FilmInfo component', () => {
       starships: [],
       vehicles: [],
       characters: [],
-      planets: []
+      planets: [],
     }
 
     expect(shallow(<FilmInfo {...data} />)).toBeTruthy()

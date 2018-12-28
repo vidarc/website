@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build-library": "babel --delete-dir-on-start -d build/ --verbose src/ --extensions '.tsx,.ts'",
-    "lint": "../../node_modules/.bin/tslint ./src --fix",
+    "lint": "../../node_modules/.bin/tslint --project tsconfig.json --fix",
     "storybook": "start-storybook -p 9009",
     "build-storybook": "build-storybook"
   },

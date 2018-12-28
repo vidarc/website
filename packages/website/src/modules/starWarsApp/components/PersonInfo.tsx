@@ -19,7 +19,7 @@ const PersonInfo = ({
   species,
   films,
   starships,
-  vehicles
+  vehicles,
 }: Person) => (
   <FlexContainer direction='column'>
     <ContentRow title='Name'>{name}</ContentRow>

@@ -12,7 +12,7 @@ import { configureStore, rootSaga, sagaMiddleware } from './ducks'
 const store = configureStore()
 sagaMiddleware.run(rootSaga)
 const client = new ApolloClient({
-  uri: 'https://us-central1-server-b6f04.cloudfunctions.net/api/graphql'
+  uri: 'https://us-central1-server-b6f04.cloudfunctions.net/api/graphql',
 })
 
 typography.injectStyles()
@@ -32,7 +32,7 @@ function renderApp(Component: any, element: HTMLElement, renderFunction: any) {
         <Component />
       </Provider>
     </ApolloProvider>,
-    element
+    element,
   )
 }
 

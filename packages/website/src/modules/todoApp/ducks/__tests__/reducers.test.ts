@@ -7,7 +7,7 @@ describe('reducers test', () => {
     it('should return an initial state of an empty array', () => {
       const expected = {
         todos: [],
-        visibilityFilter: { filter: types.SHOW_ALL }
+        visibilityFilter: { filter: types.SHOW_ALL },
       }
 
       expect(todosReducer(undefined, { type: undefined, payload: undefined })).toEqual(expected)
@@ -17,26 +17,26 @@ describe('reducers test', () => {
       const todoOne: Todo = {
         id: 'shortid00',
         text: 'testing todos',
-        completed: false
+        completed: false,
       }
       const todoTwo: Todo = {
         id: 'shortid01',
         text: 'testing todos again',
-        completed: false
+        completed: false,
       }
 
       const expected: State = {
         todos: [],
-        visibilityFilter: { filter: types.SHOW_ALL }
+        visibilityFilter: { filter: types.SHOW_ALL },
       }
 
       expect(todosReducer({}, { type: types.ADD_TODO, payload: todoOne })).toEqual({
         ...expected,
-        ...{ todos: [todoOne] }
+        ...{ todos: [todoOne] },
       })
       expect(todosReducer({ todos: [todoOne] }, { type: types.ADD_TODO, payload: todoTwo })).toEqual({
         ...expected,
-        ...{ todos: [todoOne, todoTwo] }
+        ...{ todos: [todoOne, todoTwo] },
       })
     })
 
@@ -44,17 +44,17 @@ describe('reducers test', () => {
       const todo: Todo = {
         id: 'shortid',
         text: 'testing todos',
-        completed: false
+        completed: false,
       }
       const toggledTodo: Todo = {
         id: 'shortid',
         text: 'testing todos',
-        completed: true
+        completed: true,
       }
 
       const expected: State = {
         todos: [toggledTodo],
-        visibilityFilter: { filter: types.SHOW_ALL }
+        visibilityFilter: { filter: types.SHOW_ALL },
       }
 
       expect(todosReducer({ todos: [todo] }, { type: types.TOGGLE_TODO, payload: todo })).toEqual(expected)
@@ -65,7 +65,7 @@ describe('reducers test', () => {
     it('should default to SHOW_ALL', () => {
       const expected: State = {
         todos: [],
-        visibilityFilter: { filter: types.SHOW_ALL }
+        visibilityFilter: { filter: types.SHOW_ALL },
       }
 
       // $FlowIgnore
@@ -75,7 +75,7 @@ describe('reducers test', () => {
     it('should return a filter when SET_VISIBILITY_FILTER', () => {
       const expected: State = {
         todos: [],
-        visibilityFilter: { filter: types.SHOW_ACTIVE }
+        visibilityFilter: { filter: types.SHOW_ACTIVE },
       }
 
       const visibilityFilter: VisibilityFilter = { filter: types.SHOW_ALL }
@@ -85,9 +85,9 @@ describe('reducers test', () => {
           { visibilityFilter },
           {
             type: types.SET_VISIBILITY_FILTER,
-            payload: { filter: types.SHOW_ACTIVE }
-          }
-        )
+            payload: { filter: types.SHOW_ACTIVE },
+          },
+        ),
       ).toEqual(expected)
     })
   })

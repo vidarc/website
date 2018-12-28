@@ -6,7 +6,7 @@ import {
   RESTART_GAME_OF_LIFE,
   START_GAME_OF_LIFE,
   Tile,
-  UPDATE_GAME
+  UPDATE_GAME,
 } from './types'
 
 interface State {
@@ -18,7 +18,7 @@ interface State {
 const initialState: State = {
   running: false,
   generation: 0,
-  tiles: [[]]
+  tiles: [[]],
 }
 
 const reducers = (state: State = initialState, { type, payload }: Action<any>): State => {

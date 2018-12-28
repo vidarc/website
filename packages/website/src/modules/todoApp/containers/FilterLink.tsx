@@ -9,18 +9,18 @@ interface State {
 }
 
 const mapStateToProps = (state: State, ownProps: VisibilityFilter) => ({
-  active: ownProps.filter === state.visibilityFilter
+  active: ownProps.filter === state.visibilityFilter,
 })
 
 const mapDispatchToProps = (dispatch: (string) => void, ownProps: VisibilityFilter) => ({
   onClick: () => {
     dispatch(actions.setVisibilityFilter(ownProps))
-  }
+  },
 })
 
 const FilterLink = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(TodoLink)
 
 export default FilterLink

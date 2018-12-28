@@ -11,7 +11,7 @@ describe('TodoLink component', () => {
     props = {
       active: false,
       children: <div>Children</div>,
-      onClick: jest.fn()
+      onClick: jest.fn(),
     }
   })
 

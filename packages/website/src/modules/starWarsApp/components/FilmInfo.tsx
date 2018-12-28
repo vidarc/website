@@ -17,7 +17,7 @@ const FilmInfo = ({
   starships,
   vehicles,
   characters,
-  planets
+  planets,
 }: Film) => (
   <FlexContainer direction='column'>
     <ContentRow title='Episode'>{episodeId}</ContentRow>

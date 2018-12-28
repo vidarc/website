@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "babel --delete-dir-on-start -d build/ --verbose src/ --extensions '.ts,.tsx'",
-    "lint": "../../node_modules/.bin/tslint ./src",
+    "lint": "../../node_modules/.bin/tslint --project tsconfig.json --fix",
     "deploy": "firebase deploy --token $FIREBASE_TOKEN"
   },
   "devDependencies": {

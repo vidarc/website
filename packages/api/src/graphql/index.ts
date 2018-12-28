@@ -10,7 +10,7 @@ const graphql = () => {
 
   const server = new ApolloServer({ schema })
   server.applyMiddleware({
-    app
+    app,
   })
 
   return app

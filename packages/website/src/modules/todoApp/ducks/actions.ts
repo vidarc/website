@@ -6,22 +6,22 @@ const addTodo = (text: string): Action<Todo> => ({
   type: types.ADD_TODO,
   payload: {
     text,
-    id: shortid.generate()
-  }
+    id: shortid.generate(),
+  },
 })
 
 const toggleTodo = (id: string): Action<Todo> => ({
   type: types.TOGGLE_TODO,
   payload: {
-    id
-  }
+    id,
+  },
 })
 
 const setVisibilityFilter = ({ filter }: VisibilityFilter): Action<VisibilityFilter> => ({
   type: types.SET_VISIBILITY_FILTER,
   payload: {
-    filter
-  }
+    filter,
+  },
 })
 
 export default { addTodo, toggleTodo, setVisibilityFilter }

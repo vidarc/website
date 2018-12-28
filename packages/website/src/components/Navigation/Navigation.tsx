@@ -20,11 +20,10 @@ const AvatarImg = styled.img`
 
 export default class Navigation extends React.Component<{}, State> {
   state = {
-    showSubmenu: false
+    showSubmenu: false,
   }
 
-  handleSubmenuClick = () =>
-    this.setState({ showSubmenu: !this.state.showSubmenu })
+  handleSubmenuClick = () => this.setState({ showSubmenu: !this.state.showSubmenu })
 
   handleSubmenuHover = (event: React.SyntheticEvent) => {
     // TODO - do something here

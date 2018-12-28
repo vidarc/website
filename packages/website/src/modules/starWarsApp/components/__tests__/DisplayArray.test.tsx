@@ -15,12 +15,12 @@ describe('DisplayArray component', () => {
     const array = [
       {
         id: 1,
-        name: 'some name'
+        name: 'some name',
       },
       {
         id: 2,
-        title: 'some other name'
-      }
+        title: 'some other name',
+      },
     ]
 
     expect(mount(<DisplayArray array={array} url='some/url' />)).toBeTruthy()

@@ -17,7 +17,7 @@ const PlanetInfo = ({
   climate,
   terrain,
   residents,
-  films
+  films,
 }: Planet) => (
   <FlexContainer direction='column'>
     <ContentRow title='Name'>{name}</ContentRow>

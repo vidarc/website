@@ -9,7 +9,7 @@
     "coverage": "react-scripts test --env=jsdom --coverage",
     "deploy": "firebase deploy --token $FIREBASE_TOKEN",
     "eject": "react-scripts eject",
-    "lint": "../../node_modules/.bin/tslint ./src --fix",
+    "lint": "../../node_modules/.bin/tslint --project tsconfig.json --fix",
     "postbuild": "react-snap",
     "start": "react-scripts start",
     "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom",

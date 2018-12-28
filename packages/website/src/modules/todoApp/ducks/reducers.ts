@@ -10,8 +10,8 @@ const todos = (state: Todos = [], { type, payload }: Action<Todo>): Todos => {
         {
           id: payload.id,
           text: payload.text,
-          completed: false
-        }
+          completed: false,
+        },
       ]
     case types.TOGGLE_TODO:
       return state.map((todo: Todo) => (todo.id === payload.id ? { ...todo, completed: !todo.completed } : todo))
@@ -21,12 +21,12 @@ const todos = (state: Todos = [], { type, payload }: Action<Todo>): Todos => {
 }
 
 const initialFilter: VisibilityFilter = {
-  filter: types.SHOW_ALL
+  filter: types.SHOW_ALL,
 }
 
 const visibilityFilter = (
   state: VisibilityFilter = initialFilter,
-  { type, payload }: Action<VisibilityFilter>
+  { type, payload }: Action<VisibilityFilter>,
 ): VisibilityFilter => {
   switch (type) {
     case types.SET_VISIBILITY_FILTER:
@@ -38,7 +38,7 @@ const visibilityFilter = (
 
 const todosReducer = combineReducers({
   todos,
-  visibilityFilter
+  visibilityFilter,
 })
 
 export default todosReducer

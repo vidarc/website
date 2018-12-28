@@ -18,7 +18,7 @@ const SpeciesInfo = ({
   films,
   name,
   average_height: averageHeight,
-  designation
+  designation,
 }: Species) => (
   <FlexContainer direction='column'>
     <ContentRow title='Name'>{name}</ContentRow>
