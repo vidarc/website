@@ -8,18 +8,15 @@ import {
   UPDATE_GAME,
 } from './types'
 
-export const fillBoardWithRandomData = (size: number = 25): Tile[][] => {
+export const fillBoardWithRandomData = (length: number = 25): Tile[][] => {
   let i = 0
-  return Array(size)
-    .fill(null)
-    .map(row =>
-      Array(size)
-        .fill(null)
-        .map(entry => ({
-          id: i += 1,
-          alive: Math.floor(Math.random() * 100) < 25,
-        })),
-    )
+
+  return Array.from({ length }, () =>
+    Array.from({ length }, () => ({
+      id: i += 1,
+      alive: Math.floor(Math.random() * 100) < 25,
+    })),
+  )
 }
 
 export const initGame = (): Action<Tile[][]> => ({
