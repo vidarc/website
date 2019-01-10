@@ -10,9 +10,7 @@ describe('reducers test', () => {
         visibilityFilter: { filter: types.SHOW_ALL },
       }
 
-      expect(
-        todosReducer(undefined, { type: undefined, payload: undefined }),
-      ).toEqual(expected)
+      expect(todosReducer(undefined, { type: undefined, payload: undefined })).toEqual(expected)
     })
 
     it('should add a todo', () => {
@@ -32,18 +30,11 @@ describe('reducers test', () => {
         visibilityFilter: { filter: types.SHOW_ALL },
       }
 
-      expect(
-        todosReducer({}, { type: types.ADD_TODO, payload: todoOne }),
-      ).toEqual({
+      expect(todosReducer({}, { type: types.ADD_TODO, payload: todoOne })).toEqual({
         ...expected,
         ...{ todos: [todoOne] },
       })
-      expect(
-        todosReducer(
-          { todos: [todoOne] },
-          { type: types.ADD_TODO, payload: todoTwo },
-        ),
-      ).toEqual({
+      expect(todosReducer({ todos: [todoOne] }, { type: types.ADD_TODO, payload: todoTwo })).toEqual({
         ...expected,
         ...{ todos: [todoOne, todoTwo] },
       })
@@ -66,12 +57,7 @@ describe('reducers test', () => {
         visibilityFilter: { filter: types.SHOW_ALL },
       }
 
-      expect(
-        todosReducer(
-          { todos: [todo] },
-          { type: types.TOGGLE_TODO, payload: todo },
-        ),
-      ).toEqual(expected)
+      expect(todosReducer({ todos: [todo] }, { type: types.TOGGLE_TODO, payload: todo })).toEqual(expected)
     })
   })
 
@@ -83,9 +69,7 @@ describe('reducers test', () => {
       }
 
       // $FlowIgnore
-      expect(
-        todosReducer(undefined, { type: undefined, payload: undefined }),
-      ).toEqual(expected)
+      expect(todosReducer(undefined, { type: undefined, payload: undefined })).toEqual(expected)
     })
 
     it('should return a filter when SET_VISIBILITY_FILTER', () => {

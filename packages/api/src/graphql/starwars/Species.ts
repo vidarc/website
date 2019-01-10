@@ -43,13 +43,12 @@ export const SpeciesTypeDef = gql`
 export const speciesResolvers = {
   Query: {
     getAllSpecies: () => getAll('species'),
-    getSpecies: (_: any, { id }: { id: number }) => getOne('species', id)
+    getSpecies: (_: any, { id }: { id: number }) => getOne('species', id),
   },
 
   Species: {
     people: ({ people }: Species) => batchLoad(people as number[], 'people'),
     films: ({ films }: Species) => batchLoad(films as number[], 'films'),
-    homeworld: ({ homeworld }: Species) =>
-      loader.load({ id: homeworld, type: 'planets' })
-  }
+    homeworld: ({ homeworld }: Species) => loader.load({ id: homeworld, type: 'planets' }),
+  },
 }

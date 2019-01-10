@@ -51,11 +51,11 @@ export const StarshipTypeDef = gql`
 export const starshipResolvers = {
   Query: {
     getAllStarships: () => getAll('starships'),
-    getStarship: (_: any, { id }: { id: number }) => getOne('starships', id)
+    getStarship: (_: any, { id }: { id: number }) => getOne('starships', id),
   },
 
   Starship: {
     pilots: ({ pilots }: Starship) => batchLoad(pilots as number[], 'people'),
-    films: ({ films }: Starship) => batchLoad(films as number[], 'films')
-  }
+    films: ({ films }: Starship) => batchLoad(films as number[], 'films'),
+  },
 }

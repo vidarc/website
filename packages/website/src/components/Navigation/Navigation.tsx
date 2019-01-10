@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import styled from '@emotion/styled'
 import { Link } from '@reach/router'
@@ -20,11 +20,10 @@ const AvatarImg = styled.img`
 
 export default class Navigation extends React.Component<{}, State> {
   state = {
-    showSubmenu: false
+    showSubmenu: false,
   }
 
-  handleSubmenuClick = () =>
-    this.setState({ showSubmenu: !this.state.showSubmenu })
+  handleSubmenuClick = () => this.setState({ showSubmenu: !this.state.showSubmenu })
 
   handleSubmenuHover = (event: React.SyntheticEvent) => {
     // TODO - do something here
@@ -47,9 +46,17 @@ export default class Navigation extends React.Component<{}, State> {
         >
           <p>Projects</p>
           <SubmenuItems show={showSubmenu}>
-            <Link to='/todo'>Todo</Link>
+            <Link to='/todo' role='menuitem'>
+              Todo
+            </Link>
             <hr />
-            <Link to='/starwars'>Star Wars GraphQL</Link>
+            <Link to='/starwars' role='menuitem'>
+              Star Wars GraphQL
+            </Link>
+            <hr />
+            <Link to='/gameoflife' role='menuitem'>
+              Conway's Game of Life
+            </Link>
           </SubmenuItems>
         </StyledSubmenu>
       </StyledNav>

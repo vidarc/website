@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import styled from '@emotion/styled'
 import { Router } from '@reach/router'
@@ -16,11 +16,10 @@ const StyledDiv = styled.div`
   max-width: 1024px;
 `
 
-const AsyncHome = React.lazy(() => import('../modules/Home/Home'))
-const AsyncStarWars = React.lazy(() =>
-  import('../modules/StarWarsApp/StarWarsApp')
-)
-const AsyncTodo = React.lazy(() => import('../modules/TodoApp/TodoApp'))
+const AsyncHome = React.lazy(() => import('../modules/home/Home'))
+const AsyncStarWars = React.lazy(() => import('../modules/starWarsApp/StarWarsApp'))
+const AsyncTodo = React.lazy(() => import('../modules/todoApp/TodoApp'))
+const AsyncGameOfLife = React.lazy(() => import('../modules/gameOfLife/GameOfLife'))
 
 const App: React.FunctionComponent = () => (
   <ErrorBoundary>
@@ -32,6 +31,7 @@ const App: React.FunctionComponent = () => (
           <AsyncHome path='/' />
           <AsyncStarWars path='starwars/*' />
           <AsyncTodo path='todo' />
+          <AsyncGameOfLife path='gameoflife' />
           <NotFound default={true} />
         </Router>
       </React.Suspense>

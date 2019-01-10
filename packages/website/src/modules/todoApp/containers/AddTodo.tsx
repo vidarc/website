@@ -28,9 +28,7 @@ class AddTodo extends React.Component<Props, State> {
     this.setState({ todo: '' })
   }
 
-  handleChange = ({
-    currentTarget: { name, value },
-  }: React.SyntheticEvent<HTMLInputElement>) =>
+  handleChange = ({ currentTarget: { name, value } }: React.SyntheticEvent<HTMLInputElement>) =>
     this.setState({ [name as keyof State]: value })
 
   render() {

@@ -17,9 +17,7 @@ const toggleTodo = (id: string): Action<Todo> => ({
   },
 })
 
-const setVisibilityFilter = ({
-  filter,
-}: VisibilityFilter): Action<VisibilityFilter> => ({
+const setVisibilityFilter = ({ filter }: VisibilityFilter): Action<VisibilityFilter> => ({
   type: types.SET_VISIBILITY_FILTER,
   payload: {
     filter,

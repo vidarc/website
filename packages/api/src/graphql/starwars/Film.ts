@@ -40,17 +40,14 @@ export const FilmTypeDef = gql`
 export const filmResolvers = {
   Query: {
     getAllFilms: () => getAll('films'),
-    getFilm: (_: any, { id }: { id: number }) => getOne('films', id)
+    getFilm: (_: any, { id }: { id: number }) => getOne('films', id),
   },
 
   Film: {
     species: ({ species }: Film) => batchLoad(species as number[], 'species'),
-    starships: ({ starships }: Film) =>
-      batchLoad(starships as number[], 'starships'),
-    vehicles: ({ vehicles }: Film) =>
-      batchLoad(vehicles as number[], 'vehicles'),
-    characters: ({ characters }: Film) =>
-      batchLoad(characters as number[], 'people'),
-    planets: ({ planets }: Film) => batchLoad(planets as number[], 'planets')
-  }
+    starships: ({ starships }: Film) => batchLoad(starships as number[], 'starships'),
+    vehicles: ({ vehicles }: Film) => batchLoad(vehicles as number[], 'vehicles'),
+    characters: ({ characters }: Film) => batchLoad(characters as number[], 'people'),
+    planets: ({ planets }: Film) => batchLoad(planets as number[], 'planets'),
+  },
 }

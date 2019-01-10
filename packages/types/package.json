@@ -1,5 +1,8 @@
 {
   "name": "@mattailes/types",
   "version": "2.1.0",
-  "private": true
+  "private": true,
+  "scripts": {
+    "lint": "../../node_modules/.bin/tslint --project tsconfig.json --fix"
+  }
 }

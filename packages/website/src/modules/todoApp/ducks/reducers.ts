@@ -14,9 +14,7 @@ const todos = (state: Todos = [], { type, payload }: Action<Todo>): Todos => {
         },
       ]
     case types.TOGGLE_TODO:
-      return state.map((todo: Todo) =>
-        todo.id === payload.id ? { ...todo, completed: !todo.completed } : todo,
-      )
+      return state.map((todo: Todo) => (todo.id === payload.id ? { ...todo, completed: !todo.completed } : todo))
     default:
       return state
   }

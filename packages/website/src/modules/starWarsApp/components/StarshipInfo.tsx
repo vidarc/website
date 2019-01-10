@@ -35,9 +35,7 @@ const StarshipInfo = ({
     <ContentRow title='Manufacturer'>{manufacturer}</ContentRow>
     <ContentRow title='Cargo Capacity'>{cargoCapacity}</ContentRow>
     <ContentRow title='Length'>{length}</ContentRow>
-    <ContentRow title='Max Atmosphering Speed'>
-      {maxAtmospheringSpeed}
-    </ContentRow>
+    <ContentRow title='Max Atmosphering Speed'>{maxAtmospheringSpeed}</ContentRow>
     <ContentRow title='Cost in Credits'>{costInCredits}</ContentRow>
     <ContentRow title='Pilots'>
       <DisplayArray array={pilots} url='../person/' />
