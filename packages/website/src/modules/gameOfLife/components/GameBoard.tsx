@@ -12,11 +12,17 @@ const Board = styled.div`
 
 interface Props {
   tiles: Tile[][]
+  size: number
 }
-const GameBoard: React.SFC<Props> = ({ tiles }) => (
+
+const start = (length, size): number => (length - size) / 2
+
+const end = (length, size): number => length - (length - size) / 2
+
+const GameBoard: React.SFC<Props> = ({ tiles, size }) => (
   <Board>
-    {tiles.map((row, index) => (
-      <GameBoardRow key={index} tiles={row} />
+    {tiles.slice(start(tiles.length, size), end(tiles.length, size)).map((row, index) => (
+      <GameBoardRow key={index} tiles={row} size={size} />
     ))}
   </Board>
 )

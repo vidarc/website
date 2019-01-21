@@ -10,9 +10,17 @@ interface Props extends RouteComponentProps {
   dispatch: Function
 }
 
-class GameOfLife extends Component<Props, null> {
+interface State {
+  size: number
+}
+
+class GameOfLife extends Component<Props, State> {
+  state = {
+    size: 25,
+  }
+
   componentDidMount() {
-    this.props.dispatch(initGame())
+    this.props.dispatch(initGame(this.state.size))
   }
 
   render() {

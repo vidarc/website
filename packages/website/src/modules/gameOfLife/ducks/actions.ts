@@ -8,7 +8,7 @@ import {
   UPDATE_GAME,
 } from './types'
 
-export const fillBoardWithRandomData = (length: number = 25): Tile[][] => {
+export const fillBoardWithRandomData = (length: number = 35): Tile[][] => {
   let i = 0
 
   return Array.from({ length }, () =>
@@ -19,8 +19,8 @@ export const fillBoardWithRandomData = (length: number = 25): Tile[][] => {
   )
 }
 
-export const initGame = (): Action<Tile[][]> => ({
-  payload: fillBoardWithRandomData(),
+export const initGame = (size: number): Action<Tile[][]> => ({
+  payload: fillBoardWithRandomData(size + 10),
   type: UPDATE_GAME,
 })
 

@@ -23,6 +23,7 @@ export function* runGameOfLife() {
   yield delay(500)
 
   const { gameOfLife } = yield select()
+
   yield put(updateGameBoard(processGeneration(gameOfLife)))
   yield put(incrementGeneration(gameOfLife.generation + 1))
 }
