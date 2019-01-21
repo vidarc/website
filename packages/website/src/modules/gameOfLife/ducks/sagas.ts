@@ -1,5 +1,4 @@
-import { delay } from 'redux-saga'
-import { call, put, race, select, take } from 'redux-saga/effects'
+import { call, delay, put, race, select, take } from 'redux-saga/effects'
 
 import { incrementGeneration, updateGameBoard } from './actions'
 import { PAUSE_GAME_OF_LIFE, RESTART_GAME_OF_LIFE, START_GAME_OF_LIFE, Tile } from './types'
