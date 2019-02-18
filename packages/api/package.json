@@ -14,17 +14,17 @@
   },
   "devDependencies": {
     "@babel/cli": "7.2.3",
-    "@babel/core": "7.2.2",
+    "@babel/core": "7.3.3",
     "@babel/plugin-transform-runtime": "7.2.0",
     "@babel/polyfill": "7.2.5",
     "@babel/preset-env": "7.3.1",
-    "@babel/preset-typescript": "7.1.0",
+    "@babel/preset-typescript": "7.3.3",
     "nodemon-webpack-plugin": "4.0.7",
-    "react-scripts": "2.1.4"
+    "react-scripts": "2.1.5"
   },
   "dependencies": {
     "@babel/runtime": "7.3.1",
-    "apollo-server-express": "2.4.0",
+    "apollo-server-express": "2.4.2",
     "cross-fetch": "3.0.1",
     "dataloader": "1.4.0",
     "express": "4.16.4",
