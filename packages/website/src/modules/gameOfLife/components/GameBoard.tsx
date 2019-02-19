@@ -1,7 +1,8 @@
 import React from 'react'
 
 import styled from '@emotion/styled'
-import GameBoardRow from './GameBoardRow'
+
+import GameBoardRowContainer from '../containers/GameBoardRowContainer'
 import { Tile } from '../ducks/types'
 
 const Board = styled.div`
@@ -22,7 +23,7 @@ const end = (length, size): number => length - (length - size) / 2
 const GameBoard: React.SFC<Props> = ({ tiles, size }) => (
   <Board>
     {tiles.slice(start(tiles.length, size), end(tiles.length, size)).map((row, index) => (
-      <GameBoardRow key={index} tiles={row} size={size} />
+      <GameBoardRowContainer key={index} tiles={row} size={size} />
     ))}
   </Board>
 )

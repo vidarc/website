@@ -13,7 +13,9 @@ interface Props extends RouteComponentProps {
 const GameOfLife: React.FunctionComponent<Props> = ({ dispatch }) => {
   const [size, setSize] = useState(25)
 
-  useEffect(() => dispatch(initGame(size)))
+  useEffect(() => {
+    dispatch(initGame(size))
+  })
 
   return (
     <>

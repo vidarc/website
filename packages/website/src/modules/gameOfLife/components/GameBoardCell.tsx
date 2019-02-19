@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 interface CellProps {
   perRow: number
   alive: boolean
+  onClick: (event: any) => void
 }
 
 const StyledCell = styled.div`
