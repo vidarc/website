@@ -28,13 +28,15 @@ const reducers = (state: State = initialState, { type, payload }: Action<any>): 
     case PAUSE_GAME_OF_LIFE:
       return { ...state, running: false }
     case RESTART_GAME_OF_LIFE:
-      return { ...state, ...{ tiles: fillBoardWithRandomData(25), generation: 0, running: false } }
+      return { ...state, ...{ tiles: fillBoardWithRandomData(0), generation: 0, running: false } }
     case UPDATE_GAME:
       return { ...state, tiles: payload }
     case INCREMENT_GENERATION:
       return { ...state, generation: payload }
     case TOGGLE_TILE_STATE:
-      const { tiles } = state
+      const { tiles, running } = state
+
+      if (running) return state
 
       const newTiles = tiles.map(row =>
         row.map(cell => {

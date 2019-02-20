@@ -11,7 +11,7 @@ import {
 } from './types'
 
 export const initGame = (size: number): Action<Tile[][]> => ({
-  payload: fillBoardWithRandomData(0, size),
+  payload: fillBoardWithRandomData(0, size + 10),
   type: UPDATE_GAME,
 })
 
