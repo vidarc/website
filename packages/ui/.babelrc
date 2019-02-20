@@ -1,16 +1,9 @@
 {
-  "presets": [
-    [
-      "@babel/preset-typescript", 
-      { 
-        "isTSX": true, 
-        "allExtensions": true 
-      }
-    ]
-  ],
   "plugins": [
-    [
-      "@babel/plugin-transform-react-jsx", 
-    ]
+    ["@babel/plugin-transform-typescript", {
+      "isTSX": true,
+    }],
+    "@babel/plugin-syntax-jsx",
+    "@babel/plugin-transform-react-jsx",
   ]
 }
