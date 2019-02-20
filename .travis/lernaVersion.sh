@@ -12,7 +12,7 @@ if [[ $TRAVIS_COMMIT_MESSAGE == *'[patch]'* ]]; then
 elif [[ $TRAVIS_COMMIT_MESSAGE == *'[minor]'* ]]; then
   VERSION=minor
 elif [[ $TRAVIS_COMMIT_MESSAGE == *'[major]'* ]]; then
-  echo major
+  VERSION=major
 fi
 
 echo doing a $VERSION bump

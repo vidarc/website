@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import styled from '@emotion/styled'
 import { Link } from '@reach/router'
@@ -7,10 +7,6 @@ import avatar from '../../images/avatar-small.png'
 
 import { StyledNav, StyledSubmenu, SubmenuItems } from './StyledComponents'
 
-interface State {
-  showSubmenu: boolean
-}
-
 const AvatarImg = styled.img`
   height: 32px;
   width: 32px;
@@ -18,48 +14,42 @@ const AvatarImg = styled.img`
   margin: 0;
 `
 
-export default class Navigation extends React.Component<{}, State> {
-  state = {
-    showSubmenu: false,
-  }
+const Navigation: React.FunctionComponent = () => {
+  const [showSubmenu, setSubmenu] = useState(false)
 
-  handleSubmenuClick = () => this.setState({ showSubmenu: !this.state.showSubmenu })
+  const handleSubmenuClick = () => setSubmenu(!showSubmenu)
 
-  handleSubmenuHover = (event: React.SyntheticEvent) => {
-    // TODO - do something here
-  }
+  const handleSubmenuHover = () => console.log('hello')
 
-  render() {
-    const { showSubmenu } = this.state
-
-    return (
-      <StyledNav>
-        <AvatarImg src={avatar} alt='avatar' />
-        <Link to='/'>Home</Link>
-        <StyledSubmenu
-          role='menu'
-          tabIndex={0}
-          onClick={this.handleSubmenuClick}
-          onKeyPress={this.handleSubmenuClick}
-          onMouseEnter={this.handleSubmenuHover}
-          onMouseLeave={this.handleSubmenuHover}
-        >
-          <p>Projects</p>
-          <SubmenuItems show={showSubmenu}>
-            <Link to='/todo' role='menuitem'>
-              Todo
-            </Link>
-            <hr />
-            <Link to='/starwars' role='menuitem'>
-              Star Wars GraphQL
-            </Link>
-            <hr />
-            <Link to='/gameoflife' role='menuitem'>
-              Conway's Game of Life
-            </Link>
-          </SubmenuItems>
-        </StyledSubmenu>
-      </StyledNav>
-    )
-  }
+  return (
+    <StyledNav>
+      <AvatarImg src={avatar} alt='avatar' />
+      <Link to='/'>Home</Link>
+      <StyledSubmenu
+        role='menu'
+        tabIndex={0}
+        onClick={handleSubmenuClick}
+        onKeyPress={handleSubmenuClick}
+        onMouseEnter={handleSubmenuHover}
+        onMouseLeave={handleSubmenuHover}
+      >
+        <p>Projects</p>
+        <SubmenuItems show={showSubmenu}>
+          <Link to='/todo' role='menuitem'>
+            Todo
+          </Link>
+          <hr />
+          <Link to='/starwars' role='menuitem'>
+            Star Wars GraphQL
+          </Link>
+          <hr />
+          <Link to='/gameoflife' role='menuitem'>
+            Conway's Game of Life
+          </Link>
+        </SubmenuItems>
+      </StyledSubmenu>
+    </StyledNav>
+  )
 }
+
+export default Navigation

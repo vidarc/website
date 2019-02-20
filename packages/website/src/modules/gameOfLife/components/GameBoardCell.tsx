@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 interface CellProps {
   perRow: number
   alive: boolean
+  onClick: (event: any) => void
 }
 
 const StyledCell = styled.div`
@@ -18,8 +19,6 @@ const StyledCell = styled.div`
     padding-bottom: 100%;
   }
 `
-
-// const areEqual = (prevProps, nextProps) => prevProps.alive !== nextProps.alive
 
 const GameBoardCell: React.SFC<CellProps> = props => <StyledCell {...props} />
 

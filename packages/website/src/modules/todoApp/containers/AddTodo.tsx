@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useState } from 'react'
 
 import { Button } from '@mattailes/ui'
 import { connect } from 'react-redux'
@@ -9,51 +9,32 @@ interface Props {
   dispatch: (string) => void
 }
 
-interface State {
-  todo: string
-}
+const AddTodo: React.FunctionComponent<Props> = ({ dispatch }) => {
+  const [todo, setTodo] = useState('')
 
-class AddTodo extends React.Component<Props, State> {
-  state = {
-    todo: '',
-  }
-
-  handleSubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault()
-    const { todo } = this.state
-    const { dispatch } = this.props
 
     dispatch(actions.addTodo(todo))
 
-    this.setState({ todo: '' })
+    setTodo('')
   }
 
-  handleChange = ({ currentTarget: { name, value } }: React.SyntheticEvent<HTMLInputElement>) =>
-    this.setState({ [name as keyof State]: value })
+  const handleChange = ({ currentTarget: { value } }: React.SyntheticEvent<HTMLInputElement>) => setTodo(value)
 
-  render() {
-    const { todo } = this.state
-
-    return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <label htmlFor='todo'>
-              Todo:
-              <input
-                placeholder='Enter the todo...'
-                type='text'
-                name='todo'
-                value={todo}
-                onChange={this.handleChange}
-              />
-            </label>
-            <Button type='submit'>Add Todo</Button>
-          </div>
-        </form>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor='todo'>
+            Todo:
+            <input placeholder='Enter the todo...' type='text' name='todo' value={todo} onChange={handleChange} />
+          </label>
+          <Button type='submit'>Add Todo</Button>
+        </div>
+      </form>
+    </div>
+  )
 }
 
 export default connect()(AddTodo)

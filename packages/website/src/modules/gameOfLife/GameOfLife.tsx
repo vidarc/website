@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { RouteComponentProps } from '@reach/router'
 import { connect } from 'react-redux'
@@ -10,24 +10,24 @@ interface Props extends RouteComponentProps {
   dispatch: Function
 }
 
-class GameOfLife extends Component<Props, null> {
-  componentDidMount() {
-    this.props.dispatch(initGame())
-  }
+const GameOfLife: React.FunctionComponent<Props> = ({ dispatch }) => {
+  const [size, setSize] = useState(25)
 
-  render() {
-    return (
-      <>
-        <h2>Conway's Game of Life</h2>
-        <small>
-          About: <a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life">Wikiepdia entry</a>
-        </small>
-        <hr />
-        <Controls />
-        <GameContainer {...this.state} />
-      </>
-    )
-  }
+  useEffect(() => {
+    dispatch(initGame(size))
+  })
+
+  return (
+    <>
+      <h2>Conway's Game of Life</h2>
+      <small>
+        About: <a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life">Wikiepdia entry</a>
+      </small>
+      <hr />
+      <Controls />
+      <GameContainer size={size} />
+    </>
+  )
 }
 
 export default connect()(GameOfLife)

@@ -8,10 +8,10 @@ describe('game of life redux actions', () => {
       payload: [[]],
     }
 
-    const actual = initGame()
+    const actual = initGame(25)
 
     expect(actual.type).toEqual(expected.type)
-    expect(actual.payload).toHaveLength(25)
+    expect(actual.payload).toHaveLength(35)
   })
 
   it('should return the expected action body for starting the game', () => {

@@ -23,24 +23,28 @@ export function* runGameOfLife() {
   yield delay(500)
 
   const { gameOfLife } = yield select()
+
   yield put(updateGameBoard(processGeneration(gameOfLife)))
   yield put(incrementGeneration(gameOfLife.generation + 1))
 }
 
 export const processGeneration = ({ tiles }): Tile[][] => {
-  const payload = [...tiles]
+  const payload = tiles.map(array => array.slice(0))
 
   tiles.forEach((row, rowNum) =>
     row.forEach((cell, colNum) => {
+      const tileData = { ...payload[rowNum][colNum] }
       if (
         (cell.alive && calculateNeighbors(tiles, { rowNum, colNum }) < 2) ||
         calculateNeighbors(tiles, { rowNum, colNum }) > 3
       ) {
-        payload[rowNum][colNum].alive = false
+        tileData.alive = false
+        payload[rowNum][colNum] = tileData
       }
 
       if (!cell.alive && calculateNeighbors(tiles, { rowNum, colNum }) === 3) {
-        payload[rowNum][colNum].alive = true
+        tileData.alive = true
+        payload[rowNum][colNum] = tileData
       }
     }),
   )

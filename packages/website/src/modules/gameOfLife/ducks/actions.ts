@@ -1,3 +1,4 @@
+import { fillBoardWithRandomData } from './reducers'
 import {
   Action,
   INCREMENT_GENERATION,
@@ -5,22 +6,12 @@ import {
   RESTART_GAME_OF_LIFE,
   START_GAME_OF_LIFE,
   Tile,
+  TOGGLE_TILE_STATE,
   UPDATE_GAME,
 } from './types'
 
-export const fillBoardWithRandomData = (length: number = 25): Tile[][] => {
-  let i = 0
-
-  return Array.from({ length }, () =>
-    Array.from({ length }, () => ({
-      id: i += 1,
-      alive: Math.floor(Math.random() * 100) < 25,
-    })),
-  )
-}
-
-export const initGame = (): Action<Tile[][]> => ({
-  payload: fillBoardWithRandomData(),
+export const initGame = (size: number): Action<Tile[][]> => ({
+  payload: fillBoardWithRandomData(0, size + 10),
   type: UPDATE_GAME,
 })
 
@@ -44,4 +35,9 @@ export const updateGameBoard = (payload): Action<Tile[][]> => ({
 export const incrementGeneration = (payload): Action<number> => ({
   payload,
   type: INCREMENT_GENERATION,
+})
+
+export const toggleTileState = (payload): Action<number> => ({
+  payload,
+  type: TOGGLE_TILE_STATE,
 })
