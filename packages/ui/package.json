@@ -1,6 +1,6 @@
 {
   "name": "@mattailes/ui",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "private": true,
   "scripts": {
     "build-library": "babel --delete-dir-on-start -d build/ --verbose src/ --extensions '.tsx,.ts'",
