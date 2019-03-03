@@ -1,4 +1,4 @@
-if: tag IS blank
+if: branch = master
 language: node_js
 node_js:
 - lts/*
