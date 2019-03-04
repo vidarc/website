@@ -3,7 +3,7 @@ import * as React from 'react'
 
 const Home: React.SFC<RouteComponentProps> = () => (
   <div>
-    <p>Hello everybody! My name is Matthew Ailes. This is the home screen.</p>
+    <p id='welcome-text'>Hello everybody! My name is Matthew Ailes. This is the home screen.</p>
   </div>
 )
 
