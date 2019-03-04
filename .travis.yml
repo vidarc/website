@@ -1,4 +1,4 @@
-if: tag IS blank
+if: tag IS blank AND type = pull_request
 language: node_js
 node_js:
 - lts/*
