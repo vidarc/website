@@ -9,5 +9,6 @@
       "groupName": "all dependencies",
       "groupSlug": "all"
     }
-  ]
+  ],
+  "semanticCommits": true
 }
