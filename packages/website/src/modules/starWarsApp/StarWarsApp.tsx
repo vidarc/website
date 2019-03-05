@@ -29,7 +29,7 @@ const Wrapper = styled.div`
 `
 
 const StarWarsApp: React.SFC<RouteComponentProps> = () => (
-  <div>
+  <div id='star-wars-home'>
     <h1>Star Wars Database (based on swapi.com)</h1>
     <Wrapper>
       <TabLink to='film'>Random Film</TabLink>
