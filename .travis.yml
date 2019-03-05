@@ -9,7 +9,8 @@ cache:
 
 stages:
   - precache
-  - build-library
+  - test
+  - build
 
 before_install:
 - curl -o- -L https://yarnpkg.com/install.sh | bash
@@ -17,16 +18,25 @@ before_install:
 install:
 - yarn global add codecov
 - yarn global add firebase-tools
-- yarn install --frozen-lockfile
-- lerna bootstrap
 
 jobs:
   include:
     - stage: precache
       script: true
 
-    - stage: build-library
-      script: yarn library
+    - stage: test
+      script:
+        - yarn install --frozen-lockfile
+        - lerna bootstrap
+        - yarn coverage
+        - codecov
+
+    - stage: build
+      script:
+        - yarn install --frozen-lockfile
+        - lerna bootstrap
+        - yarn library
+        - yarn build
 
 # script:
 # - yarn library
