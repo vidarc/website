@@ -19,7 +19,7 @@ const GameOfLife: React.FunctionComponent<Props> = ({ dispatch }) => {
 
   return (
     <>
-      <h2>Conway's Game of Life</h2>
+      <h2 id='game-of-life-home'>Conway's Game of Life</h2>
       <small>
         About: <a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life">Wikiepdia entry</a>
       </small>

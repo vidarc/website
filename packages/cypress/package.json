@@ -1,0 +1,12 @@
+{
+  "name": "@mattailes/cypress",
+  "version": "2.3.2",
+  "private": true,
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^3.1.5"
+  }
+}

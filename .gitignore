@@ -45,3 +45,7 @@ functions/
 keys/
 es/
 .vscode
+
+# cypress
+packages/cypress/screenshots/
+packages/cypress/videos/
