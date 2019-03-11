@@ -20,7 +20,7 @@
     "@babel/preset-env": "7.3.4",
     "@babel/preset-typescript": "7.3.3",
     "nodemon-webpack-plugin": "4.0.7",
-    "react-scripts": "2.1.5"
+    "react-scripts": "2.1.8"
   },
   "dependencies": {
     "@babel/runtime": "7.3.4",
