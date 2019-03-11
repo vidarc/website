@@ -1,9 +1,6 @@
-/** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 
 import theme from '../theme'
-
-const unused = jsx
 
 export interface ButtonProps {
   children: React.ReactChild

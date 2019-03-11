@@ -1,4 +1,5 @@
-import React, { SyntheticEvent } from 'react'
+import { jsx } from '@emotion/core'
+import { SyntheticEvent } from 'react'
 
 import { faPause } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
