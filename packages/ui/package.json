@@ -17,20 +17,20 @@
     "@fortawesome/free-regular-svg-icons": "5.7.2",
     "@fortawesome/free-solid-svg-icons": "5.7.2",
     "@fortawesome/react-fontawesome": "0.1.4",
-    "react": "16.8.3",
-    "react-dom": "16.8.3",
+    "react": "16.8.4",
+    "react-dom": "16.8.4",
     "typeface-fira-sans": "0.0.54",
-    "typography": "0.16.18",
-    "typography-plugin-code": "0.16.18",
-    "typography-theme-de-young": "0.16.18"
+    "typography": "0.16.19",
+    "typography-plugin-code": "0.16.19",
+    "typography-theme-de-young": "0.16.19"
   },
   "devDependencies": {
     "@babel/cli": "7.2.3",
     "@babel/core": "7.3.4",
     "@babel/plugin-syntax-jsx": "7.2.0",
     "@babel/plugin-transform-react-jsx": "7.3.0",
-    "@babel/plugin-transform-typescript": "7.2.0",
+    "@babel/plugin-transform-typescript": "7.3.2",
     "babel-loader": "8.0.5",
-    "react-scripts": "2.1.5"
+    "react-scripts": "2.1.8"
   }
 }

@@ -2,8 +2,11 @@
   "plugins": [
     ["@babel/plugin-transform-typescript", {
       "isTSX": true,
+      "jsxPragma": "jsx"
     }],
     "@babel/plugin-syntax-jsx",
-    "@babel/plugin-transform-react-jsx",
+    ["@babel/plugin-transform-react-jsx", {
+      "pragma": "jsx"
+    }]
   ]
 }
