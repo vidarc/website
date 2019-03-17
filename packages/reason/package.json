@@ -4,6 +4,7 @@
   "main": "index.ts",
   "scripts": {
     "build": "yarn clean && bsb -make-world",
+    "build-library": "bsb -make-world",
     "start": "bsb -make-world -w -ws _ ",
     "clean": "bsb -clean-world",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,6 +20,6 @@
     "reason-react": "0.6.0"
   },
   "devDependencies": {
-    "bs-platform": "4.0.18"
+    "bs-platform": "4.0.3"
   }
 }

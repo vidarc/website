@@ -4928,10 +4928,10 @@ bs-logger@0.x:
   dependencies:
     fast-json-stable-stringify "2.x"
 
-bs-platform@4.0.18:
-  version "4.0.18"
-  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-4.0.18.tgz#d17b8693ba1f714d9b27e0ddb365f2069ba4b8a0"
-  integrity sha512-BwzW0iYHvREqUZIgQxJmdJrxexppLvJxYQ4LLexbhCp7uZU5DIZ5ub4ZHpkCkc8fn8bsXWc+Rrejb3csi+BoAQ==
+bs-platform@4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-4.0.3.tgz#4510c1c915cc5b169b5717e5c0ada52d3f99ff98"
+  integrity sha1-RRDByRXMWxabVxflwK2lLT+Z/5g=
 
 bser@^2.0.0:
   version "2.0.0"
