@@ -1,4 +1,4 @@
-let component = ReasonReact.statelessComponent("ReasonReact");
+let component = ReasonReact.statelessComponent("ReasonReactEntry");
 
 let handleClick = (_event, _self) => Js.log("clicked!");
 
@@ -8,6 +8,7 @@ let make = _children => {
   render: self =>
     <div onClick={self.handle(handleClick)}>
       {ReasonReact.string("Hello World!")}
+      <ButtonWithState />
     </div>,
 };
 

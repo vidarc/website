@@ -1,1 +1,1 @@
-export { default as HelloWorld } from './lib/es6/src/HelloWorld.bs'
+export { default as ReasonReactEntry } from './lib/es6/src/ReasonReactEntry.bs'
