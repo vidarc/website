@@ -1,9 +1,9 @@
 {
   "name": "@mattailes/reason",
   "version": "0.1.0",
-  "main": "lib/js/src/Index.bs.js",
+  "main": "index.ts",
   "scripts": {
-    "build": "bsb -make-world",
+    "build": "yarn clean && bsb -make-world",
     "start": "bsb -make-world -w -ws _ ",
     "clean": "bsb -clean-world",
     "test": "echo \"Error: no test specified\" && exit 1"
