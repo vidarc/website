@@ -1,5 +1,5 @@
 {
-  "name": "react-lite",
+  "name": "@mattailes/reason",
   "reason": {
     "react-jsx": 2
   },
@@ -10,7 +10,7 @@
   "package-specs": [
     {
       "module": "commonjs",
-      "in-source": true
+      "in-source": false
     }
   ],
   "suffix": ".bs.js",
