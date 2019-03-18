@@ -19,7 +19,7 @@
     "@babel/polyfill": "7.2.5",
     "@babel/preset-env": "7.3.4",
     "@babel/preset-typescript": "7.3.3",
-    "nodemon-webpack-plugin": "4.0.7",
+    "nodemon-webpack-plugin": "4.0.8",
     "react-scripts": "2.1.8"
   },
   "dependencies": {
@@ -28,7 +28,7 @@
     "cross-fetch": "3.0.1",
     "dataloader": "1.4.0",
     "express": "4.16.4",
-    "firebase-admin": "7.0.0",
+    "firebase-admin": "7.1.0",
     "firebase-functions": "2.2.0",
     "graphql": "14.1.1",
     "graphql-tools": "4.0.4",
