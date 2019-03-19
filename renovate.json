@@ -7,7 +7,14 @@
     {
       "packagePatterns": ["*"],
       "groupName": "all dependencies",
-      "groupSlug": "all"
+      "groupSlug": "all",
+      "depTypeList": ["dependencies"]
+    },
+    {
+      "packagePatterns": ["*"],
+      "groupName": "all dependencies",
+      "groupSlug": "all",
+      "depTypeList": ["devDependencies"]
     }
   ],
   "semanticCommits": true
