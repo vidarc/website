@@ -46,6 +46,10 @@ const Navigation: React.FunctionComponent = () => {
           <Link to='/gameoflife' role='menuitem'>
             Conway's Game of Life
           </Link>
+          <hr />
+          <Link to='/reason' role='menuitem'>
+            Reason React
+          </Link>
         </SubmenuItems>
       </StyledSubmenu>
     </StyledNav>
