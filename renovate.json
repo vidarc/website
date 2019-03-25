@@ -5,16 +5,15 @@
   "groupSlug": "all",
   "packageRules": [
     {
-      "packagePatterns": ["*"],
-      "groupName": "all dependencies",
-      "groupSlug": "all",
-      "depTypeList": ["dependencies"]
+      "packagePatterns": ["*"]
     },
     {
-      "packagePatterns": ["*"],
-      "groupName": "all dependencies",
-      "groupSlug": "all",
-      "depTypeList": ["devDependencies"]
+      "depTypeList": ["dependencies"],
+      "groupName": "all dependencies"
+    },
+    {
+      "depTypeList": ["devDependencies"],
+      "groupName": "all devDependencies"
     }
   ],
   "semanticCommits": true
