@@ -1,7 +1,12 @@
 import { connect } from 'react-redux'
 
 import Controls from '../components/Controls'
+import { State } from '../ducks/reducers'
 
-const mapStateToProps = ({ gameOfLife }) => ({ generation: gameOfLife.generation })
+interface GameOfLifeState {
+  gameOfLife: State
+}
+
+const mapStateToProps = ({ gameOfLife: { generation, gameOver } }: GameOfLifeState) => ({ generation, gameOver })
 
 export default connect(mapStateToProps)(Controls)
