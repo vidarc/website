@@ -9,6 +9,10 @@
       "tslint --fix",
       "git add"
     ],
+    "*.vue": [
+      "prettier --write",
+      "git add"
+    ],
     "*.json": [
       "prettier --write",
       "git add"
