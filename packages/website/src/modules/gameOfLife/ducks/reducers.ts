@@ -1,5 +1,6 @@
 import {
   Action,
+  GAME_OVER,
   INCREMENT_GENERATION,
   PAUSE_GAME_OF_LIFE,
   RESTART_GAME_OF_LIFE,
@@ -9,14 +10,16 @@ import {
   UPDATE_GAME,
 } from './types'
 
-interface State {
+export interface State {
   running: boolean
+  gameOver: boolean
   generation: number
   tiles: Tile[][]
 }
 
 const initialState: State = {
   running: false,
+  gameOver: false,
   generation: 0,
   tiles: [[]],
 }
@@ -28,7 +31,9 @@ const reducers = (state: State = initialState, { type, payload }: Action<any>): 
     case PAUSE_GAME_OF_LIFE:
       return { ...state, running: false }
     case RESTART_GAME_OF_LIFE:
-      return { ...state, ...{ tiles: fillBoardWithRandomData(0), generation: 0, running: false } }
+      return { ...state, tiles: fillBoardWithRandomData(0), generation: 0, running: false, gameOver: false }
+    case GAME_OVER:
+      return { ...state, running: false, gameOver: true }
     case UPDATE_GAME:
       return { ...state, tiles: payload }
     case INCREMENT_GENERATION:

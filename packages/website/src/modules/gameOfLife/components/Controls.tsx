@@ -14,7 +14,12 @@ const StyledDiv = styled.div`
   }
 `
 
-const Controls = ({ dispatch, generation }) => {
+const StyledH3 = styled.h3`
+  margin-top: 0;
+  text-align: center;
+`
+
+const Controls = ({ dispatch, generation, gameOver }) => {
   function handlePlayClick(event: SyntheticEvent) {
     event.preventDefault()
     dispatch(startGameOfLife())
@@ -31,14 +36,17 @@ const Controls = ({ dispatch, generation }) => {
   }
 
   return (
-    <StyledDiv>
-      <PlayIcon onClick={handlePlayClick} />
-      <PauseIcon onClick={handlePauseClick} />
-      <RestartIcon onClick={handleRestartClick} />
-      <div>
-        <p>Generation: {generation}</p>
-      </div>
-    </StyledDiv>
+    <>
+      <StyledDiv>
+        <PlayIcon onClick={handlePlayClick} />
+        <PauseIcon onClick={handlePauseClick} />
+        <RestartIcon onClick={handleRestartClick} />
+        <div>
+          <p>Generation: {generation}</p>
+        </div>
+      </StyledDiv>
+      {gameOver && <StyledH3>☠️ Game Over ☠️</StyledH3>}
+    </>
   )
 }
 

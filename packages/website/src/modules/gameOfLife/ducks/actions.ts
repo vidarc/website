@@ -1,6 +1,7 @@
 import { fillBoardWithRandomData } from './reducers'
 import {
   Action,
+  GAME_OVER,
   INCREMENT_GENERATION,
   PAUSE_GAME_OF_LIFE,
   RESTART_GAME_OF_LIFE,
@@ -21,6 +22,10 @@ export const startGameOfLife = (): Action<null> => ({
 
 export const pauseGameOfLife = (): Action<null> => ({
   type: PAUSE_GAME_OF_LIFE,
+})
+
+export const gameOver = (): Action<null> => ({
+  type: GAME_OVER,
 })
 
 export const restartGameOfLife = (): Action<null> => ({

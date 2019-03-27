@@ -1,20 +1,21 @@
 import { call, delay, put, race, select, take } from 'redux-saga/effects'
 
-import { incrementGeneration, updateGameBoard } from './actions'
-import { PAUSE_GAME_OF_LIFE, RESTART_GAME_OF_LIFE, START_GAME_OF_LIFE, Tile } from './types'
+import { gameOver, incrementGeneration, updateGameBoard } from './actions'
+import { GAME_OVER, PAUSE_GAME_OF_LIFE, RESTART_GAME_OF_LIFE, START_GAME_OF_LIFE, Tile } from './types'
 
 export function* watchStart() {
   while (true) {
     yield take(START_GAME_OF_LIFE)
 
     while (true) {
-      const { pause, restart } = yield race({
+      const { pause, restart, gameOver } = yield race({
         pause: take(PAUSE_GAME_OF_LIFE),
         restart: take(RESTART_GAME_OF_LIFE),
+        gameOver: take(GAME_OVER),
         tick: call(runGameOfLife),
       })
 
-      if (pause || restart) break
+      if (pause || restart || gameOver) break
     }
   }
 }
@@ -24,8 +25,14 @@ export function* runGameOfLife() {
 
   const { gameOfLife } = yield select()
 
-  yield put(updateGameBoard(processGeneration(gameOfLife)))
-  yield put(incrementGeneration(gameOfLife.generation + 1))
+  const nextGeneration = processGeneration(gameOfLife)
+  yield put(updateGameBoard(nextGeneration))
+
+  if (!nextGeneration.some(row => row.some(tile => tile.alive))) {
+    yield put(gameOver())
+  } else {
+    yield put(incrementGeneration(gameOfLife.generation + 1))
+  }
 }
 
 export const processGeneration = ({ tiles }): Tile[][] => {

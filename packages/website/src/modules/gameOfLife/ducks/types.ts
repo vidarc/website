@@ -6,6 +6,7 @@ export const START_GAME_OF_LIFE = 'gameOfLife/START_GAME_OF_LIFE'
 export const PAUSE_GAME_OF_LIFE = 'gameOfLife/PAUSE_GAME_OF_LIFE'
 export const RESTART_GAME_OF_LIFE = 'gameOfLife/RESTART_GAME_OF_LIFE'
 export const TOGGLE_TILE_STATE = 'gameOfLife/TOGGLE_TILE_STATE'
+export const GAME_OVER = 'gameOfLife/GAME_OVER'
 
 export interface Tile {
   id: number
