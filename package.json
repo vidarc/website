@@ -3,6 +3,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "resolutions": {
+    "webpack": "4.28.3"
+  },
   "scripts": {
     "clean": "yarn clean:build && yarn clean:node_modules",
     "clean:build": "rm -rf ./packages/*/build",

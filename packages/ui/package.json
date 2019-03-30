@@ -2,6 +2,7 @@
   "name": "@mattailes/ui",
   "version": "2.3.10",
   "private": true,
+  "sideEffects": false,
   "scripts": {
     "build-library": "babel --delete-dir-on-start -d build/ --verbose src/ --extensions '.tsx,.ts'",
     "lint": "../../node_modules/.bin/tslint --project tsconfig.json --fix",
