@@ -13,6 +13,7 @@
     "vuex": "3.0.1"
   },
   "devDependencies": {
+    "@mattailes/ui": "2.3.8",
     "@types/jest": "23.1.4",
     "@vue/cli-plugin-babel": "3.5.0",
     "@vue/cli-plugin-typescript": "3.5.0",

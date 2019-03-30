@@ -17,6 +17,7 @@
     "@fortawesome/free-regular-svg-icons": "5.8.1",
     "@fortawesome/free-solid-svg-icons": "5.8.1",
     "@fortawesome/react-fontawesome": "0.1.4",
+    "@fortawesome/vue-fontawesome": "0.1.6",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "typeface-fira-sans": "0.0.54",

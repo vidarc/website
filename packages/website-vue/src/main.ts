@@ -1,7 +1,11 @@
+import { typography } from '@mattailes/ui'
+import Vue from 'vue'
+
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import Vue from 'vue'
+
+typography.injectStyles()
 
 Vue.config.productionTip = false
 
