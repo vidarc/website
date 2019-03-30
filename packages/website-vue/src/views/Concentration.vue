@@ -2,8 +2,8 @@
   <div class="about">
     <h2>Concentration</h2>
     <div class="container">
-      <template v-for="card in deck">
-        <card :key="card.id" :suit="card.suit" :value="card.value" />
+      <template v-for="(card, index) in deck">
+        <card @click="flipCard(index)" :key="card.id" :suit="card.suit" :value="card.value" :face="card.face" />
       </template>
     </div>
   </div>
@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { mapState } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 
 import Card from '../components/Card.vue'
 
@@ -20,6 +20,9 @@ export default Vue.extend({
   components: { Card },
   computed: {
     ...mapState(['deck'])
+  },
+  methods: {
+    ...mapActions(['flipCard'])
   }
 })
 </script>

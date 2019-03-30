@@ -12,12 +12,14 @@ export default Vue.extend({
     value: {
       type: [Number, String],
       required: true
+    },
+    face: {
+      type: Boolean,
+      required: true
     }
   },
-  render: (createElement, { props }) => {
-    const { suit, value } = props
-
-    this.props
+  render: (createElement, { props, listeners }) => {
+    const { suit, value, face } = props
 
     let suitEmoji
     switch (suit) {
@@ -37,9 +39,12 @@ export default Vue.extend({
         suitEmoji = suit
     }
 
+    const classes = suit === 'clubs' || suit === 'spades' ? 'card black' : 'card red'
     const display = suit === 'joker' ? `${value}` : `${suitEmoji} - ${value}`
 
-    return createElement('div', { class: 'card' }, display)
+    return face
+      ? createElement('div', { class: classes, on: { ...listeners } }, display)
+      : createElement('div', { class: classes, on: { ...listeners } })
   }
 })
 </script>
@@ -47,6 +52,15 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .card {
   border: 1px solid black;
+  cursor: pointer;
   height: 100px;
+
+  &.red {
+    color: red;
+  }
+
+  &.black {
+    color: black;
+  }
 }
 </style>
