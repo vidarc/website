@@ -19,7 +19,6 @@
     ],
     "*.{css,scss,sass}": [
       "prettier --write",
-      "eslint --fix",
       "git add"
     ]
   },
