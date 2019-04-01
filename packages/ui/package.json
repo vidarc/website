@@ -2,37 +2,26 @@
   "name": "@mattailes/ui",
   "version": "2.3.10",
   "private": true,
-  "sideEffects": false,
+  "description": "UI web components for mattailes.net",
+  "module": "dist/esm/index.js",
+  "main": "dist/index.js",
+  "unpkg": "dist/ionic.js",
+  "types": "dist/types/components.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
-    "build-library": "babel --delete-dir-on-start -d build/ --verbose src/ --extensions '.tsx,.ts'",
-    "lint": "../../node_modules/.bin/tslint --project tsconfig.json --fix",
-    "storybook": "start-storybook -p 9009",
-    "build-storybook": "build-storybook"
+    "build": "stencil build",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll"
   },
-  "main": "build/index.js",
-  "dependencies": {
-    "@emotion/core": "10.0.10",
-    "@emotion/styled": "10.0.10",
-    "@fortawesome/fontawesome-svg-core": "1.2.17",
-    "@fortawesome/free-brands-svg-icons": "5.8.1",
-    "@fortawesome/free-regular-svg-icons": "5.8.1",
-    "@fortawesome/free-solid-svg-icons": "5.8.1",
-    "@fortawesome/react-fontawesome": "0.1.4",
-    "@fortawesome/vue-fontawesome": "0.1.6",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
-    "typeface-fira-sans": "0.0.54",
-    "typography": "0.16.19",
-    "typography-plugin-code": "0.16.19",
-    "typography-theme-de-young": "0.16.19"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@babel/cli": "7.2.3",
-    "@babel/core": "7.4.0",
-    "@babel/plugin-syntax-jsx": "7.2.0",
-    "@babel/plugin-transform-react-jsx": "7.3.0",
-    "@babel/plugin-transform-typescript": "7.4.0",
-    "babel-loader": "8.0.5",
-    "react-scripts": "2.1.8"
-  }
+    "@stencil/core": "0.18.1",
+    "@stencil/sass": "^0.1.1",
+    "rollup-plugin-svgo": "^1.0.2"
+  },
+  "license": "MIT"
 }

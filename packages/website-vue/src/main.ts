@@ -1,4 +1,4 @@
-import { typography } from '@mattailes/ui'
+import typography from '@mattailes/typography'
 import Vue from 'vue'
 
 import App from './App.vue'

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 
-import { Button } from '@mattailes/ui'
 import { connect } from 'react-redux'
 
 import actions from '../ducks/actions'
@@ -30,7 +29,7 @@ const AddTodo: React.FunctionComponent<Props> = ({ dispatch }) => {
             Todo:
             <input placeholder='Enter the todo...' type='text' name='todo' value={todo} onChange={handleChange} />
           </label>
-          <Button type='submit'>Add Todo</Button>
+          <button type='submit'>Add Todo</button>
         </div>
       </form>
     </div>

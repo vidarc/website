@@ -1,7 +1,6 @@
 import React, { SyntheticEvent } from 'react'
 
 import styled from '@emotion/styled'
-import { PauseIcon, PlayIcon, RestartIcon } from '@mattailes/ui'
 
 import { pauseGameOfLife, restartGameOfLife, startGameOfLife } from '../ducks/actions'
 
@@ -38,9 +37,9 @@ const Controls = ({ dispatch, generation, gameOver }) => {
   return (
     <>
       <StyledDiv>
-        <PlayIcon onClick={handlePlayClick} />
-        <PauseIcon onClick={handlePauseClick} />
-        <RestartIcon onClick={handleRestartClick} />
+        <ma-play-icon onClick={handlePlayClick} />
+        <ma-pause-icon onClick={handlePauseClick} />
+        <ma-undo-icon onClick={handleRestartClick} />
         <div>
           <p>Generation: {generation}</p>
         </div>

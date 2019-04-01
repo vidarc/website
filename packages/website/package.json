@@ -41,6 +41,7 @@
     "@emotion/core": "10.0.10",
     "@emotion/styled": "10.0.10",
     "@mattailes/types": "^2.2.0",
+    "@mattailes/typography": "^2.3.8",
     "@mattailes/ui": "^2.3.10",
     "@reach/router": "1.2.1",
     "apollo-boost": "0.3.1",

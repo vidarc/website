@@ -13,7 +13,8 @@
     "vuex": "3.0.1"
   },
   "devDependencies": {
-    "@mattailes/ui": "2.3.8",
+    "@mattailes/typography": "^2.3.8",
+    "@mattailes/ui": "^2.3.8",
     "@types/jest": "23.1.4",
     "@vue/cli-plugin-babel": "3.5.3",
     "@vue/cli-plugin-typescript": "3.5.3",
