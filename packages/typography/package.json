@@ -1,0 +1,15 @@
+{
+  "name": "@mattailes/typography",
+  "version": "2.3.8",
+  "private": true,
+  "sideEffects": false,
+  "scripts": {},
+  "main": "index.js",
+  "dependencies": {
+    "typeface-fira-sans": "0.0.54",
+    "typography": "0.16.19",
+    "typography-plugin-code": "0.16.19",
+    "typography-theme-de-young": "0.16.19"
+  },
+  "devDependencies": {}
+}

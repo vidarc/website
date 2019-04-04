@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { typography } from '@mattailes/ui'
+import typography from '@mattailes/typography'
+import { defineCustomElements } from '@mattailes/ui/dist/loader'
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
 import { hydrate, render } from 'react-dom'
@@ -23,6 +24,8 @@ function initApp(Component: any, element: HTMLElement) {
   } else {
     renderApp(Component, element, render)
   }
+
+  defineCustomElements(window)
 }
 
 function renderApp(Component: any, element: HTMLElement, renderFunction: any) {

@@ -9,13 +9,16 @@
       "tslint --fix",
       "git add"
     ],
+    "*.vue": [
+      "prettier --write",
+      "git add"
+    ],
     "*.json": [
       "prettier --write",
       "git add"
     ],
     "*.{css,scss,sass}": [
       "prettier --write",
-      "eslint --fix",
       "git add"
     ]
   },

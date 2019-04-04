@@ -1,6 +1,5 @@
 import * as React from 'react'
 
-import { Button } from '@mattailes/ui'
 import { Query } from 'react-apollo'
 
 export default (query, Component) => props => {
@@ -29,9 +28,7 @@ export default (query, Component) => props => {
         return (
           <div>
             <Component {...data} />
-            <Button primary onClick={() => refetch()}>
-              Refetch!
-            </Button>
+            <button onClick={() => refetch()}>Refetch!</button>
           </div>
         )
       }}
