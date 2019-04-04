@@ -4,8 +4,10 @@
  * It contains typing information for all components that exist in this project.
  */
 
-import { JSXBase } from '@stencil/core/internal'
-import { JSX } from '@stencil/core'
+
+import { JSXBase } from '@stencil/core/internal';
+import { JSX } from '@stencil/core';
+
 
 export namespace Components {
   interface MaPauseIcon {}
@@ -14,8 +16,8 @@ export namespace Components {
 }
 
 interface HTMLStencilElement extends HTMLElement {
-  componentOnReady(): Promise<this>
-  forceUpdate(): void
+  componentOnReady(): Promise<this>;
+  forceUpdate(): void;
 }
 
 declare namespace LocalJSX {
@@ -24,20 +26,20 @@ declare namespace LocalJSX {
   interface MaUndoIcon extends JSXBase.HTMLAttributes {}
 
   interface ElementInterfaces {
-    MaPauseIcon: Components.MaPauseIcon
-    MaPlayIcon: Components.MaPlayIcon
-    MaUndoIcon: Components.MaUndoIcon
+    'MaPauseIcon': Components.MaPauseIcon;
+    'MaPlayIcon': Components.MaPlayIcon;
+    'MaUndoIcon': Components.MaUndoIcon;
   }
 
   interface IntrinsicElements {
-    MaPauseIcon: LocalJSX.MaPauseIcon
-    MaPlayIcon: LocalJSX.MaPlayIcon
-    MaUndoIcon: LocalJSX.MaUndoIcon
+    'MaPauseIcon': LocalJSX.MaPauseIcon;
+    'MaPlayIcon': LocalJSX.MaPlayIcon;
+    'MaUndoIcon': LocalJSX.MaUndoIcon;
   }
 }
-export { LocalJSX as JSX }
+export { LocalJSX as JSX };
 
-declare module '@stencil/core' {
+declare module "@stencil/core" {
   export namespace JSX {
     interface ElementInterfaces extends LocalJSX.ElementInterfaces {}
     interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
@@ -45,23 +47,24 @@ declare module '@stencil/core' {
 }
 
 declare global {
+
   interface HTMLMaPauseIconElement extends Components.MaPauseIcon, HTMLStencilElement {}
   var HTMLMaPauseIconElement: {
-    prototype: HTMLMaPauseIconElement
-    new (): HTMLMaPauseIconElement
-  }
+    prototype: HTMLMaPauseIconElement;
+    new (): HTMLMaPauseIconElement;
+  };
 
   interface HTMLMaPlayIconElement extends Components.MaPlayIcon, HTMLStencilElement {}
   var HTMLMaPlayIconElement: {
-    prototype: HTMLMaPlayIconElement
-    new (): HTMLMaPlayIconElement
-  }
+    prototype: HTMLMaPlayIconElement;
+    new (): HTMLMaPlayIconElement;
+  };
 
   interface HTMLMaUndoIconElement extends Components.MaUndoIcon, HTMLStencilElement {}
   var HTMLMaUndoIconElement: {
-    prototype: HTMLMaUndoIconElement
-    new (): HTMLMaUndoIconElement
-  }
+    prototype: HTMLMaUndoIconElement;
+    new (): HTMLMaUndoIconElement;
+  };
   interface HTMLElementTagNameMap {
     'ma-pause-icon': HTMLMaPauseIconElement
     'ma-play-icon': HTMLMaPlayIconElement
@@ -69,8 +72,9 @@ declare global {
   }
 
   interface ElementTagNameMap {
-    'ma-pause-icon': HTMLMaPauseIconElement
-    'ma-play-icon': HTMLMaPlayIconElement
-    'ma-undo-icon': HTMLMaUndoIconElement
+    'ma-pause-icon': HTMLMaPauseIconElement;
+    'ma-play-icon': HTMLMaPlayIconElement;
+    'ma-undo-icon': HTMLMaUndoIconElement;
   }
 }
+
