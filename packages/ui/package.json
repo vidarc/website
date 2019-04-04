@@ -1,6 +1,6 @@
 {
   "name": "@mattailes/ui",
-  "version": "2.3.10",
+  "version": "3.0.0",
   "private": true,
   "description": "UI web components for mattailes.net",
   "module": "dist/index.mjs",
@@ -17,7 +17,6 @@
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
-  "dependencies": {},
   "devDependencies": {
     "@stencil/core": "1.0.0-alpha.4",
     "@stencil/sass": "0.1.1",

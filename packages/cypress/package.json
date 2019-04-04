@@ -1,6 +1,6 @@
 {
   "name": "@mattailes/cypress",
-  "version": "2.3.6",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "cypress:open": "cypress open",

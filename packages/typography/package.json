@@ -1,6 +1,6 @@
 {
   "name": "@mattailes/typography",
-  "version": "2.3.8",
+  "version": "3.0.0",
   "private": true,
   "sideEffects": false,
   "scripts": {},
@@ -10,6 +10,5 @@
     "typography": "0.16.19",
     "typography-plugin-code": "0.16.19",
     "typography-theme-de-young": "0.16.19"
-  },
-  "devDependencies": {}
+  }
 }
