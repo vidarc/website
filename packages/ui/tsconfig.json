@@ -1,15 +1,27 @@
 {
   "extends": "../../tsconfig",
   "compilerOptions": {
+    "strict": true,
+    "alwaysStrict": true,
+    "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
-    "declaration": false,
+    "declaration": true,
     "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsxFactory": "h",
+    "lib": ["dom", "es2017"],
     "module": "esnext",
-    "target": "es2017",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "types": ["webpack-env"]
+    "outDir": ".tmp",
+    "pretty": true,
+    "removeComments": false,
+    "target": "es2017",
+    "types": []
   },
-  "include": ["src", "types/jsx.d.ts"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "stencil.config.ts"],
   "exclude": ["node_modules"]
 }

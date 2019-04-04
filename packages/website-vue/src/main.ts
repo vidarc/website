@@ -1,13 +1,16 @@
 import typography from '@mattailes/typography'
+import { defineCustomElements } from '@mattailes/ui/dist/loader'
 import Vue from 'vue'
 
 import App from './App.vue'
 import router from './router'
 import store from './store'
 
-typography.injectStyles()
-
 Vue.config.productionTip = false
+Vue.config.ignoredElements = [/ma-\w*/]
+
+typography.injectStyles()
+defineCustomElements(window)
 
 new Vue({
   router,

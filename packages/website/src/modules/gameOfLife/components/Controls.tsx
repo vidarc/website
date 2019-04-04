@@ -8,7 +8,7 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: center;
 
-  & > div:not(:last-child) {
+  & > *:not(:last-child) {
     margin-right: 20px;
   }
 `
@@ -19,20 +19,11 @@ const StyledH3 = styled.h3`
 `
 
 const Controls = ({ dispatch, generation, gameOver }) => {
-  function handlePlayClick(event: SyntheticEvent) {
-    event.preventDefault()
-    dispatch(startGameOfLife())
-  }
+  const handlePlayClick = () => dispatch(startGameOfLife())
 
-  function handlePauseClick(event: SyntheticEvent) {
-    event.preventDefault()
-    dispatch(pauseGameOfLife())
-  }
+  const handlePauseClick = () => dispatch(pauseGameOfLife())
 
-  function handleRestartClick(event: SyntheticEvent) {
-    event.preventDefault()
-    dispatch(restartGameOfLife())
-  }
+  const handleRestartClick = () => dispatch(restartGameOfLife())
 
   return (
     <>

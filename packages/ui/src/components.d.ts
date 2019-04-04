@@ -4,32 +4,47 @@
  * It contains typing information for all components that exist in this project.
  */
 
-import '@stencil/core'
+import { JSXBase } from '@stencil/core/internal'
+import { JSX } from '@stencil/core'
 
 export namespace Components {
   interface MaPauseIcon {}
-  interface MaPauseIconAttributes extends StencilHTMLAttributes {}
-
   interface MaPlayIcon {}
-  interface MaPlayIconAttributes extends StencilHTMLAttributes {}
-
   interface MaUndoIcon {}
-  interface MaUndoIconAttributes extends StencilHTMLAttributes {}
 }
 
-declare global {
-  interface StencilElementInterfaces {
+interface HTMLStencilElement extends HTMLElement {
+  componentOnReady(): Promise<this>
+  forceUpdate(): void
+}
+
+declare namespace LocalJSX {
+  interface MaPauseIcon extends JSXBase.HTMLAttributes {}
+  interface MaPlayIcon extends JSXBase.HTMLAttributes {}
+  interface MaUndoIcon extends JSXBase.HTMLAttributes {}
+
+  interface ElementInterfaces {
     MaPauseIcon: Components.MaPauseIcon
     MaPlayIcon: Components.MaPlayIcon
     MaUndoIcon: Components.MaUndoIcon
   }
 
-  interface StencilIntrinsicElements {
-    'ma-pause-icon': Components.MaPauseIconAttributes
-    'ma-play-icon': Components.MaPlayIconAttributes
-    'ma-undo-icon': Components.MaUndoIconAttributes
+  interface IntrinsicElements {
+    MaPauseIcon: LocalJSX.MaPauseIcon
+    MaPlayIcon: LocalJSX.MaPlayIcon
+    MaUndoIcon: LocalJSX.MaUndoIcon
   }
+}
+export { LocalJSX as JSX }
 
+declare module '@stencil/core' {
+  export namespace JSX {
+    interface ElementInterfaces extends LocalJSX.ElementInterfaces {}
+    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
+  }
+}
+
+declare global {
   interface HTMLMaPauseIconElement extends Components.MaPauseIcon, HTMLStencilElement {}
   var HTMLMaPauseIconElement: {
     prototype: HTMLMaPauseIconElement
@@ -47,7 +62,6 @@ declare global {
     prototype: HTMLMaUndoIconElement
     new (): HTMLMaUndoIconElement
   }
-
   interface HTMLElementTagNameMap {
     'ma-pause-icon': HTMLMaPauseIconElement
     'ma-play-icon': HTMLMaPlayIconElement
@@ -59,12 +73,4 @@ declare global {
     'ma-play-icon': HTMLMaPlayIconElement
     'ma-undo-icon': HTMLMaUndoIconElement
   }
-
-  export namespace JSX {
-    export interface Element {}
-    export interface IntrinsicElements extends StencilIntrinsicElements {
-      [tagName: string]: any
-    }
-  }
-  export interface HTMLAttributes extends StencilHTMLAttributes {}
 }

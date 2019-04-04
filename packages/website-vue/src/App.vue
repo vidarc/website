@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/concentration">Concentration</router-link>
+      <span><router-link to="/">Home</router-link></span>
+      <span><router-link to="/concentration">Concentration</router-link></span>
     </div>
     <router-view />
   </div>
@@ -17,7 +17,7 @@
 #nav {
   padding: 30px;
 
-  & > a:not(:last-child)::after {
+  & > span:not(:last-child)::after {
     content: '|';
     color: #2c3e50;
     margin: 0 8px;

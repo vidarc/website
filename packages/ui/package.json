@@ -3,7 +3,7 @@
   "version": "2.3.10",
   "private": true,
   "description": "UI web components for mattailes.net",
-  "module": "dist/esm/index.js",
+  "module": "dist/index.mjs",
   "main": "dist/index.js",
   "unpkg": "dist/ionic.js",
   "types": "dist/types/components.d.ts",
@@ -12,16 +12,16 @@
     "dist/"
   ],
   "scripts": {
-    "build": "stencil build",
+    "build-library": "stencil build",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "dependencies": {},
   "devDependencies": {
-    "@stencil/core": "0.18.1",
-    "@stencil/sass": "^0.1.1",
-    "rollup-plugin-svgo": "^1.0.2"
+    "@stencil/core": "1.0.0-alpha.4",
+    "@stencil/sass": "0.1.1",
+    "rollup-plugin-svgo": "1.0.2"
   },
   "license": "MIT"
 }
