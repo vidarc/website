@@ -13,6 +13,7 @@ export default new Vuex.Store({
     deck: deck.sort(() => 0.5 - Math.random()).map(entry => ({ ...entry, face: false })),
     selected: [],
   },
+
   mutations: {
     flipCard(state, index) {
       state.deck[index].face = !state.deck[index].face
@@ -29,6 +30,7 @@ export default new Vuex.Store({
       state.selected = []
     },
   },
+
   actions: {
     flipCard({ commit, state }, index) {
       commit('flipCard', index)

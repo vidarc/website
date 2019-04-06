@@ -7,6 +7,6 @@ export interface Props {
 }
 
 const Link = ({ active, children, onClick }: Props) =>
-  active ? <span>{children}</span> : <button onClick={onClick}>{children}</button>
+  active ? <span>{children}</span> : <ma-button onClick={onClick}>{children}</ma-button>
 
 export default Link

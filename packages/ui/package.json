@@ -3,13 +3,13 @@
   "version": "3.0.0",
   "private": true,
   "description": "UI web components for mattailes.net",
-  "module": "dist/index.mjs",
-  "main": "dist/index.js",
-  "unpkg": "dist/ionic.js",
-  "types": "dist/types/components.d.ts",
-  "collection": "dist/collection/collection-manifest.json",
+  "module": "./dist/index.mjs",
+  "main": "./dist/index.js",
+  "types": "./dist/types/components.d.ts",
+  "collection": "./dist/collection/collection-manifest.json",
   "files": [
-    "dist/"
+    "dist/",
+    "www/build/mattailes.css"
   ],
   "scripts": {
     "build-library": "stencil build",
@@ -18,7 +18,7 @@
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "devDependencies": {
-    "@stencil/core": "1.0.0-alpha.4",
+    "@stencil/core": "1.0.0-alpha.5",
     "@stencil/sass": "0.1.1",
     "rollup-plugin-svgo": "1.0.2"
   },
