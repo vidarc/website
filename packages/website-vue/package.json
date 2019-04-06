@@ -1,6 +1,6 @@
 {
   "name": "@mattailes/website-vue",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -14,8 +14,8 @@
     "vuex": "3.0.1"
   },
   "devDependencies": {
-    "@mattailes/typography": "^3.0.0",
-    "@mattailes/ui": "^3.0.0",
+    "@mattailes/typography": "^3.0.1",
+    "@mattailes/ui": "^3.0.1",
     "@types/jest": "23.1.4",
     "@vue/cli-plugin-babel": "3.5.3",
     "@vue/cli-plugin-typescript": "3.5.3",
