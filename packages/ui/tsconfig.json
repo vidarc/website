@@ -19,6 +19,7 @@
     "outDir": ".tmp",
     "pretty": true,
     "removeComments": false,
+    "strictPropertyInitialization": false,
     "target": "es2017",
     "types": []
   },

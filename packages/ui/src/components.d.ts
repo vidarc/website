@@ -5,33 +5,38 @@
  */
 
 
-import { JSXBase } from '@stencil/core/internal';
+import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import { JSX } from '@stencil/core';
 
 
 export namespace Components {
+  interface MaButton {
+    'color': string;
+    'type': string;
+  }
   interface MaPauseIcon {}
   interface MaPlayIcon {}
   interface MaUndoIcon {}
 }
 
-interface HTMLStencilElement extends HTMLElement {
-  componentOnReady(): Promise<this>;
-  forceUpdate(): void;
-}
-
 declare namespace LocalJSX {
+  interface MaButton extends JSXBase.HTMLAttributes {
+    'color'?: string;
+    'type'?: string;
+  }
   interface MaPauseIcon extends JSXBase.HTMLAttributes {}
   interface MaPlayIcon extends JSXBase.HTMLAttributes {}
   interface MaUndoIcon extends JSXBase.HTMLAttributes {}
 
   interface ElementInterfaces {
+    'MaButton': Components.MaButton;
     'MaPauseIcon': Components.MaPauseIcon;
     'MaPlayIcon': Components.MaPlayIcon;
     'MaUndoIcon': Components.MaUndoIcon;
   }
 
   interface IntrinsicElements {
+    'MaButton': LocalJSX.MaButton;
     'MaPauseIcon': LocalJSX.MaPauseIcon;
     'MaPlayIcon': LocalJSX.MaPlayIcon;
     'MaUndoIcon': LocalJSX.MaUndoIcon;
@@ -47,6 +52,12 @@ declare module "@stencil/core" {
 }
 
 declare global {
+
+  interface HTMLMaButtonElement extends Components.MaButton, HTMLStencilElement {}
+  var HTMLMaButtonElement: {
+    prototype: HTMLMaButtonElement;
+    new (): HTMLMaButtonElement;
+  };
 
   interface HTMLMaPauseIconElement extends Components.MaPauseIcon, HTMLStencilElement {}
   var HTMLMaPauseIconElement: {
@@ -66,12 +77,14 @@ declare global {
     new (): HTMLMaUndoIconElement;
   };
   interface HTMLElementTagNameMap {
+    'ma-button': HTMLMaButtonElement
     'ma-pause-icon': HTMLMaPauseIconElement
     'ma-play-icon': HTMLMaPlayIconElement
     'ma-undo-icon': HTMLMaUndoIconElement
   }
 
   interface ElementTagNameMap {
+    'ma-button': HTMLMaButtonElement;
     'ma-pause-icon': HTMLMaPauseIconElement;
     'ma-play-icon': HTMLMaPlayIconElement;
     'ma-undo-icon': HTMLMaUndoIconElement;

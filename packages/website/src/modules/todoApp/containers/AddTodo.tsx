@@ -11,10 +11,10 @@ interface Props {
 const AddTodo: React.FunctionComponent<Props> = ({ dispatch }) => {
   const [todo, setTodo] = useState('')
 
-  const handleSubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.SyntheticEvent<HTMLFormElement> | MouseEvent) => {
     event.preventDefault()
 
-    dispatch(actions.addTodo(todo))
+    if (todo) dispatch(actions.addTodo(todo))
 
     setTodo('')
   }
@@ -29,7 +29,9 @@ const AddTodo: React.FunctionComponent<Props> = ({ dispatch }) => {
             Todo:
             <input placeholder='Enter the todo...' type='text' name='todo' value={todo} onChange={handleChange} />
           </label>
-          <button type='submit'>Add Todo</button>
+          <ma-button type='submit' onClick={handleSubmit}>
+            Add Todo
+          </ma-button>
         </div>
       </form>
     </div>

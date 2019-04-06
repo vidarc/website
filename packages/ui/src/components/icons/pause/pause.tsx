@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core'
+import { Component, ComponentInterface, h } from '@stencil/core'
 
 import icon from './pause-solid.svg'
 
@@ -7,7 +7,7 @@ import icon from './pause-solid.svg'
   styleUrl: '../icon.scss',
   shadow: true,
 })
-export class PauseIcon {
+export class PauseIcon implements ComponentInterface {
   render() {
     return <span innerHTML={icon} />
   }

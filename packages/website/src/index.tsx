@@ -7,6 +7,8 @@ import { ApolloProvider } from 'react-apollo'
 import { hydrate, render } from 'react-dom'
 import { Provider } from 'react-redux'
 
+import '@mattailes/ui/www/build/mattailes.css'
+
 import App from './components/App'
 import { configureStore, rootSaga, sagaMiddleware } from './ducks'
 

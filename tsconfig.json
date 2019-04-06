@@ -1,18 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es5",
     "allowJs": true,
-    "skipLibCheck": false,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": false,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "jsx": "preserve",
+    "lib": ["es2018", "dom"],
     "module": "esnext",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
     "noEmit": true,
+    "pretty": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": false,
     "sourceMap": true,
-    "jsx": "preserve",
-    "lib": ["es2018", "dom"]
+    "strict": false,
+    "target": "es5"
   }
 }
