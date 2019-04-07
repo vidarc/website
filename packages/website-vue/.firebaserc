@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "website-b10e5"
+  },
+  "targets": {
+    "website-b10e5": {
+      "hosting": {
+        "mattailes-vue": [
+          "mattailes-vue"
+        ]
+      }
+    }
   }
 }
