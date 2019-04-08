@@ -1,6 +1,6 @@
 {
   "name": "@mattailes/website",
-  "version": "3.0.1",
+  "version": "3.0.3",
   "private": true,
   "proxy": "https://us-central1-server-b6f04.cloudfunctions.net/api/graphql",
   "scripts": {
