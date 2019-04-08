@@ -1,6 +1,9 @@
 {
   "extends": ["config:base"],
   "schedule": "before 3am on Monday",
+  "semanticCommits": true,
+  "groupName": "all dependencies",
+  "groupSlug": "all",
   "packageRules": [
     {
       "packagePatterns": ["*"]
@@ -13,6 +16,5 @@
       "depTypeList": ["devDependencies"],
       "groupName": "all devDependencies"
     }
-  ],
-  "semanticCommits": true
+  ]
 }
