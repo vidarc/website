@@ -2713,12 +2713,12 @@
     error-stack-parser "^2.0.0"
     string-width "^2.0.0"
 
-"@stencil/core@1.0.0-alpha.5":
-  version "1.0.0-alpha.5"
-  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-1.0.0-alpha.5.tgz#d8b22437e5218279f1078ce250b3c84fd7dd5f06"
-  integrity sha512-qVQzJCjLacO241Gle7Llj19x4QlgCqVtYIMYhfyLqLDo0mfNtc8oLEmAONcRR36oq/Wac97N8GPOrsxk8dSnnw==
+"@stencil/core@1.0.0-alpha.8":
+  version "1.0.0-alpha.8"
+  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-1.0.0-alpha.8.tgz#ddd075fcb7130372a29c3a72aae0548d8356d2a7"
+  integrity sha512-ov1Ak/NvF5clXxtUxCYf3RBoI2HhyelcjxMbGsbj2YhYN/QXeoGzwg/rc0flThmsI9mLz29ApmF/OKoUEoSSag==
   dependencies:
-    typescript "3.3.3"
+    typescript "3.4.2"
 
 "@stencil/sass@0.1.1":
   version "0.1.1"
@@ -17357,11 +17357,6 @@ typescript-tuple@^2.1.0:
   integrity sha512-yoi2Bsa/OHzGh7PO5zpyFj6g+0dUbR5DbdQLPFkbEulOImQtCliShqzoDpAjcpsPCfibhr2Q92y5NqYzYkaK6Q==
   dependencies:
     typescript-compare "^0.0.2"
-
-typescript@3.3.3:
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.3.3.tgz#f1657fc7daa27e1a8930758ace9ae8da31403221"
-  integrity sha512-Y21Xqe54TBVp+VDSNbuDYdGw0BpoR/Q6wo/+35M8PAU0vipahnyduJWirxxdxjsAkS7hue53x2zp8gz7F05u0A==
 
 typescript@3.4.2:
   version "3.4.2"
