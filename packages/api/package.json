@@ -2,9 +2,6 @@
   "name": "@mattailes/api",
   "version": "3.0.3",
   "private": true,
-  "engines": {
-    "node": ">=8"
-  },
   "workspaces": {
     "nohoist": [
       "@babel/runtime"
