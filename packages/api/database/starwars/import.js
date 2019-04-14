@@ -1,6 +1,6 @@
 const admin = require('firebase-admin')
 
-const serviceAccount = require('../../../../keys/server.json')
+const serviceAccount = require('../../../../keys/firebase.json')
 
 const films = require('./films.json')
 const people = require('./people.json')
@@ -11,7 +11,7 @@ const vehicles = require('./vehicles.json')
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: 'https://server-b6f04.firebaseio.com'
+  databaseURL: 'https://website-b10e5.firebaseio.com'
 })
 
 const db = admin.firestore()
