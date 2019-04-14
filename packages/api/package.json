@@ -3,7 +3,7 @@
   "version": "3.0.3",
   "private": true,
   "engines": {
-    "node": "8"
+    "node": ">=8"
   },
   "workspaces": {
     "nohoist": [
