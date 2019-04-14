@@ -2,7 +2,7 @@
   "name": "@mattailes/website",
   "version": "3.0.3",
   "private": true,
-  "proxy": "https://us-central1-server-b6f04.cloudfunctions.net/api/graphql",
+  "proxy": "https://us-central1-website-b10e5.cloudfunctions.net/api/graphql",
   "scripts": {
     "build": "react-scripts build",
     "coverage:cleanup": "rm -rf ./coverage",
@@ -40,6 +40,7 @@
   "dependencies": {
     "@emotion/core": "10.0.10",
     "@emotion/styled": "10.0.10",
+    "@mattailes/reason": "^0.1.0",
     "@mattailes/types": "^3.0.0",
     "@mattailes/typography": "^3.0.1",
     "@mattailes/ui": "^3.0.1",
@@ -49,13 +50,13 @@
     "dotenv": "7.0.0",
     "facepaint": "1.2.1",
     "graphql.macro": "1.3.5",
-    "react": "16.8.6",
     "react-apollo": "2.5.4",
     "react-dom": "16.8.6",
     "react-helmet": "5.2.0",
     "react-redux": "6.0.1",
-    "redux": "4.0.1",
+    "react": "16.8.6",
     "redux-saga": "1.0.2",
+    "redux": "4.0.1",
     "sanitize.css": "8.0.0",
     "shortid": "2.2.14"
   },

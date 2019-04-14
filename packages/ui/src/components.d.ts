@@ -53,6 +53,7 @@ declare module "@stencil/core" {
 
 declare global {
 
+
   interface HTMLMaButtonElement extends Components.MaButton, HTMLStencilElement {}
   var HTMLMaButtonElement: {
     prototype: HTMLMaButtonElement;

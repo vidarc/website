@@ -32,6 +32,7 @@ npm-debug.log
 .vim_mru_files
 .viminfo
 .vimrc
+.gitconfig
 
 .ssh/
 tmp/
