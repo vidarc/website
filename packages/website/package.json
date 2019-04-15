@@ -35,7 +35,7 @@
     "redux-devtools-extension": "2.13.8",
     "redux-mock-store": "1.5.3",
     "source-map-explorer": "1.8.0",
-    "webpack-bundle-analyzer": "3.2.0"
+    "webpack-bundle-analyzer": "3.3.2"
   },
   "dependencies": {
     "@emotion/core": "10.0.10",
