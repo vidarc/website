@@ -43,7 +43,7 @@
     "lerna": "3.13.2",
     "lint-staged": "8.1.5",
     "prettier": "1.17.0",
-    "serve": "10.1.2",
+    "serve": "11.0.0",
     "start-server-and-test": "1.7.13",
     "tslint": "5.15.0",
     "tslint-config-airbnb": "5.11.1",
