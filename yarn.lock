@@ -2940,10 +2940,10 @@
     error-stack-parser "^2.0.0"
     string-width "^2.0.0"
 
-"@stencil/core@1.0.0-alpha.11":
-  version "1.0.0-alpha.11"
-  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-1.0.0-alpha.11.tgz#f6f7a2e36b5e4df4585e06cbf26ea5229731601d"
-  integrity sha512-7GgDiJbit6Z/GtS2yajSKCkHmN2O9nNMCGsIWdeHKLRjfX38nGb5+FPCxpikrg1uzZeu1KVTW1NHxmv/Sy3qTQ==
+"@stencil/core@1.0.0-alpha.9":
+  version "1.0.0-alpha.9"
+  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-1.0.0-alpha.9.tgz#dc595d60aa6ad604d47134292524fa1f7c139c0a"
+  integrity sha512-s8ETr+vLE44nJv3P9Xk5fLLcoZVtFNlgMwhGre/Au+oKFyquNsgHbU/9jjofgQEfgOIg85aGIARtTPih+afO/Q==
   dependencies:
     typescript "3.4.2"
 
