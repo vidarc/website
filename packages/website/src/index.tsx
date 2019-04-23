@@ -15,6 +15,7 @@ import { configureStore, rootSaga, sagaMiddleware } from './ducks'
 const store = configureStore()
 sagaMiddleware.run(rootSaga)
 const client = new ApolloClient({
+  name: 'react-site',
   uri: 'https://us-central1-website-b10e5.cloudfunctions.net/api/graphql',
 })
 

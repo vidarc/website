@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <div id="nav">
+  <div class="app">
+    <div class="nav">
       <span>
         <router-link to="/">Home</router-link>
       </span>
@@ -13,12 +13,12 @@
 </template>
 
 <style lang="scss">
-#app {
+.class {
   text-align: center;
   color: #2c3e50;
 }
 
-#nav {
+.nav {
   padding: 30px;
 
   & > span:not(:last-child)::after {
