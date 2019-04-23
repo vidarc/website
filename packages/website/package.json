@@ -1,6 +1,6 @@
 {
   "name": "@mattailes/website",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "private": true,
   "proxy": "https://us-central1-website-b10e5.cloudfunctions.net/api/graphql",
   "scripts": {
@@ -40,7 +40,7 @@
   "dependencies": {
     "@emotion/core": "10.0.10",
     "@emotion/styled": "10.0.10",
-    "@mattailes/reason": "^4.0.4",
+    "@mattailes/reason": "^4.0.5",
     "@mattailes/types": "^4.0.0",
     "@mattailes/typography": "^4.0.0",
     "@mattailes/ui": "^4.0.4",
