@@ -4,12 +4,39 @@
   "semanticCommits": true,
   "packageRules": [
     {
-      "depTypeList": ["dependencies"],
-      "groupName": "all dependencies"
+      "groupName": "production dependencies",
+      "packageNames": [
+        "bs-platform",
+        "cross-fetch",
+        "dataloader",
+        "dotenv",
+        "express",
+        "facepaint",
+        "reason-react",
+        "sanitize.css",
+        "shortid"
+      ],
+      "packagePatterns": [
+        "^@babel/",
+        "^@emotion/",
+        "^@reach",
+        "^@stencil/",
+        "^@vue/",
+        "^apollo",
+        "^firebase",
+        "^graphql",
+        "^lodash",
+        "^react",
+        "^redux",
+        "^sass",
+        "^typeface",
+        "^typography",
+        "^vue"
+      ]
     },
     {
-      "depTypeList": ["devDependencies"],
-      "groupName": "all devDependencies"
+      "groupName": "development dependencies",
+      "depTypeList": ["devDependencies"]
     }
   ]
 }
