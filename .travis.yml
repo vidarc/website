@@ -30,6 +30,8 @@ deploy:
   skip_cleanup: true
   on:
     branch: master
+    condition: $TRAVIS_COMMIT_MESSAGE != *'chore(deps)'*
+
 after_deploy: bash .travis/lernaVersion.sh
 
 env:
