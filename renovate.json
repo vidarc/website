@@ -2,42 +2,14 @@
   "extends": ["config:base"],
   "schedule": "before 3am on Monday",
   "semanticCommits": true,
-  "masterIssue": true,
   "packageRules": [
+    {
+      "groupName": "production dependencies",
+      "depTypeList": ["dependencies"]
+    },
     {
       "groupName": "development dependencies",
       "depTypeList": ["devDependencies"]
-    },
-    {
-      "groupName": "production dependencies",
-      "packageNames": [
-        "bs-platform",
-        "cross-fetch",
-        "dataloader",
-        "dotenv",
-        "express",
-        "facepaint",
-        "reason-react",
-        "sanitize.css",
-        "shortid"
-      ],
-      "packagePatterns": [
-        "^@babel/",
-        "^@emotion/",
-        "^@reach",
-        "^@stencil/",
-        "^@vue/",
-        "^apollo",
-        "^firebase",
-        "^graphql",
-        "^lodash",
-        "^react",
-        "^redux",
-        "^sass",
-        "^typeface",
-        "^typography",
-        "^vue"
-      ]
     }
   ]
 }

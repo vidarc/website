@@ -17,7 +17,7 @@
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
-  "devDependencies": {
+  "dependencies": {
     "@stencil/core": "1.0.0-alpha.9",
     "@stencil/sass": "0.1.1",
     "rollup-plugin-svgo": "1.0.2"
