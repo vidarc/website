@@ -6,7 +6,7 @@ git config --global user.email "travis@travis-ci.org"
 git config --global user.name "Travis CI"
 git remote add with-credentials https://${GITHUB_TOKEN}@github.com/vidarc/website.git
 
-if [[ $TRAVIS_COMMIT_MESSAGE == *'chore(deps)'* ]]: then
+if [[ $TRAVIS_COMMIT_MESSAGE == *'chore(deps)'* ]]; then
   exit 0
 fi
 
