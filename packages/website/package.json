@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@emotion/core": "10.0.10",
-    "@emotion/styled": "10.0.10",
+    "@emotion/styled": "10.0.11",
     "@mattailes/reason": "^4.0.8",
     "@mattailes/types": "^4.0.0",
     "@mattailes/typography": "^4.0.0",
@@ -52,7 +52,7 @@
     "react": "16.8.6",
     "react-apollo": "2.5.5",
     "react-dom": "16.8.6",
-    "react-helmet": "5.2.0",
+    "react-helmet": "5.2.1",
     "react-redux": "7.0.3",
     "react-scripts": "2.1.8",
     "redux": "4.0.1",
