@@ -35,7 +35,17 @@ const Controls = ({ dispatch, generation, gameOver }) => {
           <p>Generation: {generation}</p>
         </div>
       </StyledDiv>
-      {gameOver && <StyledH3>☠️ Game Over ☠️</StyledH3>}
+      {gameOver && (
+        <StyledH3>
+          <span role='img' aria-label='skull-emoji'>
+            ☠️
+          </span>{' '}
+          Game Over{' '}
+          <span role='img' aria-label='skull-emoji'>
+            ☠️
+          </span>
+        </StyledH3>
+      )}
     </>
   )
 }
