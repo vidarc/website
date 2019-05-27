@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "enzyme": "3.9.0",
-    "enzyme-adapter-react-16": "1.13.1",
+    "enzyme-adapter-react-16": "1.13.2",
     "jest-emotion": "10.0.11",
     "jest-enzyme": "7.0.2",
     "nock": "10.0.6",
