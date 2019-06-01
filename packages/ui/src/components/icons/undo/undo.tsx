@@ -9,6 +9,6 @@ import icon from './undo-solid.svg'
 })
 export class UndoIcon implements ComponentInterface {
   render() {
-    return <span innerHTML={icon} />
+    return <img src={icon} />
   }
 }

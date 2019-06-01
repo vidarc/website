@@ -9,6 +9,6 @@ import icon from './play-solid.svg'
 })
 export class PlayIcon implements ComponentInterface {
   render() {
-    return <span innerHTML={icon} />
+    return <img src={icon} />
   }
 }
