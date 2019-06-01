@@ -6,7 +6,6 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-import { JSX } from '@stencil/core';
 
 
 export namespace Components {
@@ -17,38 +16,6 @@ export namespace Components {
   interface MaPauseIcon {}
   interface MaPlayIcon {}
   interface MaUndoIcon {}
-}
-
-declare namespace LocalJSX {
-  interface MaButton extends JSXBase.HTMLAttributes {
-    'color'?: string;
-    'type'?: string;
-  }
-  interface MaPauseIcon extends JSXBase.HTMLAttributes {}
-  interface MaPlayIcon extends JSXBase.HTMLAttributes {}
-  interface MaUndoIcon extends JSXBase.HTMLAttributes {}
-
-  interface ElementInterfaces {
-    'MaButton': Components.MaButton;
-    'MaPauseIcon': Components.MaPauseIcon;
-    'MaPlayIcon': Components.MaPlayIcon;
-    'MaUndoIcon': Components.MaUndoIcon;
-  }
-
-  interface IntrinsicElements {
-    'MaButton': LocalJSX.MaButton;
-    'MaPauseIcon': LocalJSX.MaPauseIcon;
-    'MaPlayIcon': LocalJSX.MaPlayIcon;
-    'MaUndoIcon': LocalJSX.MaUndoIcon;
-  }
-}
-export { LocalJSX as JSX };
-
-declare module "@stencil/core" {
-  export namespace JSX {
-    interface ElementInterfaces extends LocalJSX.ElementInterfaces {}
-    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
-  }
 }
 
 declare global {
@@ -78,17 +45,37 @@ declare global {
     new (): HTMLMaUndoIconElement;
   };
   interface HTMLElementTagNameMap {
-    'ma-button': HTMLMaButtonElement
-    'ma-pause-icon': HTMLMaPauseIconElement
-    'ma-play-icon': HTMLMaPlayIconElement
-    'ma-undo-icon': HTMLMaUndoIconElement
-  }
-
-  interface ElementTagNameMap {
     'ma-button': HTMLMaButtonElement;
     'ma-pause-icon': HTMLMaPauseIconElement;
     'ma-play-icon': HTMLMaPlayIconElement;
     'ma-undo-icon': HTMLMaUndoIconElement;
   }
 }
+
+declare namespace LocalJSX {
+  interface MaButton extends JSXBase.HTMLAttributes<HTMLMaButtonElement> {
+    'color'?: string;
+    'type'?: string;
+  }
+  interface MaPauseIcon extends JSXBase.HTMLAttributes<HTMLMaPauseIconElement> {}
+  interface MaPlayIcon extends JSXBase.HTMLAttributes<HTMLMaPlayIconElement> {}
+  interface MaUndoIcon extends JSXBase.HTMLAttributes<HTMLMaUndoIconElement> {}
+
+  interface IntrinsicElements {
+    'ma-button': MaButton;
+    'ma-pause-icon': MaPauseIcon;
+    'ma-play-icon': MaPlayIcon;
+    'ma-undo-icon': MaUndoIcon;
+  }
+}
+
+export { LocalJSX as JSX };
+
+
+declare module "@stencil/core" {
+  export namespace JSX {
+    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
+  }
+}
+
 

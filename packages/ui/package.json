@@ -18,9 +18,8 @@
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "dependencies": {
-    "@stencil/core": "1.0.0-beta.5",
-    "@stencil/sass": "0.2.3",
-    "rollup-plugin-svgo": "1.0.2"
+    "@stencil/core": "1.0.0-beta.8",
+    "@stencil/sass": "0.2.3"
   },
   "license": "MIT"
 }

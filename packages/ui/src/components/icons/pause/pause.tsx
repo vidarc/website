@@ -9,6 +9,6 @@ import icon from './pause-solid.svg'
 })
 export class PauseIcon implements ComponentInterface {
   render() {
-    return <span innerHTML={icon} />
+    return <img src={icon} />
   }
 }
