@@ -44,7 +44,7 @@
     "@mattailes/typography": "^4.0.0",
     "@mattailes/ui": "^4.0.12",
     "@reach/router": "1.2.1",
-    "apollo-boost": "0.4.0",
+    "apollo-boost": "0.4.2",
     "cross-fetch": "3.0.3",
     "dotenv": "8.0.0",
     "facepaint": "1.2.1",
