@@ -3,7 +3,7 @@ import { sass } from '@stencil/sass'
 
 export const config: Config = {
   namespace: 'mattailes',
-  globalStyle: 'src/global/variables.css',
+  globalStyle: 'src/global/variables.scss',
   plugins: [sass()],
   outputTargets: [{ type: 'dist' }, { type: 'www', serviceWorker: null }],
 }

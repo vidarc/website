@@ -13,7 +13,7 @@
 </template>
 
 <style lang="scss">
-.class {
+.app {
   text-align: center;
   color: #2c3e50;
 }
