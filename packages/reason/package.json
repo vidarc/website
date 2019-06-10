@@ -1,6 +1,6 @@
 {
   "name": "@mattailes/reason",
-  "version": "4.0.9",
+  "version": "4.1.0",
   "main": "index.ts",
   "scripts": {
     "build-library": "bsb -make-world",
