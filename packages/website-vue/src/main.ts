@@ -2,6 +2,8 @@ import typography from '@mattailes/typography'
 import { defineCustomElements } from '@mattailes/ui/dist/loader'
 import Vue from 'vue'
 
+import '@mattailes/ui/www/build/mattailes.css'
+
 import App from './App.vue'
 import router from './router'
 import store from './store'

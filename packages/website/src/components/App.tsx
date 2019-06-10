@@ -2,7 +2,6 @@ import React from 'react'
 
 import styled from '@emotion/styled'
 import { Router } from '@reach/router'
-import 'sanitize.css'
 
 import ErrorBoundary from './ErrorBoundary'
 import GlobalStyles from './GlobalStyles'

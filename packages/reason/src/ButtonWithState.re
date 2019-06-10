@@ -1,30 +1,14 @@
-type state = {
-  count: int,
+[@react.component]
+let make = () => {
+  let (count, setCount) = React.useState(() => 0);
+
+  let message =
+    "You have clicked the button " ++ string_of_int(count) ++ " times!";
+
+  let handleClick = _event => setCount(_ => count + 1);
+
+  <div>
+    <p> {ReasonReact.string(message)} </p>
+    <button onClick=handleClick> {ReasonReact.string("Click me!")} </button>
+  </div>;
 };
-
-type action =
-  | Click;
-
-let component = ReasonReact.reducerComponent("ButtonWithState");
-
-let make = _children => {
-  ...component,
-
-  initialState: () => {
-    count: 0,
-  },
-
-  reducer: (action, state) =>
-    switch(action) {
-      | Click => ReasonReact.Update({ count: state.count + 1 })
-    },
-
-  render: ({ send, state }) => {
-    let message = "You have clicked the button " ++ string_of_int(state.count) ++ " times!";
-
-    <div>
-      <p>(ReasonReact.string(message))</p>
-      <button onClick=(_event => send(Click))>(ReasonReact.string("Click me!"))</button>
-    </div>
-  }
-}
