@@ -1,19 +1,11 @@
 import React from 'react'
 
-import styled from '@emotion/styled'
 import { Router } from '@reach/router'
 
 import ErrorBoundary from './ErrorBoundary'
-import GlobalStyles from './GlobalStyles'
 import Loading from './Loading'
 import { Navigation } from './Navigation'
 import NotFound from './NotFound'
-
-const StyledDiv = styled.div`
-  text-align: left;
-  margin: 0 auto;
-  max-width: 1024px;
-`
 
 const AsyncHome = React.lazy(() => import('../modules/home/Home'))
 const AsyncStarWars = React.lazy(() => import('../modules/starWarsApp/StarWarsApp'))
@@ -25,20 +17,17 @@ const AsyncReasonReactEntry = React.lazy(() =>
 
 const App: React.FunctionComponent = () => (
   <ErrorBoundary>
-    <StyledDiv>
-      <GlobalStyles />
-      <Navigation />
-      <React.Suspense fallback={<Loading />}>
-        <Router>
-          <AsyncHome path='/' />
-          <AsyncStarWars path='starwars/*' />
-          <AsyncTodo path='todo' />
-          <AsyncGameOfLife path='gameoflife' />
-          <AsyncReasonReactEntry path='reason' />
-          <NotFound default={true} />
-        </Router>
-      </React.Suspense>
-    </StyledDiv>
+    <Navigation />
+    <React.Suspense fallback={<Loading />}>
+      <Router>
+        <AsyncHome path='/' />
+        <AsyncStarWars path='starwars/*' />
+        <AsyncTodo path='todo' />
+        <AsyncGameOfLife path='gameoflife' />
+        <AsyncReasonReactEntry path='reason' />
+        <NotFound default={true} />
+      </Router>
+    </React.Suspense>
   </ErrorBoundary>
 )
 

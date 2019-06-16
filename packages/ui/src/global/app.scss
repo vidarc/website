@@ -1,0 +1,23 @@
+@import '../../../../node_modules/sanitize.css/sanitize.css';
+@import '../../../../node_modules/sanitize.css/forms.css';
+
+:root {
+  --body-color: #323232;
+  --body-text-primary: #eeeeee;
+  --body-text-secondary: #80e3ff;
+
+  --button-primary: #4646f7;
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--body-text-primary);
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  appearance: none;
+}
