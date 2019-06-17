@@ -11,7 +11,7 @@
   "dependencies": {
     "@vue/cli-plugin-babel": "3.8.0",
     "@vue/cli-plugin-typescript": "3.8.1",
-    "@vue/cli-service": "3.8.0",
+    "@vue/cli-service": "3.8.4",
     "sass": "1.21.0",
     "sass-loader": "7.1.0",
     "vue": "2.6.10",
