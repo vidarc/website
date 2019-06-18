@@ -7,6 +7,9 @@
       "@babel/runtime"
     ]
   },
+  "engines": {
+    "node": "10"
+  },
   "scripts": {
     "build": "babel --delete-dir-on-start -d build/ --verbose src/ --extensions '.ts,.tsx'",
     "lint": "../../node_modules/.bin/tslint --project tsconfig.json --fix",
