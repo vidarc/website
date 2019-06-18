@@ -7,6 +7,9 @@
       "@babel/runtime"
     ]
   },
+  "engines": {
+    "node": "10"
+  },
   "scripts": {
     "build": "babel --delete-dir-on-start -d build/ --verbose src/ --extensions '.ts,.tsx'",
     "lint": "../../node_modules/.bin/tslint --project tsconfig.json --fix",
@@ -28,7 +31,7 @@
     "dataloader": "1.4.0",
     "express": "4.17.1",
     "firebase-admin": "8.1.0",
-    "firebase-functions": "2.3.1",
+    "firebase-functions": "3.0.1",
     "graphql": "14.3.1",
     "lodash.merge": "4.6.1"
   }
