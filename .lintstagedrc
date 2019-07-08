@@ -1,26 +1,23 @@
 {
-  "linters": {
-    "*.{js,jsx}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.{ts,tsx}": [
-      "prettier --write",
-      "tslint --fix",
-      "git add"
-    ],
-    "*.vue": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.{css,scss,sass}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "concurrent": false
+  "*.{js,jsx}": [
+    "prettier --write",
+    "git add"
+  ],
+  "*.{ts,tsx}": [
+    "prettier --write",
+    "tslint --fix",
+    "git add"
+  ],
+  "*.vue": [
+    "prettier --write",
+    "git add"
+  ],
+  "*.json": [
+    "prettier --write",
+    "git add"
+  ],
+  "*.{css,scss,sass}": [
+    "prettier --write",
+    "git add"
+  ]
 }
