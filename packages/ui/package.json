@@ -18,7 +18,7 @@
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "dependencies": {
-    "@stencil/core": "1.1.5",
+    "@stencil/core": "1.1.7",
     "@stencil/sass": "1.0.1",
     "sanitize.css": "10.0.0"
   },
