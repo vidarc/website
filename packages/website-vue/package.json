@@ -11,8 +11,8 @@
   "dependencies": {
     "@vue/cli-plugin-babel": "3.9.2",
     "@vue/cli-plugin-typescript": "3.9.0",
-    "@vue/cli-service": "3.9.2",
-    "sass": "1.22.5",
+    "@vue/cli-service": "3.9.3",
+    "sass": "1.22.7",
     "sass-loader": "7.1.0",
     "vue": "2.6.10",
     "vue-router": "3.0.7",

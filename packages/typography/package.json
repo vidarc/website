@@ -6,7 +6,7 @@
   "scripts": {},
   "main": "index.js",
   "dependencies": {
-    "typeface-fira-sans": "0.0.54",
+    "typeface-fira-sans": "0.0.75",
     "typography": "0.16.19",
     "typography-plugin-code": "0.16.19",
     "typography-theme-de-young": "0.16.19"
