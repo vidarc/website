@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 
 interface Props {
-  direction: 'column' | 'row'
+  direction?: 'column' | 'row'
 }
 const FlexContainer = styled.div<Props>`
   display: flex;
