@@ -11,6 +11,6 @@ button {
 
   &.primary {
     background-color: var(--button-primary);
-    color: #ffffff;
+    color: var(--body-text-primary);
   }
 }

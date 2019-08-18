@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface Props {
-  children: React.ReactChild
+  children: React.ReactChild[]
 }
 
 interface State {
@@ -9,18 +9,18 @@ interface State {
 }
 
 export default class ErrorBoundary extends React.Component<Props, State> {
-  constructor(props) {
+  constructor(props: Readonly<Props>) {
     super(props)
     this.state = {
       hasError: false,
     }
   }
 
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError(error: any) {
     return { hasError: true }
   }
 
-  componentDidCatch(error, info) {
+  componentDidCatch(error: any, info: any) {
     console.error(error, info)
   }
 
