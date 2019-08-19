@@ -34,13 +34,13 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "@types/enzyme": "^3.10.3",
+    "@types/enzyme": "3.10.3",
     "@types/jest": "24.0.17",
     "@types/node": "10.14.15",
     "@types/reach__router": "1.2.4",
     "@types/react": "16.9.2",
     "@types/react-dom": "16.8.5",
-    "@types/react-test-renderer": "^16.9.0",
+    "@types/react-test-renderer": "16.9.0",
     "@types/webpack-env": "1.14.0",
     "husky": "3.0.4",
     "lerna": "3.16.4",
