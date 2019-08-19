@@ -21,3 +21,9 @@ body {
 [type='submit'] {
   appearance: none;
 }
+
+a {
+  color: var(--body-text-secondary);
+  cursor: pointer;
+  text-decoration: none;
+}
