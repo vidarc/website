@@ -37,16 +37,16 @@
     "webpack-bundle-analyzer": "3.4.1"
   },
   "dependencies": {
-    "@emotion/core": "10.0.15",
+    "@emotion/core": "10.0.16",
     "@emotion/styled": "10.0.15",
     "@mattailes/reason": "^4.1.5",
     "@mattailes/types": "^4.0.0",
     "@mattailes/typography": "^4.2.0",
     "@mattailes/ui": "^4.2.0",
     "@reach/router": "1.2.1",
-    "apollo-boost": "0.4.3",
+    "apollo-boost": "0.4.4",
     "cross-fetch": "3.0.4",
-    "dotenv": "8.0.0",
+    "dotenv": "8.1.0",
     "facepaint": "1.2.1",
     "graphql.macro": "1.4.2",
     "react": "16.9.0",
@@ -54,7 +54,7 @@
     "react-dom": "16.9.0",
     "react-helmet": "5.2.1",
     "react-redux": "7.1.0",
-    "react-scripts": "3.0.1",
+    "react-scripts": "3.1.1",
     "redux": "4.0.4",
     "redux-saga": "1.0.5",
     "shortid": "2.2.14"
