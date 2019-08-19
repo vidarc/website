@@ -1,7 +1,8 @@
+import { DocumentNode } from 'graphql'
 import * as React from 'react'
 import { useQuery } from 'react-apollo'
 
-const withQuery = (query, Component) => props => {
+const withQuery = (query: DocumentNode, Component: React.FunctionComponent<any>) => props => {
   const { '*': pathParam, defaultId } = props
 
   const variables = {
