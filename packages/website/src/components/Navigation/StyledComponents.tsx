@@ -6,6 +6,8 @@ export const StyledNav = styled.nav`
   width: 100%;
   padding-left: 10px;
   padding-right: 10px;
+  background-color: #666666;
+  border-radius: 5px;
 
   > div,
   > a,
@@ -38,6 +40,9 @@ export const StyledSubmenu = styled.div`
   > div {
     position: absolute;
     min-width: 300px;
+    background-color: #666666;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 
     > a {
       display: block;

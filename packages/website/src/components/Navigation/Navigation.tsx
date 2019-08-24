@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import styled from '@emotion/styled'
 import { Link } from '@reach/router'
@@ -15,23 +15,49 @@ const AvatarImg = styled.img`
 `
 
 const Navigation: React.FunctionComponent = () => {
+  const submenu = useRef(null)
   const [showSubmenu, setSubmenu] = useState(false)
 
-  const handleSubmenuClick = () => setSubmenu(!showSubmenu)
+  useEffect(() => {
+    function handleSubmenuClose({ type, target, key }: KeyboardEvent) {
+      switch (type) {
+        case 'mousedown': {
+          if (submenu.current.contains(target)) return
+          setSubmenu(false)
+          break
+        }
+        case 'keydown': {
+          if (key === 'Escape') {
+            setSubmenu(false)
+            break
+          }
+        }
+      }
+    }
 
-  const handleSubmenuHover = () => console.log('hello')
+    document.addEventListener('mousedown', handleSubmenuClose, false)
+    document.addEventListener('keydown', handleSubmenuClose, false)
+
+    return function cleanup() {
+      document.removeEventListener('mousedown', handleSubmenuClose, false)
+      document.removeEventListener('keydown', handleSubmenuClose, false)
+    }
+  })
+
+  const handleSubmenuClick = () => {
+    setSubmenu(!showSubmenu)
+  }
 
   return (
     <StyledNav>
       <AvatarImg src={avatar} alt='avatar' />
       <Link to='/'>Home</Link>
       <StyledSubmenu
+        ref={submenu}
         role='menu'
         tabIndex={0}
         onClick={handleSubmenuClick}
         onKeyPress={handleSubmenuClick}
-        onMouseEnter={handleSubmenuHover}
-        onMouseLeave={handleSubmenuHover}
       >
         <p>Projects</p>
         <SubmenuItems show={showSubmenu}>
