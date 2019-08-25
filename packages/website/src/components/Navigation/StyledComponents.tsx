@@ -4,6 +4,7 @@ export const StyledNav = styled.nav`
   display: flex;
   height: 50px;
   width: 100%;
+  margin-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
   background-color: #666666;
@@ -25,12 +26,18 @@ export const StyledSubmenu = styled.div`
   cursor: pointer;
   display: inline-block;
   position: relative;
+  z-index: 100;
 
   hr {
     margin: 0;
     border: 0;
     height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0)
+    );
   }
 
   > p {
