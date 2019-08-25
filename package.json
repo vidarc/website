@@ -29,7 +29,7 @@
     }
   },
   "prettier": {
-    "printWidth": 120,
+    "printWidth": 100,
     "semi": false,
     "singleQuote": true
   },
@@ -41,6 +41,7 @@
     "@types/react": "16.9.2",
     "@types/react-dom": "16.8.5",
     "@types/react-test-renderer": "16.9.0",
+    "@types/typography": "0.16.2",
     "@types/webpack-env": "1.14.0",
     "husky": "3.0.4",
     "lerna": "3.16.4",

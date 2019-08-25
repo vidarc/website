@@ -16,13 +16,25 @@
     <ma-pause-icon></ma-pause-icon>
   </h1>
 
+  <div>
+    <a href="#" id="link">I am a link</a>
+    <p>Link was clicked <span id="link-count">0</span> times</p>
+  </div>
+
   <ma-button id="button">Click me!</ma-button>
   <div id="count">Count: 0</div>
 
   <script>
     let initCount = 0;
-    const div = document.getElementById('count');
+    const div = document.getElementById('count')
     const button = document.getElementById('button')
+    const link = document.getElementById('link')
+    const linkCount = document.getElementById('link-count')
+
+    link.addEventListener('click', () => {
+      const count = parseInt(linkCount.textContent);
+      linkCount.textContent = count + 1
+    })
 
     button.addEventListener('click', () => {
       initCount++

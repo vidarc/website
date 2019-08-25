@@ -4,12 +4,20 @@ import deYoung from 'typography-theme-de-young'
 
 import 'typeface-fira-sans'
 
-deYoung.plugins = [new CodePlugin()]
-deYoung.headerFontFamily = ['Fira Sans', 'sans-serif']
-deYoung.bodyFontFamily = ['Fira Sans', 'sans-serif']
-deYoung.bodyColor = 'var(--body-text)'
-deYoung.includeNormalize = false
+const styles = {
+  ...deYoung,
+  plugins: [new CodePlugin()],
+  headerFontFamily: ['Fira Sans', 'sans-serif'],
+  headerColor: 'var(--body-text)',
+  bodyFontFamily: ['Fira Sans', 'sans-serif'],
+  bodyColor: 'var(--body-text)',
+  includeNormalize: false,
+  overrideStyles: () => ({
+    'a:active': {},
+    'a:hover': {},
+  }),
+}
 
-const typography = new Typography(deYoung)
+const typography = new Typography(styles)
 
 export default typography

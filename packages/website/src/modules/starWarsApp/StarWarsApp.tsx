@@ -13,7 +13,6 @@ const Wrapper = styled.div`
 
   & a {
     padding: 10px;
-    color: royalblue;
     border-color: #000000;
     border-style: solid;
 

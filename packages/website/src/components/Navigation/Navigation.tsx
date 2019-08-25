@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import styled from '@emotion/styled'
 import { Link } from '@reach/router'
 
 import avatar from '../../images/avatar-small.png'
 
-import { StyledNav, StyledSubmenu, SubmenuItems } from './StyledComponents'
+import { StyledNav } from './StyledComponents'
+import Submenu from './Submenu'
 
 const AvatarImg = styled.img`
   height: 32px;
@@ -14,44 +15,25 @@ const AvatarImg = styled.img`
   margin: 0;
 `
 
-const Navigation: React.FunctionComponent = () => {
-  const [showSubmenu, setSubmenu] = useState(false)
-
-  const handleSubmenuClick = () => setSubmenu(!showSubmenu)
-
-  const handleSubmenuHover = () => console.log('hello')
-
+const Navigation: React.FunctionComponent<{}> = () => {
   return (
     <StyledNav>
       <AvatarImg src={avatar} alt='avatar' />
       <Link to='/'>Home</Link>
-      <StyledSubmenu
-        role='menu'
-        tabIndex={0}
-        onClick={handleSubmenuClick}
-        onKeyPress={handleSubmenuClick}
-        onMouseEnter={handleSubmenuHover}
-        onMouseLeave={handleSubmenuHover}
-      >
-        <p>Projects</p>
-        <SubmenuItems show={showSubmenu}>
-          <Link to='/todo' role='menuitem'>
-            Todo
-          </Link>
-          <hr />
-          <Link to='/starwars' role='menuitem'>
-            Star Wars GraphQL
-          </Link>
-          <hr />
-          <Link to='/gameoflife' role='menuitem'>
-            Conway's Game of Life
-          </Link>
-          <hr />
-          <Link to='/reason' role='menuitem'>
-            Reason React
-          </Link>
-        </SubmenuItems>
-      </StyledSubmenu>
+      <Submenu title='Projects'>
+        <Link to='/todo' role='menuitem'>
+          Todo
+        </Link>
+        <Link to='/starwars' role='menuitem'>
+          Star Wars GraphQL
+        </Link>
+        <Link to='/gameoflife' role='menuitem'>
+          Conway's Game of Life
+        </Link>
+        <Link to='/reason' role='menuitem'>
+          Reason React
+        </Link>
+      </Submenu>
     </StyledNav>
   )
 }

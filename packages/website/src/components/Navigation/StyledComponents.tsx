@@ -4,8 +4,11 @@ export const StyledNav = styled.nav`
   display: flex;
   height: 50px;
   width: 100%;
+  margin-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
+  background-color: var(--nav-background-color);
+  border-radius: 5px;
 
   > div,
   > a,
@@ -23,13 +26,7 @@ export const StyledSubmenu = styled.div`
   cursor: pointer;
   display: inline-block;
   position: relative;
-
-  hr {
-    margin: 0;
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-  }
+  z-index: 100;
 
   > p {
     margin: 10px 0px;
@@ -38,6 +35,9 @@ export const StyledSubmenu = styled.div`
   > div {
     position: absolute;
     min-width: 300px;
+    background-color: var(--nav-background-color);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 
     > a {
       display: block;
