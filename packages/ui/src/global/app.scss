@@ -2,13 +2,13 @@
 @import '../../../../node_modules/sanitize.css/forms.css';
 
 :root {
-  --body-color: #323232;
-  --body-text-primary: #eeeeee;
-  --body-text-secondary: #80e3ff;
+  --body-color: hsl(0, 0%, 20%);
+  --body-text-primary: hsl(0, 0%, 93%);
+  --body-text-secondary: hsl(193, 100%, 75%);
 
-  --button-primary: #4646f7;
+  --button-primary: hsl(240, 92%, 62%);
 
-  --nav-background-color: #666666;
+  --nav-background-color: hsl(0, 0%, 40%);
 }
 
 body {
