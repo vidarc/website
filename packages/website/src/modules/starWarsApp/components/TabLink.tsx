@@ -4,10 +4,9 @@ import { Link } from '@reach/router'
 
 interface Props {
   to: string
-  children: React.ReactChild
 }
 
-const TabLink = (props: Props) => {
+const TabLink: React.FunctionComponent<Props> = props => {
   const { children } = props
 
   return (

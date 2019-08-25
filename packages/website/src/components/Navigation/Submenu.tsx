@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { StyledSubmenu, SubmenuItems } from './StyledComponents'
 
 type SubmenuProps = {
@@ -48,20 +48,7 @@ const Submenu: React.FunctionComponent<SubmenuProps> = ({ title, children }) => 
       onKeyPress={handleSubmenuClick}
     >
       <p>{title}</p>
-      <SubmenuItems show={showSubmenu}>
-        <hr />
-        {React.Children.map(children, (child, index) => {
-          if (index < React.Children.count(children) - 1) {
-            return (
-              <Fragment key={index}>
-                {child}
-                <hr />
-              </Fragment>
-            )
-          }
-          return child
-        })}
-      </SubmenuItems>
+      <SubmenuItems show={showSubmenu}>{children}</SubmenuItems>
     </StyledSubmenu>
   )
 }

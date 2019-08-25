@@ -7,6 +7,8 @@
   --body-text-secondary: #80e3ff;
 
   --button-primary: #4646f7;
+
+  --nav-background-color: #666666;
 }
 
 body {
@@ -23,7 +25,24 @@ body {
 }
 
 a {
+  display: inline-block;
   color: var(--body-text-secondary);
   cursor: pointer;
   text-decoration: none;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    margin-top: 2px;
+    height: 2px;
+    background-color: var(--body-text-secondary);
+    transition: transform 250ms ease;
+    transform: scaleX(0);
+  }
+
+  &:active::after,
+  &:hover::after {
+    transform: scaleX(1);
+  }
 }

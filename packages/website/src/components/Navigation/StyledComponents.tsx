@@ -7,7 +7,7 @@ export const StyledNav = styled.nav`
   margin-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #666666;
+  background-color: var(--nav-background-color);
   border-radius: 5px;
 
   > div,
@@ -28,18 +28,6 @@ export const StyledSubmenu = styled.div`
   position: relative;
   z-index: 100;
 
-  hr {
-    margin: 0;
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0.75),
-      rgba(0, 0, 0, 0)
-    );
-  }
-
   > p {
     margin: 10px 0px;
   }
@@ -47,7 +35,7 @@ export const StyledSubmenu = styled.div`
   > div {
     position: absolute;
     min-width: 300px;
-    background-color: #666666;
+    background-color: var(--nav-background-color);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 

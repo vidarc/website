@@ -14,7 +14,7 @@ const Item = styled.div<ItemProps>`
   max-width: ${props => props.width};
 `
 
-const ContentRow = ({ title, children }: { title: string; children: React.ReactChild }) => (
+const ContentRow: React.FunctionComponent<{ title: string }> = ({ title, children }) => (
   <Container>
     <Item width='25%'>{title}</Item>
     <Item width='75%'>{children}</Item>

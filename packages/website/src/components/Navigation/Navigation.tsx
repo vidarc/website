@@ -15,7 +15,7 @@ const AvatarImg = styled.img`
   margin: 0;
 `
 
-const Navigation: React.FunctionComponent = () => {
+const Navigation: React.FunctionComponent<{}> = () => {
   return (
     <StyledNav>
       <AvatarImg src={avatar} alt='avatar' />
