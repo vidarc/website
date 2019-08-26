@@ -1,11 +1,7 @@
 {
-  "*.{js,jsx}": [
+  "*.{js,jsx,ts,tsx}": [
     "prettier --write",
-    "git add"
-  ],
-  "*.{ts,tsx}": [
-    "prettier --write",
-    "tslint --fix",
+    "eslint --fix",
     "git add"
   ],
   "*.vue": [

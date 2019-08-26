@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
+import PropTypes from 'prop-types'
 import { StyledSubmenu, SubmenuItems } from './StyledComponents'
 
 type SubmenuProps = {
-  title: string,
+  title: string
 }
 
 const Submenu: React.FunctionComponent<SubmenuProps> = ({ title, children }) => {
@@ -20,18 +21,19 @@ const Submenu: React.FunctionComponent<SubmenuProps> = ({ title, children }) => 
         case 'keydown': {
           if (key === 'Escape') {
             setSubmenu(false)
-            break
           }
+          break
         }
+        default:
+          break
       }
     }
 
-    document.addEventListener('mousedown', handleSubmenuClose, false)
-    document.addEventListener('keydown', handleSubmenuClose, false)
+    const events = ['mousedown', 'keydown']
+    events.forEach(type => document.addEventListener(type, handleSubmenuClose))
 
     return function cleanup() {
-      document.removeEventListener('mousedown', handleSubmenuClose, false)
-      document.removeEventListener('keydown', handleSubmenuClose, false)
+      events.forEach(type => document.removeEventListener(type, handleSubmenuClose))
     }
   })
 
@@ -42,7 +44,7 @@ const Submenu: React.FunctionComponent<SubmenuProps> = ({ title, children }) => 
   return (
     <StyledSubmenu
       ref={submenu}
-      role='menu'
+      role="menu"
       tabIndex={0}
       onClick={handleSubmenuClick}
       onKeyPress={handleSubmenuClick}
@@ -51,6 +53,10 @@ const Submenu: React.FunctionComponent<SubmenuProps> = ({ title, children }) => 
       <SubmenuItems show={showSubmenu}>{children}</SubmenuItems>
     </StyledSubmenu>
   )
+}
+
+Submenu.propTypes = {
+  title: PropTypes.string.isRequired
 }
 
 export default Submenu
