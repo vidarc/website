@@ -9,11 +9,11 @@
     "deploy": "firebase deploy --only hosting:mattailes-vue --token $FIREBASE_TOKEN"
   },
   "dependencies": {
-    "@vue/cli-plugin-babel": "3.10.0",
-    "@vue/cli-plugin-typescript": "3.10.0",
-    "@vue/cli-service": "3.10.0",
+    "@vue/cli-plugin-babel": "3.11.0",
+    "@vue/cli-plugin-typescript": "3.11.0",
+    "@vue/cli-service": "3.11.0",
     "sass": "1.22.10",
-    "sass-loader": "7.2.0",
+    "sass-loader": "7.3.1",
     "vue": "2.6.10",
     "vue-router": "3.1.2",
     "vue-template-compiler": "2.6.10",
