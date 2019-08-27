@@ -1,5 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import PropTypes from 'prop-types'
+
+import useCloseDropdown from './useDropdownClose'
 import { StyledSubmenu, SubmenuItems } from './StyledComponents'
 
 type SubmenuProps = {
@@ -7,35 +9,9 @@ type SubmenuProps = {
 }
 
 const Submenu: React.FunctionComponent<SubmenuProps> = ({ title, children }) => {
-  const submenu = useRef(null)
+  const ref = useRef(null)
   const [showSubmenu, setSubmenu] = useState(false)
-
-  useEffect(() => {
-    function handleSubmenuClose({ type, target, key }: KeyboardEvent) {
-      switch (type) {
-        case 'mousedown': {
-          if (submenu.current.contains(target)) return
-          setSubmenu(false)
-          break
-        }
-        case 'keydown': {
-          if (key === 'Escape') {
-            setSubmenu(false)
-          }
-          break
-        }
-        default:
-          break
-      }
-    }
-
-    const events = ['mousedown', 'keydown']
-    events.forEach(type => document.addEventListener(type, handleSubmenuClose))
-
-    return function cleanup() {
-      events.forEach(type => document.removeEventListener(type, handleSubmenuClose))
-    }
-  })
+  useCloseDropdown({ ref, callback: setSubmenu })
 
   const handleSubmenuClick = () => {
     setSubmenu(!showSubmenu)
@@ -43,7 +19,7 @@ const Submenu: React.FunctionComponent<SubmenuProps> = ({ title, children }) => 
 
   return (
     <StyledSubmenu
-      ref={submenu}
+      ref={ref}
       role="menu"
       tabIndex={0}
       onClick={handleSubmenuClick}

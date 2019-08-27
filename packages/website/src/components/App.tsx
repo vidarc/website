@@ -12,7 +12,7 @@ const AsyncStarWars = React.lazy(() => import('../modules/starWarsApp/StarWarsAp
 const AsyncTodo = React.lazy(() => import('../modules/todoApp/TodoApp'))
 const AsyncGameOfLife = React.lazy(() => import('../modules/gameOfLife/GameOfLife'))
 const AsyncReasonReactEntry = React.lazy(() =>
-  import('@mattailes/reason').then(({ ReasonReactEntry }) => ({ default: ReasonReactEntry })),
+  import('@mattailes/reason').then(({ ReasonReactEntry }) => ({ default: ReasonReactEntry }))
 )
 
 const App: React.FunctionComponent = () => (
@@ -20,12 +20,12 @@ const App: React.FunctionComponent = () => (
     <Navigation />
     <React.Suspense fallback={<Loading />}>
       <Router>
-        <AsyncHome path='/' />
-        <AsyncStarWars path='starwars/*' />
-        <AsyncTodo path='todo' />
-        <AsyncGameOfLife path='gameoflife' />
-        <AsyncReasonReactEntry path='reason' />
-        <NotFound default={true} />
+        <AsyncHome path="/" />
+        <AsyncStarWars path="starwars/*" />
+        <AsyncTodo path="todo" />
+        <AsyncGameOfLife path="gameoflife" />
+        <AsyncReasonReactEntry path="reason" />
+        <NotFound default />
       </Router>
     </React.Suspense>
   </ErrorBoundary>
