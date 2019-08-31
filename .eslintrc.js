@@ -10,7 +10,8 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    jest: true
+    jest: true,
+    'cypress/globals': true
   },
   extends: [
     'airbnb',
@@ -21,7 +22,7 @@ module.exports = {
     'prettier/react',
     'prettier/vue'
   ],
-  plugins: ['@typescript-eslint', 'prettier'],
+  plugins: ['@typescript-eslint', 'prettier', 'cypress'],
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
