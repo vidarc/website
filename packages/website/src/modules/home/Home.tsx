@@ -22,7 +22,7 @@ const ArticleHeader = styled.header`
 const Home: React.SFC<RouteComponentProps> = () => (
   <div>
     <Banner src={galaxy} alt="galaxy banner" />
-    <Header>My name is Matthew Ailes and this is my website.</Header>
+    <Header id="welcome-text">My name is Matthew Ailes and this is my website.</Header>
     <main>
       <article>
         <ArticleHeader>The Purpose of this Site</ArticleHeader>
