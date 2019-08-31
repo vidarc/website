@@ -31,6 +31,22 @@ module.exports = {
     }
   },
   rules: {
+    '@typescript-eslint/member-naming': [
+      'error',
+      {
+        private: '^__',
+        protected: '^_'
+      }
+    ],
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        vars: 'all',
+        args: 'after-used',
+        ignoreRestSiblings: false
+      }
+    ],
+    'no-unused-vars': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
     'react/prop-types': [2, { ignore: ['children'] }],
     semi: ['error', 'never']

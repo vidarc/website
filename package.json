@@ -36,6 +36,7 @@
   "devDependencies": {
     "@types/enzyme": "3.10.3",
     "@types/jest": "24.0.18",
+    "@types/lodash.merge": "4.6.6",
     "@types/node": "10.14.16",
     "@types/reach__router": "1.2.4",
     "@types/react": "16.9.2",
