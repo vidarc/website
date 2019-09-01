@@ -16,7 +16,8 @@ function useCloseDropdown({ ref, callback }: Props) {
       }
 
       if (type === 'keydown') {
-        if ((<KeyboardEvent>event).key === 'Escape') {
+        const { key } = event as KeyboardEvent
+        if (key === 'Escape') {
           callback(false)
         }
       }
