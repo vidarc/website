@@ -1,9 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import styled from '@emotion/styled'
 
 import GameBoardRowContainer from '../containers/GameBoardRowContainer'
-import { Tile } from '../ducks/types'
 
 const Board = styled.div`
   border: 1px solid black;
@@ -11,21 +11,29 @@ const Board = styled.div`
   width: 75%;
 `
 
-interface Props {
-  tiles: Tile[][]
-  size: number
-}
+const start = (length: number, size: number): number => (length - size) / 2
 
-const start = (length, size): number => (length - size) / 2
+const end = (length: number, size: number): number => length - (length - size) / 2
 
-const end = (length, size): number => length - (length - size) / 2
-
-const GameBoard: React.SFC<Props> = ({ tiles, size }) => (
+const GameBoard = ({ tiles, size }) => (
   <Board>
     {tiles.slice(start(tiles.length, size), end(tiles.length, size)).map((row, index) => (
+      // eslint-disable-next-line react/no-array-index-key
       <GameBoardRowContainer key={index} tiles={row} size={size} />
     ))}
   </Board>
 )
+
+GameBoard.propTypes = {
+  tiles: PropTypes.arrayOf(
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number,
+        alive: PropTypes.bool
+      })
+    )
+  ).isRequired,
+  size: PropTypes.number.isRequired
+}
 
 export default GameBoard

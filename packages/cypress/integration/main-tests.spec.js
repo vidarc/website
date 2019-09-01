@@ -1,3 +1,4 @@
+// eslint-disable-next-line spaced-comment
 /// <reference types="Cypress" />
 
 context('Make sure everything actually loads', () => {
@@ -6,7 +7,7 @@ context('Make sure everything actually loads', () => {
 
     cy.get('#welcome-text')
       .should('exist')
-      .and('have.text', 'Hello everybody! My name is Matthew Ailes. This is the home screen.')
+      .and('have.text', 'My name is Matthew Ailes and this is my website.')
   })
 
   it('then visits the game of life app and it renders', () => {

@@ -49,6 +49,6 @@ export const StyledSubmenu = styled.div`
 interface SubmenuItemsProps {
   show: boolean
 }
-export const SubmenuItems = styled.div`
-  display: ${(props: SubmenuItemsProps) => (props.show ? 'block' : 'none')};
+export const SubmenuItems = styled.div<SubmenuItemsProps>`
+  display: ${props => (props.show ? 'block' : 'none')};
 `

@@ -10,7 +10,8 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    jest: true
+    jest: true,
+    'cypress/globals': true
   },
   extends: [
     'airbnb',
@@ -21,7 +22,7 @@ module.exports = {
     'prettier/react',
     'prettier/vue'
   ],
-  plugins: ['@typescript-eslint', 'prettier'],
+  plugins: ['@typescript-eslint', 'prettier', 'cypress'],
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
@@ -30,6 +31,23 @@ module.exports = {
     }
   },
   rules: {
+    '@typescript-eslint/member-naming': [
+      'error',
+      {
+        private: '^__',
+        protected: '^_'
+      }
+    ],
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        vars: 'all',
+        args: 'after-used',
+        ignoreRestSiblings: false
+      }
+    ],
+    'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['state'] }],
+    'no-unused-vars': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
     'react/prop-types': [2, { ignore: ['children'] }],
     semi: ['error', 'never']

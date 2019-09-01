@@ -39,7 +39,6 @@
   "dependencies": {
     "@emotion/core": "10.0.16",
     "@emotion/styled": "10.0.15",
-    "@mattailes/reason": "^4.2.1",
     "@mattailes/types": "^4.0.0",
     "@mattailes/typography": "^4.3.0",
     "@mattailes/ui": "^4.3.1",

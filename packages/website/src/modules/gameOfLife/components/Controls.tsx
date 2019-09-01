@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 
 import { pauseGameOfLife, restartGameOfLife, startGameOfLife } from '../ducks/actions'
@@ -28,26 +28,32 @@ const Controls = ({ dispatch, generation, gameOver }) => {
   return (
     <>
       <StyledDiv>
-        <ma-play-icon onClick={handlePlayClick} />
-        <ma-pause-icon onClick={handlePauseClick} />
-        <ma-undo-icon onClick={handleRestartClick} />
+        <ma-icons name="play-solid" onClick={handlePlayClick} />
+        <ma-icons name="pause-solid" onClick={handlePauseClick} />
+        <ma-icons name="undo-solid" onClick={handleRestartClick} />
         <div>
           <p>Generation: {generation}</p>
         </div>
       </StyledDiv>
       {gameOver && (
         <StyledH3>
-          <span role='img' aria-label='skull-emoji'>
+          <span role="img" aria-label="skull-emoji">
             ☠️
           </span>{' '}
           Game Over{' '}
-          <span role='img' aria-label='skull-emoji'>
+          <span role="img" aria-label="skull-emoji">
             ☠️
           </span>
         </StyledH3>
       )}
     </>
   )
+}
+
+Controls.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  generation: PropTypes.string.isRequired,
+  gameOver: PropTypes.bool.isRequired
 }
 
 export default Controls

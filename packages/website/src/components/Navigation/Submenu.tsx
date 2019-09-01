@@ -1,41 +1,30 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import PropTypes from 'prop-types'
+import styled from '@emotion/styled'
+
+import useCloseDropdown from './useDropdownClose'
 import { StyledSubmenu, SubmenuItems } from './StyledComponents'
+
+const DropdownTitle = styled.p`
+  display: flex;
+  height: 34px;
+
+  & ma-icons {
+    position: relative;
+    font-size: 0.75rem;
+    margin-left: 10px;
+    top: 3px;
+  }
+`
 
 type SubmenuProps = {
   title: string
 }
 
 const Submenu: React.FunctionComponent<SubmenuProps> = ({ title, children }) => {
-  const submenu = useRef(null)
+  const ref = useRef(null)
   const [showSubmenu, setSubmenu] = useState(false)
-
-  useEffect(() => {
-    function handleSubmenuClose({ type, target, key }: KeyboardEvent) {
-      switch (type) {
-        case 'mousedown': {
-          if (submenu.current.contains(target)) return
-          setSubmenu(false)
-          break
-        }
-        case 'keydown': {
-          if (key === 'Escape') {
-            setSubmenu(false)
-          }
-          break
-        }
-        default:
-          break
-      }
-    }
-
-    const events = ['mousedown', 'keydown']
-    events.forEach(type => document.addEventListener(type, handleSubmenuClose))
-
-    return function cleanup() {
-      events.forEach(type => document.removeEventListener(type, handleSubmenuClose))
-    }
-  })
+  useCloseDropdown({ ref, callback: setSubmenu })
 
   const handleSubmenuClick = () => {
     setSubmenu(!showSubmenu)
@@ -43,13 +32,16 @@ const Submenu: React.FunctionComponent<SubmenuProps> = ({ title, children }) => 
 
   return (
     <StyledSubmenu
-      ref={submenu}
+      ref={ref}
       role="menu"
       tabIndex={0}
       onClick={handleSubmenuClick}
       onKeyPress={handleSubmenuClick}
     >
-      <p>{title}</p>
+      <DropdownTitle>
+        {title}
+        <ma-icons name="caret-down-solid" />
+      </DropdownTitle>
       <SubmenuItems show={showSubmenu}>{children}</SubmenuItems>
     </StyledSubmenu>
   )
