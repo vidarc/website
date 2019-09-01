@@ -1,25 +1,23 @@
 import React, { useEffect, useState } from 'react'
-
-import { RouteComponentProps } from '@reach/router'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { RouteComponentProps } from '@reach/router'
 
 import { initGame } from './ducks/actions'
 import { Controls, GameContainer } from './containers'
 
-interface Props extends RouteComponentProps {
-  dispatch: Function
-}
+interface Props extends RouteComponentProps {}
 
-const GameOfLife: React.FunctionComponent<Props> = ({ dispatch }) => {
+const GameOfLife = ({ onInitGame }) => {
   const [size] = useState(25)
 
   useEffect(() => {
-    dispatch(initGame(size))
+    onInitGame(size)
   })
 
   return (
     <>
-      <h2 id='game-of-life-home'>Conway's Game of Life</h2>
+      <h2 id="game-of-life-home">Conway&apos;s Game of Life</h2>
       <small>
         About: <a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life">Wikiepdia entry</a>
       </small>
@@ -30,4 +28,17 @@ const GameOfLife: React.FunctionComponent<Props> = ({ dispatch }) => {
   )
 }
 
-export default connect()(GameOfLife)
+GameOfLife.propTypes = {
+  onInitGame: PropTypes.func.isRequired
+}
+
+const mapDispatchToProps = dispatch => ({
+  onInitGame: (size: number) => dispatch(initGame(size))
+})
+
+const mapStateToProps = (_state, ownProps: Props) => ownProps
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(GameOfLife)
