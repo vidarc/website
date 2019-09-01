@@ -1,46 +1,52 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
 
-  <title>Stencil Component Starter</title>
+    <title>Stencil Component Starter</title>
 
-  <link rel="stylesheet" type="text/css" href="/build/mattailes.css">  
-  <script type="module" src="/build/mattailes.esm.js"></script>
-  <script nomodule src="/build/mattailes.js"></script>
-</head>
+    <link rel="stylesheet" type="text/css" href="/build/mattailes.css" />
+    <script type="module" src="/build/mattailes.esm.js"></script>
+    <script nomodule src="/build/mattailes.js"></script>
+  </head>
 
-<body>
-  <h1 style="color: red">
-    <ma-pause-icon></ma-pause-icon>
-  </h1>
+  <body>
+    <h1 style="color: red">
+      <ma-icons name="caret-down-solid"></ma-icons>
+      <ma-icons name="pause-solid"></ma-icons>
+      <ma-icons name="play-solid"></ma-icons>
+      <ma-icons name="undo-solid"></ma-icons>
+    </h1>
 
-  <div>
-    <a href="#" id="link">I am a link</a>
-    <p>Link was clicked <span id="link-count">0</span> times</p>
-  </div>
+    <div>
+      <a href="#" id="link">I am a link</a>
+      <p>Link was clicked <span id="link-count">0</span> times</p>
+    </div>
 
-  <ma-button id="button">Click me!</ma-button>
-  <div id="count">Count: 0</div>
+    <ma-button id="button">Click me!</ma-button>
+    <div id="count">Count: 0</div>
 
-  <script>
-    let initCount = 0;
-    const div = document.getElementById('count')
-    const button = document.getElementById('button')
-    const link = document.getElementById('link')
-    const linkCount = document.getElementById('link-count')
+    <script>
+      let initCount = 0
+      const div = document.getElementById('count')
+      const button = document.getElementById('button')
+      const link = document.getElementById('link')
+      const linkCount = document.getElementById('link-count')
 
-    link.addEventListener('click', () => {
-      const count = parseInt(linkCount.textContent);
-      linkCount.textContent = count + 1
-    })
+      link.addEventListener('click', () => {
+        const count = parseInt(linkCount.textContent)
+        linkCount.textContent = count + 1
+      })
 
-    button.addEventListener('click', () => {
-      initCount++
+      button.addEventListener('click', () => {
+        initCount++
 
-      div.textContent = `Count: ${initCount}`
-    })
-  </script>
-</body>
+        div.textContent = `Count: ${initCount}`
+      })
+    </script>
+  </body>
 </html>

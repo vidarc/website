@@ -13,9 +13,9 @@ export namespace Components {
     'color': string;
     'type': string;
   }
-  interface MaPauseIcon {}
-  interface MaPlayIcon {}
-  interface MaUndoIcon {}
+  interface MaIcons {
+    'name': string;
+  }
 }
 
 declare global {
@@ -27,28 +27,14 @@ declare global {
     new (): HTMLMaButtonElement;
   };
 
-  interface HTMLMaPauseIconElement extends Components.MaPauseIcon, HTMLStencilElement {}
-  var HTMLMaPauseIconElement: {
-    prototype: HTMLMaPauseIconElement;
-    new (): HTMLMaPauseIconElement;
-  };
-
-  interface HTMLMaPlayIconElement extends Components.MaPlayIcon, HTMLStencilElement {}
-  var HTMLMaPlayIconElement: {
-    prototype: HTMLMaPlayIconElement;
-    new (): HTMLMaPlayIconElement;
-  };
-
-  interface HTMLMaUndoIconElement extends Components.MaUndoIcon, HTMLStencilElement {}
-  var HTMLMaUndoIconElement: {
-    prototype: HTMLMaUndoIconElement;
-    new (): HTMLMaUndoIconElement;
+  interface HTMLMaIconsElement extends Components.MaIcons, HTMLStencilElement {}
+  var HTMLMaIconsElement: {
+    prototype: HTMLMaIconsElement;
+    new (): HTMLMaIconsElement;
   };
   interface HTMLElementTagNameMap {
     'ma-button': HTMLMaButtonElement;
-    'ma-pause-icon': HTMLMaPauseIconElement;
-    'ma-play-icon': HTMLMaPlayIconElement;
-    'ma-undo-icon': HTMLMaUndoIconElement;
+    'ma-icons': HTMLMaIconsElement;
   }
 }
 
@@ -57,15 +43,13 @@ declare namespace LocalJSX {
     'color'?: string;
     'type'?: string;
   }
-  interface MaPauseIcon extends JSXBase.HTMLAttributes<HTMLMaPauseIconElement> {}
-  interface MaPlayIcon extends JSXBase.HTMLAttributes<HTMLMaPlayIconElement> {}
-  interface MaUndoIcon extends JSXBase.HTMLAttributes<HTMLMaUndoIconElement> {}
+  interface MaIcons extends JSXBase.HTMLAttributes<HTMLMaIconsElement> {
+    'name'?: string;
+  }
 
   interface IntrinsicElements {
     'ma-button': MaButton;
-    'ma-pause-icon': MaPauseIcon;
-    'ma-play-icon': MaPlayIcon;
-    'ma-undo-icon': MaUndoIcon;
+    'ma-icons': MaIcons;
   }
 }
 

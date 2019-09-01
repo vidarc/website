@@ -1,8 +1,21 @@
 import React, { useRef, useState } from 'react'
 import PropTypes from 'prop-types'
+import styled from '@emotion/styled'
 
 import useCloseDropdown from './useDropdownClose'
 import { StyledSubmenu, SubmenuItems } from './StyledComponents'
+
+const DropdownTitle = styled.p`
+  display: flex;
+  height: 34px;
+
+  & ma-icons {
+    position: relative;
+    font-size: 0.75rem;
+    margin-left: 10px;
+    top: 3px;
+  }
+`
 
 type SubmenuProps = {
   title: string
@@ -25,7 +38,10 @@ const Submenu: React.FunctionComponent<SubmenuProps> = ({ title, children }) => 
       onClick={handleSubmenuClick}
       onKeyPress={handleSubmenuClick}
     >
-      <p>{title}</p>
+      <DropdownTitle>
+        {title}
+        <ma-icons name="caret-down-solid" />
+      </DropdownTitle>
       <SubmenuItems show={showSubmenu}>{children}</SubmenuItems>
     </StyledSubmenu>
   )

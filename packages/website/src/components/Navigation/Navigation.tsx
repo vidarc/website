@@ -31,6 +31,7 @@ const Navigation: React.FunctionComponent<{}> = () => {
           Conway&apos;s Game of Life
         </Link>
       </Submenu>
+      <a href="https://vue.mattailes.net">VueJS Site</a>
     </StyledNav>
   )
 }

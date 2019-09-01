@@ -9,9 +9,7 @@ declare global {
   namespace JSX {
     interface IntrinsicElements {
       'ma-button': MaButtonElement
-      'ma-pause-icon': Components.MaPauseIcon
-      'ma-play-icon': Components.MaPlayIcon
-      'ma-undo-icon': Components.MaUndoIcon
+      'ma-icons': Components.MaIcons
     }
   }
 }
