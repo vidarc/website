@@ -12,11 +12,12 @@ export default class ErrorBoundary extends React.Component<Props, State> {
   constructor(props: Readonly<Props>) {
     super(props)
     this.state = {
-      hasError: false,
+      hasError: false
     }
   }
 
-  static getDerivedStateFromError(error: any) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  static getDerivedStateFromError(_error: any) {
     return { hasError: true }
   }
 
@@ -25,6 +26,9 @@ export default class ErrorBoundary extends React.Component<Props, State> {
   }
 
   render() {
-    return this.state.hasError ? <img src='https://http.cat/400' alt='big ole error' /> : this.props.children
+    const { hasError } = this.state
+    const { children } = this.props
+
+    return hasError ? <img src="https://http.cat/400" alt="big ole error" /> : children
   }
 }

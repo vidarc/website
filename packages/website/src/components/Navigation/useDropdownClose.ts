@@ -7,7 +7,8 @@ type Props = {
 
 function useCloseDropdown({ ref, callback }: Props) {
   useEffect(() => {
-    function handleSubmenuClose({ type, target, key }: KeyboardEvent) {
+    function handleSubmenuClose(event: KeyboardEvent | MouseEvent) {
+      const { type, target } = event
       if (type === 'mousedown') {
         if (!ref.current.contains(target)) {
           callback(false)
@@ -15,17 +16,19 @@ function useCloseDropdown({ ref, callback }: Props) {
       }
 
       if (type === 'keydown') {
-        if (key === 'Escape') {
+        if ((<KeyboardEvent>event).key === 'Escape') {
           callback(false)
         }
       }
     }
 
     const events = ['mousedown', 'keydown']
-    events.forEach(type => document.addEventListener(type, handleSubmenuClose))
+    events.forEach(type => document.addEventListener(type, handleSubmenuClose as EventListener))
 
     return function cleanup() {
-      events.forEach(type => document.removeEventListener(type, handleSubmenuClose))
+      events.forEach(type =>
+        document.removeEventListener(type, handleSubmenuClose as EventListener)
+      )
     }
   })
 }
