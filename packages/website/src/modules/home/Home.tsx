@@ -1,5 +1,4 @@
 import React from 'react'
-// eslint-disable-next-line no-unused-vars
 import { RouteComponentProps } from '@reach/router'
 import styled from '@emotion/styled'
 
@@ -42,11 +41,13 @@ const Home: React.SFC<RouteComponentProps> = () => (
             <a href="https://travis-ci.com/dashboard">travis-ci</a>
           </li>
           <li>
-            React (both <a href="https://reactjs.org/">JavaScript version</a> and{' '}
-            <a href="https://reasonml.github.io/reason-react/">Reason version</a>)
+            <a href="https://reactjs.org/">React</a>
           </li>
           <li>
             <a href="https://www.apollographql.com/">Apollo GraphQL</a>
+          </li>
+          <li>
+            <a href="https://vuejs.org/">VueJS</a>
           </li>
         </ul>
         <p>

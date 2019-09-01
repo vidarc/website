@@ -18,20 +18,17 @@ const AvatarImg = styled.img`
 const Navigation: React.FunctionComponent<{}> = () => {
   return (
     <StyledNav>
-      <AvatarImg src={avatar} alt='avatar' />
-      <Link to='/'>Home</Link>
-      <Submenu title='Projects'>
-        <Link to='/todo' role='menuitem'>
+      <AvatarImg src={avatar} alt="avatar" />
+      <Link to="/">Home</Link>
+      <Submenu title="Projects">
+        <Link to="/todo" role="menuitem">
           Todo
         </Link>
-        <Link to='/starwars' role='menuitem'>
+        <Link to="/starwars" role="menuitem">
           Star Wars GraphQL
         </Link>
-        <Link to='/gameoflife' role='menuitem'>
-          Conway's Game of Life
-        </Link>
-        <Link to='/reason' role='menuitem'>
-          Reason React
+        <Link to="/gameoflife" role="menuitem">
+          Conway&apos;s Game of Life
         </Link>
       </Submenu>
     </StyledNav>
