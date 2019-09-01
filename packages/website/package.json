@@ -1,6 +1,6 @@
 {
   "name": "@mattailes/website",
-  "version": "4.3.1",
+  "version": "4.4.0",
   "private": true,
   "proxy": "https://us-central1-website-b10e5.cloudfunctions.net/api/graphql",
   "scripts": {
@@ -39,9 +39,9 @@
   "dependencies": {
     "@emotion/core": "10.0.16",
     "@emotion/styled": "10.0.15",
-    "@mattailes/types": "^4.0.0",
-    "@mattailes/typography": "^4.3.0",
-    "@mattailes/ui": "^4.3.1",
+    "@mattailes/types": "^4.4.0",
+    "@mattailes/typography": "^4.4.0",
+    "@mattailes/ui": "^4.4.0",
     "@reach/router": "1.2.1",
     "apollo-boost": "0.4.4",
     "cross-fetch": "3.0.4",

@@ -1,6 +1,6 @@
 {
   "name": "@mattailes/website-vue",
-  "version": "4.3.1",
+  "version": "4.4.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -20,8 +20,8 @@
     "vuex": "3.1.1"
   },
   "devDependencies": {
-    "@mattailes/typography": "^4.3.0",
-    "@mattailes/ui": "^4.3.1",
+    "@mattailes/typography": "^4.4.0",
+    "@mattailes/ui": "^4.4.0",
     "@vue/cli-plugin-unit-jest": "3.11.0",
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-core": "7.0.0-bridge.0",
