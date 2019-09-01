@@ -8,10 +8,22 @@ Vue.use(Vuex)
 const redSuits = ['hearts', 'diamonds']
 const blackSuits = ['spades', 'clubs']
 
-export default new Vuex.Store({
+type Deck = {
+  id: number
+  suit: string
+  value: number | string
+  face: boolean
+}
+
+interface State {
+  deck: Deck[]
+  selected: Deck[]
+}
+
+export default new Vuex.Store<State>({
   state: {
     deck: deck.sort(() => 0.5 - Math.random()).map(entry => ({ ...entry, face: false })),
-    selected: [],
+    selected: []
   },
 
   mutations: {
@@ -24,11 +36,14 @@ export default new Vuex.Store({
       state.deck.splice(state.deck.findIndex(entry => entry.id === second.id), 1)
     },
     resetCards(state) {
-      state.deck.map(entry => (entry.face = false))
+      state.deck.map(entry => ({
+        ...entry,
+        face: false
+      }))
     },
     resetSelected(state) {
       state.selected = []
-    },
+    }
   },
 
   actions: {
@@ -51,6 +66,6 @@ export default new Vuex.Store({
           commit('resetSelected')
         }, 500)
       }
-    },
-  },
+    }
+  }
 })

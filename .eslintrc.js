@@ -46,6 +46,7 @@ module.exports = {
         ignoreRestSiblings: false
       }
     ],
+    'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['state'] }],
     'no-unused-vars': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
     'react/prop-types': [2, { ignore: ['children'] }],
