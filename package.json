@@ -37,7 +37,7 @@
     "@types/enzyme": "3.10.3",
     "@types/jest": "24.0.18",
     "@types/lodash.merge": "4.6.6",
-    "@types/node": "10.14.16",
+    "@types/node": "10.14.17",
     "@types/reach__router": "1.2.4",
     "@types/react": "16.9.2",
     "@types/react-dom": "16.9.0",
@@ -48,7 +48,7 @@
     "@types/webpack-env": "1.14.0",
     "@typescript-eslint/eslint-plugin": "2.0.0",
     "@typescript-eslint/parser": "2.0.0",
-    "eslint": "6.2.2",
+    "eslint": "6.3.0",
     "eslint-config-airbnb": "18.0.1",
     "eslint-config-prettier": "6.1.0",
     "eslint-plugin-cypress": "2.6.1",
@@ -57,12 +57,12 @@
     "eslint-plugin-prettier": "3.1.0",
     "eslint-plugin-react": "7.14.3",
     "eslint-plugin-react-hooks": "2.0.1",
-    "husky": "3.0.4",
+    "husky": "3.0.5",
     "lerna": "3.16.4",
-    "lint-staged": "9.2.4",
+    "lint-staged": "9.2.5",
     "prettier": "1.18.2",
     "serve": "11.1.0",
     "start-server-and-test": "1.10.0",
-    "typescript": "3.5.3"
+    "typescript": "3.6.2"
   }
 }
