@@ -37,8 +37,8 @@
     "webpack-bundle-analyzer": "3.4.1"
   },
   "dependencies": {
-    "@emotion/core": "10.0.16",
-    "@emotion/styled": "10.0.15",
+    "@emotion/core": "10.0.17",
+    "@emotion/styled": "10.0.17",
     "@mattailes/types": "^4.4.0",
     "@mattailes/typography": "^4.4.0",
     "@mattailes/ui": "^4.4.0",
