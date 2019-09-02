@@ -5,7 +5,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "preserve",
-    "lib": ["es2018", "dom"],
+    "lib": ["es2018", "dom", "esnext.asynciterable"],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
