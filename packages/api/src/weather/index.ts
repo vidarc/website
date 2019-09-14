@@ -19,13 +19,13 @@ function createRequest(type: string, city: string, zip: number): URL {
   return url
 }
 
-async function weatherApi({ query }: Request, { send }: Response) {
+async function weatherApi({ query }: Request, res: Response) {
   const { city, type = 'forecast', zip = 23220 } = query
 
   const request = createRequest(type, city, zip)
   const response = await fetch(request.href)
 
-  send(await response.json())
+  res.send(await response.json())
 }
 
 export default weatherApi
