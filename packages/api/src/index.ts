@@ -1,9 +1,9 @@
-import { https } from 'firebase-functions'
+import * as functions from 'firebase-functions'
 import graphql from './graphql'
 import weatherApi from './weather'
 
 const graphqlServer = graphql()
 
-export const api = https.onRequest(graphqlServer)
+export const api = functions.https.onRequest(graphqlServer)
 
-export const weather = https.onRequest(weatherApi)
+export const weather = functions.https.onRequest(weatherApi)
