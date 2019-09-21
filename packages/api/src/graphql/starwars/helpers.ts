@@ -4,7 +4,6 @@ import { DocumentData } from '@google-cloud/firestore'
 
 import logger from '../../logger'
 
-admin.initializeApp()
 const firestore = admin.firestore()
 firestore.settings({ timestampsInSnapshots: true })
 

@@ -2,7 +2,6 @@ import admin from 'firebase-admin'
 import { differenceInMinutes } from 'date-fns'
 import fetch from 'cross-fetch'
 
-admin.initializeApp()
 const firestore = admin.firestore()
 firestore.settings({ timestampsInSnapshots: true })
 
