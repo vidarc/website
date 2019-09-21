@@ -1,5 +1,6 @@
 import { Request, Response, config } from 'firebase-functions'
 import requestFromCache from '../cache'
+import logger from '../logger'
 
 const BASE_URL = 'https://api.openweathermap.org'
 const BASE_API_URL = '/data/2.5/'
@@ -28,7 +29,7 @@ async function weatherApi({ query }: Request, res: Response) {
     const data = await requestFromCache(request.href)
     res.send(data)
   } catch (error) {
-    console.error(error)
+    logger.error(error)
     res.send('ouchie')
   }
 }

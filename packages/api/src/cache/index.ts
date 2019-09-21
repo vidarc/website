@@ -1,6 +1,7 @@
 import { firestore } from 'firebase-admin'
 import { differenceInMinutes } from 'date-fns'
 import fetch from 'cross-fetch'
+import logger from '../logger'
 
 const DEFAULT_TTL = 5
 
@@ -17,7 +18,7 @@ async function setInCache(request: string) {
   const data = await response.json()
   const timestamp = firestore.Timestamp.fromDate(new Date())
 
-  console.log('putting data into cache', timestamp.toDate(), request)
+  logger.log('putting data into cache', timestamp.toDate(), request)
   firestore()
     .collection('cache')
     .doc(escapedRequest(request))
@@ -33,15 +34,15 @@ async function requestFromCache(request: string, ttl: number = DEFAULT_TTL) {
     .get()
 
   if (doc.exists) {
-    console.log('doc exists in cache')
+    logger.log('doc exists in cache')
     const { timestamp, data } = doc.data()
 
     if (isNotStale(timestamp.toDate(), ttl)) {
       return data
     }
-    console.log('but it is stale')
+    logger.log('but it is stale')
   } else {
-    console.log('doc does not exist in cache')
+    logger.log('doc does not exist in cache')
   }
 
   return setInCache(request)
