@@ -1,6 +1,6 @@
 {
   "name": "@mattailes/website-vue",
-  "version": "4.4.2",
+  "version": "4.5.3",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
