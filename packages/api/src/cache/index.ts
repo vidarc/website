@@ -9,7 +9,7 @@ function escapedRequest(url: string) {
 }
 
 function isNotStale(timestamp: Date, ttl: number) {
-  return differenceInMinutes(timestamp, new Date()) >= ttl
+  return differenceInMinutes(new Date(), timestamp) <= ttl
 }
 
 async function setInCache(request: string) {
@@ -17,11 +17,11 @@ async function setInCache(request: string) {
   const data = await response.json()
   const timestamp = firestore.Timestamp.fromDate(new Date())
 
-  console.log('putting data into cache', timestamp, request)
+  console.log('putting data into cache', timestamp.toDate(), request)
   firestore()
     .collection('cache')
     .doc(escapedRequest(request))
-    .set({ timestamp, data })
+    .set({ timestamp, data }, { merge: true })
 
   return data
 }
@@ -36,9 +36,10 @@ async function requestFromCache(request: string, ttl: number = DEFAULT_TTL) {
     console.log('doc exists in cache')
     const { timestamp, data } = doc.data()
 
-    if (isNotStale(timestamp, ttl)) {
+    if (isNotStale(timestamp.toDate(), ttl)) {
       return data
     }
+    console.log('but it is stale')
   } else {
     console.log('doc does not exist in cache')
   }
