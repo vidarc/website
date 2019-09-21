@@ -1,6 +1,5 @@
 import { Request, Response, config } from 'firebase-functions'
-import fetch from 'cross-fetch'
-import { differenceInMinutes } from 'date-fns'
+import requestFromCache from '../cache'
 
 const BASE_URL = 'https://api.openweathermap.org'
 const BASE_API_URL = '/data/2.5/'
@@ -20,27 +19,17 @@ function createRequest(type: string, city: string, zip: number): URL {
   return url
 }
 
-function isNotStale(timestamp: Date) {
-  return differenceInMinutes(timestamp, new Date()) >= 10
-}
+async function weatherApi({ query }: Request, res: Response) {
+  const { city, type = 'forecast', zip = 23220 } = query
 
-async function weatherApi(
-  { query, originalUrl }: Request,
-  res: Response,
-  cache: Map<string, { timestamp: Date; data: any }>
-) {
-  if (cache.has(originalUrl) && isNotStale(cache.get(originalUrl).timestamp)) {
-    console.log('sending cached data')
-    res.send(cache.get(originalUrl).data)
-  } else {
-    const { city, type = 'forecast', zip = 23220 } = query
+  const request = createRequest(type, city, zip)
 
-    const request = createRequest(type, city, zip)
-    const response = await fetch(request.href)
-    const data = await response.json()
-    cache.set(originalUrl, { timestamp: new Date(), data })
-
+  try {
+    const data = await requestFromCache(request.href)
     res.send(data)
+  } catch (error) {
+    console.error(error)
+    res.send('ouchie')
   }
 }
 
