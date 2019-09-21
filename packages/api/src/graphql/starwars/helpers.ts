@@ -1,16 +1,15 @@
 import DataLoader from 'dataloader'
-import admin from 'firebase-admin'
+import { firestore } from 'firebase-admin'
 import { DocumentData } from '@google-cloud/firestore'
 
 import logger from '../../logger'
 
-const firestore = admin.firestore()
-firestore.settings({ timestampsInSnapshots: true })
-
 async function getAll(type: string | number) {
   const results: DocumentData[] = []
   try {
-    const snapshots = await firestore.collection(`starwars_${type}`).get()
+    const snapshots = await firestore()
+      .collection(`starwars_${type}`)
+      .get()
 
     snapshots.forEach(snapshot => results.push(snapshot.data()))
   } catch (error) {
@@ -23,7 +22,7 @@ async function getAll(type: string | number) {
 async function getOne(type: string | number, id: string | number) {
   let result = {}
   try {
-    const snapshots = await firestore
+    const snapshots = await firestore()
       .collection(`starwars_${type}`)
       .where('id', '==', id)
       .limit(1)
@@ -47,7 +46,7 @@ const loader = new DataLoader<Props, {}>(keys => {
   try {
     return Promise.all(
       keys.map(key =>
-        firestore
+        firestore()
           .collection(`starwars_${key.type}`)
           .where('id', '==', key.id)
           .limit(1)

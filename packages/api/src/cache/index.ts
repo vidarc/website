@@ -1,9 +1,6 @@
-import admin from 'firebase-admin'
+import { firestore } from 'firebase-admin'
 import { differenceInMinutes } from 'date-fns'
 import fetch from 'cross-fetch'
-
-const firestore = admin.firestore()
-firestore.settings({ timestampsInSnapshots: true })
 
 const DEFAULT_TTL = 5
 
@@ -14,10 +11,10 @@ function isNotStale(timestamp: Date, ttl: number) {
 async function setInCache(request: string) {
   const response = await fetch(request)
   const data = await response.json()
-  const timestamp = admin.firestore.Timestamp.fromDate(new Date())
+  const timestamp = firestore.Timestamp.fromDate(new Date())
 
   console.log('putting data into cache', timestamp, request)
-  firestore
+  firestore()
     .collection('cache')
     .doc(request)
     .set({ timestamp, data })
@@ -26,7 +23,7 @@ async function setInCache(request: string) {
 }
 
 async function requestFromCache(request: string, ttl: number = DEFAULT_TTL) {
-  const doc = await firestore
+  const doc = await firestore()
     .collection('cache')
     .doc(request)
     .get()
