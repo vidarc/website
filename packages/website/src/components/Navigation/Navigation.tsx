@@ -7,6 +7,7 @@ import avatar from '../../images/avatar-small.png'
 
 import { StyledNav } from './StyledComponents'
 import Submenu from './Submenu'
+import EntryPoint from '../Authentication/EntryPoint'
 
 const AvatarImg = styled.img`
   height: 32px;
@@ -32,6 +33,7 @@ const Navigation: React.FunctionComponent<{}> = () => {
         </Link>
       </Submenu>
       <a href="https://vue.mattailes.net">VueJS Site</a>
+      <EntryPoint />
     </StyledNav>
   )
 }

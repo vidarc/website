@@ -7,7 +7,7 @@ import { StyledSubmenu, SubmenuItems } from './StyledComponents'
 
 const DropdownTitle = styled.p`
   display: flex;
-  height: 34px;
+  height: 32px;
 
   & ma-icons {
     position: relative;
