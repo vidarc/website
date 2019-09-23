@@ -6,6 +6,7 @@ import ErrorBoundary from './ErrorBoundary'
 import Loading from './Loading'
 import { Navigation } from './Navigation'
 import NotFound from './NotFound'
+import { UserProvider } from '../context/User'
 
 const AsyncHome = React.lazy(() => import('../modules/home/Home'))
 const AsyncStarWars = React.lazy(() => import('../modules/starWarsApp/StarWarsApp'))
@@ -14,16 +15,18 @@ const AsyncGameOfLife = React.lazy(() => import('../modules/gameOfLife/GameOfLif
 
 const App: React.FunctionComponent = () => (
   <ErrorBoundary>
-    <Navigation />
-    <React.Suspense fallback={<Loading />}>
-      <Router>
-        <AsyncHome path="/" />
-        <AsyncStarWars path="starwars/*" />
-        <AsyncTodo path="todo" />
-        <AsyncGameOfLife path="gameoflife" />
-        <NotFound default />
-      </Router>
-    </React.Suspense>
+    <UserProvider>
+      <Navigation />
+      <React.Suspense fallback={<Loading />}>
+        <Router>
+          <AsyncHome path="/" />
+          <AsyncStarWars path="starwars/*" />
+          <AsyncTodo path="todo" />
+          <AsyncGameOfLife path="gameoflife" />
+          <NotFound default />
+        </Router>
+      </React.Suspense>
+    </UserProvider>
   </ErrorBoundary>
 )
 

@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import firebase from 'firebase/app'
 
-import { User } from './User.type'
+import { User } from '../../context/User'
 
 export async function checkDatabase({ uid, displayName }: firebase.User): Promise<User> {
   const collection = firebase.firestore().collection('users')
