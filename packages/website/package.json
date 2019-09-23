@@ -28,13 +28,13 @@
     "enzyme-adapter-react-16": "1.14.0",
     "jest-emotion": "10.0.17",
     "jest-enzyme": "7.1.1",
-    "nock": "11.3.4",
+    "nock": "11.3.5",
     "raf": "3.4.1",
     "react-test-renderer": "16.9.0",
     "redux-devtools-extension": "2.13.8",
     "redux-mock-store": "1.5.3",
-    "source-map-explorer": "2.0.1",
-    "webpack-bundle-analyzer": "3.5.0"
+    "source-map-explorer": "2.1.0",
+    "webpack-bundle-analyzer": "3.5.1"
   },
   "dependencies": {
     "@emotion/core": "10.0.17",
