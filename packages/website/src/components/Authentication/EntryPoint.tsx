@@ -2,22 +2,25 @@ import React, { useState } from 'react'
 import styled from '@emotion/styled'
 import firebase from 'firebase/app'
 
+import { checkDatabase } from './utils'
+
 const Container = styled.div`
   margin-left: auto;
 `
 
 const EntryPoint = () => {
   const [user, setUser] = useState()
-  // const [isAdmin, setIsAdmin] = useState(false)
+  const [isAdmin, setIsAdmin] = useState(false)
 
   const handleClick = async () => {
     const provider = new firebase.auth.GoogleAuthProvider()
 
     try {
       const auth = await firebase.auth().signInWithPopup(provider)
-      const { displayName, uid } = auth.user
+      const { displayName, role } = await checkDatabase(auth.user)
+
       setUser(displayName)
-      console.log(uid)
+      setIsAdmin(role === 'admin')
     } catch (error) {
       console.log(error)
     }
@@ -26,7 +29,9 @@ const EntryPoint = () => {
   return (
     <Container>
       {user ? (
-        <span>Hello, {user}!</span>
+        <span>
+          Hello, {user}! {isAdmin ? '(admin)' : null}
+        </span>
       ) : (
         <button type="button" onClick={handleClick}>
           Click Me To Sign In
