@@ -14,6 +14,8 @@ async function onCreate(user: functions.auth.UserRecord) {
     email,
     role: 'user'
   })
+
+  return null
 }
 
 export default onCreate

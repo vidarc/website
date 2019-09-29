@@ -8,6 +8,8 @@ async function onDelete(user: functions.auth.UserRecord) {
   const collection = firestore().collection('users')
 
   await collection.doc(user.uid).delete()
+
+  return null
 }
 
 export default onDelete
