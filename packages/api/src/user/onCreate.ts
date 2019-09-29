@@ -7,8 +7,11 @@ export default function onCreate(user: functions.auth.UserRecord) {
   logger.log('creating a user in firestore', user.uid)
   const collection = firestore().collection('users')
 
-  collection.doc(user.uid).set({
-    ...user.toJSON(),
+  const { displayName, email, uid } = user
+
+  collection.doc(uid).set({
+    displayName,
+    email,
     role: 'user'
   })
 }
