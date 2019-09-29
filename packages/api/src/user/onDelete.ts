@@ -3,9 +3,11 @@ import { firestore } from 'firebase-admin'
 
 import logger from '../logger'
 
-export default function onDelete(user: functions.auth.UserRecord) {
+async function onDelete(user: functions.auth.UserRecord) {
   logger.log('removing a user from firestore', user.uid)
   const collection = firestore().collection('users')
 
-  collection.doc(user.uid).delete()
+  await collection.doc(user.uid).delete()
 }
+
+export default onDelete
