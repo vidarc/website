@@ -11,10 +11,5 @@ export async function checkDatabase({ uid, displayName }: firebase.User): Promis
     return user.data() as User
   }
 
-  collection.doc(uid).set({
-    displayName,
-    role: 'user'
-  })
-
   return { displayName, role: 'user' }
 }
