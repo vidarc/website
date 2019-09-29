@@ -6,7 +6,7 @@
       {
         "modules": "commonjs",
         "targets": {
-          "node": "8"
+          "node": "10"
         }
       }
     ]
