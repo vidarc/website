@@ -1,5 +1,6 @@
 import { JSX as Components } from '@mattailes/ui/dist/types/components'
 import { h } from '@stencil/core'
+import { JSXBase } from '@stencil/core/dist/declarations'
 
 interface MaButtonElement extends Components.MaButton {
   children: any
@@ -8,8 +9,8 @@ interface MaButtonElement extends Components.MaButton {
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'ma-button': MaButtonElement
-      'ma-icons': Components.MaIcons
+      'ma-button': MaButtonElement & JSXBase.HTMLAttributes<HTMLMaButtonElement>
+      'ma-icons': Components.MaIcons & JSXBase.HTMLAttributes<HTMLMaIconsElement>
     }
   }
 }
