@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import styled from '@emotion/styled'
 import firebase from 'firebase/app'
 
@@ -16,16 +16,17 @@ const EntryPoint = () => {
 
   const handleClick = async () => {
     const provider = new firebase.auth.GoogleAuthProvider()
-
-    try {
-      const auth = await firebase.auth().signInWithPopup(provider)
-      const { displayName, role } = await checkDatabase(auth.user)
-
-      dispatch({ type: 'update-user', payload: { displayName, role } })
-    } catch (error) {
-      console.log(error)
-    }
+    await firebase.auth().signInWithPopup(provider)
   }
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged(async user => {
+      if (user) {
+        const { displayName, role } = await checkDatabase(user)
+        dispatch({ type: 'update-user', payload: { displayName, role } })
+      }
+    })
+  })
 
   const { displayName, role } = state
   return (
