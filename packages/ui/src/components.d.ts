@@ -39,11 +39,11 @@ declare global {
 }
 
 declare namespace LocalJSX {
-  interface MaButton extends JSXBase.HTMLAttributes<HTMLMaButtonElement> {
+  interface MaButton {
     'color'?: string;
     'type'?: string;
   }
-  interface MaIcons extends JSXBase.HTMLAttributes<HTMLMaIconsElement> {
+  interface MaIcons {
     'name'?: string;
   }
 
@@ -58,7 +58,10 @@ export { LocalJSX as JSX };
 
 declare module "@stencil/core" {
   export namespace JSX {
-    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
+    interface IntrinsicElements {
+      'ma-button': LocalJSX.MaButton & JSXBase.HTMLAttributes<HTMLMaButtonElement>;
+      'ma-icons': LocalJSX.MaIcons & JSXBase.HTMLAttributes<HTMLMaIconsElement>;
+    }
   }
 }
 
