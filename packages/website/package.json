@@ -37,7 +37,7 @@
     "webpack-bundle-analyzer": "3.5.2"
   },
   "dependencies": {
-    "@emotion/core": "10.0.17",
+    "@emotion/core": "10.0.21",
     "@emotion/styled": "10.0.17",
     "@mattailes/types": "^4.4.0",
     "@mattailes/typography": "^4.4.0",
@@ -50,12 +50,12 @@
     "firebase": "6.6.2",
     "graphql.macro": "1.4.2",
     "prop-types": "15.7.2",
-    "react": "16.10.1",
-    "react-apollo": "3.1.1",
-    "react-dom": "16.10.1",
+    "react": "16.10.2",
+    "react-apollo": "3.1.2",
+    "react-dom": "16.10.2",
     "react-helmet": "5.2.1",
     "react-redux": "7.1.1",
-    "react-scripts": "3.1.2",
+    "react-scripts": "3.2.0",
     "redux": "4.0.4",
     "redux-saga": "1.1.1",
     "shortid": "2.2.15"
