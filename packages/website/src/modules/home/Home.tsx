@@ -46,9 +46,6 @@ const Home: React.SFC<RouteComponentProps> = () => (
           <li>
             <a href="https://www.apollographql.com/">Apollo GraphQL</a>
           </li>
-          <li>
-            <a href="https://vuejs.org/">VueJS</a>
-          </li>
         </ul>
         <p>
           I spend the rest of my free time doing things like watching{' '}
