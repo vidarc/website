@@ -18,8 +18,8 @@
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "dependencies": {
-    "@stencil/core": "1.7.4",
-    "@stencil/sass": "1.1.0",
+    "@stencil/core": "1.7.5",
+    "@stencil/sass": "1.1.1",
     "sanitize.css": "11.0.0"
   },
   "license": "MIT"

@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@emotion/core": "10.0.22",
-    "@emotion/styled": "10.0.22",
+    "@emotion/styled": "10.0.23",
     "@mattailes/types": "^4.4.0",
     "@mattailes/typography": "^4.4.0",
     "@mattailes/ui": "^4.5.14",
@@ -47,7 +47,7 @@
     "cross-fetch": "3.0.4",
     "dotenv": "8.2.0",
     "facepaint": "1.2.1",
-    "firebase": "7.2.2",
+    "firebase": "7.2.3",
     "graphql.macro": "1.4.2",
     "prop-types": "15.7.2",
     "react": "16.11.0",
