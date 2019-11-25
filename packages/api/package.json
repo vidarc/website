@@ -27,7 +27,7 @@
     "apollo-link-http": "1.5.16",
     "apollo-server-express": "2.9.12",
     "cross-fetch": "3.0.4",
-    "dataloader": "1.4.0",
+    "dataloader": "2.0.0",
     "date-fns": "2.8.1",
     "express": "4.17.1",
     "firebase-admin": "8.8.0",
