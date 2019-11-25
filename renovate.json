@@ -1,15 +1,4 @@
 {
   "extends": ["config:base"],
-  "schedule": "before 3am on Monday",
-  "semanticCommits": true,
-  "packageRules": [
-    {
-      "groupName": "production dependencies",
-      "depTypeList": ["dependencies"]
-    },
-    {
-      "groupName": "development dependencies",
-      "depTypeList": ["devDependencies"]
-    }
-  ]
+  "schedule": "before 3am on Monday"
 }
