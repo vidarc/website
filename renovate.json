@@ -1,4 +1,13 @@
 {
   "extends": ["config:base"],
-  "schedule": "before 3am on Monday"
+  "schedule": "before 3am on Monday",
+  "groupName": "all dependencies",
+  "groupSlug": "all",
+  "packageRules": [
+    {
+      "packagePatterns": ["*"],
+      "groupName": "all dependencies",
+      "groupSlug": "all"
+    }
+  ]
 }
