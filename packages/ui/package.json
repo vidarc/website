@@ -3,6 +3,7 @@
   "version": "4.5.16",
   "private": true,
   "description": "UI web components for mattailes.net",
+  "license": "MIT",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "types": "dist/types/components.d.ts",
@@ -19,8 +20,8 @@
   },
   "dependencies": {
     "@stencil/core": "1.8.1",
+    "@stencil/react-output-target": "0.0.2",
     "@stencil/sass": "1.1.1",
     "sanitize.css": "11.0.0"
-  },
-  "license": "MIT"
+  }
 }
