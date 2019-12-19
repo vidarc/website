@@ -19,9 +19,11 @@ firebase.initializeApp({
   apiKey: 'AIzaSyCfFUY9_dBsSSrCeqKCJVRgy5YE0YfQU9s',
   authDomain: 'website-b10e5.firebaseapp.com',
   databaseURL: 'https://website-b10e5.firebaseio.com',
-  messagingSenderId: '896911814889',
   projectId: 'website-b10e5',
-  storageBucket: 'website-b10e5.appspot.com'
+  storageBucket: 'website-b10e5.appspot.com',
+  messagingSenderId: '896911814889',
+  appId: '1:896911814889:web:b447586521925a25408078',
+  measurementId: 'G-1WT9RDTR48'
 })
 
 const store = configureStore()

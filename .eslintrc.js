@@ -46,6 +46,17 @@ module.exports = {
         ignoreRestSiblings: false
       }
     ],
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+        mjs: 'never'
+      }
+    ],
     'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['state'] }],
     'no-unused-vars': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
