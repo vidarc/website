@@ -31,6 +31,9 @@ const Navigation: React.FunctionComponent<{}> = () => {
         <Link to="/gameoflife" role="menuitem">
           Conway&apos;s Game of Life
         </Link>
+        <Link to="/gallery" role="menuitem">
+          Gallery
+        </Link>
       </Submenu>
       <EntryPoint />
     </StyledNav>

@@ -12,6 +12,7 @@ const AsyncHome = React.lazy(() => import('../modules/home/Home'))
 const AsyncStarWars = React.lazy(() => import('../modules/starWarsApp/StarWarsApp'))
 const AsyncTodo = React.lazy(() => import('../modules/todoApp/TodoApp'))
 const AsyncGameOfLife = React.lazy(() => import('../modules/gameOfLife/GameOfLife'))
+const AsyncGallery = React.lazy(() => import('../modules/gallery/Gallery'))
 
 const App: React.FunctionComponent = () => (
   <ErrorBoundary>
@@ -23,6 +24,7 @@ const App: React.FunctionComponent = () => (
           <AsyncStarWars path="starwars/*" />
           <AsyncTodo path="todo" />
           <AsyncGameOfLife path="gameoflife" />
+          <AsyncGallery path="gallery" />
           <NotFound default />
         </Router>
       </React.Suspense>
