@@ -6,7 +6,9 @@ import { Component, h, ComponentInterface, Prop, State, getAssetPath } from '@st
   tag: 'ma-icons',
   styleUrl: 'icon.scss',
   assetsDirs: ['svg'],
-  shadow: true
+  shadow: {
+    delegatesFocus: true
+  }
 })
 export class MaIcons implements ComponentInterface {
   @Prop() name: string
