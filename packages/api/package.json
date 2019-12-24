@@ -22,7 +22,7 @@
     "@babel/preset-env": "7.7.7",
     "@babel/preset-typescript": "7.7.7",
     "@babel/runtime": "7.7.7",
-    "@google-cloud/firestore": "2.6.1",
+    "@google-cloud/firestore": "3.1.0",
     "apollo-link": "1.2.13",
     "apollo-link-http": "1.5.16",
     "apollo-server-express": "2.9.14",
