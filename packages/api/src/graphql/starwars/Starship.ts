@@ -1,5 +1,6 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { Starship } from '@mattailes/types/StarWars'
-import { gql } from 'apollo-server-express'
+import { gql } from 'apollo-server-cloud-functions'
 
 import { batchLoad, getAll, getOne } from './helpers'
 
@@ -51,11 +52,11 @@ export const StarshipTypeDef = gql`
 export const starshipResolvers = {
   Query: {
     getAllStarships: () => getAll('starships'),
-    getStarship: (_: any, { id }: { id: number }) => getOne('starships', id),
+    getStarship: (_: any, { id }: { id: number }) => getOne('starships', id)
   },
 
   Starship: {
     pilots: ({ pilots }: Starship) => batchLoad(pilots as number[], 'people'),
-    films: ({ films }: Starship) => batchLoad(films as number[], 'films'),
-  },
+    films: ({ films }: Starship) => batchLoad(films as number[], 'films')
+  }
 }
