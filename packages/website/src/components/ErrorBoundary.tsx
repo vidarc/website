@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Error from './Error'
+
 interface Props {
   children: React.ReactNode
 }
@@ -16,8 +18,7 @@ export default class ErrorBoundary extends React.Component<Props, State> {
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  static getDerivedStateFromError(_error: any) {
+  static getDerivedStateFromError() {
     return { hasError: true }
   }
 
@@ -29,6 +30,6 @@ export default class ErrorBoundary extends React.Component<Props, State> {
     const { hasError } = this.state
     const { children } = this.props
 
-    return hasError ? <img src="https://http.cat/400" alt="big ole error" /> : children
+    return hasError ? <Error /> : children
   }
 }
