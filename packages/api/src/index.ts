@@ -18,4 +18,7 @@ export const weather = functions.https.onRequest(weatherApi)
 export const onUserCreation = functions.auth.user().onCreate(onCreate)
 export const onUserDeletion = functions.auth.user().onDelete(onDelete)
 
-export const onFinalizeStorage = functions.storage.object().onFinalize(generateThumbnail)
+export const onFinalizeStorage = functions
+  .runWith({ memory: '1GB' })
+  .storage.object()
+  .onFinalize(generateThumbnail)

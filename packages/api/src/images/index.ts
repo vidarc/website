@@ -87,7 +87,7 @@ const generateThumbnail = async (object: functions.storage.ObjectMetadata) => {
   try {
     await convertAndUpload(object, paths)
   } catch (error) {
-    logger.error('error while trying to create thumbnail', error)
+    return logger.error('error while trying to create thumbnail', name, error)
   }
 
   return logger.log('successfully made thumbnail', name)
