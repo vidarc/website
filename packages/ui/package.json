@@ -1,6 +1,6 @@
 {
   "name": "@mattailes/ui",
-  "version": "4.6.4",
+  "version": "4.7.0",
   "private": true,
   "description": "UI web components for mattailes.net",
   "module": "dist/index.mjs",
