@@ -23,7 +23,7 @@ const Gallery: React.SFC<Props> = () => {
 
   return (
     <Container>
-      <h2>The Gallery App</h2>
+      <h2 id="gallery-title">The Gallery App</h2>
       {loading && <Loading />}
       {error && <Error />}
       <ImageGrid images={images} />
