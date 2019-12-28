@@ -38,6 +38,6 @@ context('Make sure everything actually loads', () => {
   it('then visits the gallery app and it renders', () => {
     cy.visit('/gallery')
 
-    cy.get('#gallery-title').chould('exist')
+    cy.get('#gallery-title').should('exist')
   })
 })
