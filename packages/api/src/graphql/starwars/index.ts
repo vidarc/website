@@ -1,4 +1,4 @@
-import { gql, makeExecutableSchema } from 'apollo-server-express'
+import { gql, makeExecutableSchema } from 'apollo-server-cloud-functions'
 import merge from 'lodash.merge'
 
 import { filmResolvers, FilmTypeDef } from './Film'
@@ -17,7 +17,15 @@ const Query = gql`
 const resolvers = {}
 
 const starwarsSchema = makeExecutableSchema({
-  typeDefs: [Query, FilmTypeDef, PersonTypeDef, PlanetTypeDef, SpeciesTypeDef, StarshipTypeDef, VehicleTypeDef],
+  typeDefs: [
+    Query,
+    FilmTypeDef,
+    PersonTypeDef,
+    PlanetTypeDef,
+    SpeciesTypeDef,
+    StarshipTypeDef,
+    VehicleTypeDef
+  ],
   resolvers: merge(
     resolvers,
     filmResolvers,
@@ -25,8 +33,8 @@ const starwarsSchema = makeExecutableSchema({
     planetResolvers,
     speciesResolvers,
     starshipResolvers,
-    vehicleResolvers,
-  ),
+    vehicleResolvers
+  )
 })
 
 export default starwarsSchema

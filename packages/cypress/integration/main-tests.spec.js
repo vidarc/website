@@ -34,4 +34,10 @@ context('Make sure everything actually loads', () => {
 
     cy.get('#todo-app-home').should('exist')
   })
+
+  it('then visits the gallery app and it renders', () => {
+    cy.visit('/gallery')
+
+    cy.get('#gallery-title').should('exist')
+  })
 })

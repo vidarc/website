@@ -7,7 +7,9 @@ import { Component, ComponentInterface, h, Prop } from '@stencil/core'
 @Component({
   tag: 'ma-button',
   styleUrl: 'style.scss',
-  shadow: true
+  shadow: {
+    delegatesFocus: true
+  }
 })
 export class Button implements ComponentInterface {
   @Prop() type: string = 'button'
