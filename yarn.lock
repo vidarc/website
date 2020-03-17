@@ -7894,7 +7894,7 @@ cypress@4.2.0:
     ospath "1.2.2"
     pretty-bytes "5.3.0"
     ramda "0.26.1"
-    request "github:cypress-io/request#b5af0d1fa47eec97ba980cde90a13e69a2afcd16"
+    request cypress-io/request#b5af0d1fa47eec97ba980cde90a13e69a2afcd16
     request-progress "3.0.0"
     supports-color "7.1.0"
     tmp "0.1.0"
@@ -17089,7 +17089,6 @@ request@^2.87.0, request@^2.88.0:
 
 "request@github:cypress-io/request#b5af0d1fa47eec97ba980cde90a13e69a2afcd16":
   version "2.88.1"
-  uid b5af0d1fa47eec97ba980cde90a13e69a2afcd16
   resolved "https://codeload.github.com/cypress-io/request/tar.gz/b5af0d1fa47eec97ba980cde90a13e69a2afcd16"
   dependencies:
     aws-sign2 "~0.7.0"
@@ -19568,10 +19567,10 @@ webpack-sources@^1.4.0, webpack-sources@^1.4.1, webpack-sources@^1.4.3:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack@4.41.5, webpack@4.42.0:
-  version "4.42.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.42.0.tgz#b901635dd6179391d90740a63c93f76f39883eb8"
-  integrity sha512-EzJRHvwQyBiYrYqhyjW9AqM90dE4+s1/XtCfn7uWg6cS72zH+2VPFAlsnW0+W0cDi0XRjNKUMoJtpSi50+Ph6w==
+webpack@4.41.5:
+  version "4.41.5"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.41.5.tgz#3210f1886bce5310e62bb97204d18c263341b77c"
+  integrity sha512-wp0Co4vpyumnp3KlkmpM5LWuzvZYayDwM2n17EHFr4qxBBbRokC7DJawPJC7TfSFZ9HZ6GsdH40EBj4UV0nmpw==
   dependencies:
     "@webassemblyjs/ast" "1.8.5"
     "@webassemblyjs/helper-module-context" "1.8.5"
