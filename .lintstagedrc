@@ -2,18 +2,14 @@
   "*.{js,jsx,ts,tsx}": [
     "prettier --write",
     "eslint --fix",
-    "git add"
   ],
   "*.vue": [
     "prettier --write",
-    "git add"
   ],
   "*.json": [
     "prettier --write",
-    "git add"
   ],
   "*.{css,scss,sass}": [
     "prettier --write",
-    "git add"
   ]
 }

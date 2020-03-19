@@ -32,7 +32,7 @@ script:
 deploy:
   provider: script
   script: lerna run deploy --since
-  skip_cleanup: true
+  cleanup: false
   on:
     branch: master
     condition: $TRAVIS_COMMIT_MESSAGE != *'chore(deps)'*
