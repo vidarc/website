@@ -7,11 +7,9 @@ import logger from '../../logger'
 async function getAll(type: string | number) {
   const results: DocumentData[] = []
   try {
-    const snapshots = await firestore()
-      .collection(`starwars_${type}`)
-      .get()
+    const snapshots = await firestore().collection(`starwars_${type}`).get()
 
-    snapshots.forEach(snapshot => results.push(snapshot.data()))
+    snapshots.forEach((snapshot) => results.push(snapshot.data()))
   } catch (error) {
     logger.error(`Error in getAll function for type: ${type}`, error)
   }
@@ -28,7 +26,7 @@ async function getOne(type: string | number, id: string | number) {
       .limit(1)
       .get()
 
-    snapshots.forEach(snapshot => {
+    snapshots.forEach((snapshot) => {
       result = snapshot.data()
     })
   } catch (error) {
@@ -42,19 +40,19 @@ interface Props {
   id: number
   type: string
 }
-const loader = new DataLoader<Props, {}>(keys => {
+const loader = new DataLoader<Props, {}>((keys) => {
   try {
     return Promise.all(
-      keys.map(key =>
+      keys.map((key) =>
         firestore()
           .collection(`starwars_${key.type}`)
           .where('id', '==', key.id)
           .limit(1)
           .get()
-          .then(docs => {
+          .then((docs) => {
             const array: DocumentData[] = []
 
-            docs.forEach(doc => array.push(doc.data()))
+            docs.forEach((doc) => array.push(doc.data()))
 
             return array[0]
           })
@@ -67,6 +65,6 @@ const loader = new DataLoader<Props, {}>(keys => {
   return Promise.resolve([])
 })
 
-const batchLoad = (ids: number[], type: string) => loader.loadMany(ids.map(id => ({ id, type })))
+const batchLoad = (ids: number[], type: string) => loader.loadMany(ids.map((id) => ({ id, type })))
 
 export { getAll, getOne, loader, batchLoad }

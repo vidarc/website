@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 import {
   Action,
   GAME_OVER,
@@ -24,6 +25,18 @@ const initialState: State = {
   tiles: [[]],
 }
 
+export const fillBoardWithRandomData = (percent: number = 0, length: number = 35): Tile[][] => {
+  let i = 0
+
+  return Array.from({ length }, () =>
+    // eslint-disable-next-line no-return-assign
+    Array.from({ length }, () => ({
+      id: i += 1,
+      alive: Math.floor(Math.random() * 100) < percent,
+    }))
+  )
+}
+
 const reducers = (state: State = initialState, { type, payload }: Action<any>): State => {
   switch (type) {
     case START_GAME_OF_LIFE:
@@ -31,7 +44,13 @@ const reducers = (state: State = initialState, { type, payload }: Action<any>): 
     case PAUSE_GAME_OF_LIFE:
       return { ...state, running: false }
     case RESTART_GAME_OF_LIFE:
-      return { ...state, tiles: fillBoardWithRandomData(0), generation: 0, running: false, gameOver: false }
+      return {
+        ...state,
+        tiles: fillBoardWithRandomData(0),
+        generation: 0,
+        running: false,
+        gameOver: false,
+      }
     case GAME_OVER:
       return { ...state, running: false, gameOver: true }
     case UPDATE_GAME:
@@ -43,31 +62,20 @@ const reducers = (state: State = initialState, { type, payload }: Action<any>): 
 
       if (running) return state
 
-      const newTiles = tiles.map(row =>
-        row.map(cell => {
+      const newTiles = tiles.map((row) =>
+        row.map((cell) => {
           if (cell.id === payload) {
             return { ...cell, alive: !cell.alive }
           }
 
           return cell
-        }),
+        })
       )
 
       return { ...state, tiles: newTiles }
     default:
       return initialState
   }
-}
-
-export const fillBoardWithRandomData = (percent: number = 0, length: number = 35): Tile[][] => {
-  let i = 0
-
-  return Array.from({ length }, () =>
-    Array.from({ length }, () => ({
-      id: i += 1,
-      alive: Math.floor(Math.random() * 100) < percent,
-    })),
-  )
 }
 
 export default reducers

@@ -41,11 +41,11 @@ export const PlanetTypeDef = gql`
 export const planetResolvers = {
   Query: {
     getAllPlanets: () => getAll('planets'),
-    getPlanet: (_: any, { id }: { id: number }) => getOne('planets', id)
+    getPlanet: (_: any, { id }: { id: number }) => getOne('planets', id),
   },
 
   Planet: {
     residents: ({ residents }: Planet) => batchLoad(residents as number[], 'people'),
-    films: ({ films }: Planet) => batchLoad(films as number[], 'films')
-  }
+    films: ({ films }: Planet) => batchLoad(films as number[], 'films'),
+  },
 }

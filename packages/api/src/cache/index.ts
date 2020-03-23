@@ -28,10 +28,7 @@ async function setInCache(request: string) {
 }
 
 async function requestFromCache(request: string, ttl: number = DEFAULT_TTL) {
-  const doc = await firestore()
-    .collection('cache')
-    .doc(escapedRequest(request))
-    .get()
+  const doc = await firestore().collection('cache').doc(escapedRequest(request)).get()
 
   if (doc.exists) {
     logger.log('doc exists in cache')

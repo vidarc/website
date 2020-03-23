@@ -13,7 +13,11 @@ const rootReducer = combineReducers({ todoReducers, gameOfLife })
 export const sagaMiddleware = createSagaMiddleware()
 
 export function configureStore() {
-  return createStore(rootReducer, initialState, composeWithDevTools(applyMiddleware(sagaMiddleware)))
+  return createStore(
+    rootReducer,
+    initialState,
+    composeWithDevTools(applyMiddleware(sagaMiddleware))
+  )
 }
 
 export function* rootSaga() {

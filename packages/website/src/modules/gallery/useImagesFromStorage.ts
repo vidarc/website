@@ -9,11 +9,7 @@ const pathToThumb = (path: string) => {
   return [...array, 'thumbnails', `thumb_${fileName}`].join('/')
 }
 
-const getDownloadURL = async (ref: string) =>
-  firebase
-    .storage()
-    .ref(ref)
-    .getDownloadURL()
+const getDownloadURL = async (ref: string) => firebase.storage().ref(ref).getDownloadURL()
 
 const getUrls = async (image: ImageState): Promise<ImageState> => {
   const fullPath = await getDownloadURL(image.fullPath)
@@ -39,12 +35,12 @@ const useImagesFromStorage = (pageToken = ''): [ImageState[], boolean, boolean, 
         const imageMap = items
           .map(({ fullPath }) => ({
             fullPath,
-            thumbPath: pathToThumb(fullPath)
+            thumbPath: pathToThumb(fullPath),
           }))
-          .map(image => getUrls(image))
+          .map((image) => getUrls(image))
 
         const nextSet = await Promise.all(imageMap)
-        setImages(i => [...i, ...nextSet])
+        setImages((i) => [...i, ...nextSet])
         setNextPageToken(nextPageToken)
       } catch (_) {
         setError(true)

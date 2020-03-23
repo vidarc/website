@@ -7,8 +7,8 @@ import { Component, h, ComponentInterface, Prop, State, getAssetPath } from '@st
   styleUrl: 'icon.scss',
   assetsDirs: ['svg'],
   shadow: {
-    delegatesFocus: true
-  }
+    delegatesFocus: true,
+  },
 })
 export class MaIcons implements ComponentInterface {
   @Prop() name: string

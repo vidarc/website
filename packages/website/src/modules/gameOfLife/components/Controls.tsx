@@ -53,7 +53,7 @@ const Controls = ({ dispatch, generation, gameOver }) => {
 Controls.propTypes = {
   dispatch: PropTypes.func.isRequired,
   generation: PropTypes.string.isRequired,
-  gameOver: PropTypes.bool.isRequired
+  gameOver: PropTypes.bool.isRequired,
 }
 
 export default Controls

@@ -28,7 +28,7 @@ const EntryPoint = () => {
   }
 
   useEffect(() => {
-    firebase.auth().onAuthStateChanged(async user => {
+    firebase.auth().onAuthStateChanged(async (user) => {
       if (user) {
         const { displayName, role } = await checkDatabase(user)
         dispatch({ type: 'update-user', payload: { displayName, role } })
@@ -48,7 +48,7 @@ const EntryPoint = () => {
           </span>,
           <button type="button" key="sign-out" onClick={handleLogoutClick}>
             Sign Out
-          </button>
+          </button>,
         ]
       ) : (
         <button type="button" onClick={handleLoginClick}>

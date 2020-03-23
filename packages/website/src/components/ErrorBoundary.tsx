@@ -14,7 +14,7 @@ export default class ErrorBoundary extends React.Component<Props, State> {
   constructor(props: Readonly<Props>) {
     super(props)
     this.state = {
-      hasError: false
+      hasError: false,
     }
   }
 

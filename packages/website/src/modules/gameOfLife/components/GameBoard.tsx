@@ -29,11 +29,11 @@ GameBoard.propTypes = {
     PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.number,
-        alive: PropTypes.bool
+        alive: PropTypes.bool,
       })
     )
   ).isRequired,
-  size: PropTypes.number.isRequired
+  size: PropTypes.number.isRequired,
 }
 
 export default GameBoard

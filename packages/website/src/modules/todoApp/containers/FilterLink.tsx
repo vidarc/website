@@ -18,9 +18,6 @@ const mapDispatchToProps = (dispatch: (string) => void, ownProps: VisibilityFilt
   },
 })
 
-const FilterLink = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(TodoLink)
+const FilterLink = connect(mapStateToProps, mapDispatchToProps)(TodoLink)
 
 export default FilterLink

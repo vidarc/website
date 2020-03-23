@@ -24,7 +24,7 @@ const starwarsSchema = makeExecutableSchema({
     PlanetTypeDef,
     SpeciesTypeDef,
     StarshipTypeDef,
-    VehicleTypeDef
+    VehicleTypeDef,
   ],
   resolvers: merge(
     resolvers,
@@ -34,7 +34,7 @@ const starwarsSchema = makeExecutableSchema({
     speciesResolvers,
     starshipResolvers,
     vehicleResolvers
-  )
+  ),
 })
 
 export default starwarsSchema

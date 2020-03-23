@@ -15,7 +15,7 @@ const NotFound: React.SFC<RouteComponentProps> = () => (
     <Helmet>
       <title>404 - Not Found</title>
     </Helmet>
-    <img src='https://http.cat/404' alt='404 cat' />
+    <img src="https://http.cat/404" alt="404 cat" />
   </ImageContainer>
 )
 

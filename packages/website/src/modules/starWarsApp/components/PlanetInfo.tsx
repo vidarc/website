@@ -19,21 +19,21 @@ const PlanetInfo = ({
   residents,
   films,
 }: Planet) => (
-  <FlexContainer direction='column'>
-    <ContentRow title='Name'>{name}</ContentRow>
-    <ContentRow title='Surface Water'>{surfaceWater}</ContentRow>
-    <ContentRow title='Population'>{population}</ContentRow>
-    <ContentRow title='Diameter'>{diameter}</ContentRow>
-    <ContentRow title='Gravity'>{gravity}</ContentRow>
-    <ContentRow title='Rotation Period'>{rotationPeriod}</ContentRow>
-    <ContentRow title='Orbital Period'>{orbitalPeriod}</ContentRow>
-    <ContentRow title='Climate'>{climate}</ContentRow>
-    <ContentRow title='Terrain'>{terrain}</ContentRow>
-    <ContentRow title='Residents'>
-      <DisplayArray array={residents} url='../person/' />
+  <FlexContainer direction="column">
+    <ContentRow title="Name">{name}</ContentRow>
+    <ContentRow title="Surface Water">{surfaceWater}</ContentRow>
+    <ContentRow title="Population">{population}</ContentRow>
+    <ContentRow title="Diameter">{diameter}</ContentRow>
+    <ContentRow title="Gravity">{gravity}</ContentRow>
+    <ContentRow title="Rotation Period">{rotationPeriod}</ContentRow>
+    <ContentRow title="Orbital Period">{orbitalPeriod}</ContentRow>
+    <ContentRow title="Climate">{climate}</ContentRow>
+    <ContentRow title="Terrain">{terrain}</ContentRow>
+    <ContentRow title="Residents">
+      <DisplayArray array={residents} url="../person/" />
     </ContentRow>
-    <ContentRow title='Films'>
-      <DisplayArray array={films} url='../film/' />
+    <ContentRow title="Films">
+      <DisplayArray array={films} url="../film/" />
     </ContentRow>
   </FlexContainer>
 )

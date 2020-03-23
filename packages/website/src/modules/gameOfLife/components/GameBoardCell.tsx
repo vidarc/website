@@ -20,6 +20,6 @@ const StyledCell = styled.div`
   }
 `
 
-const GameBoardCell: React.SFC<CellProps> = props => <StyledCell {...props} />
+const GameBoardCell: React.SFC<CellProps> = (props) => <StyledCell {...props} />
 
 export default GameBoardCell

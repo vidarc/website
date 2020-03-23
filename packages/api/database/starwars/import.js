@@ -11,7 +11,7 @@ const vehicles = require('./vehicles.json')
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: 'https://website-b10e5.firebaseio.com'
+  databaseURL: 'https://website-b10e5.firebaseio.com',
 })
 
 const db = admin.firestore()
@@ -21,7 +21,7 @@ db.settings(settings)
 const insert = (type, data) => {
   const doc = db.collection(`starwars_${type}`)
 
-  data.forEach(object => doc.add(object))
+  data.forEach((object) => doc.add(object))
 }
 
 insert('films', films)
@@ -32,5 +32,5 @@ insert('starships', starships)
 insert('vehicles', vehicles)
 
 module.exports = {
-  insert
+  insert,
 }

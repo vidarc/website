@@ -8,10 +8,10 @@ describe('ContentRow component', () => {
   it('renders without crashing', () => {
     expect(
       mount(
-        <ContentRow title='Title'>
+        <ContentRow title="Title">
           <p>Hello</p>
-        </ContentRow>,
-      ),
+        </ContentRow>
+      )
     ).toBeTruthy()
   })
 })

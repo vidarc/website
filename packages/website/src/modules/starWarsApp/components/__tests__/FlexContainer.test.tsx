@@ -15,6 +15,6 @@ describe('FlexContainer', () => {
   })
 
   it('matches the snapshot when direction is specified', () => {
-    expect(renderer.create(<FlexContainer direction='column' />).toJSON()).toMatchSnapshot()
+    expect(renderer.create(<FlexContainer direction="column" />).toJSON()).toMatchSnapshot()
   })
 })
