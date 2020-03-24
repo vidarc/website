@@ -24,10 +24,10 @@ function useCloseDropdown({ ref, callback }: Props) {
     }
 
     const events = ['mousedown', 'keydown']
-    events.forEach(type => document.addEventListener(type, handleSubmenuClose as EventListener))
+    events.forEach((type) => document.addEventListener(type, handleSubmenuClose as EventListener))
 
     return function cleanup() {
-      events.forEach(type =>
+      events.forEach((type) =>
         document.removeEventListener(type, handleSubmenuClose as EventListener)
       )
     }

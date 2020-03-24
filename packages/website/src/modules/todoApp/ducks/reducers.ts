@@ -14,7 +14,9 @@ const todos = (state: Todos = [], { type, payload }: Action<Todo>): Todos => {
         },
       ]
     case types.TOGGLE_TODO:
-      return state.map((todo: Todo) => (todo.id === payload.id ? { ...todo, completed: !todo.completed } : todo))
+      return state.map((todo: Todo) =>
+        todo.id === payload.id ? { ...todo, completed: !todo.completed } : todo
+      )
     default:
       return state
   }
@@ -26,7 +28,7 @@ const initialFilter: VisibilityFilter = {
 
 const visibilityFilter = (
   state: VisibilityFilter = initialFilter,
-  { type, payload }: Action<VisibilityFilter>,
+  { type, payload }: Action<VisibilityFilter>
 ): VisibilityFilter => {
   switch (type) {
     case types.SET_VISIBILITY_FILTER:

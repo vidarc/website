@@ -24,14 +24,14 @@ firebase.initializeApp({
   storageBucket: 'website-b10e5.appspot.com',
   messagingSenderId: '896911814889',
   appId: '1:896911814889:web:b447586521925a25408078',
-  measurementId: 'G-1WT9RDTR48'
+  measurementId: 'G-1WT9RDTR48',
 })
 
 const store = configureStore()
 sagaMiddleware.run(rootSaga)
 const client = new ApolloClient({
   name: 'react-site',
-  uri: 'https://us-central1-website-b10e5.cloudfunctions.net/api/graphql'
+  uri: 'https://us-central1-website-b10e5.cloudfunctions.net/api/graphql',
 })
 
 typography.injectStyles()

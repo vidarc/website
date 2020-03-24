@@ -48,7 +48,7 @@ const Submenu: React.FunctionComponent<SubmenuProps> = ({ title, children }) => 
 }
 
 Submenu.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 }
 
 export default Submenu

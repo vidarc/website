@@ -46,7 +46,7 @@ const convertAndUpload = async (
   logger.log('converting file: ', { name, tempLocalFile, tempLocalThumbFile, thumbFilePath })
   const objectBucket = storage().bucket(bucket)
   const metadata = {
-    contentType
+    contentType,
   }
 
   await promisedMkdir(path.dirname(tempLocalFile), { recursive: true })
@@ -59,7 +59,7 @@ const convertAndUpload = async (
     tempLocalFile,
     '-thumbnail',
     `x${THUMB_HEIGHT}`,
-    tempLocalThumbFile
+    tempLocalThumbFile,
   ])
   logger.log('converted the file')
 

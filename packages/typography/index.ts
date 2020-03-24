@@ -14,8 +14,8 @@ const styles = {
   includeNormalize: false,
   overrideStyles: () => ({
     'a:active': {},
-    'a:hover': {}
-  })
+    'a:hover': {},
+  }),
 }
 
 const typography = new Typography(styles)

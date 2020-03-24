@@ -45,11 +45,11 @@ export const VehicleTypeDef = gql`
 export const vehicleResolvers = {
   Query: {
     getAllVehicles: () => getAll('vehicles'),
-    getVehicle: (_: any, { id }: { id: number }) => getOne('vehicles', id)
+    getVehicle: (_: any, { id }: { id: number }) => getOne('vehicles', id),
   },
 
   Vehicle: {
     pilots: ({ pilots }: Vehicle) => batchLoad(pilots as number[], 'people'),
-    films: ({ films }: Vehicle) => batchLoad(films as number[], 'films')
-  }
+    films: ({ films }: Vehicle) => batchLoad(films as number[], 'films'),
+  },
 }

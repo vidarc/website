@@ -6,7 +6,7 @@ interface Props {
   to: string
 }
 
-const TabLink: React.FunctionComponent<Props> = props => {
+const TabLink: React.FunctionComponent<Props> = (props) => {
   const { children } = props
 
   return (

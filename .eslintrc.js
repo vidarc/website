@@ -4,14 +4,14 @@ module.exports = {
     project: './tsconfig.json',
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true
-    }
+      jsx: true,
+    },
   },
   env: {
     browser: true,
     node: true,
     jest: true,
-    'cypress/globals': true
+    'cypress/globals': true,
   },
   extends: [
     'airbnb',
@@ -20,31 +20,31 @@ module.exports = {
     'prettier',
     'prettier/@typescript-eslint',
     'prettier/react',
-    'prettier/vue'
+    'prettier/vue',
   ],
   plugins: ['@typescript-eslint', 'prettier', 'cypress'],
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true
-    }
+      jsx: true,
+    },
   },
   rules: {
     '@typescript-eslint/member-naming': [
       'error',
       {
         private: '^__',
-        protected: '^_'
-      }
+        protected: '^_',
+      },
     ],
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
         vars: 'all',
         args: 'after-used',
-        ignoreRestSiblings: false
-      }
+        ignoreRestSiblings: false,
+      },
     ],
     'import/extensions': [
       'error',
@@ -54,18 +54,19 @@ module.exports = {
         jsx: 'never',
         ts: 'never',
         tsx: 'never',
-        mjs: 'never'
-      }
+        mjs: 'never',
+      },
     ],
     'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['state'] }],
     'no-unused-vars': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
+    'react/jsx-props-no-spreading': [0],
     'react/prop-types': [2, { ignore: ['children'] }],
-    semi: ['error', 'never']
+    semi: ['error', 'never'],
   },
   settings: {
     react: {
-      version: 'detect'
-    }
-  }
+      version: 'detect',
+    },
+  },
 }

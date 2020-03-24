@@ -2,7 +2,7 @@
 
 const logger = {
   error: console.error,
-  log: console.log
+  log: console.log,
 }
 
 export default logger

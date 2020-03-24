@@ -9,7 +9,7 @@ interface GameOfLifeState {
 
 const mapStateToProps = ({ gameOfLife: { generation, gameOver } }: GameOfLifeState) => ({
   generation,
-  gameOver
+  gameOver,
 })
 
 export default connect(mapStateToProps)(Controls)

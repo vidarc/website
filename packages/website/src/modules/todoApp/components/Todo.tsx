@@ -12,7 +12,7 @@ interface StyledLiProps {
   completed: boolean
 }
 const StyledLi = styled.li<StyledLiProps>`
-  text-decoration: ${props => (props.completed ? 'line-through' : 'none')};
+  text-decoration: ${(props) => (props.completed ? 'line-through' : 'none')};
   cursor: pointer;
 `
 

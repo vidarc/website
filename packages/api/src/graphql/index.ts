@@ -8,7 +8,7 @@ const schema = mergeSchemas({ schemas: [starwarsSchema] })
 const server = new ApolloServer({
   schema,
   engine: { apiKey: config().graphql.enginekey },
-  tracing: true
+  tracing: true,
 })
 
 export default server.createHandler({ cors: { origin: 'https://www.mattailes.net' } })

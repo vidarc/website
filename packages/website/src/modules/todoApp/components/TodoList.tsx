@@ -11,8 +11,7 @@ export interface Props {
 
 const TodoList = ({ todos, onTodoClick }: Props) => (
   <ul>
-    {todos.map(todo => (
-      // tslint:disable-next-line:jsx-no-lambda
+    {todos.map((todo) => (
       <Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} />
     ))}
   </ul>

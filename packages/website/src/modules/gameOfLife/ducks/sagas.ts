@@ -1,42 +1,50 @@
 import { call, delay, put, race, select, take } from 'redux-saga/effects'
 
 import { gameOver, incrementGeneration, updateGameBoard } from './actions'
-import { GAME_OVER, PAUSE_GAME_OF_LIFE, RESTART_GAME_OF_LIFE, START_GAME_OF_LIFE, Tile } from './types'
+import {
+  GAME_OVER,
+  PAUSE_GAME_OF_LIFE,
+  RESTART_GAME_OF_LIFE,
+  START_GAME_OF_LIFE,
+  Tile,
+} from './types'
 
-export function* watchStart() {
-  while (true) {
-    yield take(START_GAME_OF_LIFE)
+const tileIsAlive = (row: number, col: number, gameBoard: Tile[][]) =>
+  row >= 0 &&
+  row < gameBoard.length &&
+  col >= 0 &&
+  col < gameBoard.length &&
+  gameBoard[row][col].alive
 
-    while (true) {
-      const { pause, restart, gameOver } = yield race({
-        pause: take(PAUSE_GAME_OF_LIFE),
-        restart: take(RESTART_GAME_OF_LIFE),
-        gameOver: take(GAME_OVER),
-        tick: call(runGameOfLife),
-      })
+export const calculateNeighbors = (
+  gameBoard: Tile[][],
+  coords: { rowNum: number; colNum: number }
+) => {
+  const { rowNum, colNum } = coords
+  let neighbors = 0
 
-      if (pause || restart || gameOver) break
+  const matrix = [
+    [rowNum - 1, colNum - 1],
+    [rowNum - 1, colNum],
+    [rowNum - 1, colNum + 1],
+    [rowNum, colNum - 1],
+    [rowNum, colNum + 1],
+    [rowNum + 1, colNum - 1],
+    [rowNum + 1, colNum],
+    [rowNum + 1, colNum + 1],
+  ]
+
+  matrix.forEach(([row, col]) => {
+    if (tileIsAlive(row, col, gameBoard)) {
+      neighbors += 1
     }
-  }
-}
+  })
 
-export function* runGameOfLife() {
-  yield delay(500)
-
-  const { gameOfLife } = yield select()
-
-  const nextGeneration = processGeneration(gameOfLife)
-  yield put(updateGameBoard(nextGeneration))
-
-  if (!nextGeneration.some(row => row.some(tile => tile.alive))) {
-    yield put(gameOver())
-  } else {
-    yield put(incrementGeneration(gameOfLife.generation + 1))
-  }
+  return neighbors
 }
 
 export const processGeneration = ({ tiles }): Tile[][] => {
-  const payload = tiles.map(array => array.slice(0))
+  const payload = tiles.map((array) => array.slice(0))
 
   tiles.forEach((row, rowNum) =>
     row.forEach((cell, colNum) => {
@@ -53,31 +61,40 @@ export const processGeneration = ({ tiles }): Tile[][] => {
         tileData.alive = true
         payload[rowNum][colNum] = tileData
       }
-    }),
+    })
   )
 
   return payload
 }
 
-export const calculateNeighbors = (gameBoard: Tile[][], coords: { rowNum: number; colNum: number }) => {
-  const { rowNum, colNum } = coords
-  let neighbors = 0
+export function* runGameOfLife() {
+  yield delay(500)
 
-  const matrix = [
-    [rowNum - 1, colNum - 1],
-    [rowNum - 1, colNum],
-    [rowNum - 1, colNum + 1],
-    [rowNum, colNum - 1],
-    [rowNum, colNum + 1],
-    [rowNum + 1, colNum - 1],
-    [rowNum + 1, colNum],
-    [rowNum + 1, colNum + 1],
-  ]
+  const { gameOfLife } = yield select()
 
-  matrix.forEach(([row, col]) => (tileIsAlive(row, col, gameBoard) ? (neighbors += 1) : null))
+  const nextGeneration = processGeneration(gameOfLife)
+  yield put(updateGameBoard(nextGeneration))
 
-  return neighbors
+  if (!nextGeneration.some((row) => row.some((tile) => tile.alive))) {
+    yield put(gameOver())
+  } else {
+    yield put(incrementGeneration(gameOfLife.generation + 1))
+  }
 }
 
-const tileIsAlive = (row: number, col: number, gameBoard: Tile[][]) =>
-  row >= 0 && row < gameBoard.length && col >= 0 && col < gameBoard.length && gameBoard[row][col].alive
+export function* watchStart() {
+  while (true) {
+    yield take(START_GAME_OF_LIFE)
+
+    while (true) {
+      const { pause, restart, gameOver: gameOverResult } = yield race({
+        pause: take(PAUSE_GAME_OF_LIFE),
+        restart: take(RESTART_GAME_OF_LIFE),
+        gameOver: take(GAME_OVER),
+        tick: call(runGameOfLife),
+      })
+
+      if (pause || restart || gameOverResult) break
+    }
+  }
+}

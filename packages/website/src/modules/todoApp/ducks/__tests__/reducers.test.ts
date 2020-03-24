@@ -34,7 +34,9 @@ describe('reducers test', () => {
         ...expected,
         ...{ todos: [todoOne] },
       })
-      expect(todosReducer({ todos: [todoOne] }, { type: types.ADD_TODO, payload: todoTwo })).toEqual({
+      expect(
+        todosReducer({ todos: [todoOne] }, { type: types.ADD_TODO, payload: todoTwo })
+      ).toEqual({
         ...expected,
         ...{ todos: [todoOne, todoTwo] },
       })
@@ -57,7 +59,9 @@ describe('reducers test', () => {
         visibilityFilter: { filter: types.SHOW_ALL },
       }
 
-      expect(todosReducer({ todos: [todo] }, { type: types.TOGGLE_TODO, payload: todo })).toEqual(expected)
+      expect(todosReducer({ todos: [todo] }, { type: types.TOGGLE_TODO, payload: todo })).toEqual(
+        expected
+      )
     })
   })
 
@@ -86,8 +90,8 @@ describe('reducers test', () => {
           {
             type: types.SET_VISIBILITY_FILTER,
             payload: { filter: types.SHOW_ACTIVE },
-          },
-        ),
+          }
+        )
       ).toEqual(expected)
     })
   })

@@ -6,13 +6,13 @@ import Footer from './components/Footer'
 import VisibleTodoList from './containers/VisibleTodoList'
 
 const TodoApp: React.SFC<RouteComponentProps> = () => (
-  <div id='todo-app-home'>
+  <div id="todo-app-home">
     <div>
       <AddTodo />
       <VisibleTodoList />
       <Footer />
     </div>
-    <Link to='/'>Go Back Home</Link>
+    <Link to="/">Go Back Home</Link>
   </div>
 )
 

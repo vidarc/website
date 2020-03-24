@@ -47,7 +47,7 @@ const ImageGrid: React.FunctionComponent<Props> = ({ images }) => {
 }
 
 ImageGrid.defaultProps = {
-  images: []
+  images: [],
 }
 
 export default ImageGrid

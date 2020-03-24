@@ -8,7 +8,7 @@ describe('DisplayArray component', () => {
   it('renders without crashing', () => {
     const array = []
 
-    expect(mount(<DisplayArray array={array} url='some/url/' />)).toBeTruthy()
+    expect(mount(<DisplayArray array={array} url="some/url/" />)).toBeTruthy()
   })
 
   it('renders when there is data in array', () => {
@@ -23,6 +23,6 @@ describe('DisplayArray component', () => {
       },
     ]
 
-    expect(mount(<DisplayArray array={array} url='some/url' />)).toBeTruthy()
+    expect(mount(<DisplayArray array={array} url="some/url" />)).toBeTruthy()
   })
 })

@@ -12,7 +12,7 @@ async function onCreate(user: functions.auth.UserRecord) {
   await collection.doc(uid).set({
     displayName,
     email,
-    role: 'user'
+    role: 'user',
   })
 
   return null

@@ -29,16 +29,13 @@ const GameOfLife = ({ onInitGame }) => {
 }
 
 GameOfLife.propTypes = {
-  onInitGame: PropTypes.func.isRequired
+  onInitGame: PropTypes.func.isRequired,
 }
 
-const mapDispatchToProps = dispatch => ({
-  onInitGame: (size: number) => dispatch(initGame(size))
+const mapDispatchToProps = (dispatch) => ({
+  onInitGame: (size: number) => dispatch(initGame(size)),
 })
 
 const mapStateToProps = (_state, ownProps: Props) => ownProps
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(GameOfLife)
+export default connect(mapStateToProps, mapDispatchToProps)(GameOfLife)

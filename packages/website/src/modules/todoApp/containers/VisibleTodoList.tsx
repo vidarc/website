@@ -7,9 +7,9 @@ import { Todo, VisibilityFilter } from '../ducks/types'
 const getVisibleTodos = (todos: Todo[], { filter }: VisibilityFilter) => {
   switch (filter) {
     case 'SHOW_COMPLETED':
-      return todos.filter(todo => todo.completed)
+      return todos.filter((todo) => todo.completed)
     case 'SHOW_ACTIVE':
-      return todos.filter(todo => !todo.completed)
+      return todos.filter((todo) => !todo.completed)
     case 'SHOW_ALL':
       return todos
     default:
@@ -27,9 +27,6 @@ const mapDispatchToProps = (dispatch: (string) => void) => ({
   },
 })
 
-const VisibleTodoList = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(TodoList)
+const VisibleTodoList = connect(mapStateToProps, mapDispatchToProps)(TodoList)
 
 export default VisibleTodoList

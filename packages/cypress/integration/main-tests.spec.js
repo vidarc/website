@@ -13,17 +13,13 @@ context('Make sure everything actually loads', () => {
   it('then visits the game of life app and it renders', () => {
     cy.visit('/gameoflife')
 
-    cy.get('#game-of-life-home')
-      .should('exist')
-      .and('have.text', "Conway's Game of Life")
+    cy.get('#game-of-life-home').should('exist').and('have.text', "Conway's Game of Life")
   })
 
   it('then visits the star wars app and it renders', () => {
     cy.visit('/starwars')
 
-    cy.get('#star-wars-home')
-      .should('exist')
-      .and('have.descendants', 'h1')
+    cy.get('#star-wars-home').should('exist').and('have.descendants', 'h1')
     cy.get('#star-wars-home > h1')
       .should('exist')
       .and('have.text', 'Star Wars Database (based on swapi.com)')

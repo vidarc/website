@@ -21,7 +21,7 @@ const GameBoardRow = ({ tiles, size, dispatch }) => {
 
   return (
     <Row>
-      {tiles.slice(start(tiles.length, size), end(tiles.length, size)).map(cell => (
+      {tiles.slice(start(tiles.length, size), end(tiles.length, size)).map((cell) => (
         <GameBoardCell
           key={cell.id}
           alive={cell.alive}
@@ -38,11 +38,11 @@ GameBoardRow.propTypes = {
   tiles: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
-      alive: PropTypes.bool
+      alive: PropTypes.bool,
     })
   ).isRequired,
   size: PropTypes.number.isRequired,
-  dispatch: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired,
 }
 
 export default GameBoardRow
