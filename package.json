@@ -4,8 +4,7 @@
     "packages/*"
   ],
   "resolutions": {
-    "babel-jest": "24.9.0",
-    "webpack": "4.42.1"
+    "babel-jest": "24.9.0"
   },
   "scripts": {
     "clean": "yarn clean:build && yarn clean:node_modules",
