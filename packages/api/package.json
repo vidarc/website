@@ -1,6 +1,6 @@
 {
   "name": "@mattailes/api",
-  "version": "4.7.14",
+  "version": "4.7.15",
   "private": true,
   "workspaces": {
     "nohoist": [
