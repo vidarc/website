@@ -29,7 +29,7 @@ const Mashin: React.FC<Props> = () => {
           height="315"
           src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
           frameBorder="0"
-          allow="accelerometer; autoplay; muted; encrypted-media; gyroscope; picture-in-picture"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
       </Container>
