@@ -22,7 +22,7 @@
     "@babel/preset-env": "7.10.3",
     "@babel/preset-typescript": "7.10.1",
     "@babel/runtime": "7.10.3",
-    "@google-cloud/firestore": "3.8.6",
+    "@google-cloud/firestore": "4.0.0",
     "apollo-link": "1.2.14",
     "apollo-link-http": "1.5.17",
     "apollo-server-cloud-functions": "2.15.0",
@@ -32,7 +32,7 @@
     "date-fns": "2.14.0",
     "firebase-admin": "8.12.1",
     "firebase-functions": "3.7.0",
-    "graphql": "14.6.0",
+    "graphql": "15.1.0",
     "lodash.merge": "4.6.2"
   }
 }
