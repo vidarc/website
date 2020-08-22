@@ -2,7 +2,7 @@
 import { Species } from '@mattailes/types/StarWars'
 import { gql } from 'apollo-server-cloud-functions'
 
-import { batchLoad, getAll, getOne, loader } from './helpers'
+import { batchLoad, getAll, getOne, loader } from '../helpers'
 
 export const SpeciesTypeDef = gql`
   extend type Query {
@@ -43,13 +43,14 @@ export const SpeciesTypeDef = gql`
 
 export const speciesResolvers = {
   Query: {
-    getAllSpecies: () => getAll('species'),
-    getSpecies: (_: any, { id }: { id: number }) => getOne('species', id),
+    getAllSpecies: () => getAll('starwars_species'),
+    getSpecies: (_: any, { id }: { id: number }) => getOne('starwars_species', id),
   },
 
   Species: {
-    people: ({ people }: Species) => batchLoad(people as number[], 'people'),
-    films: ({ films }: Species) => batchLoad(films as number[], 'films'),
-    homeworld: ({ homeworld }: Species) => loader.load({ id: homeworld, type: 'planets' }),
+    people: ({ people }: Species) => batchLoad(people as number[], 'starwars_people'),
+    films: ({ films }: Species) => batchLoad(films as number[], 'starwars_films'),
+    homeworld: ({ homeworld }: Species) =>
+      loader.load({ id: homeworld, collection: 'starwars_planets' }),
   },
 }

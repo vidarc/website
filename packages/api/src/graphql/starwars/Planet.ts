@@ -2,7 +2,7 @@
 import { Planet } from '@mattailes/types/StarWars'
 import { gql } from 'apollo-server-cloud-functions'
 
-import { batchLoad, getAll, getOne } from './helpers'
+import { batchLoad, getAll, getOne } from '../helpers'
 
 export const PlanetTypeDef = gql`
   extend type Query {
@@ -40,12 +40,12 @@ export const PlanetTypeDef = gql`
 
 export const planetResolvers = {
   Query: {
-    getAllPlanets: () => getAll('planets'),
-    getPlanet: (_: any, { id }: { id: number }) => getOne('planets', id),
+    getAllPlanets: () => getAll('starwars_planets'),
+    getPlanet: (_: any, { id }: { id: number }) => getOne('starwars_planets', id),
   },
 
   Planet: {
-    residents: ({ residents }: Planet) => batchLoad(residents as number[], 'people'),
-    films: ({ films }: Planet) => batchLoad(films as number[], 'films'),
+    residents: ({ residents }: Planet) => batchLoad(residents as number[], 'starwars_people'),
+    films: ({ films }: Planet) => batchLoad(films as number[], 'starwars_films'),
   },
 }

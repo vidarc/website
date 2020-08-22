@@ -2,7 +2,7 @@
 import { Vehicle } from '@mattailes/types/StarWars'
 import { gql } from 'apollo-server-cloud-functions'
 
-import { batchLoad, getAll, getOne } from './helpers'
+import { batchLoad, getAll, getOne } from '../helpers'
 
 export const VehicleTypeDef = gql`
   extend type Query {
@@ -44,12 +44,12 @@ export const VehicleTypeDef = gql`
 
 export const vehicleResolvers = {
   Query: {
-    getAllVehicles: () => getAll('vehicles'),
-    getVehicle: (_: any, { id }: { id: number }) => getOne('vehicles', id),
+    getAllVehicles: () => getAll('starwars_vehicles'),
+    getVehicle: (_: any, { id }: { id: number }) => getOne('starwars_vehicles', id),
   },
 
   Vehicle: {
-    pilots: ({ pilots }: Vehicle) => batchLoad(pilots as number[], 'people'),
-    films: ({ films }: Vehicle) => batchLoad(films as number[], 'films'),
+    pilots: ({ pilots }: Vehicle) => batchLoad(pilots as number[], 'starwars_people'),
+    films: ({ films }: Vehicle) => batchLoad(films as number[], 'starwars_films'),
   },
 }
