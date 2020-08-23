@@ -3,4 +3,5 @@ export interface Employee {
   position: string
   reportsTo: string
   directReports: string[]
+  notes: string
 }
