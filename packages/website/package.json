@@ -46,7 +46,7 @@
     "cross-fetch": "3.0.6",
     "dotenv": "8.2.0",
     "facepaint": "1.2.1",
-    "firebase": "7.21.1",
+    "firebase": "7.22.0",
     "graphql": "14.7.0",
     "graphql.macro": "1.4.2",
     "prop-types": "15.7.2",
