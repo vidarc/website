@@ -23,7 +23,7 @@ function createRequest(type: string, city: string, zip: number): URL {
 async function weatherApi({ query }: Request, res: Response) {
   const { city, type = 'forecast', zip = 23220 } = query
 
-  const request = createRequest(type, city, zip)
+  const request = createRequest(type as string, city as string, zip as number)
 
   try {
     const data = await requestFromCache(request.href)

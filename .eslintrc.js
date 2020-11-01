@@ -3,6 +3,7 @@ module.exports = {
   parserOptions: {
     project: './tsconfig.json',
     sourceType: 'module',
+    ecmaVersion: 2018,
     ecmaFeatures: {
       jsx: true,
     },
@@ -23,21 +24,7 @@ module.exports = {
     'prettier/vue',
   ],
   plugins: ['@typescript-eslint', 'prettier', 'cypress'],
-  parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
   rules: {
-    '@typescript-eslint/member-naming': [
-      'error',
-      {
-        private: '^__',
-        protected: '^_',
-      },
-    ],
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
