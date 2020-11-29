@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState, FunctionComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 
@@ -21,7 +21,7 @@ type SubmenuProps = {
   title: string
 }
 
-const Submenu: React.FunctionComponent<SubmenuProps> = ({ title, children }) => {
+const Submenu: FunctionComponent<SubmenuProps> = ({ title, children }) => {
   const ref = useRef(null)
   const [showSubmenu, setSubmenu] = useState(false)
   useCloseDropdown({ ref, callback: setSubmenu })

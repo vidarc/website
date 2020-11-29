@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import { Link } from '@reach/router'
 
 const DisplayArray = ({ array, url }) =>

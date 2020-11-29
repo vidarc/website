@@ -1,4 +1,4 @@
-import React from 'react'
+import { FunctionComponent } from 'react'
 
 import styled from '@emotion/styled'
 import { Link } from '@reach/router'
@@ -16,7 +16,7 @@ const AvatarImg = styled.img`
   margin: 0;
 `
 
-const Navigation: React.FunctionComponent<{}> = () => {
+const Navigation: FunctionComponent<{}> = () => {
   return (
     <StyledNav>
       <AvatarImg src={avatar} alt="avatar" />

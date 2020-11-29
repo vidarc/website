@@ -4,6 +4,6 @@
   "compilerOptions": {
     "isolatedModules": true,
     "noFallthroughCasesInSwitch": true,
-    "jsx": "react"
+    "jsx": "react-jsx"
   }
 }

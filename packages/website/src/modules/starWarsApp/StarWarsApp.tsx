@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { FunctionComponent } from 'react'
 
 import styled from '@emotion/styled'
 import { RouteComponentProps } from '@reach/router'
@@ -27,7 +27,7 @@ const Wrapper = styled.div`
   }
 `
 
-const StarWarsApp: React.SFC<RouteComponentProps> = () => (
+const StarWarsApp: FunctionComponent<RouteComponentProps> = () => (
   <div id="star-wars-home">
     <h1>Star Wars Database (based on swapi.com)</h1>
     <Wrapper>

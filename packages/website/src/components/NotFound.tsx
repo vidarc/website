@@ -1,5 +1,4 @@
-import React from 'react'
-
+import { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import { RouteComponentProps } from '@reach/router'
 import { Helmet } from 'react-helmet'
@@ -10,7 +9,7 @@ const ImageContainer = styled.div`
   justify-content: center;
 `
 
-const NotFound: React.SFC<RouteComponentProps> = () => (
+const NotFound: FunctionComponent<RouteComponentProps> = () => (
   <ImageContainer>
     <Helmet>
       <title>404 - Not Found</title>

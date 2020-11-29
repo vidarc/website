@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { FunctionComponent } from 'react'
 
 import { Link } from '@reach/router'
 
@@ -6,7 +6,7 @@ interface Props {
   to: string
 }
 
-const TabLink: React.FunctionComponent<Props> = (props) => {
+const TabLink: FunctionComponent<Props> = (props) => {
   const { children } = props
 
   return (

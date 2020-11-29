@@ -1,16 +1,16 @@
-import React from 'react'
+import { ReactNode, Component } from 'react'
 
 import Error from './Error'
 
 interface Props {
-  children: React.ReactNode
+  children: ReactNode
 }
 
 interface State {
   hasError: boolean
 }
 
-export default class ErrorBoundary extends React.Component<Props, State> {
+export default class ErrorBoundary extends Component<Props, State> {
   constructor(props: Readonly<Props>) {
     super(props)
     this.state = {

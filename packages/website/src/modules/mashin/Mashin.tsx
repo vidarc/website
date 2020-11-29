@@ -1,4 +1,4 @@
-import React from 'react'
+import { FunctionComponent } from 'react'
 import { RouteComponentProps } from '@reach/router'
 import styled from '@emotion/styled'
 
@@ -18,7 +18,7 @@ const Container = styled.div`
 
 interface Props extends RouteComponentProps {}
 
-const Mashin: React.FC<Props> = () => {
+const Mashin: FunctionComponent<Props> = () => {
   return (
     <>
       <Header>MASHIN</Header>

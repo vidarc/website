@@ -47,9 +47,12 @@ module.exports = {
     'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['state'] }],
     'no-unused-vars': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
+    'react/react-in-jsx-scope': 'off',
     'react/jsx-props-no-spreading': [0],
     'react/prop-types': [2, { ignore: ['children'] }],
     semi: ['error', 'never'],
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
   },
   settings: {
     react: {

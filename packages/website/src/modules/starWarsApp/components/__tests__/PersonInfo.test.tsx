@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Person } from '@mattailes/types'
 import { shallow } from 'enzyme'
 

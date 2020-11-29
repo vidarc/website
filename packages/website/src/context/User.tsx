@@ -1,6 +1,4 @@
-import React, { useReducer } from 'react'
-
-export const UserContext = React.createContext<UserContextInterface>(null)
+import { useReducer, createContext, FunctionComponent } from 'react'
 
 export interface User {
   displayName?: string
@@ -11,6 +9,8 @@ export interface UserContextInterface {
   state: User
   dispatch({ type: string, payload: User }): void
 }
+
+export const UserContext = createContext<UserContextInterface>(null)
 
 const reducer = (state: User, action: { type: string; payload: User }) => {
   switch (action.type) {
@@ -23,7 +23,7 @@ const reducer = (state: User, action: { type: string; payload: User }) => {
   }
 }
 
-export const UserProvider: React.SFC = ({ children }) => {
+export const UserProvider: FunctionComponent = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, {})
   const value = { state, dispatch }
 
