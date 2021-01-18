@@ -3,8 +3,8 @@
   "version": "4.8.7",
   "private": true,
   "description": "UI web components for mattailes.net",
-  "module": "dist/index.mjs",
-  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "main": "dist/index.cjs.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [
