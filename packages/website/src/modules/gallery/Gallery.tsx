@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { RouteComponentProps } from '@reach/router'
 import styled from '@emotion/styled'
 
@@ -15,7 +15,7 @@ const Container = styled.div`
   align-items: center;
 `
 
-const Gallery: React.SFC<Props> = () => {
+const Gallery: React.FunctionComponent<Props> = () => {
   const [nextPageToken, setNextPageToken] = useState('')
   const [images, loading, error, pageToken] = useImagesFromStorage(nextPageToken)
 

@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Film } from '@mattailes/types'
 import { shallow } from 'enzyme'
 

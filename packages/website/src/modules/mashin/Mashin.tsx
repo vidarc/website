@@ -1,4 +1,3 @@
-import React from 'react'
 import { RouteComponentProps } from '@reach/router'
 import styled from '@emotion/styled'
 
@@ -18,23 +17,21 @@ const Container = styled.div`
 
 interface Props extends RouteComponentProps {}
 
-const Mashin: React.FC<Props> = () => {
-  return (
-    <>
-      <Header>MASHIN</Header>
-      <Container>
-        <iframe
-          title="mashin"
-          width="560"
-          height="315"
-          src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
-          frameBorder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      </Container>
-    </>
-  )
-}
+const Mashin: React.FunctionComponent<Props> = () => (
+  <>
+    <Header>MASHIN</Header>
+    <Container>
+      <iframe
+        title="mashin"
+        width="560"
+        height="315"
+        src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
+        frameBorder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+    </Container>
+  </>
+)
 
 export default Mashin

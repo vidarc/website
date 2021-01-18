@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import { Router } from '@reach/router'
 import { loader } from 'graphql.macro'
 

@@ -2,6 +2,7 @@
   "extends": "../../tsconfig",
   "include": ["src/**/*.ts", "src/**/*.tsx", "../ui/dist/types/*.d.ts"],
   "compilerOptions": {
-    "isolatedModules": true
+    "isolatedModules": true,
+    "jsx": "react-jsx"
   }
 }

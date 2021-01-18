@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import Todo from './Todo'
 
 import { Todo as TodoProp } from '../ducks/types'

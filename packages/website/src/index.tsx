@@ -1,5 +1,3 @@
-import React from 'react'
-
 import typography from '@mattailes/typography'
 import { defineCustomElements } from '@mattailes/ui/dist/loader'
 import ApolloClient from 'apollo-boost'
