@@ -33,6 +33,7 @@
     "singleQuote": true
   },
   "devDependencies": {
+    "@emotion/eslint-plugin": "11.0.0",
     "@types/enzyme": "3.10.8",
     "@types/jest": "26.0.20",
     "@types/lodash.merge": "4.6.6",

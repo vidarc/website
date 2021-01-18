@@ -23,7 +23,7 @@
     "prettier/react",
     "prettier/vue"
   ],
-  "plugins": ["@typescript-eslint", "prettier", "cypress"],
+  "plugins": ["@typescript-eslint", "prettier", "cypress", "@emotion/eslint-plugin"],
   "rules": {
     "@typescript-eslint/no-unused-vars": [
       "error",
