@@ -1,5 +1,5 @@
+/* eslint-disable react/prop-types */
 import { DocumentNode } from 'graphql'
-import * as React from 'react'
 import { useQuery } from 'react-apollo'
 
 const withQuery = (query: DocumentNode, Component: React.FunctionComponent<any>) => (props) => {

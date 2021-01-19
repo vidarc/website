@@ -13,6 +13,7 @@
   ],
   "scripts": {
     "build-library": "stencil build",
+    "lint": "eslint ./src --fix --ext .ts,.tsx,.js,.jsx",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll"

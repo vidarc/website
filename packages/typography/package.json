@@ -3,7 +3,9 @@
   "version": "4.7.11",
   "private": true,
   "sideEffects": false,
-  "scripts": {},
+  "scripts": {
+    "lint": "eslint . --fix --ext .ts,.tsx,.js,.jsx"
+  },
   "main": "index.js",
   "dependencies": {
     "typeface-fira-sans": "1.1.13",

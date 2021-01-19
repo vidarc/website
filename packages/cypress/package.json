@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "lint": "eslint . --fix --ext .ts,.tsx,.js,.jsx"
   },
   "devDependencies": {
     "cypress": "6.2.1"

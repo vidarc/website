@@ -12,7 +12,8 @@
   },
   "scripts": {
     "build": "tsc && babel --delete-dir-on-start -d build/ --verbose src/ --extensions '.ts,.tsx'",
-    "deploy": "firebase deploy --only functions --token $FIREBASE_TOKEN"
+    "deploy": "firebase deploy --only functions --token $FIREBASE_TOKEN",
+    "lint": "eslint ./src --fix --ext .ts,.tsx,.js,.jsx"
   },
   "dependencies": {
     "@babel/cli": "7.13.14",

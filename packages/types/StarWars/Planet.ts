@@ -1,4 +1,5 @@
-import { Film, Person } from '.'
+import type { Film } from './Film'
+import type { Person } from './Person'
 
 export interface Planet {
   id: number
