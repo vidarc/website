@@ -1,5 +1,5 @@
 import { gql, makeExecutableSchema } from 'apollo-server-cloud-functions'
-import merge from 'lodash.merge'
+import { merge } from 'lodash'
 
 import { filmResolvers, FilmTypeDef } from './Film'
 import { personResolvers, PersonTypeDef } from './Person'

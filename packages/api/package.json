@@ -34,7 +34,7 @@
     "firebase-admin": "9.6.0",
     "firebase-functions": "3.13.2",
     "graphql": "15.5.0",
-    "lodash.merge": "4.6.2",
+    "lodash": "4.17.21",
     "pino": "6.9.0"
   }
 }
