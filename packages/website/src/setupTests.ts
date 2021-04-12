@@ -1,11 +1,12 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { configure } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 
 import 'jest-enzyme'
 
-import serializer, { matchers } from 'jest-emotion'
+import { matchers, createSerializer } from '@emotion/jest'
 
-expect.addSnapshotSerializer(serializer)
+expect.addSnapshotSerializer(createSerializer())
 expect.extend(matchers)
 
 jest.mock('shortid', () => ({

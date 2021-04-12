@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from 'react'
+import { SyntheticEvent } from 'react'
 import PropTypes from 'prop-types'
 
 import styled from '@emotion/styled'

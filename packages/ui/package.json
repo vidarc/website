@@ -3,8 +3,8 @@
   "version": "4.8.7",
   "private": true,
   "description": "UI web components for mattailes.net",
-  "module": "dist/index.mjs",
-  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "main": "dist/index.cjs.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [
@@ -13,12 +13,13 @@
   ],
   "scripts": {
     "build-library": "stencil build",
+    "lint": "eslint ./src --fix --ext .ts,.tsx,.js,.jsx",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "dependencies": {
-    "@stencil/core": "1.17.4",
+    "@stencil/core": "2.5.2",
     "@stencil/sass": "1.4.1",
     "sanitize.css": "12.0.1"
   },

@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 export interface Props {
   active: boolean
   children: React.ReactChild

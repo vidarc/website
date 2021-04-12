@@ -1,4 +1,4 @@
 {
   "extends": "../../tsconfig",
-  "include": ["./index.ts", "./StarWars"]
+  "include": ["./index.ts", "./StarWars", "/typescript/*"]
 }

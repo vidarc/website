@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import { Species } from '@mattailes/types'
 
 import ContentRow from './ContentRow'

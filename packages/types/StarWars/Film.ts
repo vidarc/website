@@ -1,4 +1,8 @@
-import { Person, Planet, Species, Starship, Vehicle } from '.'
+import type { Person } from './Person'
+import type { Planet } from './Planet'
+import type { Species } from './Species'
+import type { Starship } from './Starship'
+import type { Vehicle } from './Vehicle'
 
 export interface Film {
   id: number

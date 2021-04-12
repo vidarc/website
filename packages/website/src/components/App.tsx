@@ -1,4 +1,4 @@
-import React from 'react'
+import { lazy, Suspense } from 'react'
 
 import { Router } from '@reach/router'
 
@@ -8,18 +8,18 @@ import { Navigation } from './Navigation'
 import NotFound from './NotFound'
 import { UserProvider } from '../context/User'
 
-const AsyncHome = React.lazy(() => import('../modules/home/Home'))
-const AsyncStarWars = React.lazy(() => import('../modules/starWarsApp/StarWarsApp'))
-const AsyncTodo = React.lazy(() => import('../modules/todoApp/TodoApp'))
-const AsyncGameOfLife = React.lazy(() => import('../modules/gameOfLife/GameOfLife'))
-const AsyncGallery = React.lazy(() => import('../modules/gallery/Gallery'))
-const AsyncMashin = React.lazy(() => import('../modules/mashin/Mashin'))
+const AsyncHome = lazy(() => import('../modules/home/Home'))
+const AsyncStarWars = lazy(() => import('../modules/starWarsApp/StarWarsApp'))
+const AsyncTodo = lazy(() => import('../modules/todoApp/TodoApp'))
+const AsyncGameOfLife = lazy(() => import('../modules/gameOfLife/GameOfLife'))
+const AsyncGallery = lazy(() => import('../modules/gallery/Gallery'))
+const AsyncMashin = lazy(() => import('../modules/mashin/Mashin'))
 
 const App: React.FunctionComponent = () => (
   <ErrorBoundary>
     <UserProvider>
       <Navigation />
-      <React.Suspense fallback={<Loading />}>
+      <Suspense fallback={<Loading />}>
         <Router>
           <AsyncHome path="/" />
           <AsyncStarWars path="starwars/*" />
@@ -29,7 +29,7 @@ const App: React.FunctionComponent = () => (
           <AsyncMashin path="mashin" />
           <NotFound default />
         </Router>
-      </React.Suspense>
+      </Suspense>
     </UserProvider>
   </ErrorBoundary>
 )

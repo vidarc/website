@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import React from 'react'
 import styled from '@emotion/styled'
 
 import { ImageState } from './gallery.types'
@@ -36,15 +35,13 @@ const Image = styled.img`
   }
 `
 
-const ImageGrid: React.FunctionComponent<Props> = ({ images }) => {
-  return (
-    <Container>
-      {images.map(({ thumbPath }) => (
-        <Image key={thumbPath} src={thumbPath} alt="gallery item" />
-      ))}
-    </Container>
-  )
-}
+const ImageGrid: React.FunctionComponent<Props> = ({ images }) => (
+  <Container>
+    {images.map(({ thumbPath }) => (
+      <Image key={thumbPath} src={thumbPath} alt="gallery item" />
+    ))}
+  </Container>
+)
 
 ImageGrid.defaultProps = {
   images: [],

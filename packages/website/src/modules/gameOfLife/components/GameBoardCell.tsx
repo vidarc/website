@@ -1,5 +1,3 @@
-import React from 'react'
-
 import styled from '@emotion/styled'
 
 interface CellProps {
@@ -20,6 +18,6 @@ const StyledCell = styled.div`
   }
 `
 
-const GameBoardCell: React.SFC<CellProps> = (props) => <StyledCell {...props} />
+const GameBoardCell: React.FunctionComponent<CellProps> = (props) => <StyledCell {...props} />
 
 export default GameBoardCell

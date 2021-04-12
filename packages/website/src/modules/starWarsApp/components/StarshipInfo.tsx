@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import { Starship } from '@mattailes/types'
 
 import ContentRow from './ContentRow'

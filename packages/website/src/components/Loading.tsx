@@ -1,5 +1,3 @@
-import React from 'react'
-
-const Loading: React.SFC = () => <div>Loading...</div>
+const Loading: React.FunctionComponent = () => <div>Loading...</div>
 
 export default Loading

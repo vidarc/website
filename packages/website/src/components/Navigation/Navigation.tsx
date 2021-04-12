@@ -1,5 +1,3 @@
-import React from 'react'
-
 import styled from '@emotion/styled'
 import { Link } from '@reach/router'
 
@@ -16,28 +14,26 @@ const AvatarImg = styled.img`
   margin: 0;
 `
 
-const Navigation: React.FunctionComponent<{}> = () => {
-  return (
-    <StyledNav>
-      <AvatarImg src={avatar} alt="avatar" />
-      <Link to="/">Home</Link>
-      <Submenu title="Projects">
-        <Link to="/todo" role="menuitem">
-          Todo
-        </Link>
-        <Link to="/starwars" role="menuitem">
-          Star Wars GraphQL
-        </Link>
-        <Link to="/gameoflife" role="menuitem">
-          Conway&apos;s Game of Life
-        </Link>
-        <Link to="/gallery" role="menuitem">
-          Gallery
-        </Link>
-      </Submenu>
-      <EntryPoint />
-    </StyledNav>
-  )
-}
+const Navigation: React.FunctionComponent<{}> = () => (
+  <StyledNav>
+    <AvatarImg src={avatar} alt="avatar" />
+    <Link to="/">Home</Link>
+    <Submenu title="Projects">
+      <Link to="/todo" role="menuitem">
+        Todo
+      </Link>
+      <Link to="/starwars" role="menuitem">
+        Star Wars GraphQL
+      </Link>
+      <Link to="/gameoflife" role="menuitem">
+        Conway&apos;s Game of Life
+      </Link>
+      <Link to="/gallery" role="menuitem">
+        Gallery
+      </Link>
+    </Submenu>
+    <EntryPoint />
+  </StyledNav>
+)
 
 export default Navigation

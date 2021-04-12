@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import { connect } from 'react-redux'
 
 import actions from '../ducks/actions'
 
+// eslint-disable-next-line react/prop-types
 const AddTodo = ({ dispatch }) => {
   const [todo, setTodo] = useState('')
 

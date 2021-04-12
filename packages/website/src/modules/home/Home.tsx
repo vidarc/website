@@ -1,4 +1,3 @@
-import React from 'react'
 import { RouteComponentProps } from '@reach/router'
 import styled from '@emotion/styled'
 
@@ -18,7 +17,7 @@ const ArticleHeader = styled.header`
   font-size: 1.1rem;
 `
 
-const Home: React.SFC<RouteComponentProps> = () => (
+const Home: React.FunctionComponent<RouteComponentProps> = () => (
   <div>
     <Banner src={galaxy} alt="galaxy banner" />
     <Header id="welcome-text">My name is Matthew Ailes and this is my website.</Header>
