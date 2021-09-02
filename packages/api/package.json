@@ -15,14 +15,14 @@
     "deploy": "firebase deploy --only functions --token $FIREBASE_TOKEN"
   },
   "dependencies": {
-    "@babel/cli": "7.14.8",
-    "@babel/core": "7.14.8",
-    "@babel/plugin-transform-runtime": "7.14.5",
+    "@babel/cli": "7.15.4",
+    "@babel/core": "7.15.4",
+    "@babel/plugin-transform-runtime": "7.15.0",
     "@babel/polyfill": "7.12.1",
-    "@babel/preset-env": "7.14.9",
-    "@babel/preset-typescript": "7.14.5",
-    "@babel/runtime": "7.14.8",
-    "@google-cloud/firestore": "4.14.0",
+    "@babel/preset-env": "7.15.4",
+    "@babel/preset-typescript": "7.15.0",
+    "@babel/runtime": "7.15.4",
+    "@google-cloud/firestore": "4.15.0",
     "apollo-link": "1.2.14",
     "apollo-link-http": "1.5.17",
     "apollo-server-cloud-functions": "2.25.2",
@@ -30,9 +30,9 @@
     "cross-fetch": "3.1.4",
     "dataloader": "2.0.0",
     "date-fns": "2.23.0",
-    "firebase-admin": "9.11.0",
-    "firebase-functions": "3.14.1",
-    "graphql": "15.5.1",
+    "firebase-admin": "9.11.1",
+    "firebase-functions": "3.15.5",
+    "graphql": "15.5.2",
     "lodash.merge": "4.6.2"
   }
 }
